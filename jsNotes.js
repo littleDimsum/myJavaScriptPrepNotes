@@ -467,38 +467,38 @@ console.log();
 
 console.log(" ===== 12 ===== ");
 // array to object
-var list = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 36], ['role', 'manager']], [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 42], ['role', 'clerk']]];
-var transformEmployeeData = function (array) {
-  var finResult = [];
-  for (var i = 0; i < array.length; i++) {
-    var tempResult = {};
-    for (var j = 0; j < array[i].length; j++) {
-      tempResult[array[i][j][0]] = array[i][j][1];
-    }
-    finResult.push(tempResult);
-  }
-  return finResult;
-};
-console.log(transformEmployeeData(list));
-console.log();
-console.log();
+// var list = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 36], ['role', 'manager']], [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 42], ['role', 'clerk']]];
+// var transformEmployeeData = function (array) {
+//   var finResult = [];
+//   for (var i = 0; i < array.length; i++) {
+//     var tempResult = {};
+//     for (var j = 0; j < array[i].length; j++) {
+//       tempResult[array[i][j][0]] = array[i][j][1];
+//     }
+//     finResult.push(tempResult);
+//   }
+//   return finResult;
+// };
+// console.log(transformEmployeeData(list));
+// console.log();
+// console.log();
 
-console.log(" ===== 13 ===== ");
-// object to array
-var convertObjectToList = function (obj) {
-  var finalResult = [];
-  for (var key in obj) {
-    // var tempData = [];
-    // tempData.push(key);
-    // tempData.push(obj[key]);
-    // finalResult.push(tempData);
-    finalResult.push(key + ': ' + obj[key]);
-  }
-  return finalResult;
-};
-console.log(convertObjectToList({name: 'Holly', age: 35, role: 'producer'}));
-console.log();
-console.log();
+// console.log(" ===== 13 ===== ");
+// // object to array
+// var convertObjectToList = function (obj) {
+//   var finalResult = [];
+//   for (var key in obj) {
+//     // var tempData = [];
+//     // tempData.push(key);
+//     // tempData.push(obj[key]);
+//     // finalResult.push(tempData);
+//     finalResult.push(key + ': ' + obj[key]);
+//   }
+//   return finalResult;
+// };
+// console.log(convertObjectToList({name: 'Holly', age: 35, role: 'producer'}));
+// console.log();
+// console.log();
 
 // arrays
 console.log(" ===== 14 ===== ");
@@ -857,7 +857,8 @@ console.log();
 console.log(" ===== 36 ===== ");
 var letterCount = function (str) {
   var obj = {};
-  for (var i = 0; i < str.length; i++) {
+  var strLength = str.length;
+  for (var i = 0; i < strLength; i++) {
     var current = str.charAt(i);
     if (obj[current] === undefined) {
       obj[current] = 1;
@@ -873,56 +874,72 @@ console.log();
 console.log();
 
 console.log(" ===== 37 ===== ");
-var duplicates = function (arr) {
-  // where we will store our duplicate values
-  var dups = [];
-  for (var i = 0; i < arr.length; i++) {
-    // get element in array
-    var el = arr[Math.abs(arr[i])];
-    // element in array is positive so make it negative
-    if (el > 0) {
-      arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])];
-    } else if (el === 0) { 
-      arr[Math.abs(arr[i])] = -arr.length; 
-    } else {
-      if (Math.abs(arr[i]) === arr.length) { 
-        dups.push(0); 
-      } else { dups.push(Math.abs(arr[i])); }
+// var duplicates = function (arr) {
+//   // where we will store our duplicate values
+//   var dups = [];
+//   for (var i = 0; i < arr.length; i++) {
+//     // get element in array
+//     var el = arr[Math.abs(arr[i])];
+//     // element in array is positive so make it negative
+//     if (el > 0) {
+//       arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])];
+//     } else if (el === 0) { 
+//       arr[Math.abs(arr[i])] = -arr.length; 
+//     } else {
+//       if (Math.abs(arr[i]) === arr.length) { 
+//         dups.push(0); 
+//       } else { dups.push(Math.abs(arr[i])); }
+//     }
+//   }
+//   return dups;
+// };
+// console.log(duplicates([0,2,0,1,3,3]));
+// console.log(duplicates([0,1,1,3,4,-4,-4,-5,3,0,-1,-2,1,3,3]));
+// console.log();
+// console.log();
+
+var noDuplicates = function (myArray) {
+  var tempResult = [];
+  var arrLength = myArray.length
+  for (var i = 0; i < arrLength; i++) {
+    if (tempResult.includes(myArray[i]) === false) {
+    tempResult.push(myArray[i]);
     }
   }
-  return dups;
+  return tempResult.sort(function(a,b) { return a - b; });
 };
-console.log(duplicates([0,2,0,1,3,3]));
-console.log(duplicates([0,1,1,3,4,-4,-4,-5,3,0,-1,-2,1,3,3]));
+console.log(noDuplicates([1,3,4,2,3,5,1,5,6,73,8,4,9,85]));
+console.log(noDuplicates([0,2,0,1,3,3]));
+console.log(noDuplicates([0,1,1,3,4,-4,-4,-5,3,0,-1,-2,1,3,3]));
 console.log();
 console.log();
 
 console.log(" ===== 38 ===== ");
-duplicatez = function (arr) {
-  // our hash table to store each element
-  // in the array as we pass through it
-  var hashTable = [];
-  // store duplicates
-  var dups = [];
-  // check each element in the array
-  for (var i = 0; i < arr.length; i++) {
-    // if element does not exist in hash table
-    // then insert it
-    if (hashTable[arr[i].toString()] === undefined) {
-      hashTable[arr[i].toString()] = true;
-    } else { 
-      dups.push(arr[i]); 
-    }
-  }
-  return dups;
-};
-console.log(duplicatez([1, 21, -4, 103, 21, 4, 1]));
-console.log(duplicatez([1, 21, -4, 1, 32, 103, 21, 4, 1]));
+// var duplicatez = function (arr) {
+//   // our hash table to store each element
+//   // in the array as we pass through it
+//   var hashTable = [];
+//   // store duplicates
+//   var dups = [];
+//   // check each element in the array
+//   for (var i = 0; i < arr.length; i++) {
+//     // if element does not exist in hash table
+//     // then insert it
+//     if (hashTable[arr[i].toString()] === undefined) {
+//       hashTable[arr[i].toString()] = true;
+//     } else { 
+//       dups.push(arr[i]); 
+//     }
+//   }
+//   return dups;
+// };
+// console.log(duplicatez([1, 21, -4, 103, 21, 4, 1]));
+// console.log(duplicatez([1, 21, -4, 1, 32, 103, 21, 4, 1]));
 console.log();
 console.log();
 
 console.log(" ===== 39 ===== ");
-powerSet = function (arr) {
+var powerSet = function (arr) {
   // the final power set
   var powers = [];
   // the total number of sets that the power set will contain
@@ -998,11 +1015,13 @@ var dutchNatFlag = function (arr) {
   // one pass through the array swapping
   // the necessary elements in place
   while (mid <= high) {
-    if      (arr[mid] === 0) { 
+    if (arr[mid] === 0) { 
       swap(arr, low++, mid++); 
     } else if (arr[mid] === 2) { 
       swap(arr, mid, high--); 
-    } else if (arr[mid] === 1) { mid++; }
+    } else if (arr[mid] === 1) { 
+      mid++; 
+    }
   }
   return arr;
 };
@@ -1042,7 +1061,7 @@ console.log();
 
 
 console.log(" ===== 43 ===== ");
-insertInterval = function (arr, interval) {
+var insertInterval = function (arr, interval) {
   var newSet = [];
   var endSet = [];
   var i = 0;
@@ -1071,9 +1090,9 @@ console.log(insertInterval([[1,5],[10,15],[20,25]], [12,27]));
 console.log(insertInterval([[6,7]], [1,9]));
 console.log(insertInterval([[6,7]], [1,5]));
 console.log(insertInterval([[1,5]], [6,7]));
-console.log(insertInterval([[1,5],[6,11],[13,20],[40,50]],[12,19]));
+console.log(insertInterval([[1,5],[6,11],[13,20],[40,50]], [12,19]));
 console.log(insertInterval([[1,5],[10,15],[20,25]], [2,6]));
-console.log(insertInterval([[1,5],[6,11],[13,20],[25,30],[32,55]],[12,45]));
+console.log(insertInterval([[1,5],[6,11],[13,20],[25,30],[32,55]], [12,45]));
 console.log(insertInterval([[1,5],[6,11],[20,22]], [24,45]));
 console.log();
 console.log();
@@ -1084,7 +1103,7 @@ var Node = function (data, next) {
   this.data = data;
   this.next = next;
 };
-merge = function (L1, L2) {
+var merge = function (L1, L2) {
   // create new linked list pointer
   var L3 = new Node(null, null);
   var prev = L3;
@@ -1122,7 +1141,7 @@ console.log();
 
 
 console.log(" ===== 45 Even Pairs =====");
-EvenPairs = function (str) {
+var EvenPairs = function (str) {
   var zzz = /[24680]\d*[24680]/; // look for these adj numbers
   return zzz.test(str); // does str match zzz?
 };
@@ -1141,22 +1160,34 @@ console.log();
 
 
 console.log(" ===== 47 Factorial =====");
-Factorial = function (num) {
-  var fact = 1;
-  for (var i = 1; i <= num; i++) {
-    fact = fact * i;
+// var Factorial = function (num) {
+//   var fact = 1;
+//   for (var i = 1; i <= num; i++) {
+//     fact = fact * i;
+//   }
+//   return fact;
+// };
+// console.log(Factorial(10));
+// console.log();
+
+var Factorial = function (num) {
+  var result = 1
+  for (var i = num; i >= 1; i--) {
+    result *= i;
   }
-  return fact;
+  return result;
 };
 console.log(Factorial(10));
+console.log();
 console.log();
 
 
 console.log(" ===== 48 FirstReverse =====");
-FirstReverse = function (str) { 
+var FirstReverse = function (str) { 
   return str.split('').reverse().join('');
 };
-console.log(FirstReverse("enildaer"));
+console.log(FirstReverse('enildaer'));
+console.log(FirstReverse('azuhey ubiahus'));
 console.log();
 /*function FirstReverse(str) { 
   var newString = "";
@@ -1186,7 +1217,7 @@ var employedList = [ [['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42],
 ['role', 'clerk']], [['firstName', 'Mary'], ['lastName', 'James'], ['age', 36],
 ['role', 'manager']] ];
 
-transformEmployeeData = function (array) {
+var transformEmployeeData = function (array) {
   var tranformEmployeList = [];
   for (var i = 0; i < array.length; i++) {
     var tempData = {};
@@ -1233,11 +1264,11 @@ simple key-value pairs.
 {species: 'canine', name: 'Bowser', weight: 45}*/
 //solution below
 var hash1 = {name: 'Holly', age: 35, role: 'producer'};
-convertObjectToList = function (array) {
+var convertObjectToList = function (hash) {
   var finalResult = [];
-  for (var x in array) {
+  for (var key in hash) {
     var tempData = [];
-    tempData.push(x, array[x]);
+    tempData.push(key, hash[key]);
     finalResult.push(tempData);
   }
   return finalResult;
@@ -1260,7 +1291,7 @@ var employedList = [ [['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42],
 ['role', 'clerk']], [['firstName', 'Mary'], ['lastName', 'James'], ['age', 36],
 ['role', 'manager']] ];
 
-tester = function (arr) {
+var tester = function (arr) {
   var result = [];
   for (var x in arr) {
     var tempRes = {};
@@ -1282,7 +1313,7 @@ console.log(" ===== 51 key: value ===== ");
 (4) Pass each number in the array to this function
 (5) Save the original numbers and the doubled results as key-value pairs in an object
 */
-doubling = function (num) {
+var doubling = function (num) {
   return num * 2;
 };
 // create an array of arbitrary numbers and store the
@@ -1368,26 +1399,28 @@ var dataMod = data.filter(function(el) {
     return false;
   }
 });
+console.log(dataMod);
 console.log();
 console.log();
 
+var optFunc = function (array) {
+  var tempData = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].name !== null && array[i].age !== undefined) {
+      tempData.push(array[i]);
+    }
+  }
+  return tempData;
+}
+console.log(optFunc(data));
+console.log();
+console.log();
 
 
 //****************************************************************************
 //****************************************************************************
 console.log(" ===== HACKREACTOR STYLE QUESTIONS ===== ");
 //******************************************************************************
-// Write multipyN(num) which takes a number num and returns a function which takes
-// an argument and returns that argument multiplied by num.
-//
-// Example:
-// > var multiplyTen = multiplyN(10);
-// > multiplyTen;
-// [Function]
-// > multiplyTen(35)
-// 350
-
-//****************************************************************************
 // Write a function transpose(array), which will convert between the row-oriented and
 // column-oriented representations of a two-dimensional array. Assume square arrays.
 //
@@ -1400,6 +1433,23 @@ console.log(" ===== HACKREACTOR STYLE QUESTIONS ===== ");
 //     [6, 7, 8]
 //   ]
 //
+// Example Transpose Question:
+var arr1 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+var arr2 = [[0, 3, 6], [1, 4, 7], [2, 5, 8]];
+var transPose = function (array) {
+  var result = [];
+  var arrLength = array.length
+  for (var i = 0; i < arrLength; i++) {
+    var tempResult = [];
+    for (var j = 0; j < arrLength; j++) {
+      tempResult.push(array[j][i]);
+    }
+    result.push(tempResult);
+  }
+  return result;
+};
+console.log(transPose(arr1)); // [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
+console.log(transPose(arr2)); // [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 // transpose(arr1) => [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
 //****************************************************************************
 
