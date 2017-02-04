@@ -2,12 +2,12 @@
 console.log(" ========== NOTES + EXERCISES ========== " );
 
 console.log();
-console.log(1);
+console.log (' numero 1 ');
 console.log ("John");
 console.log ("John".length);
 console.log (3 + 7);
 console.log (100 * 100);
-console.log ("karaake".length);
+console.log ("karaoke".length);
 console.log ("Some folks are really cool!".length);
 console.log ("like a G-six!".length > 10);
 console.log (2 - 5);
@@ -17,7 +17,7 @@ console.log (8 * 2 === 16);
 console.log(2 ** 4);
 console.log();
 
-console.log(2);
+console.log(' numero 2 ');
 console.log("wonderful day".substring (3, 7));
 console.log ("January".substring (0, 3));
 console.log ("Melbourne is great".substring (0, 12));
@@ -25,18 +25,17 @@ console.log ("Hamburgers".substring (3, 10));
 console.log();
 
 var nums = [1, 2, 3, 4, 12, 3, 5, 2, -7, 0];
-Math.max
-
-console.log(Math.max(...nums));
-console.log('Math max of numbers not in an array: ', Math.max(1, 2, 3, 4, 12, 3, 5, 2, -7, 0));
+console.log('Math.max of numbers in an array: ', Math.max(...nums));
+console.log('Math.max of numbers not in an array: ', Math.max(1, 2, 3, 4, 12, 3, 5, 2, -7, 0));
 //console.log(Math.max.apply(null, num));
 //console.log(Math.max(...num));
 console.log(Math.min(1, 2, 3, 4, 12, 3, 5, 2, -7, 0));
+console.log(Math.min(...nums));
 //console.log(Math.min.apply(null, num));
 //console.log(Math.min(...num));
 console.log();
 
-console.log(3);
+console.log(' numero 3 ');
 console.log(Math.abs(-239));
 console.log(Math.exp(0));
 console.log(Math.exp(1));
@@ -56,14 +55,14 @@ console.log();
 console.log(" ========== EXTRA STRING NOTES ========== ");
 console.log();
 
-console.log(4);
+console.log(' numero 4 ');
 console.log("HELLO WORLD".charAt(0));
 console.log("AZabHELLO WORLD".charCodeAt(0));
 console.log("AZabHELLO WORLD".charCodeAt(1));
 console.log("AZabHELLO WORLD".charCodeAt(2));
 console.log("AZazHELLO WORLD".charCodeAt(3));
 console.log(String.fromCharCode(65));
-console.log(String.fromCharCode(72, 69, 76, 76, 79));
+console.log(String.fromCharCode(...[72, 69, 76, 76, 79]));
 var ascii = function (a) { 
   return a.charCodeAt(0); 
 };
@@ -72,8 +71,9 @@ console.log('ergtrer'.split('').map(ascii));
 console.log();
 console.log();
 
-console.log(5);
+console.log(' numero 5 ');
 console.log("suhai ".concat("yehuza"));
+console.log([1,2,3].concat([4,5,6]));
 console.log("suhai".endsWith("i"));
 console.log("suhai yehuza".endsWith("yehuza"));
 console.log("suhai".startsWith("i"));
@@ -81,7 +81,7 @@ console.log("suhai yehuza".startsWith("yehuza"));
 console.log();
 console.log();
 
-console.log(6);
+console.log(' numero 6 ');
 console.log("suhai".includes("a"));
 console.log("suhai ocran yehuza".includes("ocran"));
 console.log("suhai ocran yehuza".indexOf("ocran"));
@@ -91,7 +91,7 @@ console.log("suhai ocran yehuza".lastIndexOf("yehuza"));
 console.log();
 console.log();
 
-console.log(7);
+console.log(' numero 7 ');
 console.log("suhai".localeCompare("yehuza"));
 console.log("ocran".localeCompare("ocran"));
 console.log("yehuza".localeCompare("suhai"));
@@ -101,9 +101,10 @@ console.log(str.match(/ain/ig));
 console.log();
 console.log();
 
-console.log(8);
+console.log(' numero 8 ');
 console.log("Hello World!!! ".repeat(2));
 console.log("suhai ocran yehuza".replace("suhai", "swy"));
+console.log("suhai ocran yehuza suhai suhaibu ".replace("suhai", "swy"));
 console.log("suhai ocran yehuza".search("ocran"));
 console.log("suhai ocran yehuza".search("o"));
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
@@ -113,7 +114,7 @@ console.log(fruits.slice(1, 2));
 console.log();
 console.log();
 
-console.log(9);
+console.log(' numero 9 ');
 console.log("How are you doing today?".split(" "));
 console.log("Hello world!".substr(1, 6));
 console.log("Hello world!".substr(2, 6)); // note this
@@ -127,7 +128,7 @@ console.log();
 console.log();
 
 
-console.log(10);
+console.log(' numero 10 ');
 var num = 15;
 console.log(num.toString());
 var str = "       Hello World!        ";
@@ -138,9 +139,8 @@ console.log(false.toString());
 console.log(String(true));
 console.log(true.toString());
 console.log();
-console.log();
 /*
-concat()	Joins two or more arrays, and returns a copy of the joined arrays
+concat()	Joins two or more arrays or strings, and returns a copy of the joined arrays or strings.
 copyWithin()	Copies array elements within the array, to and from specified positions
 every()	Checks if every element in an array pass a test
 fill()	Fill the elements in an array with a static value
@@ -171,14 +171,16 @@ valueOf()	Returns the primitive value of an array
 console.log(" ========== EXTRA ARRAY NOTES ========== ");
 console.log();
 
-console.log(11);
+console.log(' numero 11 ');
 console.log(["a", "b", "c"].concat([1, 2, 3]));
-//var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
-//console.log(fruits.copyWithin(2, 0));
-//console.log(fruits.copyWithin(0, 3));
-//console.log(fruits.copyWithin(2, 0, 2));
+// var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+// console.log(fruits.copyWithin(2, 0));
+// console.log(fruits.copyWithin(0, 3));
+// console.log(fruits.copyWithin(2, 0, 2));
 var ages = [32, 33, 16, 40];
-checkAdult = function (age) { return age >= 18; };
+var checkAdult = function (age) { 
+  return age >= 18; 
+};
 console.log(ages.every(checkAdult));
 console.log(ages.every(Number));
 console.log(ages.some(checkAdult));
@@ -188,22 +190,24 @@ console.log(ages.find(checkAdult));
 console.log();
 console.log();
 
-console.log(12);
+console.log(' numero 12 ');
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.fill("Kiwi"));
 var newAges = [3, 10, 18, 20];
 console.log(newAges.findIndex(checkAdult));
-//function myFunction(item, index) {
-    //return "index[" + index + "]: " + item ; }
-//var numbers = [4, 9, 16, 25];
-//console.log(numbers.forEach(myFunction));
+// var myFunction = function (item, index) {
+//     return "index[" + index + "]: " + item; 
+// };
+// var numbers = [4, 9, 16, 25];
+// console.log(numbers.forEach(myFunction));
+// console.log(Array.isArray(numbers));
 console.log(Array.isArray([1, 2, 3]));
 console.log(["Banana", "Orange", "Apple", "Mango"].join());
 console.log(["Banana", "Orange", "Apple", "Mango"].join("-"));
 console.log();
 console.log();
 
-console.log(13);
+console.log(' numero 13 ');
 var str = "Hello planet earth, you are a great planet.";
 console.log(str.lastIndexOf("planet"));
 console.log([4, 9, 16, 25].map(Math.sqrt));
@@ -213,16 +217,17 @@ console.log(fruits.push("cherry")); // note difference of output here
 fruits.push("guava");
 console.log(fruits); // note the difference here
 console.log(fruits.shift());
-fruits.unshift("apricot");
+console.log(fruits.unshift("apricot"));
 console.log(fruits);
 console.log();
 console.log();
 
-console.log(14);
+console.log(' numero 14 ');
 var numbers = [65, 44, 12, 4];
 console.log(numbers.reduce(function(tot, num) { return tot + num; }));
 console.log(numbers.reduce(function(tot, num) { return tot + num; }, 0));
 console.log(numbers.reduce(function(tot, num) { return tot + num; }, 1));
+console.log(numbers.reduce(function(tot, num) { return tot * num; }));
 console.log(numbers.reduce(function(tot, num) { return tot * num; }, 1));
 console.log(numbers.reduceRight(function(a, b) { return a + b; }, 0));
 console.log(numbers.reduceRight(function(a, b) { return a * b; }, 1));
@@ -231,11 +236,13 @@ console.log([5, 4, 3, 2, 1].reverse());
 console.log();
 console.log();
 
-console.log(15);
+console.log(' numero 15 ');
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.slice(1, 3));
 fruits.splice(2, 0, "Lemon", "Kiwi");
 console.log(fruits);
+// fruits.splice(2, 4, "Lemon", "Kiwi");
+// console.log(fruits);
 console.log(fruits.sort());
 var points = [40, 100, 1, 5, 25, 10];
 console.log(points.sort(function(a, b) { return a - b; }));
