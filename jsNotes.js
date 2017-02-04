@@ -254,14 +254,13 @@ console.log();
 
 console.log(" ========== MORE NOTES ========== ");
 console.log();
-
 var num = [1, 2, 3, 4, 5, 9, 7, 10, 8, 0];
 console.log(num.sort(function(a, b) { return b - a; }));
 console.log((2345).toString());
 var ploMan = (3 * 2);
-var ploMon = (7 * 2);
-console.log(`[${ploMan}, ${ploMon}]`);
-console.log(`the man is here for the ${ploMan}, and the ${ploMon}`);
+var ploTan = (7 * 2);
+console.log(`[${ploMan}, ${ploTan}]`);
+console.log(`the man is here for the ${ploMan}, and the ${ploTan}`);
 console.log();
 
 // The string:
@@ -272,7 +271,7 @@ console.log(src.test(str));
 console.log();
 
 console.log(" ===== 1 ===== ");
-ascii = function (a) { return a.charCodeAt(0); };
+ascii = function(a) { return a.charCodeAt(0); };
 console.log("aergtrer".split("").map(ascii));
 console.log(String.fromCharCode(65, 66, 67)); // returns 'ABC'
 
@@ -287,7 +286,7 @@ console.log();
 
 console.log(" ===== 2 ===== ");
 console.log("a".charCodeAt()); // 97
-console.log(String.fromCharCode( str.charCodeAt(0) + 1 )); // I
+console.log(String.fromCharCode(str.charCodeAt(0) + 1)); // I
 console.log("hello".toUpperCase()); // HELLO
 console.log("hello".charAt(1).toUpperCase()); // E
 console.log("Hey there".split("")); // ["H","e","l","l","o","","t","h","e","r","e"]
@@ -298,7 +297,7 @@ console.log();
 console.log(" ===== 3 ===== ");
 console.log("Hello planet Earth".substr(6, 6)); // planet
 console.log("An apple was eaten".replace(/a/gi, "4")); // 4n 4pple w4s e4ten
-console.log("My number is 551-555".replace(/[0-9]/gi, "x")); // My number is xxx-xxx
+console.log("My number is 551-555-5555".replace(/[0-9]/gi, "x")); // My number is xxx-xxx
 console.log();
 console.log();
 
@@ -318,14 +317,13 @@ console.log();
 
 console.log(" ===== 4 ===== ");
 var arr = [1, 2, 3, 4];
-console.log(arr.push(5)); // [1, 2, 3, 4, 5]
-console.log(arr.push(6, 7, 8)); // [1, 2, 3, 4, 5, 6, 7, 8]
-console.log(arr.pop()); // [1, 2, 3, 4, 5, 6, 7]
+console.log(arr.push(5)); // 5; arr is now [1, 2, 3, 4, 5]
+console.log(arr.push(6, 7, 8)); // 8; arr is now [1, 2, 3, 4, 5, 6, 7, 8]
+console.log(arr.pop()); // 8; array is now [1, 2, 3, 4, 5, 6, 7]
 
 var arr = [1, 2, 100, 12, -1];
-console.log(arr.shift()); // 1
-// arr is now => [2, 100, 12, -1]
-console.log(arr.unshift(5000)); // arr is now => [5000, 2, 100, 12, -1]
+console.log(arr.shift()); // 1; arr is now => [2, 100, 12, -1]
+console.log(arr.unshift(5000)); // 5; arr is now => [5000, 2, 100, 12, -1]
 console.log();
 console.log();
 
@@ -345,7 +343,7 @@ console.log(" ===== 6 ===== ");
 var arr = [1, 2, 100, 12, -1];
 //Return the start and end indices.
 console.log(arr.slice(1, 3)); // [2, 100]
-
+console.log(arr.splice(1, 3)); // [2, 100, 12]
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 console.log(txt.length);
 
@@ -369,9 +367,9 @@ console.log();
 console.log();
 
 console.log(" ===== 8 ===== ");
-str = "Please visit Microsoft!";
+str = "Please visit Microsoft Microsoft Microsoft!";
 console.log(str.replace("Microsoft", "W3Schools"));
-console.log(str.replace(/Microsoft/g, "W3Schools"));
+console.log(str.replace(/Microsoft/g, 'W3Schools'));
 console.log();
 console.log();
 
@@ -382,7 +380,7 @@ console.log(text1.toLowerCase());
 
 var text1 = "Hello";
 var text2 = "World";
-console.log(text1.concat(" ", text2));
+console.log(text1.concat(' ','1 2 3 ', text2));
 
 var str = "HELLO WORLD";
 console.log(str.charAt(0));            // returns H
@@ -402,7 +400,7 @@ console.log();
 console.log(" ===== 11 ===== ");
 // switch()
 var foo = 1;
-switch (foo) {
+switch(foo) {
 case -1:
   console.log('negative 1');
   break;
@@ -421,7 +419,7 @@ default:
 
 
 var Animal = 'Giraffe';
-switch (Animal) {
+switch(Animal) {
 case 'Cow':
 case 'Giraffe':
 case 'Dog':
@@ -448,7 +446,7 @@ var customerData = {
   }
 };
 
-greetCustomer = function (firstName) {
+var greetCustomer = function (firstName) {
   var greeting = '';
   if (customerData[firstName] === undefined) {
     greeting = 'Welcome! Is this your first time?';
@@ -470,7 +468,7 @@ console.log();
 console.log(" ===== 12 ===== ");
 // array to object
 var list = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 36], ['role', 'manager']], [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 42], ['role', 'clerk']]];
-transformEmployeeData = function (array) {
+var transformEmployeeData = function (array) {
   var finResult = [];
   for (var i = 0; i < array.length; i++) {
     var tempResult = {};
@@ -488,14 +486,15 @@ console.log();
 console.log(" ===== 13 ===== ");
 // object to array
 var convertObjectToList = function (obj) {
-  var finalResul = [];
+  var finalResult = [];
   for (var key in obj) {
-    var tempData = [];
-    tempData.push(key);
-    tempData.push(obj[key]);
-    finalResul.push(tempData);
+    // var tempData = [];
+    // tempData.push(key);
+    // tempData.push(obj[key]);
+    // finalResult.push(tempData);
+    finalResult.push(key + ': ' + obj[key]);
   }
-  return finalResul;
+  return finalResult;
 };
 console.log(convertObjectToList({name: 'Holly', age: 35, role: 'producer'}));
 console.log();
@@ -504,18 +503,19 @@ console.log();
 // arrays
 console.log(" ===== 14 ===== ");
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
-console.log(fruits.pop());      // the value of x is "Mango"
-console.log(fruits.push("Kiwi"));       //  Adds a new element ("Kiwi") to fruits
-console.log(fruits.shift());
-console.log(fruits.unshift("Lemon"));    // Adds a new element "Lemon" to fruits
+console.log(fruits.pop()); // the value of x is "Mango"
+console.log(fruits.push("Kiwi")); //  Adds a new element ("Kiwi") to fruits
+console.log(fruits.shift()); // 4
+console.log(fruits.unshift("Lemon")); // Adds a new element "Lemon" to fruits
 console.log();
 console.log();
 
 console.log(" ===== 15 ===== ");
 console.log(fruits[fruits.length] = "avocado");   // Appends "avocado" to fruit
-console.log(delete fruits[0]);  // Changes the first element in fruits to undefined
-console.log(fruits.splice(2, 0, "Lemon", "Kiwi"));
-console.log(fruits.splice(0, 1));   // Removes the first element of fruits
+delete fruits[0];//Changes the first element in fruits to undefined
+console.log(fruits);
+// console.log(fruits.splice(2, 4, "Lemon", "Kiwi"));
+// console.log(fruits.splice(0, 1));   // Removes the first element of fruits
 console.log();
 console.log();
 
@@ -526,9 +526,10 @@ var arr2 = ["Emil", "Tobias", "Linus"];
 var arr3 = ["Robin", "Morgan"];
 console.log(arr1.concat(arr2, arr3));
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-var citrus = fruits.slice(1);
+console.log(citrus = fruits.slice(1));
 console.log(fruits.slice(3));
 console.log(fruits.slice(1, 3)); // upto but not imncluding the end
+console.log(fruits.splice(1, 3)); 
 console.log();
 console.log();
 
@@ -536,39 +537,25 @@ var colors = ['red', 'green', 'blue'];
 colors.forEach(function(color) {
   console.log(color);
 });
-
-var myArray = new Array("Wind", "Rain", "Fire");
-var sortFn = function (a, b) {
-  if (a[a.length - 1] < b[b.length - 1]) { return -1; }
-  if (a[a.length - 1] > b[b.length - 1]) { return 1; }
-  if (a[a.length - 1] === b[b.length - 1]) { return 0; }
-};
-console.log(myArray.sort(sortFn));
-// sorts the array so that myArray = ["Wind","Fire","Rain"]
-var points = [40, 100, 1, 5, 25, 10];
-console.log(points.sort(function(a, b) { return a - b; }));
-console.log(myArray.sort());
-// sorts the array so that myArray = [ "Fire", "Rain", "Wind" ]
 console.log();
 console.log();
 
 console.log(" ===== 17 ===== ");
 var point = [1, 5, 10, 14, 4, 28, 17, 7, 3, 6, 2, 9, 8];
 console.log(point.sort(function(a, b) { return a - b; }));
-/*
 console.log(2 ** 3);
 console.log(3 ** 2);
 console.log(3 ** 2.5);
 console.log(10 ** -1);
 console.log(NaN ** 2);
-console.log(2 ** 3 ** 2);
+console.log(2 ** 3 ** 2 === 3 ** 2 ** 2);
 console.log(2 ** 9);
 console.log(2 ** (3 ** 2));
 console.log((2 ** 3) ** 2);
 console.log(8 ** 2);
 console.log();
 console.log();
-*/
+
 console.log(" ===== 18 ===== ");
 //Array methods
 //The Array object has the following methods:
@@ -576,7 +563,6 @@ console.log(" ===== 18 ===== ");
 var myArray = new Array("1", "2", "3");
 console.log(myArray.concat("a", "b", "c"));
 // myArray is now ["1", "2", "3", "a", "b", "c"]
-
 //join(deliminator = ',') joins all elements of an array into a string.
 var myArray = new Array("Wind", "Rain", "Fire");
 console.log(myArray.join(" - ")); // list is "Wind - Rain - Fire"
@@ -597,8 +583,8 @@ console.log(myArray.shift());
 
 //unshift() adds one or more elements to the front of an array and returns the new length of the array.
 var myArray = new Array ("1", "2", "3");
-console.log(myArray.unshift("4", "5")); // myArray becomes ["4", "5", "1", "2", "3"]
-console.log();
+myArray.unshift("4", "5"); // myArray becomes ["4", "5", "1", "2", "3"]
+console.log(myArray);
 console.log();
 
 
@@ -609,8 +595,8 @@ console.log(myArray.slice(1, 4)); // starts at index 1 and extracts all elements
 
 //splice(index, count_to_remove, addElement1, addElement2, ...) removes elements from an array and (optionally) replaces them. It returns the items which were removed from the array.
 var myArray = new Array ("1", "2", "3", "4", "5");
-console.log(myArray.splice(1, 3, "a", "b", "c", "d"));
-// myArray is now ["1", "a", "b", "c", "d", "5"]
+myArray.splice(1, 3, "a", "b", "c", "d");
+console.log(myArray); // myArray is now ["1", "a", "b", "c", "d", "5"]
 // This code started at index one (or where the "2" was),
 // removed 3 elements there, and then inserted all consecutive
 // elements in its place.
@@ -630,7 +616,10 @@ console.log();
 console.log();
 
 console.log(" ===== 20 ===== ");
-var sortFn = function(a, b) {
+var myArray = new Array("Wind", "Rain", "Fire");
+console.log(myArray.sort());
+// sorts the array so that myArray = [ "Fire", "Rain", "Wind" ]
+var sortFn = function (a, b) {
   if (a[a.length - 1] < b[b.length - 1]) { return -1; }
   if (a[a.length - 1] > b[b.length - 1]) { return 1; }
   if (a[a.length - 1] === b[b.length - 1]) { return 0; }
@@ -642,18 +631,15 @@ console.log(myArray.sort(sortFn));
 //if a and b are considered equivalent, return 0.
 
 //indexOf(searchElement[, fromIndex]) searches the array for searchElement and returns the index of the first match.
-var a = ['a', 'b', 'a', 'b', 'a'];
+var points = [40, 100, 1, 5, 25, 10];
+console.log(points.sort(function(a, b) { return a - b; }));
+var a = ['a', 'b', 'a', 'b', 'a', 'b', 't', 'b', 'y', 'm', 'b'];
 console.log(a.indexOf('b')); // logs 1
 // Now try again, starting from after the last match
 console.log(a.indexOf('b', 2)); // logs 3
+//console.log(a.indexOf('b', 4)); // logs 
 console.log(a.indexOf('z')); // logs -1, because 'z' was not found
-
 //lastIndexOf(searchElement[, fromIndex]) works like indexOf, but starts at the end and searches backwards.
-var a = ['a', 'b', 'c', 'd', 'a', 'b'];
-console.log(a.lastIndexOf('b')); // logs 5
-// Now try again, starting from before the last match
-console.log(a.lastIndexOf('b', 4)); // logs 1
-console.log(a.lastIndexOf('z')); // logs -1
 console.log();
 console.log();
 
@@ -664,14 +650,15 @@ a.forEach(function(element) { console.log(element); } );
 // logs each item in turn
 
 //map(callback[, thisObject]) returns a new array of the return value from executing callback on every array item.
-var a1 = ['a', 'b', 'c'];
-var a2 = a1.map(function(item) { return item.toUpperCase(); });
-console.log(a2); // logs ['A', 'B', 'C']
+var a1 = a.map(function(item) { return item.toUpperCase(); });
+console.log(a1); // logs ['A', 'B', 'C']
 
 //filter(callback[, thisObject]) returns a new array containing the items for which callback returned true.
-var a1 = ['a', 10, 'b', 20, 'c', 30];
-var a2 = a1.filter(function(item) { return typeof item === 'number'; });
-console.log(a2); // logs [10, 20, 30]
+var a2 = ['a', 10, 'b', 20, 'c', 30];
+var a3 = a2.filter(function(item) { return typeof item === 'number'; });
+console.log(a3); // logs [10, 20, 30]
+var a4 = a2.map((function(item) { return typeof item === 'number'; }));
+console.log(a4); // logs [10, 20, 30]
 
 //every(callback[, thisObject]) returns true if callback returns true for every item in the array.
 var isNumber = function (value) {
@@ -681,20 +668,15 @@ var a1 = [1, 2, 3];
 console.log(a1.every(isNumber)); // logs true
 var a2 = [1, '2', 3];
 console.log(a2.every(isNumber)); // logs false
+//some(callback[, thisObject]) returns true if callback returns true for at least one item in the array.
+console.log(a1.some(isNumber));
+console.log(a2.some(isNumber));
+var a3 = ['1', '2', '3'];
+console.log(a3.some(isNumber));
 console.log();
 console.log();
 
 console.log(" ===== 22 ===== ");
-//some(callback[, thisObject]) returns true if callback returns true for at least one item in the array.
-isNumber = function (value) {
-  return typeof value === 'number';
-};
-var a1 = [1, 2, 3];
-console.log(a1.some(isNumber)); // logs true
-var a2 = [1, '2', 3];
-console.log(a2.some(isNumber)); // logs true
-var a3 = ['1', '2', '3'];
-console.log(a3.some(isNumber)); // logs false
 console.log();
 console.log();
 //The methods above that take a callback are known as iterative methods, because they iterate over the entire array in some fashion. Each one takes an optional second argument called thisObject. If provided, thisObject becomes the value of the this keyword inside the body of the callback function. If not provided, as with other cases where a function is invoked outside of an explicit object context, this will refer to the global object (window).
@@ -735,9 +717,13 @@ getProd2 = function (total, num) {
   return total / num;
 };
 console.log(numbers.reduceRight(getSum1));
+console.log(numbers.reduce(getSum1));
 console.log(numbers.reduceRight(getSum2));
+console.log(numbers.reduce(getSum2));
 console.log(numbers.reduceRight(getProd1));
+console.log(numbers.reduce(getProd1));
 console.log(numbers.reduceRight(getProd2));
+console.log(numbers.reduce(getProd2));
 console.log();
 console.log();
 
@@ -750,14 +736,17 @@ var a = new Array(4);
 for (var i = 0; i < 4; i++) {
   a[i] = new Array(4);
   for (var j = 0; j < 4; j++) {
-    console.log(a[i][j] = "[" + i + "," + j + "]");
+    (a[i][j] = '[' + i + ', ' + j + ']');
   }
 }
+console.log(a);
 //This example creates an array with the following rows:
 //Row 0: [0,0] [0,1] [0,2] [0,3]
 //Row 1: [1,0] [1,1] [1,2] [1,3]
 //Row 2: [2,0] [2,1] [2,2] [2,3]
 //Row 3: [3,0] [3,1] [3,2] [3,3]
+console.log();
+console.log();
 
 console.log(" ===== 26 ===== ");
 //Numbers
@@ -773,6 +762,7 @@ var x = 9.656;
 console.log(x.toExponential(2));     // returns 9.66e+0
 console.log(x.toExponential(4));     // returns 9.6560e+0
 console.log(x.toExponential(6));     // returns 9.656000e+0
+console.log(965.6452783.toExponential(6));     // returns 9.656000e+0
 console.log();
 console.log();
 
@@ -808,7 +798,7 @@ console.log(Number(x));        // returns 1
 x = false;
 console.log(Number(x));        // returns 0
 x = new Date();
-console.log(Number(x));        // returns 1404568027739
+console.log(Number(x));        // returns 14xxxxxxxxxx
 x = "10";
 console.log(Number(x));        // returns 10
 x = "10 20";
@@ -883,7 +873,7 @@ console.log();
 console.log();
 
 console.log(" ===== 37 ===== ");
-duplicates = function (arr) {
+var duplicates = function (arr) {
   // where we will store our duplicate values
   var dups = [];
   for (var i = 0; i < arr.length; i++) {
