@@ -466,39 +466,42 @@ console.log();
 console.log();
 
 console.log(" ===== 12 ===== ");
-// array to object
-// var list = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 36], ['role', 'manager']], [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 42], ['role', 'clerk']]];
-// var transformEmployeeData = function (array) {
-//   var finResult = [];
-//   for (var i = 0; i < array.length; i++) {
-//     var tempResult = {};
-//     for (var j = 0; j < array[i].length; j++) {
-//       tempResult[array[i][j][0]] = array[i][j][1];
-//     }
-//     finResult.push(tempResult);
-//   }
-//   return finResult;
-// };
-// console.log(transformEmployeeData(list));
-// console.log();
-// console.log();
+// Examples:
+var people1 = [
+   { name: 'Bob', scores: [1, 2, 3, 4] },
+   { name: 'Jerry', scores: [10, 3, 2] },
+   { name: 'Anthony', scores: [5, 7, 9] },
+   { name: 'Jimmy', scores: [4, 4, 4, 4] },
+   { name: 'Swy', scores: [41, 44, 45, 49] }
+];
 
-// console.log(" ===== 13 ===== ");
-// // object to array
-// var convertObjectToList = function (obj) {
-//   var finalResult = [];
-//   for (var key in obj) {
-//     // var tempData = [];
-//     // tempData.push(key);
-//     // tempData.push(obj[key]);
-//     // finalResult.push(tempData);
-//     finalResult.push(key + ': ' + obj[key]);
-//   }
-//   return finalResult;
-// };
-// console.log(convertObjectToList({name: 'Holly', age: 35, role: 'producer'}));
-// console.log();
-// console.log();
+var people2 = [
+   { name: 'Tim', scores: [10] },
+   { name: 'Nat', scores: [4] },
+   { name: 'Jimmy', scores: [4, 4, 4, 4] }
+];
+var bestScore = function(array) {
+  var name1 = undefined;
+  var sum1 = -Infinity;
+  array.forEach (function(element) {
+    var score = element.scores;
+    var sum = score.reduce(function(a, b) {
+      return a + b;
+    });
+    if (name1 === undefined) {
+      name1 = element.name;
+      sum1 = sum;
+    } else if (sum > sum1) {
+      name1 = element.name;
+      sum1 = sum;
+    }
+  });
+  return '[' + name1 + ': ' + sum1 + ']';
+};
+console.log(bestScore(people1)); // 'Swy'
+console.log(bestScore(people2)); // 'Jimmy'
+console.log();
+console.log();
 
 // arrays
 console.log(" ===== 14 ===== ");
@@ -1450,8 +1453,7 @@ var transPose = function (array) {
 };
 console.log(transPose(arr1)); // [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
 console.log(transPose(arr2)); // [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-// transpose(arr1) => [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
-//****************************************************************************
+console.log();
 
 // Part 1
 /*****************************************************************************
@@ -1485,31 +1487,45 @@ console.log(transPose(arr2)); // [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 // result2 === 9 // 0 + (1 + 0) + (2 + 1) + (3 + 2)
 *****************************************************************************/
 
-// Part 2
-/*****************************************************************************
 // Write  function `bestScore(arr)` that expects an array of objects as an argument. See the `people`
 // array for an example of how the input data will look. The function should return the person's name
 // whose scores sum to the highest number.
 //
 // Use your #myInject function.
-//
 // Examples:
-// var people1 = [
-//   { name: "Bob", scores : [1,2,3,4] },
-//   { name: "Jerry", scores : [10,3,2] },
-//   { name: "Anthony", scores : [5,7,9] },
-//   { name: "Jimmy", scores : [4,4,4,4] }
-// ];
-//
-// var people2 = [
-//   { name: "Tim", scores : [10] },
-//   { name: "Nat", scores : [4] }
-// ];
-//
-// bestScore(people1) === 'Anthony';
-//
-// bestScore(people2) === 'Tim';
-*****************************************************************************/
+var people1 = [
+   { name: 'Bob', scores: [1, 2, 3, 4] },
+   { name: 'Jerry', scores: [10, 3, 2] },
+   { name: 'Anthony', scores: [5, 7, 9] },
+   { name: 'Jimmy', scores: [4, 4, 4, 4] },
+   { name: 'Swy', scores: [41, 44, 45, 49] }
+];
+
+var people2 = [
+   { name: 'Tim', scores: [10] },
+   { name: 'Nat', scores: [4] },
+   { name: 'Jimmy', scores: [4, 4, 4, 4] }
+];
+var bestScore = function(array) {
+  var name1 = undefined;
+  var sum1 = -Infinity;
+  array.forEach (function(element) {
+    var score = element.scores;
+    var sum = score.reduce(function(a, b) {
+      return a + b;
+    });
+    if (name1 === undefined) {
+      name1 = element.name;
+      sum1 = sum;
+    } else if (sum > sum1) {
+      name1 = element.name;
+      sum1 = sum;
+    }
+  });
+  return '[' + name1 + ': ' + sum1 + ']';
+};
+console.log(bestScore(people1)); // 'Swy'
+console.log(bestScore(people2)); // 'Jimmy'
 console.log();
 console.log();
 
