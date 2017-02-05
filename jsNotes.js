@@ -1925,11 +1925,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var vigenereCipher = function (string, keySequence, alphabet){
   var arrHolder = [];
   for (var i = 0; i < string.length; i++) {
-    if (i < keySequence.length) {
-    arrHolder.push(string.charCodeAt(i) + keySequence[i])
-    } else {
       arrHolder.push(string.charCodeAt(i) + keySequence[i % keySequence.length])
-    }
   }
   return String.fromCharCode(...arrHolder);
 };
@@ -1966,7 +1962,30 @@ console.log();
 // biodiversity(["cat", "cat", "dog"]) => 2 (2 ^ 2 * 1 / 2)
 // biodiversity(["cat", "fly", "dog"]) => 9
 // biodiversity(["cat", "fly", "dog", "dog", "cat", "cat"]) => 3
+
 ------------------------------------------------------------------------------*/
+var bioDiversity = function (array) {
+  var speciesList = {};
+  for (var i = 0; i < array.length; i++) {
+    if (speciesList[array[i]] === undefined) {
+      speciesList[array[i]] = 1;
+    } else speciesList[array[i]] += 1;
+  }
+  var popLation = Object.values(speciesList);
+  //var popLation = Object.keys(speciesList);
+  var numSpecies = popLation.length;
+  var smallestPopSize = Math.min(...popLation);
+  var largestPopSize = Math.max(...popLation);
+  var smallestPopSize;
+  return (numSpecies ** 2) * (smallestPopSize / largestPopSize);
+};
+console.log(bioDiversity(["cat"]) === 1); //=> 1
+console.log(bioDiversity(["cat", "cat", "cat"]) === 1); //=> 1 (1 ^ 2 * 3 / 3)
+console.log(bioDiversity(["cat", "cat", "dog"]) === 2); //=> 2 (2 ^ 2 * 1 / 2)
+console.log(bioDiversity(["cat", "fly", "dog"]) === 9); // => 9
+console.log(bioDiversity(["cat", "fly", "dog", "dog", "cat", "cat"]) === 3);
+console.log(bioDiversity(['a', 'b', 'r', 'b', 'b', 'b', 'a', 'b', 'm', 'b']) === 2.6666666666666665 );
+console.log();
 
 /*------------------------------------------------------------------------------
 // Caesar Guesser
