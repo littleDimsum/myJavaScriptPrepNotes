@@ -1919,10 +1919,26 @@ console.log();
 // vigenereCipher("toerrishuman", [1, 2], alphabet) => "uqftsktjvobp"
 // vigenereCipher("toerrishuman", [1, 2, 3], alphabet) => "uqhstltjxncq"
 
+//console.log("AZazHELLO WORLD".charCodeAt(3)); => 90
+//console.log(String.fromCharCode(...[72, 69, 76, 76, 79])); => HELLO
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var vigenereCipher = function (string, keySequence, alphabet){
-  var cipherString = '';
+  var arrHolder = [];
+  for (var i = 0; i < string.length; i++) {
+    if (i < keySequence.length) {
+    arrHolder.push(string.charCodeAt(i) + keySequence[i])
+    } else {
+      arrHolder.push(string.charCodeAt(i) + keySequence[i % keySequence.length])
+    }
+  }
+  return String.fromCharCode(...arrHolder);
 };
+console.log(vigenereCipher("toerrishuman", [1], alphabet) === "upfssjtivnbo");
+console.log(vigenereCipher("toerrishuman", [1, 2]) === "uqftsktjvobp");
+console.log(vigenereCipher("toerrishuman", [1, 2, 3]) === "uqhstltjxncq");
+console.log(vigenereCipher("fraframatingotirtiryabulation", [1]));
+console.log(vigenereCipher("fraframatingotirtiryabulation", [1, 3]));
+console.log(vigenereCipher("fraframatingotirtiryabulation", [1, 7, 2, 13, 99]));
 console.log();
 
 /*------------------------------------------------------------------------------
