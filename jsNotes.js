@@ -2038,35 +2038,30 @@ var caesarGuesser = function(string) {
   var resArr = [];
   for (var i = 0; i < tempArr.length; i++) {
     var charVal = tempArr[i].charCodeAt() + diff;
+
     if (charVal < 97) {
-      charVal = 97 + 26 + diff;
+      charVal = 123 - (97 - charVal);
       resArr.push(String.fromCharCode(charVal));
     } else if (charVal > 122) {
-      charVal = 122 + 26 + diff;
+      charVal = charVal - 122 + 96;
       resArr.push(String.fromCharCode(charVal));
-    } else if (97 <= charVal || charVal <= 122) {
+    } else {
       resArr.push(String.fromCharCode(charVal));
     }
   }
+  
   return resArr.join('');
 };
 // console.log('u'.charCodeAt()); // 117
-// console.log('a'.charCodeAt()); // 97
-// console.log('e'.charCodeAt()); // 101
-// console.log('Q'.charCodeAt()); // 81
-// console.log('V'.charCodeAt()); // 86
-// console.log('X'.charCodeAt()); // 88
-// console.log('Z'.charCodeAt()); // 90
-// console.log('{'.charCodeAt()); // 123
-console.log(caesarGuesser("a", alphabet)); // == "e");
-console.log(caesarGuesser("b", alphabet)); // == "e");
-console.log(caesarGuesser("abcddddefghi", alphabet)); // == "bcdeeeefghij");
-console.log(caesarGuesser("xyzcccabc", alphabet)); // == "zabeeecde");
-console.log(caesarGuesser("xyzggabc", alphabet)); // == "uvweexyz");
-console.log(caesarGuesser("abcdeffffghi", alphabet)); // == "yzabceeeefgh");
-console.log(caesarGuesser("ruuauufuh", alphabet)); // == "beekeeper");
-console.log(caesarGuesser("mnonwmcqntnny", alphabet)); // == "defendthekeep");
-console.log(caesarGuesser("happdaiawpywga", alphabet)); // == "letthemeatcake");
+console.log(caesarGuesser("a") === "e");
+console.log(caesarGuesser("b") === "e");
+console.log(caesarGuesser("abcddddefghi") === "bcdeeeefghij");
+console.log(caesarGuesser("xyzcccabc") === "zabeeecde");
+console.log(caesarGuesser("xyzggabc") === 'vwxeeyza');
+console.log(caesarGuesser("abcdeffffghi") === "zabcdeeeefgh");
+console.log(caesarGuesser("ruuauufuh") === "beekeeper");
+console.log(caesarGuesser("mnonwmcqntnny") === "defendthekeep");
+console.log(caesarGuesser("happdaiawpywga") === "letthemeatcake");
 console.log();
 
 /*
