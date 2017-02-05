@@ -1671,17 +1671,20 @@ console.log();
 doSomething = function (val) {
   "use strict";
   var x = val + 10;
+  //return x;
 };
+//console.log(doSomething(10));
 console.log();
 
 //6. What is the difference between == and ===?
 //Answer
 //The difference is that == performs implicit type conversion to check if values are equal to each other. So it will convert the values to true or false boolean values and then compare them. Below are some weird results of this implicit type conversion using the double equal operator:
-console.log("1" === 1); // true
-console.log(true === 1); // true
-console.log([] === false); // true
-console.log("" === false); // true
+console.log("1" == 1); // true
+console.log(true == 1); // true
+console.log([] == false); // true
+console.log("" == false); // true
 console.log(undefined == null); // true
+console.log();
 //This can really cause some problems when you're writing JavaScript, so the safe thing to do is use the triple equal operator instead, which checks that the two values are of the same type and does not perform type conversion.
 console.log("1" === 1); // false
 console.log(true === 1); // false
@@ -1705,13 +1708,24 @@ Array.prototype.average = function() {
 var arr = [1, 2, 3, 4, 5];
 var avg = arr.average();
 console.log(avg); // => 3
-//Now every array that is created will have the average method inherited along with every other Array method. But, you need to be careful with modifying the prototype of an object, because you can mistakenly overwrite a common method.
 console.log();
+// Now every array that is created will have the average method inherited along with every other Array method. But, you need to be careful with modifying the prototype of an object, because you can mistakenly overwrite a common method. Another way would be to do the process below:
+
+var average2 = function() {
+  // calculate sum
+  var sum = this.reduce(function(prev, cur) { return prev + cur; });
+  // return sum divided by number of elements
+  return sum / this.length;
+};
+var arr2 = [11, 12, 13, 14, 15];
+var avg2 = average2.bind(arr2)();
+console.log(avg2); // => 13
+
 
 //8. Explain what a callback function is and provide a simple example.
 //Answer
 //A callback function is a function that is passed to another function as an argument and is executed after some operation has been completed. Below is an example of a simple callback function that logs to the console after some operations have been completed.
-modifyArray = function (arr, callback) {
+var modifyArray = function (arr, callback) {
   // do something to arr here
   arr.push(100);
   // then execute the callback function that was passed
@@ -1737,7 +1751,7 @@ func = function () {
 };
 //console.log(priv); // throws error
 //To access the variable, a helper function would need to be created that returns the private variable.
-func = function () {
+var func = function () {
   var priv = "secret code";
   return function() {
     return priv;
