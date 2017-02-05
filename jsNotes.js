@@ -2049,7 +2049,7 @@ var caesarGuesser = function(string) {
       resArr.push(String.fromCharCode(charVal));
     }
   }
-  
+
   return resArr.join('');
 };
 // console.log('u'.charCodeAt()); // 117
@@ -2085,7 +2085,38 @@ console.log();
 
 var wordWithMostRepeats = function (sentence) {
  // your code here...
+ var words = sentence.split(' ');
+ var mostReps = '';
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i];
+    var tempWord = [];
+    var duplicatz = [];
+    var trashMaster = [];
+
+    for (var j in word) {
+      if (!tempWord.includes(word[j])) {
+        tempWord.push(word[j]);
+      } else if (!duplicatz.includes(word[j])) {
+        duplicatz.push(word[j]);
+      } else {
+        trashMaster.push(word[j]);
+      }
+    }
+
+    if (mostReps.length < duplicatz.length) {
+      mostReps = duplicatz;
+      var result = words[i];
+    }
+
+  }
+
+  return result;
+
 };
+console.log(wordWithMostRepeats('good luck')); // === 'good');
+console.log(wordWithMostRepeats('what if there is a tie betwixt words')); // 'there');
+console.log(wordWithMostRepeats('tutu ooooooooooh')); // === 'tutu');
+console.log(wordWithMostRepeats('ooooooooooh tutu')); // === 'tutu');
 console.log();
 
 /*
