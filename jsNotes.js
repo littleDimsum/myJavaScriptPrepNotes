@@ -1776,7 +1776,7 @@ console.log(" ===== MORE QUESTIONS ===== ");
 //So there are 5 distinct ways to climb 4 steps. We want to write a function, using recursion, that will produce the answer for any number of steps.
 //Solution
 //We'll try to build up a list of solutions for N starting from the smallest staircase. If we want to climb a staircase of 1 step (N = 1), then we can only take 1 step to reach the top. Therefore, the solution when N = 1 is 1. If we want to climb a staircase of 2 steps (N = 2), we can take either 2 steps, or 1 step and 1 step to reach the top. So for N = 2, the solution is 2.
-countSteps = function (N) {
+var countSteps = function (N) {
   // just as in our solution explanation above, we know that to climb 1 step
   // there is only 1 solution, and for 2 steps there are 2 solutions
   if (N === 1) { return 1; }
@@ -1787,7 +1787,14 @@ countSteps = function (N) {
 };
 // the solution for N = 6 will recursively be solved by calculating
 // the solution for N = 5, N = 4, N = 3, and N = 2 which we know is 2
-countSteps(6);
+console.log(countSteps(1));
+console.log(countSteps(2));
+console.log(countSteps(3));
+console.log(countSteps(4));
+console.log(countSteps(5));
+console.log(countSteps(6));
+console.log(countSteps(7));
+console.log(countSteps(10));
 console.log();
 
 // In All Strings
@@ -1801,7 +1808,7 @@ console.log();
 // inAllStrings(["gandalf", "aragorn", "sauron"], "sam") => false
 // inAllStrings(["axe", "ajax", "axl rose"], "ax") => true
 
-inAllStrings = function (longStrings, shortString){
+var inAllStrings = function (longStrings, shortString){
   for (var i = 0; i < longStrings.length; i++) {
     if (longStrings[i].indexOf(shortString) === -1){
       return false;
@@ -1809,6 +1816,8 @@ inAllStrings = function (longStrings, shortString){
   }
   return true;
 };
+console.log(inAllStrings(["axe", "ajax", "axl rose"], "ax")); // true
+console.log(inAllStrings(["gandalf", "aragorn", "sauron"], "sam")); // false
 console.log();
 
 
@@ -1822,7 +1831,7 @@ console.log();
 // repeatedChars("mississippi") => ["s", "s", "p"]
 // repeatedChars("SSassSS") => ["S", "s", "S"]
 
-repeatedChars = function (word){
+var repeatedChars = function (word){
   var array = [];
   for (var i = 1; i < word.length; i++){
     if (word[i] === word[i-1]){
@@ -1833,6 +1842,25 @@ repeatedChars = function (word){
   }
   return array;
 };
+console.log(repeatedChars("aaabaa")); // => ["a", "a"]
+console.log(repeatedChars("mississippi")); // => ["s", "s", "p"]
+console.log(repeatedChars("SSassSS")); // => ["S", "s", "S"]
+console.log();
+//-----------------------------------------------------------
+var repeatedChars = function (word){
+  var array = [];
+  for (var i = 1; i < word.length; i++){
+    if (word[i] === word[i-1]){
+      if (array.includes(word[i]) === false) {
+        array.push(word[i]);
+      }
+    }
+  }
+  return array;
+};
+console.log(repeatedChars("aaabaa")); // => ["a"]
+console.log(repeatedChars("mississippi")); // => ["s", "p"]
+console.log(repeatedChars("SSassSS")); // => ["S", "s"]
 console.log();
 
 // Write a function oneOffWords(word, dictionary) which takes
@@ -1843,23 +1871,28 @@ console.log();
 // Examples:
 // oneOffWords("cat", ["cat", "fat", "flat", "tar"]) => ["fat", "tar"]
 // oneOffWords("will", ["wilt", "willow", "wail"]) => ["wilt", "wail"]
-oneOffWord = function (word, dictionary){
+var oneOffWords = function (word, dictionary){
   var array = [];
   for (var i = 0; i < dictionary.length; i++){
     var currWord = dictionary[i];
     var count = 0;
-    for (var j = 0; j < currWord.length; j++){
-      var currL = corrWord[j];
-      if (word.indexOf(currL) !== -1){
-        count += 1;
+    if (word.length === currWord.length) {
+      for (var j = 0; j < currWord.length; j++){
+      var currL = currWord[j];
+        if (word.indexOf(currL) !== -1){
+          count += 1;
+        }
+      }
+      if (count === word.length - 1){
+        array.push(currWord);
       }
     }
-    if (count === word.length - 1){
-      array.push(currWord);
-    }
+
   }
   return array;
 };
+console.log(oneOffWords("cat", ["cat", "fat", "flat", "tar"])); // => ["fat", "tar"]
+console.log(oneOffWords("will", ["wilt", "willow", "wail"])); // => ["wilt", "wail"]
 console.log();
 
 // Vigenere Cipher
@@ -1887,7 +1920,7 @@ console.log();
 // vigenereCipher("toerrishuman", [1, 2, 3], alphabet) => "uqhstltjxncq"
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-vigenereCipher = function (string, keySequence, alphabet){
+var vigenereCipher = function (string, keySequence, alphabet){
   var cipherString = '';
 };
 console.log();
@@ -1942,8 +1975,6 @@ console.log();
 // caesarGuesser("mnonwmcqntnny", alphabet) == "defendthekeep"
 // caesarGuesser("happdaiawpywga", alphabet) == "letthemeatcake"
 // ------------------------------------------------------------------------------*/
-
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /*
 # Word With Most Repeats
