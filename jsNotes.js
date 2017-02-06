@@ -2204,7 +2204,7 @@ console.log();
 #  Cupcake Solver
 #------------------------------------------------------------------------------
 # It's Jennifer's birthday today. Jennifer's mom decided to bake different kinds
-# of cupcakes for Jennifer's first grade class.  Everybody needs to have an equal
+# of cupcakes for Jennifer's first grade class. Everybody needs to have an equal
 # amount of the different kinds of cupcakes.
 # Write a method that takes an array of the counts of the different kinds of
 # cupcakes and the number of students in the class, and returns
@@ -2226,7 +2226,16 @@ console.log();
 
 var cupcakeSolver = function (cupcakeCounts, numberOfStudentsInClass) {
   // your code here...
+  var result = 0;
+  for (var i = 0; i < cupcakeCounts.length; i++) {
+    result += Math.floor(cupcakeCounts[i] / numberOfStudentsInClass);
+  }
+  return result;
 };
+console.log(cupcakeSolver([10, 10, 10], 5)); // => 6
+console.log(cupcakeSolver([25, 27, 30], 5)); // => 16
+console.log(cupcakeSolver([32, 27, 28], 20)); // => 3
+console.log(cupcakeSolver([32, 27, 28, 24], 20)); // => 4
 console.log();
 
 
