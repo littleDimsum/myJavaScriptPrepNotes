@@ -2182,7 +2182,21 @@ console.log();
 
 var xbonacci = function (startingSequence, numberOfXbonacciNumbersToReturn) {
   // your code here...
+  var result = startingSequence;
+  var initLength = startingSequence.length;
+  while (result.length < numberOfXbonacciNumbersToReturn) {
+    var tempResult = result.slice(-initLength);
+    result.push(tempResult.reduce(function(a, b) {
+      return a + b;
+    }));
+  }
+  return result;
 };
+console.log(xbonacci([1, 1], 5)); // => [1, 1, 2, 3, 5]
+console.log(xbonacci([1, 1, 1], 6)); // => [1, 1, 1, 3, 5, 9]
+console.log(xbonacci([1, 1, 1, 1], 8)); // => [1, 1, 1, 1, 4, 7, 13, 25]
+console.log(xbonacci([1, 1, 1, 1, 1, 1], 10)); // => [1, 1, 1, 1, 1, 1, 6, 11, 21, 41]
+console.log(xbonacci([0, 0, 0, 0, 1], 10)); // => [0, 0, 0, 0, 1, 1, 2, 4, 8, 16]
 console.log();
 
 
