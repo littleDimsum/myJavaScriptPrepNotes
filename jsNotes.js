@@ -2242,11 +2242,12 @@ console.log();
 
 console.log(" ========== INTERVIEW QUESTIONS ========== ");
 console.log();
-console.log();
+
 console.log(" ===== I-1 ===== ");
-//Determine if binary tree is a subtree of a larger binary tree
-//In a previous algorithm tutorial we discussed how to traverse a tree using different algorithms. Now we'll solve a popular tree algorithm question of determining if a binary tree is a subtree within a larger tree.
-//We can assume the tree is properly constructed via the following code which sets up nodes and links them to their proper child nodes:
+// Determine if binary tree is a subtree of a larger binary tree
+// In a previous algorithm tutorial we discussed how to traverse a tree using different algorithms. Now we'll solve a popular tree algorithm question of determining if a binary tree is a subtree within a larger tree.
+// We can assume the tree is properly constructed via the following code which sets up nodes and links them to their proper child nodes:
+
 var Node = function (data) {
   this.data = data;
   this.left = null;
@@ -2409,6 +2410,8 @@ console.log(postOrder(root, [])); // => [ D, E, B, C, A ]
 //3) Add all children of popped node to queue, and continue from step 2 until queue is empty.
 //For the tree above, performing a level-order traversal would output the node values in the following order:
 // A, B, C, D, E
+console.log();
+console.log();
 console.log(" ===== SOS! SOMETHING IS MISSING HERE ===== ");
 console.log(" ===== PLEEEASE TRY TO FIX ME BELOW!! ===== ");
 console.log();
@@ -3038,7 +3041,7 @@ console.log(" ===== I-15 ===== ");
 //Linked lists are useful and simple data structures and are sometimes preferred over using arrays because inserting or deleting elements can be done without reallocation or reorganization of the entire structure.
 //If, for example, you wanted to add an element to the beginning of the array, every single other element would need to be moved and the array would need to make space for one extra element. Inserting an element at the beginning of a linked list simply requires you to create a new node and set its "next" field to point to some node, making this new node the first node in the sequence now.
 //Node setup
-Node = function (data, next) {
+var Node = function (data, next) {
   this.data = data;
   this.next = next;
 };
