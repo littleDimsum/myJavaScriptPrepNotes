@@ -54,9 +54,12 @@ console.log(' ===== Greet Customers ===== ');
 	
 //   return greeting;
 // }
-var aa = function () {
+var greetCustomer = function (name) {
 
 };
+console.log(greetCustomer());
+console.log(greetCustomer());
+console.log(greetCustomer());
 console.log();
 
 
@@ -88,9 +91,12 @@ console.log(' ===== Array to Object ===== ');
 // function transformEmployeeData(array) {
 //   // your code here
 // }
-var aa = function () {
+var transformEmployeeData = function (data) {
 
 };
+console.log(transformEmployeeData());
+console.log(transformEmployeeData());
+console.log(transformEmployeeData());
 console.log();
 
 
@@ -114,10 +120,12 @@ console.log(' ===== Object to Array ===== ');
 //   name: 'Bowser',
 //   weight: 45
 // }
-var aa = function () {
+var convertObjectToList = function (object) {
 
 };
-console.log();
+console.log(convertObjectToList());
+console.log(convertObjectToList());
+console.log(convertObjectToList());
 console.log();
 //
 //
@@ -740,9 +748,12 @@ console.log(' ===== 01: countWords ===== ');
 // function countWords(str) {
 //   // your code here
 // }  
-var aa = function () {
+var countWords = function (string) {
 
 };
+console.log(countWords());
+console.log(countWords());
+console.log(countWords());
 console.log();
 
 
@@ -767,9 +778,12 @@ console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');
 // function isPersonOldEnoughToDrinkAndDrive(person) {
 //   // your code here
 // }
-var aa = function () {
+var isPersonOldEnoughToDrinkAndDrive = function (obj) {
 
 };
+console.log(isPersonOldEnoughToDrinkAndDrive());
+console.log(isPersonOldEnoughToDrinkAndDrive());
+console.log(isPersonOldEnoughToDrinkAndDrive());
 console.log();
 
 
@@ -802,9 +816,12 @@ console.log(' ===== 03: extend ===== ');
 // function extend(obj1, obj2) {
 //   // your code here
 // }
-var aa = function () {
+var extend = function (obj1, obj2) {
 
 };
+console.log(extend());
+console.log(extend());
+console.log(extend());
 console.log();
 
 
@@ -830,9 +847,12 @@ console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');
 // function getElementsThatEqual10AtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getElementsThatEqual10AtProperty = function (obj, key) {
 
 };
+console.log(getElementsThatEqual10AtProperty());
+console.log(getElementsThatEqual10AtProperty());
+console.log(getElementsThatEqual10AtProperty());
 console.log();
 
 
@@ -862,9 +882,12 @@ console.log(' ===== 05: select ===== ');
 // function select(arr, obj) {
 //   // your code here
 // }
-var aa = function () {
+var select = function (arr, obj) {
 
 };
+console.log(select());
+console.log(select());
+console.log(select());
 console.log();
 
 
@@ -890,9 +913,12 @@ console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');
 // function getElementsLessThan100AtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getElementsLessThan100AtProperty = function (obj, key) {
 
 };
+console.log(getElementsLessThan100AtProperty());
+console.log(getElementsLessThan100AtProperty());
+console.log(getElementsLessThan100AtProperty());
 console.log();
 
 
@@ -912,9 +938,12 @@ console.log(' ===== 07: countAllCharacters ===== ');
 // function countAllCharacters(str) {
 //   // your code here
 // }
-var aa = function () {
+var countAllCharacters = function (str) {
 
 };
+console.log(countAllCharacters());
+console.log(countAllCharacters());
+console.log(countAllCharacters());
 console.log();
 
 
@@ -941,9 +970,12 @@ console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');
 // function getElementsGreaterThan10AtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getElementsGreaterThan10atProperty = function (obj, key) {
 
 };
+console.log(getElementsGreaterThan10atProperty());
+console.log(getElementsGreaterThan10atProperty());
+console.log(getElementsGreaterThan10atProperty());
 console.log();
 
 
@@ -969,9 +1001,12 @@ console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');
 // function getAverageOfElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getAverageOfElementsAtProperty = function (obj, key) {
 
 };
+console.log(getAverageOfElementsAtProperty());
+console.log(getAverageOfElementsAtProperty());
+console.log(getAverageOfElementsAtProperty());
 console.log();
 
 
@@ -997,9 +1032,12 @@ console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');
 // function getOddLengthWordsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getOddLengthWordsAtProperty = function (obj, key) {
 
 };
+console.log(getOddLengthWordsAtProperty());
+console.log(getOddLengthWordsAtProperty());
+console.log(getOddLengthWordsAtProperty());
 console.log();
 
 
@@ -1025,9 +1063,12 @@ console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');
 // function getEvenLengthWordsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getEvenLengthWordsAtProperty = function (obj, key) {
 
 };
+console.log(getEvenLengthWordsAtProperty());
+console.log(getEvenLengthWordsAtProperty());
+console.log(getEvenLengthWordsAtProperty());
 console.log();
 
 
@@ -1052,9 +1093,12 @@ console.log(' ===== 12: getSquaredElementsAtProperty ===== ');
 // function getSquaredElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getSquaredElementsAtProperty = function (obj, key) {
 
 };
+console.log(getSquaredElementsAtProperty());
+console.log(getSquaredElementsAtProperty());
+console.log(getSquaredElementsAtProperty());
 console.log();
 
 
@@ -1080,9 +1124,12 @@ console.log(' ===== 13: getOddElementsAtProperty ===== ');
 // function getOddElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getOddElementsAtProperty = function (obj, key) {
 
 };
+console.log(getOddElementsAtProperty());
+console.log(getOddElementsAtProperty());
+console.log(getOddElementsAtProperty());
 console.log();
 
 
@@ -1108,13 +1155,16 @@ console.log(' ===== 14: getEvenElementsAtProperty ===== ');
 // function getEvenElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getEvenElementsAtProperty = function (obj, key) {
 
 };
+console.log(getEvenElementsAtProperty());
+console.log(getEvenElementsAtProperty());
+console.log(getEvenElementsAtProperty());
 console.log();
 
 
-console.log(' ===== 15: getSmallestElementsAtProperty ===== ');    
+console.log(' ===== 15: getSmallestElementAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getSmallestElementAtProperty".
 
@@ -1135,13 +1185,16 @@ console.log(' ===== 15: getSmallestElementsAtProperty ===== ');
 // function getSmallestElementAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getSmallestElementAtProperty = function (obj, key) {
 
 };
+console.log(getSmallestElementAtProperty());
+console.log(getSmallestElementAtProperty());
+console.log(getSmallestElementAtProperty());
 console.log();
 
 
-console.log(' ===== 16: getLargestElementsAtProperty ===== ');    
+console.log(' ===== 16: getLargestElementAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLargestElementAtProperty".
 
@@ -1162,9 +1215,12 @@ console.log(' ===== 16: getLargestElementsAtProperty ===== ');
 // function getLargestElementAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getLargestElementAtProperty = function (obj, key) {
 
 };
+console.log(getLargestElementAtProperty());
+console.log(getLargestElementAtProperty());
+console.log(getLargestElementAtProperty());
 console.log();
 
 
@@ -1189,9 +1245,12 @@ console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');
 // function getProductOfAllElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getProductOfAllElementsAtProperty = function (obj, key) {
 
 };
+console.log(getProductOfAllElementsAtProperty());
+console.log(getProductOfAllElementsAtProperty());
+console.log(getProductOfAllElementsAtProperty());
 console.log();
 
 
@@ -1216,9 +1275,12 @@ console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');
 // function getSumOfAllElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getSumOfAllElementsAtProperty = function (obj, key) {
 
 };
+console.log(getSumOfAllElementsAtProperty());
+console.log(getSumOfAllElementsAtProperty());
+console.log(getSumOfAllElementsAtProperty());
 console.log();
 
 
@@ -1243,9 +1305,12 @@ console.log(' ===== 19: getAllButLastElementOfProperty ===== ');
 // function getAllButLastElementOfProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getAllButLastElementOfProperty = function (obj, key) {
 
 };
+console.log(getAllButLastElementOfProperty());
+console.log(getAllButLastElementOfProperty());
+console.log(getAllButLastElementOfProperty());
 console.log();
 
 
@@ -1271,9 +1336,12 @@ console.log(' ===== 20: getNthElementOfProperty ===== ');
 // function getNthElementOfProperty(obj, key, n) {
 //   // your code here
 // }
-var aa = function () {
+var getNthElementOfProperty = function (obj, key, n) {
 
 };
+console.log(getNthElementOfProperty());
+console.log(getNthElementOfProperty());
+console.log(getNthElementOfProperty());
 console.log();
 
 
@@ -1298,9 +1366,12 @@ console.log(' ===== 21: getLastElementOfProperty ===== ');
 // function getLastElementOfProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getLastElementOfProperty = function (obj, key) {
 
 };
+console.log(getLastElementOfProperty());
+console.log(getLastElementOfProperty());
+console.log(getLastElementOfProperty());
 console.log();
 
 
@@ -1326,9 +1397,12 @@ console.log(' ===== 22: getFirstElementOfProperty ===== ');
 // function getFirstElementOfProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getFirstElementOfProperty = function (obj, key) {
 
 };
+console.log(getFirstElementOfProperty());
+console.log(getFirstElementOfProperty());
+console.log(getFirstElementOfProperty());
 console.log();
 
 
@@ -1350,9 +1424,12 @@ console.log(' ===== 23: removeNumbersLargerThan ===== ');
 // function removeNumbersLargerThan(num, obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeNumbersLargerThan = function (num, obj) {
 
 };
+console.log(removeNumbersLargerThan());
+console.log(removeNumbersLargerThan());
+console.log(removeNumbersLargerThan());
 console.log();
 
 
@@ -1375,9 +1452,12 @@ console.log(' ===== 24: removeNumbersLessThan ===== ');
 // function removeNumbersLessThan(num, obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeNumbersLessThan = function (num, obj) {
 
 };
+console.log(removeNumbersLessThan());
+console.log(removeNumbersLessThan());
+console.log(removeNumbersLessThan());
 console.log();
 
 
@@ -1398,9 +1478,12 @@ console.log(' ===== 25: addFullNameProperty ===== ');
 // function addFullNameProperty(obj) {
 //   // your code here
 // }
-var aa = function () {
+var addFullNameProperty = function (obj) {
 
 };
+console.log(addFullNameProperty());
+console.log(addFullNameProperty());
+console.log(addFullNameProperty());
 console.log();
 
 
@@ -1422,9 +1505,12 @@ console.log(' ===== 26: removeStringValuesLongerThan ===== ');
 // function removeStringValuesLongerThan(num, obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeStringValuesLongerThan = function (num, obj) {
 
 };
+console.log(removeStringValuesLongerThan());
+console.log(removeStringValuesLongerThan());
+console.log(removeStringValuesLongerThan());
 console.log();
 
 
@@ -1450,9 +1536,12 @@ console.log(' ===== 27: removeEvenValues ===== ');
 // function removeEvenValues(obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeEvenValues = function (obj) {
 
 };
+console.log(removeEvenValues());
+console.log(removeEvenValues());
+console.log(removeEvenValues());
 console.log();
 
 
@@ -1474,9 +1563,12 @@ console.log(' ===== 28: countNumberOfKeys ===== ');
 // function countNumberOfKeys(obj) {
 //   // your code here
 // }
-var aa = function () {
+var countNumberOfKeys = function (obj) {
 
 };
+console.log(countNumberOfKeys());
+console.log(countNumberOfKeys());
+console.log(countNumberOfKeys());
 console.log();
 
 
@@ -1499,9 +1591,12 @@ console.log(' ===== 29: isPersonOldEnoughToDrive ===== ');
 // function isPersonOldEnoughToDrive(person) {
 //   // your code here
 // }
-var aa = function () {
+var isPersonOldEnoughToDrive = function (obj) {
 
 };
+console.log(isPersonOldEnoughToDrive());
+console.log(isPersonOldEnoughToDrive());
+console.log(isPersonOldEnoughToDrive());
 console.log();
 
 
@@ -1523,9 +1618,12 @@ console.log(' ===== 30: removeOddValues ===== ');
 // function removeOddValues(obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeOddValues = function (obj) {
 
 };
+console.log(removeOddValues());
+console.log(removeOddValues());
+console.log(removeOddValues());
 console.log();
 
 
@@ -1547,9 +1645,12 @@ console.log(' ===== 31: removeArrayValues ===== ');
 // function removeArrayValues(obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeArrayValues = function (obj) {
 
 };
+console.log(removeArrayValues());
+console.log(removeArrayValues());
+console.log(removeArrayValues());
 console.log();
 
 
@@ -1571,9 +1672,12 @@ console.log(' ===== 32: removeNumberValues ===== ');
 // function removeNumberValues(obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeNumberValues = function (obj) {
 
 };
+console.log(removeNumberValues());
+console.log(removeNumberValues());
+console.log(removeNumberValues());
 console.log();
 
 
@@ -1596,9 +1700,12 @@ console.log(' ===== 33: isPersonOldEnoughToVote ===== ');
 // function isPersonOldEnoughToVote(person) {
 //   // your code here
 // }
-var aa = function () {
+var isPersonOldEnoughToVote = function (obj) {
 
 };
+console.log(isPersonOldEnoughToVote());
+console.log(isPersonOldEnoughToVote());
+console.log(isPersonOldEnoughToVote());
 console.log();
 
 
@@ -1619,9 +1726,12 @@ console.log(' ===== 34: removeStringValues ===== ');
 // function removeStringValues(obj) {
 //   // your code here
 // }
-var aa = function () {
+var removeStringValues = function (obj) {
 
 };
+console.log(removeStringValues());
+console.log(removeStringValues());
+console.log(removeStringValues());
 console.log();
 
 
@@ -1644,9 +1754,12 @@ console.log(' ===== 35: isPersonOldEnoughToDrink ===== ');
 // function isPersonOldEnoughToDrink(person) {
 //   // your code here
 // }
-var aa = function () {
+var isPersonOldEnoughToDrink = function (obj) {
 
 };
+console.log(isPersonOldEnoughToDrink());
+console.log(isPersonOldEnoughToDrink());
+console.log(isPersonOldEnoughToDrink());
 console.log();
 
 
@@ -1672,9 +1785,12 @@ console.log(' ===== 36: getElementOfArrayProperty ===== ');
 // function getElementOfArrayProperty(obj, key, index) {
 //   // your code here
 // }
-var aa = function () {
+var getElementOfArrayProperty = function (obj, key, ind) {
 
 };
+console.log(getElementOfArrayProperty());
+console.log(getElementOfArrayProperty());
+console.log(getElementOfArrayProperty());
 console.log();
 
 
@@ -1697,11 +1813,13 @@ console.log(' ===== 37: getProperty ===== ');
 // function getProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var getProperty = function (obj, key) {
 
 };
+console.log(getProperty());
+console.log(getProperty());
+console.log(getProperty());
 console.log();
-
 
 
 console.log(' ===== 38: addObjectProperty ===== ');    
@@ -1725,9 +1843,12 @@ console.log(' ===== 38: addObjectProperty ===== ');
 // function addObjectProperty(obj1, key, obj2) {
 //   // your code here
 // }
-var aa = function () {
+var addObjectProperty = function (obj1, key, obj2) {
 
 };
+console.log(addObjectProperty());
+console.log(addObjectProperty());
+console.log(addObjectProperty());
 console.log();
 
 
@@ -1746,9 +1867,12 @@ console.log(' ===== 39: addArrayProperty ===== ');
 // function addArrayProperty(obj, key, arr) {
 //   // your code here
 // }
-var aa = function () {
+var addArrayProperty = function (obj, key, arr) {
 
 };
+console.log(addArrayProperty());
+console.log(addArrayProperty());
+console.log(addArrayProperty());
 console.log();
 
 
@@ -1769,9 +1893,12 @@ console.log(' =====  40: removeProperty===== ');
 // function removeProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var removeProperty = function (obj, key) {
 
 };
+console.log(removeProperty());
+console.log(removeProperty());
+console.log(removeProperty());
 console.log();
 
 
@@ -1789,9 +1916,12 @@ console.log(' ===== 41: addProperty ===== ');
 // function addProperty(obj, key) {
 //   // your code here
 // }
-var aa = function () {
+var addProperty = function (obj, key) {
 
 };
+console.log(addProperty());
+console.log(addProperty());
+console.log(addProperty());
 console.log();
 
 
@@ -1811,9 +1941,12 @@ console.log(' ===== 42: convertDoubleSpaceToSingle ===== ');
 // function convertDoubleSpaceToSingle(str) {
 //   // your code here
 // }
-var aa = function () {
+var convertDoubleSpaceToSingle = function (str) {
 
 };
+console.log(convertDoubleSpaceToSingle());
+console.log(convertDoubleSpaceToSingle());
+console.log(convertDoubleSpaceToSingle());
 console.log();
 
 
@@ -1833,9 +1966,12 @@ console.log(' ===== 43: getAllWords ===== ');
 // function getAllWords(str) {
 //   // your code here
 // }
-var aa = function () {
+var getAllWords = function (str) {
 
 };
+console.log(getAllWords());
+console.log(getAllWords());
+console.log(getAllWords());
 console.log();
 
 
@@ -1855,9 +1991,12 @@ console.log(' ===== 44: getAllLetters ===== ');
 // function getAllLetters(str) {
 //   // your code here
 // }
-var aa = function () {
+var getAllLetters = function (str) {
 
 };
+console.log(getAllLetters());
+console.log(getAllLetters());
+console.log(getAllLetters());
 console.log();
 
 
@@ -1874,9 +2013,12 @@ console.log(' ===== 45: countCharacter ===== ');
 // function countCharacter(str, char) {
 //   // your code here
 // }
-var aa = function () {
+var countCharacter = function (str, char) {
 
 };
+console.log(countCharacter());
+console.log(countCharacter());
+console.log(countCharacter());
 console.log();
 
 
@@ -1898,9 +2040,12 @@ console.log(' ===== 46: removeElement ===== ');
 // function removeElement(array, discarder) {
 //   // your code here
 // }
-var aa = function () {
+var removeElement = function (arr, discarder) {
 
 };
+console.log(removeElement());
+console.log(removeElement());
+console.log(removeElement());
 console.log();
 
 
@@ -1920,9 +2065,12 @@ console.log(' ===== 47: keep ===== ');
 // function keep(array, keeper) {
 //   // your code here
 // }
-var aa = function () {
+var keep = function (arr, keeper) {
 
 };
+console.log(keep());
+console.log(keep());
+console.log(keep());
 console.log();
 
 
@@ -1945,9 +2093,12 @@ console.log(' ===== 48: findShortestWordAmongMixedElements ===== ');
 // function findShortestWordAmongMixedElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var findShortestWordAmongMixedElements = function (arr) {
 
 };
+console.log(findShortestWordAmongMixedElements());
+console.log(findShortestWordAmongMixedElements());
+console.log(findShortestWordAmongMixedElements());
 console.log();
 
 
@@ -1968,9 +2119,12 @@ console.log(' ===== 49: computeAverageOfNumbers ===== ');
 // function computeAverageOfNumbers(nums) {
 //   // your code here
 // }
-var aa = function () {
+var computeAverageOfNumbers = function (nums) {
 
 };
+console.log(computeAverageOfNumbers());
+console.log(computeAverageOfNumbers());
+console.log(computeAverageOfNumbers());
 console.log();
 
 
@@ -1991,9 +2145,12 @@ console.log(' ===== 50: findSmallestNumberAmongMixedElements ===== ');
 // function findSmallestNumberAmongMixedElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var findSmallestNumberAmongMixedElements = function (arr) {
 
 };
+console.log(findSmallestNumberAmongMixedElements());
+console.log(findSmallestNumberAmongMixedElements());
+console.log(findSmallestNumberAmongMixedElements());
 console.log();
 
 
@@ -2014,9 +2171,12 @@ console.log(' ===== 51: getLongestWordOfMixedElements ===== ');
 // function getLongestWordOfMixedElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLongestWordOfMixedElements = function (arr) {
 
 };
+console.log(getLongestWordOfMixedElements());
+console.log(getLongestWordOfMixedElements());
+console.log(getLongestWordOfMixedElements());
 console.log();
 
 
@@ -2033,9 +2193,12 @@ console.log(' ===== 52: filterOddLengthWords ===== ');
 // function filterOddLengthWords(words) {
 //   // your code here
 // }
-var aa = function () {
+var filterOddLengthWords = function (words) {
 
 };
+console.log(filterOddLengthWords());
+console.log(filterOddLengthWords());
+console.log(filterOddLengthWords());
 console.log();
 
 
@@ -2057,9 +2220,12 @@ console.log(' ===== 53: findLargestNumberAmongMixedElements ===== ');
 // function getLargestNumberAmongMixedElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLargestNumberAmongMixedElements = function (arr) {
 
 };
+console.log(getLargestNumberAmongMixedElements());
+console.log(getLargestNumberAmongMixedElements());
+console.log(getLargestNumberAmongMixedElements());
 console.log();
 
 
@@ -2079,9 +2245,12 @@ console.log(' ===== 54: getLengthOfLongestElement ===== ');
 // function getLengthOfLongestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLengthOfLongestElement = function (arr) {
 
 };
+console.log(getLengthOfLongestElement());
+console.log(getLengthOfLongestElement());
+console.log(getLengthOfLongestElement());
 console.log();
 
 
@@ -2098,9 +2267,12 @@ console.log(' ===== 55: filterEvenLengthWords ===== ');
 // function filterEvenLengthWords(words) {
 //   // your code here
 // }
-var aa = function () {
+var filterEvenLengthWords = function (words) {
 
 };
+console.log(filterEvenLengthWords());
+console.log(filterEvenLengthWords());
+console.log(filterEvenLengthWords());
 console.log();
 
 
@@ -2117,9 +2289,12 @@ console.log(' ===== 56: squareElements ===== ');
 // function squareElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var squareElements = function (arr) {
 
 };
+console.log(squareElements());
+console.log(squareElements());
+console.log(squareElements());
 console.log();
 
 
@@ -2136,9 +2311,12 @@ console.log(' ===== 57: filterOddElements ===== ');
 // function filterOddElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var filterOddElements = function (arr) {
 
 };
+console.log(filterOddElements());
+console.log(filterOddElements());
+console.log(filterOddElements());
 console.log();
 
 
@@ -2158,9 +2336,12 @@ console.log(' ===== 58: computeProductOfAllElements ===== ');
 // function computeProductOfAllElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var computeProductOfAllElements = function (arr) {
 
 };
+console.log(computeProductOfAllElements());
+console.log(computeProductOfAllElements());
+console.log(computeProductOfAllElements());
 console.log();
 
 
@@ -2177,9 +2358,12 @@ console.log(' ===== 59: filterEvenElements ===== ');
 // function filterEvenElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var filterEvenElements = function (arr) {
 
 };
+console.log(filterEvenElements());
+console.log(filterEvenElements());
+console.log(filterEvenElements());
 console.log();
 
 
@@ -2199,9 +2383,12 @@ console.log(' ===== 60: getLengthOfShortestElement ===== ');
 // function getLengthOfShortestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLengthOfShortestElement = function (arr) {
 
 };
+console.log(getLengthOfShortestElement());
+console.log(getLengthOfShortestElement());
+console.log(getLengthOfShortestElement());
 console.log();
 
 
@@ -2222,9 +2409,12 @@ console.log(' ===== 61: getLongestElement ===== ');
 // function getLongestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLongestElement = function (arr) {
 
 };
+console.log(getLongestElement());
+console.log(getLongestElement());
+console.log(getLongestElement());
 console.log();
 
 
@@ -2244,9 +2434,12 @@ console.log(' ===== 62: findSmallestElement ===== ');
 // function findSmallestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var findSmallestElement = function (arr) {
 
 };
+console.log(findSmallestElement());
+console.log(findSmallestElement());
+console.log(findSmallestElement());
 console.log();
 
 
@@ -2268,9 +2461,12 @@ console.log(' ===== 63: removeFromFrontOfNew ===== ');
 // function removeFromFrontOfNew(arr) {
 //   // your code here
 // }
-var aa = function () {
+var removeFromFrontOfNew = function (arr) {
 
 };
+console.log(removeFromFrontOfNew());
+console.log(removeFromFrontOfNew());
+console.log(removeFromFrontOfNew());
 console.log();
 
 
@@ -2291,9 +2487,12 @@ console.log(' ===== 64: findShortestElement ===== ');
 // function findShortestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var findShortestElement = function (arr) {
 
 };
+console.log(findShortestElement());
+console.log(findShortestElement());
+console.log(findShortestElement());
 console.log();
 
 
@@ -2313,9 +2512,12 @@ console.log(' ===== 65: getLargestElement ===== ');
 // function getLargestElement(arr) {
 //   // your code here
 // }
-var aa = function () {
+var getLargestElement = function (arr) {
 
 };
+console.log(getLargestElement());
+console.log(getLargestElement());
+console.log(getLargestElement());
 console.log();
 
 
@@ -2334,9 +2536,12 @@ console.log(' ===== 66: joinThreeArrays ===== ');
 // function joinThreeArrays(arr1, arr2, arr3) {
 //   // your code here
 // }
-var aa = function () {
+var joinThreeArrays = function (arr1, arr2, arr3) {
 
 };
+console.log(joinThreeArrays());
+console.log(joinThreeArrays());
+console.log(joinThreeArrays());
 console.log();
 
 
@@ -2353,13 +2558,16 @@ console.log(' ===== 67: computeSumOfAllElements ===== ');
 // function computeSumOfAllElements(arr) {
 //   // your code here
 // }
-var aa = function () {
+var computeSumOfAllElements = function (arr) {
 
 };
+console.log(computeSumOfAllElements());
+console.log(computeSumOfAllElements());
+console.log(computeSumOfAllElements());
 console.log();
 
 
-console.log(' ===== 68: removeFromBackOfnew ===== ');    
+console.log(' ===== 68: removeFromBackOfNew ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeFromBackOfNew".
 
@@ -2377,9 +2585,12 @@ console.log(' ===== 68: removeFromBackOfnew ===== ');
 // function removeFromBackOfNew(arr) {
 //   // your code here
 // }
-var aa = function () {
+var removeFromBackOfNew = function (arr) {
 
 };
+console.log(removeFromBackOfNew());
+console.log(removeFromBackOfNew());
+console.log(removeFromBackOfNew());
 console.log();
 
 
@@ -2400,17 +2611,20 @@ console.log(' ===== 69: addToFrontOfNew ===== ');
 // function addToFrontOfNew(arr, element) {
 //   // your code here
 // }
-var aa = function () {
+var addToFrontOfNew = function (arr, element) {
 
 };
+console.log(addToFrontOfNew());
+console.log(addToFrontOfNew());
+console.log(addToFrontOfNew());
 console.log();
 
 
-console.log(' ===== 70: addtoBackOfNew ===== ');    
+console.log(' ===== 70: addToBackOfNew ===== ');    
 //----------------------------------------------------------------------
-// Write a function called "addToBackNew".
+// Write a function called "addToBackOfNew".
 
-// Given an array and an element, "addToBackNew" returns a clone of the given array, with the given element added to the end.
+// Given an array and an element, "addToBackOfNew" returns a clone of the given array, with the given element added to the end.
 
 // Important: It should be a NEW array instance, not the original array instance.
 
@@ -2423,9 +2637,12 @@ console.log(' ===== 70: addtoBackOfNew ===== ');
 // function addToBackOfNew(arr, element) {
 //   // your code here
 // }
-var aa = function () {
+var addToBackOfNew = function (arr, element) {
 
 };
+console.log(addToBackOfNew());
+console.log(addToBackOfNew());
+console.log(addToBackOfNew());
 console.log();
 
 
@@ -2442,9 +2659,12 @@ console.log(' ===== 71: getAllElementsButNth ===== ');
 // function getAllElementsButNth(array, n) {
 //   // your code here
 // }
-var aa = function () {
+var getAllElementsButNth = function (arr, n) {
 
 };
+console.log(getAllElementsButNth());
+console.log(getAllElementsButNth());
+console.log(getAllElementsButNth());
 console.log();
 
 
@@ -2463,9 +2683,12 @@ console.log(' ===== 72: joinArrayOfArrays ===== ');
 // function joinArrayOfArrays(arr) {
 //   // your code here
 // }
-var aa = function () {
+var joinArrayOfArrays = function (arr) {
 
 };
+console.log(joinArrayOfArrays());
+console.log(joinArrayOfArrays());
+console.log(joinArrayOfArrays());
 console.log();
 
 
@@ -2485,9 +2708,12 @@ console.log(' ===== 73: removeFromFront ===== ');
 // function removeFromFront(arr) {
 //   // your code here
 // }
-var aa = function () {
+var removeFromFront = function (arr) {
 
 };
+console.log(removeFromFront());
+console.log(removeFromFront());
+console.log(removeFromFront());
 console.log();
 
 
@@ -2505,9 +2731,12 @@ console.log(' ===== 74: getAllElementsButLast ===== ');
 // function getAllElementsButLast(array) {
 //   // your code here
 // }
-var aa = function () {
+var getAllElementsButLast = function (arr) {
 
 };
+console.log(getAllElementsButLast());
+console.log(getAllElementsButLast());
+console.log(getAllElementsButLast());
 console.log();
 
 
@@ -2526,9 +2755,12 @@ console.log(' ===== 75: joinArrays ===== ');
 // function joinArrays(arr1, arr2) {
 //   // your code here
 // }
-var aa = function () {
+var joinArrays = function (arr1, arr2) {
 
 };
+console.log(joinArrays());
+console.log(joinArrays());
+console.log(joinArrays());
 console.log();
 
 
@@ -2548,9 +2780,12 @@ console.log(' ===== 76: getNthElement ===== ');
 // function getNthElement(array, n) {
 //   // your code here
 // }
-var aa = function () {
+var getNthElement = function (arr, n) {
 
 };
+console.log(getNthElement());
+console.log(getNthElement());
+console.log(getNthElement());
 console.log();
 
 
@@ -2567,9 +2802,12 @@ console.log(' ===== 77: getElementsAfter ===== ');
 // function getElementsAfter(array, n) {
 //   // your code here
 // }
-var aa = function () {
+var getElementsAfter = function (arr, n) {
 
 };
+console.log(getElementsAfter());
+console.log(getElementsAfter());
+console.log(getElementsAfter());
 console.log();
 
 
@@ -2589,9 +2827,12 @@ console.log(' ===== 78: getElementsUpTo ===== ');
 // function getElementsUpTo(array, n) {
 //   // your code here
 // }
-var aa = function () {
+var getElementsUpTo = function (arr, n) {
 
 };
+console.log(getElementsUpTo());
+console.log(getElementsUpTo());
+console.log(getElementsUpTo());
 console.log();
 
 
@@ -2609,9 +2850,12 @@ console.log(' ===== 79: getAllElementsButFirst ===== ');
 // function getAllElementsButFirst(array) {
 //   // your code here
 // }
-var aa = function () {
+var getAllElementsButFirst = function (arr) {
 
 };
+console.log(getAllElementsButFirst());
+console.log(getAllElementsButFirst());
+console.log(getAllElementsButFirst());
 console.log();
 
 
@@ -2631,9 +2875,12 @@ console.log(' ===== 80: removeFromBack ===== ');
 // function removeFromBack(arr) {
 //   // your code here
 // }
-var aa = function () {
+var removeFromBack = function (arr) {
 
 };
+console.log(removeFromBack());
+console.log(removeFromBack());
+console.log(removeFromBack());
 console.log();
 
 
@@ -2653,9 +2900,12 @@ console.log(' ===== 81: addToFront ===== ');
 // function addToFront(arr, element) {
 //   // your code here
 // }
-var aa = function () {
+var addToFront = function (arr, element) {
 
 };
+console.log(addToFront());
+console.log(addToFront());
+console.log(addToFront());
 console.log();
 
 
@@ -2674,9 +2924,12 @@ console.log(' ===== 82: addToBack ===== ');
 // function addToBack(arr, element) {
 //   // your code here
 // }
-var aa = function () {
+var addToBack = function (arr, element) {
 
 };
+console.log(addToBack());
+console.log(addToBack());
+console.log(addToBack());
 console.log();
 
 
@@ -2696,9 +2949,12 @@ console.log(' ===== 83: getLastElement ===== ');
 // function getLastElement(array) {
 //   // your code here
 // }
-var aa = function () {
+var getLastElement = function (arr) {
 
 };
+console.log(getLastElement());
+console.log(getLastElement());
+console.log(getLastElement());
 console.log();
 
 
@@ -2718,9 +2974,12 @@ console.log(' ===== 84: getFirstElement ===== ');
 // function getFirstElement(array) {
 //   // your code here
 // }
-var aa = function () {
+var getFirstElement = function (arr) {
 
 };
+console.log(getFirstElement());
+console.log(getFirstElement());
+console.log(getFirstElement());
 console.log();
 
 
@@ -2746,9 +3005,12 @@ console.log(' ===== 85: sumDigits ===== ');
 // function sumDigits(num) {
 //   // your code here
 // }
-var aa = function () {
+var sumDigits = function (num) {
 
 };
+console.log(sumDigits());
+console.log(sumDigits());
+console.log(sumDigits());
 console.log();
 
 
@@ -2771,9 +3033,12 @@ console.log(' ===== 86: getIndexOf ===== ');
 // function getIndexOf(char, str) {
 //   // your code here
 // }
-var aa = function () {
+var getIndexOf = function (char, str) {
 
 };
+console.log(getIndexOf());
+console.log(getIndexOf());
+console.log(getIndexOf());
 console.log();
 
 
@@ -2794,9 +3059,12 @@ console.log(' ===== 87: getStringLength ===== ');
 // function getStringLength(string) {
 //   // your code here
 // }
-var aa = function () {
+var getStringLength = function (str) {
 
 };
+console.log(getStringLength());
+console.log(getStringLength());
+console.log(getStringLength());
 console.log();
 
 
@@ -2813,9 +3081,12 @@ console.log(' ===== 88: countAllCharacters ===== ');
 // function countCharacter(str, char) {
 //   // your code here
 // }
-var aa = function () {
+var countCharacter = function (str, char) {
 
 };
+console.log(countCharacter());
+console.log(countCharacter());
+console.log(countCharacter());
 console.log();
 
 
@@ -2842,9 +3113,12 @@ console.log(' ===== 89: modulo ===== ');
 // function modulo(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var modulo = function (num1, num2) {
 
 };
+console.log(modulo());
+console.log(modulo());
+console.log(modulo());
 console.log();
 
 
@@ -2864,9 +3138,12 @@ console.log(' ===== 90: multiply ===== ');
 // function multiply(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var multiply = function (num1, num2) {
 
 };
+console.log(multiply());
+console.log(multiply());
+console.log(multiply());
 console.log();
 
 
@@ -2887,9 +3164,12 @@ console.log(' ===== 91: isOddWithoutModulo ===== ');
 // function isOddWithoutModulo(num) {
 //   // your code here
 // }
-var aa = function () {
+var isOddWithoutModulo = function (num) {
 
 };
+console.log(isOddWithoutModulo());
+console.log(isOddWithoutModulo());
+console.log(isOddWithoutModulo());
 console.log();
 
 
@@ -2910,9 +3190,12 @@ console.log(' ===== 92: isEvenWithoutModulo ===== ');
 // function isEvenWithoutModulo(num) {
 //   // your code here
 // }
-var aa = function () {
+var isEvenWithoutModulo = function (num) {
 
 };
+console.log(isEvenWithoutModulo());
+console.log(isEvenWithoutModulo());
+console.log(isEvenWithoutModulo());
 console.log();
 
 
@@ -2933,9 +3216,12 @@ console.log(' ===== 93: multiplyBetween ===== ');
 // function multiplyBetween(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var multiplyBetween = function (num1, num2) {
 
 };
+console.log(multiplyBetween());
+console.log(multiplyBetween());
+console.log(multiplyBetween());
 console.log();
 
 
@@ -2956,32 +3242,37 @@ console.log(' ===== 94: computeSumBetween ===== ');
 // function computeSumBetween(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var computeSumBetween = function (num1, num2) {
 
 };
+console.log(computeSumBetween());
+console.log(computeSumBetween());
+console.log(computeSumBetween());
 console.log();
 
 
 console.log(' ===== 95: computeFactorialOfN ===== ');    
 //----------------------------------------------------------------------
-// Write a function called "computeSumBetween".
+// Write a function called "computeFactorialOfN".
 
-// Given 2 integers, "computeSumBetween" returns the sum between the two given integers, beginning at num1, and excluding num2.
+// Given a natural number (a whole number greater than 0), "computeFactorialOfN" returns its factorial.
 
-// Notes:
-// * The sum between 1 and 4 is 1 + 2 + 3 = 6.
-// * If num2 is not greater than num1, it should return 0.
+// var output = computeFactorialOfN(3);
+// console.log(output); // --> 6
 
-// var output = computeSumBetween(2, 5);
-// console.log(output); // --> 9
+// var output = computeFactorialOfN(4);
+// console.log(output); // --> 24
 
 // Starter Code :
-// function computeSumBetween(num1, num2) {
+// function computeFactorialOfN(n) {
 //   // your code here
 // }
-var aa = function () {
+var computeFactorialOfN = function (num) {
 
 };
+console.log(computeFactorialOfN());
+console.log(computeFactorialOfN());
+console.log(computeFactorialOfN());
 console.log();
 
 
@@ -2998,9 +3289,12 @@ console.log(' ===== 96: repeatString ===== ');
 // function repeatString(string, num) {
 //   // your code here
 // }
-var aa = function () {
+var repeatString = function (str, num) {
 
 };
+console.log(repeatString());
+console.log(repeatString());
+console.log(repeatString());
 console.log();
 
 
@@ -3020,9 +3314,12 @@ console.log(' ===== 97: computeSummationToN ===== ');
 // function computeSummationToN(n) {
 //   // your code here
 // }
-var aa = function () {
+var computeSummationToN = function (n) {
 
 };
+console.log(computeSummationToN());
+console.log(computeSummationToN());
+console.log(computeSummationToN());
 console.log();
 
 
@@ -3051,9 +3348,12 @@ console.log(' ===== 98: computeScoreToGradeWithPlus ===== ');
 // function convertScoreToGradeWithPlusAndMinus(score) {
 //   // your code here
 // }
-var aa = function () {
+var convertScoreToGradeWithPlusAndMinus = function (score) {
 
 };
+console.log(convertScoreToGradeWithPlusAndMinus());
+console.log(convertScoreToGradeWithPlusAndMinus());
+console.log(convertScoreToGradeWithPlusAndMinus());
 console.log();
 
 
@@ -3078,9 +3378,12 @@ console.log(' ===== 99: computeScoreToGrade ===== ');
 // function convertScoreToGrade(score) {
 //   // your code here
 // }
-var aa = function () {
+var convertScoreToGrade = function (score) {
 
 };
+console.log(convertScoreToGrade());
+console.log(convertScoreToGrade());
+console.log(convertScoreToGrade());
 console.log();
 
 
@@ -3097,9 +3400,12 @@ console.log(' ===== 100: areValidCredentials ===== ');
 // function areValidCredentials(name, password) {
 //   // your code here
 // }
-var aa = function () {
+var areValidCredentials = function (name, password) {
 
 };
+console.log(areValidCredentials());
+console.log(areValidCredentials());
+console.log(areValidCredentials());
 console.log();
 
 
@@ -3119,9 +3425,12 @@ console.log(' ===== 101: getLongestOfThreeWords ===== ');
 // function getLongestOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var aa = function () {
+var getLongestOfThreeWords = function (word1, word2, word3) {
 
 };
+console.log(getLongestOfThreeWords());
+console.log(getLongestOfThreeWords());
+console.log(getLongestOfThreeWords());
 console.log();
 
 
@@ -3141,9 +3450,12 @@ console.log(' ===== 102: findShortestOfThreeWords ===== ');
 // function findShortestOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var aa = function () {
+var findShortestOfThreeWords = function (word1, word2, word3) {
 
 };
+console.log(findShortestOfThreeWords());
+console.log(findShortestOfThreeWords());
+console.log(findShortestOfThreeWords());
 console.log();
 
 
@@ -3160,9 +3472,12 @@ console.log(' ===== 103: findMinLengthOfThreeWords ===== ');
 // function findMinLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var aa = function () {
+var findMinLengthOfThreeWords = function (word1, word2, word3) {
 
 };
+console.log(findMinLengthOfThreeWords());
+console.log(findMinLengthOfThreeWords());
+console.log(findMinLengthOfThreeWords());
 console.log();
 
 
@@ -3179,9 +3494,12 @@ console.log(' ===== 104: findMaxLengthOfThreeWords ===== ');
 // function findMaxLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var aa = function () {
+var findMaxLengthOfThreeWords = function (str1, str2, str3) {
 
 };
+console.log(findMaxLengthOfThreeWords());
+console.log(findMaxLengthOfThreeWords());
+console.log(findMaxLengthOfThreeWords());
 console.log();
 
 
@@ -3203,9 +3521,12 @@ console.log(' ===== 105: checkAge ===== ');
 // function checkAge(name, age) {
 //   // your code here
 // }
-var aa = function () {
+var checkAge = function (name, age) {
 
 };
+console.log(checkAge());
+console.log(checkAge());
+console.log(checkAge());
 console.log();
 
 
@@ -3226,9 +3547,12 @@ console.log(' ===== 106: or ===== ');
 // function or(expression1, expression2) {
 //   // your code here
 // }
-var aa = function () {
+var or = function (exp1, exp2) {
 
 };
+console.log(or());
+console.log(or());
+console.log(or());
 console.log();
 
 
@@ -3249,9 +3573,12 @@ console.log(' ===== 107: isOldEnoughToDrinkAndDrive ===== ');
 // function isOldEnoughToDrinkAndDrive(age) {
 //   // your code here
 // }
-var aa = function () {
+var isOldEnoughToDrinkAndDrive = function (age) {
 
 };
+console.log(isOldEnoughToDrinkAndDrive());
+console.log(isOldEnoughToDrinkAndDrive());
+console.log(isOldEnoughToDrinkAndDrive());
 console.log();
 
 
@@ -3271,9 +3598,12 @@ console.log(' ===== 108: isOldEnoughToDrive ===== ');
 // function isOldEnoughToDrive(age) {
 //   // your code here
 // }
-var aa = function () {
+var isOldEnoughToDrive = function (age) {
 
 };
+console.log(isOldEnoughToDrive());
+console.log(isOldEnoughToDrive());
+console.log(isOldEnoughToDrive());
 console.log();
 
 
@@ -3293,9 +3623,12 @@ console.log(' ===== 109: isOldEnoughToVote ===== ');
 // function isOldEnoughToVote(age) {
 //   // your code here
 // }
-var aa = function () {
+var isOldEnoughToVote = function (age) {
 
 };
+console.log(isOldEnoughToVote());
+console.log(isOldEnoughToVote());
+console.log(isOldEnoughToVote());
 console.log();
 
 
@@ -3315,9 +3648,12 @@ console.log(' ===== 110: isOldEnoughToDrink ===== ');
 // function isOldEnoughToDrink(age) {
 //   // your code here	
 // }
-var aa = function () {
+var isOldEnoughToDrink = function (age) {
 
 };
+console.log(isOldEnoughToDrink());
+console.log(isOldEnoughToDrink());
+console.log(isOldEnoughToDrink());
 console.log();
 
 
@@ -3337,9 +3673,12 @@ console.log(' ===== 111: isEitherEvenOrAreBoth7 ===== ');
 // function isEitherEvenOrAreBoth7(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var isEitherEvenOrAreBoth7 = function (num1, num2) {
 
 };
+console.log(isEitherEvenOrAreBoth7());
+console.log(isEitherEvenOrAreBoth7());
+console.log(isEitherEvenOrAreBoth7());
 console.log();
 
 
@@ -3359,9 +3698,12 @@ console.log(' ===== 112: isEitherEvenAndLessThan9 ===== ');
 // function isEitherEvenAndLessThan9(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var sEitherEvenAndLessThan9 = function (num1, num2) {
 
 };
+console.log(sEitherEvenAndLessThan9());
+console.log(sEitherEvenAndLessThan9());
+console.log(sEitherEvenAndLessThan9());
 console.log();
 
 
@@ -3378,9 +3720,12 @@ console.log(' ===== 113: isEitherEven ===== ');
 // function isEitherEven(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var isEitherEven = function (num1, num2) {
 
 };
+console.log(isEitherEven());
+console.log(isEitherEven());
+console.log(isEitherEven());
 console.log();
 
 
@@ -3397,9 +3742,12 @@ console.log(' ===== 114: areBothOdd ===== ');
 // function areBothOdd(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var areBothOdd = function (num1, num2) {
 
 };
+console.log(areBothOdd());
+console.log(areBothOdd());
+console.log(areBothOdd());
 console.log();
 
 
@@ -3416,9 +3764,12 @@ console.log(' ===== 115: isEvenAndGretaerThanTen ===== ');
 // function isEvenAndGreaterThanTen(num) {
 //   // your code here
 // }
-var aa = function () {
+var isEvenAndGreaterThanTen = function (num) {
 
 };
+console.log(isEvenAndGreaterThanTen());
+console.log(isEvenAndGreaterThanTen());
+console.log(isEvenAndGreaterThanTen());
 console.log();
 
 
@@ -3435,9 +3786,12 @@ console.log(' ===== 116: isSameLength ===== ');
 // function isSameLength(word1, word2) {
 //   // your code here
 // }
-var aa = function () {
+var isSameLength = function (word1, word2) {
 
 };
+console.log(isSameLength());
+console.log(isSameLength());
+console.log(isSameLength());
 console.log();
 
 
@@ -3454,9 +3808,12 @@ console.log(' ===== 117: isOddLength ===== ');
 // function isOddLength(word) {
 //   // your code here
 // }
-var aa = function () {
+var isOddLength = function (word) {
 
 };
+console.log(isOddLength());
+console.log(isOddLength());
+console.log(isOddLength());
 console.log();
 
 
@@ -3473,9 +3830,12 @@ console.log(' ===== 118: isEvenLength ===== ');
 // function isEvenLength(word) {
 //   // your code here
 // }
-var aa = function () {
+var isEvenLength = function (word) {
 
 };
+console.log(isEvenLength());
+console.log(isEvenLength());
+console.log(isEvenLength());
 console.log();
 
 
@@ -3492,9 +3852,12 @@ console.log(' ===== 119: isOdd ===== ');
 // function isOdd(num) {
 //   // your code here
 // }
-var aa = function () {
+var isOdd = function (num) {
 
 };
+console.log(isOdd());
+console.log(isOdd());
+console.log(isOdd());
 console.log();
 
 
@@ -3511,9 +3874,12 @@ console.log(' ===== 120: isEven ===== ');
 // function isEven(num) {
 //   // your code here
 // }
-var aa = function () {
+var sEven = function (num) {
 
 };
+console.log(sEven());
+console.log(sEven());
+console.log(sEven());
 console.log();
 
 
@@ -3530,9 +3896,12 @@ console.log(' ===== 121: isEqualTo ===== ');
 // function isEqualTo(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var isEqualTo = function (num1, num2) {
 
 };
+console.log(isEqualTo());
+console.log(isEqualTo());
+console.log(isEqualTo());
 console.log();
 
 
@@ -3549,9 +3918,12 @@ console.log(' ===== 122: isGreaterThan ===== ');
 // function isGreaterThan(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var isGreaterThan = function (num1, num2) {
 
 };
+console.log(isGreaterThan());
+console.log(isGreaterThan());
+console.log(isGreaterThan());
 console.log();
 
 
@@ -3568,9 +3940,12 @@ console.log(' ===== 123: isLessThan ===== ');
 // function isLessThan(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var isLessThan = function (num1, num2) {
 
 };
+console.log(isLessThan());
+console.log(isLessThan());
+console.log(isLessThan());
 console.log();
 
 
@@ -3587,9 +3962,12 @@ console.log(' ===== 124: equalsTen ===== ');
 // function equalsTen(num) {
 //   // your code here
 // }
-var aa = function () {
+var equalsTen = function (num) {
 
 };
+console.log(equalsTen());
+console.log(equalsTen());
+console.log(equalsTen());
 console.log();
 
 
@@ -3606,9 +3984,12 @@ console.log(' ===== 125: isLessThan30 ===== ');
 // function isLessThan30(num) {
 //   // your code here
 // }
-var aa = function () {
+var isLessThan30 = function (num) {
 
 };
+console.log(isLessThan30());
+console.log(isLessThan30());
+console.log(isLessThan30());
 console.log();
 
 
@@ -3625,9 +4006,12 @@ console.log(' ===== 126: isGreaterThanTen ===== ');
 // function isGreaterThanTen(num) {
 //   // your code here
 // }
-var aa = function () {
+var isGreaterThanTen = function (num) {
 
 };
+console.log(isGreaterThanTen());
+console.log(isGreaterThanTen());
+console.log(isGreaterThanTen());
 console.log();
 
 
@@ -3648,9 +4032,12 @@ console.log(' ===== 127: computeCompoundInterest ===== ');
 // function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
 //   // your code here
 // }
-var aa = function () {
+var computeCompoundInterest = function (principal, int) {
 
 };
+console.log(computeCompoundInterest());
+console.log(computeCompoundInterest());
+console.log(computeCompoundInterest());
 console.log();
 
 
@@ -3671,9 +4058,12 @@ console.log(' ===== 128: calculateBillTotal ===== ');
 // function calculateBillTotal(preTaxAndTipAmount) {
 //   // your code here
 // }
-var aa = function () {
+var calculateBillTotal = function (preBill) {
 
 };
+console.log(calculateBillTotal());
+console.log(calculateBillTotal());
+console.log(calculateBillTotal());
 console.log();
 
 
@@ -3690,9 +4080,12 @@ console.log(' ===== 129: computePower ===== ');
 // function computePower(num, exponent) {
 //   // your code here
 // }
-var aa = function () {
+var computePower = function (num, exp) {
 
 };
+console.log(computePower());
+console.log(computePower());
+console.log(computePower());
 console.log();
 
 
@@ -3712,9 +4105,12 @@ console.log(' ===== 130: computeAreaOfCircle ===== ');
 // function computeAreaOfACircle(radius) {
 //   // your code here
 // }
-var aa = function () {
+var computeAreaOfACircle = function (radius) {
 
 };
+console.log(computeAreaOfACircle());
+console.log(computeAreaOfACircle());
+console.log(computeAreaOfACircle());
 console.log();
 
 
@@ -3731,9 +4127,12 @@ console.log(' ===== 131: computePerimeterOfCircle ===== ');
 // function computePerimeterOfACircle(radius) {
 //   // your code here
 // }
-var aa = function () {
+var computePerimeterOfACircle = function (radius) {
 
 };
+console.log(computePerimeterOfACircle());
+console.log(computePerimeterOfACircle());
+console.log(computePerimeterOfACircle());
 console.log();
 
 
@@ -3750,9 +4149,12 @@ console.log(' ===== 132: computeTripledAreaOfARectangle ===== ');
 // function computeTripledAreaOfARectangle(length, width) {
 //   // your code here
 // }
-var aa = function () {
+var computeTripledAreaOfARectangle = function (length, width) {
 
 };
+console.log(computeTripledAreaOfARectangle());
+console.log(computeTripledAreaOfARectangle());
+console.log(computeTripledAreaOfARectangle());
 console.log();
 
 
@@ -3769,9 +4171,12 @@ console.log(' ===== 133: doubleSquareRootOf ===== ');
 // function doubleSquareRootOf(num) {
 //   // your code here
 // }
-var aa = function () {
+var doubleSquareRootOf = function (num) {
 
 };
+console.log(doubleSquareRootOf());
+console.log(doubleSquareRootOf());
+console.log(doubleSquareRootOf());
 console.log();
 
 
@@ -3788,9 +4193,12 @@ console.log(' ===== 134: computeAverageLengthOfWords ===== ');
 // function computeAverageLengthOfWords(word1, word2) {
 //   // your code here
 // }
-var aa = function () {
+var omputeAverageLengthOfWords = function (str1, str2) {
 
 };
+console.log(omputeAverageLengthOfWords());
+console.log(omputeAverageLengthOfWords());
+console.log(omputeAverageLengthOfWords());
 console.log();
 
 
@@ -3807,9 +4215,12 @@ console.log(' ===== 135: computeSquareRoot ===== ');
 // function computeSquareRoot(num) {
 //   // your code here
 // }
-var aa = function () {
+var omputeSquareRoot = function (num) {
 
 };
+console.log(omputeSquareRoot());
+console.log(omputeSquareRoot());
+console.log(omputeSquareRoot());
 console.log();
 
 
@@ -3826,9 +4237,12 @@ console.log(' ===== 136: getLengthOfThreeWords ===== ');
 // function getLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var aa = function () {
+var getLengthOfThreeWords = function (str1, str2, str3) {
 
 };
+console.log(getLengthOfThreeWords());
+console.log(getLengthOfThreeWords());
+console.log(getLengthOfThreeWords());
 console.log();
 
 
@@ -3845,9 +4259,12 @@ console.log(' ===== 137: getFullName ===== ');
 // function getFullName(firstName, lastName) {
 //   // your code here
 // }
-var aa = function () {
+var getFullName = function (firstName, lastName) {
 
 };
+console.log(getFullName());
+console.log(getFullName());
+console.log(getFullName());
 console.log();
 
 
@@ -3864,9 +4281,12 @@ console.log(' ===== 138: average ===== ');
 // function average(num1, num2) {
 //   // your code here
 // }
-var aa = function () {
+var average = function (num1, num2) {
 
 };
+console.log(average());
+console.log(average());
+console.log(average());
 console.log();
 
 
@@ -3883,9 +4303,12 @@ console.log(' ===== 139: computeAreaOfATriangle ===== ');
 // function computeAreaOfATriangle(base, height) {
 //   // your code here
 // }
-var aa = function () {
+var computeAreaOfATriangle = function (base, height) {
 
 };
+console.log(computeAreaOfATriangle());
+console.log(computeAreaOfATriangle());
+console.log(computeAreaOfATriangle());
 console.log();
 
 
@@ -3902,9 +4325,12 @@ console.log(' ===== 140: getLengthOfTwoWords ===== ');
 // function getLengthOfTwoWords(word1, word2) {
 //   // your code here
 // }
-var aa = function () {
+var etLengthOfTwoWords = function (word1, word2) {
 
 };
+console.log(etLengthOfTwoWords());
+console.log(etLengthOfTwoWords());
+console.log(etLengthOfTwoWords());
 console.log();
 
 
@@ -3921,9 +4347,12 @@ console.log(' ===== 141: cube ===== ');
 // function cube(num) {
 //   // your code here
 // }
-var aa = function () {
+var cube = function (num) {
 
 };
+console.log(cube());
+console.log(cube());
+console.log(cube());
 console.log();
 
 
@@ -3940,9 +4369,12 @@ console.log(' ===== 142: computePerimeterOfATriangle ===== ');
 // function computePerimeterOfATriangle(side1, side2, side3) {
 //   // your code here
 // }
-var aa = function () {
+var computePerimeterOfATriangle = function (side1, side2, side3) {
 
 };
+console.log(computePerimeterOfATriangle());
+console.log(computePerimeterOfATriangle());
+console.log(computePerimeterOfATriangle());
 console.log();
 
 
@@ -3959,9 +4391,12 @@ console.log(' ===== 143: computePerimeterOfARectangle ===== ');
 // function computePerimeterOfARectangle(length, width) {
 //   // your code here
 // }
-var aa = function () {
+var computePerimeterOfARectangle = function (length, width) {
 
 };
+console.log(computePerimeterOfARectangle());
+console.log(computePerimeterOfARectangle());
+console.log(computePerimeterOfARectangle());
 console.log();
 
 
@@ -3978,9 +4413,12 @@ console.log(' ===== 144: computeAreaOfARectangle ===== ');
 // function computeAreaOfARectangle(length, width) {
 //   // your code here
 // }
-var aa = function () {
+var computeAreaOfARectangle = function (length, width) {
 
 };
+console.log(computeAreaOfARectangle());
+console.log(computeAreaOfARectangle());
+console.log(computeAreaOfARectangle());
 console.log();
 
 
@@ -3997,9 +4435,12 @@ console.log(' ===== 145: getLengthOfWord ===== ');
 // function getLengthOfWord(word) {
 //   // your code here
 // }
-var aa = function () {
+var getLengthOfWord = function (word) {
 
 };
+console.log(getLengthOfWord());
+console.log(getLengthOfWord());
+console.log(getLengthOfWord());
 console.log();
 
 
@@ -4016,10 +4457,12 @@ console.log(' ===== 146: square ===== ');
 // function getLengthOfWord(word) {
 //   // your code here
 // }
-var aa = function () {
+var getLengthOfWord = function (word) {
 
 };
-console.log();
+console.log(getLengthOfWord());
+console.log(getLengthOfWord());
+console.log(getLengthOfWord());
 console.log();
 //
 //
@@ -4732,6 +5175,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [evaluation 01] Array assignment ===== ');    
@@ -4763,6 +5207,7 @@ console.log(' ===== [evaluation 01] Array assignment ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -4802,6 +5247,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [testing 02] writing "assertArraysEqual" ===== ');    
@@ -4835,6 +5281,7 @@ console.log(' ===== [testing 02] writing "assertArraysEqual" ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -4873,6 +5320,7 @@ console.log(' ===== [testing 03] writing "assertObjectsEqual" ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -4918,6 +5366,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [testing 05] applying "assertEqual" #1 ===== ');    
@@ -4946,6 +5395,7 @@ console.log(' ===== [testing 05] applying "assertEqual" #1 ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -4980,6 +5430,7 @@ console.log(' ===== [testing 06] apply "assertEqual" #2 ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5019,6 +5470,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [testing 08] apply "assertObjectsEqual" ===== ');    
@@ -5054,6 +5506,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [skeleton 00] average integers ===== ');    
@@ -5078,6 +5531,7 @@ console.log(' ===== [skeleton 00] average integers ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5120,6 +5574,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [skeleton 02] is it an isogram? ===== ');    
@@ -5145,6 +5600,7 @@ console.log(' ===== [skeleton 02] is it an isogram? ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5196,6 +5652,7 @@ console.log(' ===== [skeleton 03] read skeleton; understand problem  ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5257,6 +5714,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [skeleton 05] find longest palindrome ===== ');    
@@ -5297,6 +5755,7 @@ console.log(' ===== [skeleton 05] find longest palindrome ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5342,6 +5801,7 @@ console.log(' ===== [problem 01] Fashion Inventory part A ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -5397,6 +5857,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== [problem 03] Fashion Inventory, part C ===== ');    
@@ -5438,6 +5899,7 @@ console.log(' ===== [problem 03] Fashion Inventory, part C ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -6494,6 +6956,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== 002 Big Flipper ===== ');    
@@ -6561,6 +7024,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== 003 Outliers ===== ');    
@@ -6617,6 +7081,7 @@ console.log(' ===== 003 Outliers ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -6680,6 +7145,7 @@ var aa = function () {
 
 };
 console.log();
+console.log();
 
 
 console.log(' ===== 005 Find the pair ===== ');    
@@ -6706,6 +7172,7 @@ console.log(' ===== 005 Find the pair ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
@@ -6745,6 +7212,7 @@ console.log(' ===== 006 oh yeah? Rotate THIS ===== ');
 var aa = function () {
 
 };
+console.log();
 console.log();
 
 
