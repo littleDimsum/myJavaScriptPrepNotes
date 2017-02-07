@@ -724,7 +724,7 @@ console.log(' ===== MODULE 1: EXERCISES ===== ');
 console.log();
 /****************************************************************************/
 
-console.log(' ===== countWords ===== '); 
+console.log(' ===== 01: countWords ===== '); 
 //---------------------------------------------------------------------- 
 // Write a function called "countWords".
 
@@ -746,7 +746,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isPersonOldEnoughToDrinkAndDrive ===== ');    
+console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrinkAndDrive".
 
@@ -773,7 +773,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== extend ===== ');    
+console.log(' ===== 03: extend ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "extend".
 
@@ -808,7 +808,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementsThatEqual10AtProperty ===== ');    
+console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getElementsThatEqual10AtProperty".
 
@@ -836,7 +836,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== select ===== ');    
+console.log(' ===== 05: select ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "select".
 
@@ -868,7 +868,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementsLessThan100AtProperty ===== ');    
+console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getElementsLessThan100AtProperty".
 
@@ -896,7 +896,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== countAllCharacters ===== ');    
+console.log(' ===== 07: countAllCharacters ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "countAllCharacters".
 
@@ -918,7 +918,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementsGreaterThan10atProperty ===== ');    
+console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');    
 //----------------------------------------------------------------------
 
 // Write a function called "getElementsGreaterThan10AtProperty".
@@ -947,7 +947,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAverageOfElementsAtProperty ===== ');    
+console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAverageOfElementsAtProperty".
 
@@ -975,7 +975,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getOddLengthWordsAtProperty ===== ');    
+console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getOddLengthWordsAtProperty".
 
@@ -1003,7 +1003,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getEvenLengthWordsAtProperty ===== ');    
+console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getEvenLengthWordsAtProperty".
 
@@ -1031,7 +1031,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getSquaredElementsAtProperty ===== ');    
+console.log(' ===== 12: getSquaredElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getSquaredElementsAtProperty".
 
@@ -1058,7 +1058,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getOddElementsAtProperty ===== ');    
+console.log(' ===== 13: getOddElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getOddElementsAtProperty".
 
@@ -1086,7 +1086,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getEvenElementsAtProperty ===== ');    
+console.log(' ===== 14: getEvenElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getEvenElementsAtProperty".
 
@@ -1114,7 +1114,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getSmallestElementsAtProperty ===== ');    
+console.log(' ===== 15: getSmallestElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getSmallestElementAtProperty".
 
@@ -1141,7 +1141,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLargestElementsAtProperty ===== ');    
+console.log(' ===== 16: getLargestElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLargestElementAtProperty".
 
@@ -1168,7 +1168,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getProductOfAllElementsAtProperty ===== ');    
+console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getProductOfAllElementsAtProperty".
 
@@ -1195,7 +1195,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getSumOfAllElementsAtProperty ===== ');    
+console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getSumOfAllElementsAtProperty".
 
@@ -1222,7 +1222,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllButLastElementOfProperty ===== ');    
+console.log(' ===== 19: getAllButLastElementOfProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllButLastElementOfProperty".
 
@@ -1249,7 +1249,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getNthElementOfProperty ===== ');    
+console.log(' ===== 20: getNthElementOfProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getNthElementOfProperty".
 
@@ -1277,7 +1277,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLastElementOfProperty ===== ');    
+console.log(' ===== 21: getLastElementOfProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLastElementOfProperty".
 
@@ -1304,7 +1304,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getFirstElementOfProperty ===== ');    
+console.log(' ===== 22: getFirstElementOfProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getFirstElementOfProperty".
 
@@ -1332,7 +1332,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeNumbersLargerThan ===== ');    
+console.log(' ===== 23: removeNumbersLargerThan ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeNumbersLargerThan".
 
@@ -1356,7 +1356,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeNumbersLessThan ===== ');    
+console.log(' ===== 24: removeNumbersLessThan ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeNumbersLessThan".
 
@@ -1381,7 +1381,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addFullNameProperty ===== ');    
+console.log(' ===== 25: addFullNameProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addFullNameProperty".
 
@@ -1404,7 +1404,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeStringValuesLongerThan ===== ');    
+console.log(' ===== 26: removeStringValuesLongerThan ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeStringValuesLongerThan".
 
@@ -1428,7 +1428,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeEvenValues ===== ');    
+console.log(' ===== 27: removeEvenValues ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeEvenValues".
 
@@ -1456,7 +1456,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== countNumberOfKeys ===== ');    
+console.log(' ===== 28: countNumberOfKeys ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "countNumberOfKeys".
 
@@ -1480,7 +1480,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isPersonOldEnoughToDrive ===== ');    
+console.log(' ===== 29: isPersonOldEnoughToDrive ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrive".
 
@@ -1505,7 +1505,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeOddValues ===== ');    
+console.log(' ===== 30: removeOddValues ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeOddValues".
 
@@ -1529,7 +1529,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeArrayValues ===== ');    
+console.log(' ===== 31: removeArrayValues ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeArrayValues".
 
@@ -1553,7 +1553,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeNumberValues ===== ');    
+console.log(' ===== 32: removeNumberValues ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeNumberValues".
 
@@ -1577,7 +1577,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isPersonOldEnoughToVote ===== ');    
+console.log(' ===== 33: isPersonOldEnoughToVote ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToVote".
 
@@ -1602,7 +1602,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeStringValues ===== ');    
+console.log(' ===== 34: removeStringValues ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeStringValues".
 
@@ -1625,7 +1625,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isPersonOldEnoughToDrink ===== ');    
+console.log(' ===== 35: isPersonOldEnoughToDrink ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrink".
 
@@ -1650,7 +1650,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementOfArrayProperty ===== ');    
+console.log(' ===== 36: getElementOfArrayProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getElementOfArrayProperty".
 
@@ -1678,7 +1678,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getProperty ===== ');    
+console.log(' ===== 37: getProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getProperty".
 
@@ -1704,7 +1704,7 @@ console.log();
 
 
 
-console.log(' ===== addObjectProperty ===== ');    
+console.log(' ===== 38: addObjectProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addObjectProperty".
 
@@ -1731,7 +1731,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addArrayProperty ===== ');    
+console.log(' ===== 39: addArrayProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addArrayProperty".
 
@@ -1752,7 +1752,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' =====  removeProperty===== ');    
+console.log(' =====  40: removeProperty===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeProperty".
 
@@ -1775,7 +1775,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addProperty ===== ');    
+console.log(' ===== 41: addProperty ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addProperty".
 
@@ -1795,7 +1795,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== convertDoubleSpaceToSingle ===== ');    
+console.log(' ===== 42: convertDoubleSpaceToSingle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "convertDoubleSpaceToSingle".
 
@@ -1817,7 +1817,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllWords ===== ');    
+console.log(' ===== 43: getAllWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllWords".
 
@@ -1839,7 +1839,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllLetters ===== ');    
+console.log(' ===== 44: getAllLetters ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllLetters".
 
@@ -1861,7 +1861,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== countCharacter ===== ');    
+console.log(' ===== 45: countCharacter ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "countCharacter".
 
@@ -1880,7 +1880,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeElement ===== ');    
+console.log(' ===== 46: removeElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeElement".
 
@@ -1904,7 +1904,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== keep ===== ');    
+console.log(' ===== 47: keep ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "keep".
 
@@ -1926,7 +1926,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findShortestWordAmongMixedElements ===== ');    
+console.log(' ===== 48: findShortestWordAmongMixedElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findShortestWordAmongMixedElements".
 
@@ -1951,7 +1951,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeAverageOfNumbers ===== ');    
+console.log(' ===== 49: computeAverageOfNumbers ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeAverageOfNumbers".
 
@@ -1974,7 +1974,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findSmallestNumberAmongMixedElements ===== ');    
+console.log(' ===== 50: findSmallestNumberAmongMixedElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findSmallestNumberAmongMixedElements".
 
@@ -1997,7 +1997,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLongestWordOfMixedElements ===== ');    
+console.log(' ===== 51: getLongestWordOfMixedElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLongestWordOfMixedElements".
 
@@ -2020,7 +2020,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== filterOddLengthWords ===== ');    
+console.log(' ===== 52: filterOddLengthWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "filterOddLengthWords".
 
@@ -2039,7 +2039,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findLargestNumberAmongMixedElements ===== ');    
+console.log(' ===== 53: findLargestNumberAmongMixedElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLargestNumberAmongMixedElements". 
 
@@ -2063,7 +2063,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLengthOfLongestElement ===== ');    
+console.log(' ===== 54: getLengthOfLongestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfLongestElement".
 
@@ -2085,7 +2085,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== filterEvenLengthWords ===== ');    
+console.log(' ===== 55: filterEvenLengthWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "filterEvenLengthWords".
 
@@ -2104,7 +2104,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== squareElements ===== ');    
+console.log(' ===== 56: squareElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "squareElements".
 
@@ -2123,7 +2123,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== filterOddElements ===== ');    
+console.log(' ===== 57: filterOddElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "filterOddElements".
 
@@ -2142,7 +2142,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeProductOfAllElements ===== ');    
+console.log(' ===== 58: computeProductOfAllElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeProductOfAllElements".
 
@@ -2164,7 +2164,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== filterEvenElements ===== ');    
+console.log(' ===== 59: filterEvenElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "filterEvenElements".
 
@@ -2183,7 +2183,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLengthOfShortestElement ===== ');    
+console.log(' ===== 60: getLengthOfShortestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfShortestElement".
 
@@ -2205,7 +2205,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLongestElement ===== ');    
+console.log(' ===== 61: getLongestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLongestElement".
 
@@ -2228,7 +2228,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findSmallestElement ===== ');    
+console.log(' ===== 62: findSmallestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findSmallestElement".
 
@@ -2250,7 +2250,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeFromFrontOfNew ===== ');    
+console.log(' ===== 63: removeFromFrontOfNew ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeFromFrontOfNew".
 
@@ -2274,7 +2274,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findShortestElement ===== ');    
+console.log(' ===== 64: findShortestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findShortestElement".
 
@@ -2297,7 +2297,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLargestElement ===== ');    
+console.log(' ===== 65: getLargestElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLargestElement".
 
@@ -2319,7 +2319,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== joinThreeArrays ===== ');    
+console.log(' ===== 66: joinThreeArrays ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "joinThreeArrays".
 
@@ -2340,7 +2340,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeSumOfAllElements ===== ');    
+console.log(' ===== 67: computeSumOfAllElements ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeSumOfAllElements".
 
@@ -2359,7 +2359,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeFromBackOfnew ===== ');    
+console.log(' ===== 68: removeFromBackOfnew ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeFromBackOfNew".
 
@@ -2383,7 +2383,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addToFrontOfNew ===== ');    
+console.log(' ===== 69: addToFrontOfNew ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addToFrontOfNew".
 
@@ -2406,7 +2406,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addtoBackOfNew ===== ');    
+console.log(' ===== 70: addtoBackOfNew ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addToBackNew".
 
@@ -2429,7 +2429,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllElementsButNth ===== ');    
+console.log(' ===== 71: getAllElementsButNth ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButNth".
 
@@ -2448,7 +2448,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== joinArrayOfArrays ===== ');    
+console.log(' ===== 72: joinArrayOfArrays ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "joinArrayOfArrays".
 
@@ -2469,7 +2469,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeFromFront ===== ');    
+console.log(' ===== 73: removeFromFront ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeFromFront".
 
@@ -2491,7 +2491,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllElementsButLast ===== ');    
+console.log(' ===== 74: getAllElementsButLast ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButLast".
 
@@ -2511,7 +2511,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== joinArrays ===== ');    
+console.log(' ===== 75: joinArrays ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "joinArrays".
 
@@ -2532,7 +2532,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getNthElement ===== ');    
+console.log(' ===== 76: getNthElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getNthElement".
 
@@ -2554,7 +2554,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementsAfter ===== ');    
+console.log(' ===== 77: getElementsAfter ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getElementsAfter".
 
@@ -2573,7 +2573,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getElementsUpTo ===== ');    
+console.log(' ===== 78: getElementsUpTo ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getElementsUpTo".
 
@@ -2595,7 +2595,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getAllElementsButFirst ===== ');    
+console.log(' ===== 79: getAllElementsButFirst ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButFirst".
 
@@ -2615,7 +2615,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== removeFromBack ===== ');    
+console.log(' ===== 80: removeFromBack ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "removeFromBack".
 
@@ -2637,7 +2637,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addToFront ===== ');    
+console.log(' ===== 81: addToFront ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addToFront".
 
@@ -2659,7 +2659,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== addToBack ===== ');    
+console.log(' ===== 82: addToBack ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "addToBack".
 
@@ -2680,7 +2680,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLastElement ===== ');    
+console.log(' ===== 83: getLastElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLastElement".
 
@@ -2702,7 +2702,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getFirstElement ===== ');    
+console.log(' ===== 84: getFirstElement ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getFirstElement".
 
@@ -2724,7 +2724,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== sumDigits ===== ');    
+console.log(' ===== 85: sumDigits ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "sumDigits".
 
@@ -2752,7 +2752,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getIndexOf ===== ');    
+console.log(' ===== 86: getIndexOf ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getIndexOf".
 
@@ -2777,7 +2777,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getStringLength ===== ');    
+console.log(' ===== 87: getStringLength ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getStringLength".
 
@@ -2800,7 +2800,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== countAllCharacters ===== ');    
+console.log(' ===== 88: countAllCharacters ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "countCharacter".
 
@@ -2819,7 +2819,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== modulo ===== ');    
+console.log(' ===== 89: modulo ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "modulo".
 
@@ -2848,7 +2848,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== multiply ===== ');    
+console.log(' ===== 90: multiply ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "multiply".
 
@@ -2870,7 +2870,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOddWithoutModulo ===== ');    
+console.log(' ===== 91: isOddWithoutModulo ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOddWithoutModulo".
 
@@ -2893,7 +2893,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEvenWithoutModulo ===== ');    
+console.log(' ===== 92: isEvenWithoutModulo ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEvenWithoutModulo".
 
@@ -2916,7 +2916,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== multiplyBetween ===== ');    
+console.log(' ===== 93: multiplyBetween ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "multiplyBetween".
 
@@ -2939,7 +2939,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeSumBetween ===== ');    
+console.log(' ===== 94: computeSumBetween ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeSumBetween".
 
@@ -2962,7 +2962,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeFactorialOfN ===== ');    
+console.log(' ===== 95: computeFactorialOfN ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeSumBetween".
 
@@ -2985,7 +2985,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== repeatString ===== ');    
+console.log(' ===== 96: repeatString ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "repeatString".
 
@@ -3004,7 +3004,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeSummationToN ===== ');    
+console.log(' ===== 97: computeSummationToN ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeSummationToN".
 
@@ -3026,7 +3026,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeScoreToGradeWithPlus ===== ');    
+console.log(' ===== 98: computeScoreToGradeWithPlus ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "convertScoreToGradeWithPlusAndMinus".
 
@@ -3057,7 +3057,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeScoreToGrade ===== ');    
+console.log(' ===== 99: computeScoreToGrade ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "convertScoreToGrade".
 
@@ -3084,7 +3084,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== areValidCredentials ===== ');    
+console.log(' ===== 100: areValidCredentials ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "areValidCredentials".
 
@@ -3103,7 +3103,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLongestOfThreeWords ===== ');    
+console.log(' ===== 101: getLongestOfThreeWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLongestOfThreeWords".
 
@@ -3125,7 +3125,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findShortestOfThreeWords ===== ');    
+console.log(' ===== 102: findShortestOfThreeWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findShortestOfThreeWords".
 
@@ -3147,7 +3147,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findMinLengthOfThreeWords ===== ');    
+console.log(' ===== 103: findMinLengthOfThreeWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findMinLengthOfThreeWords".
 
@@ -3166,7 +3166,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== findMaxLengthOfThreeWords ===== ');    
+console.log(' ===== 104: findMaxLengthOfThreeWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "findMaxLengthOfThreeWords".
 
@@ -3185,7 +3185,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== checkAge ===== ');    
+console.log(' ===== 105: checkAge ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "checkAge". 
 
@@ -3209,7 +3209,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== or ===== ');    
+console.log(' ===== 106: or ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "or".
 
@@ -3232,7 +3232,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOldEnoughToDrinkAndDrive ===== ');    
+console.log(' ===== 107: isOldEnoughToDrinkAndDrive ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrinkAndDrive".
 
@@ -3255,7 +3255,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOldEnoughToDrive ===== ');    
+console.log(' ===== 108: isOldEnoughToDrive ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrive".
 
@@ -3277,7 +3277,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOldEnoughToVote ===== ');    
+console.log(' ===== 109: isOldEnoughToVote ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToVote".
 
@@ -3299,7 +3299,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOldEnoughToDrink ===== ');    
+console.log(' ===== 110: isOldEnoughToDrink ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrink".
 
@@ -3321,7 +3321,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEitherEvenOrAreBoth7 ===== ');    
+console.log(' ===== 111: isEitherEvenOrAreBoth7 ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEitherEvenOrAreBoth7".
 
@@ -3343,7 +3343,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEitherEvenAndLessThan9 ===== ');    
+console.log(' ===== 112: isEitherEvenAndLessThan9 ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEitherEvenAndLessThan9".
 
@@ -3365,7 +3365,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEitherEven ===== ');    
+console.log(' ===== 113: isEitherEven ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEitherEven".
 
@@ -3384,7 +3384,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== areBothOdd ===== ');    
+console.log(' ===== 114: areBothOdd ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "areBothOdd".
 
@@ -3403,7 +3403,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEvenAndGretaerThanTen ===== ');    
+console.log(' ===== 115: isEvenAndGretaerThanTen ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEvenAndGreaterThanTen".
 
@@ -3422,7 +3422,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isSameLength ===== ');    
+console.log(' ===== 116: isSameLength ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isSameLength".
 
@@ -3441,7 +3441,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOddLength ===== ');    
+console.log(' ===== 117: isOddLength ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOddLength".
 
@@ -3460,7 +3460,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEvenLength ===== ');    
+console.log(' ===== 118: isEvenLength ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEvenLength".
 
@@ -3479,7 +3479,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isOdd ===== ');    
+console.log(' ===== 119: isOdd ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isOdd".
 
@@ -3498,7 +3498,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEven ===== ');    
+console.log(' ===== 120: isEven ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEven".
 
@@ -3517,7 +3517,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isEqualTo ===== ');    
+console.log(' ===== 121: isEqualTo ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isEqualTo".
 
@@ -3536,7 +3536,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isGreaterThan ===== ');    
+console.log(' ===== 122: isGreaterThan ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isGreaterThan".
 
@@ -3555,7 +3555,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isLessThan ===== ');    
+console.log(' ===== 123: isLessThan ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isLessThan".
 
@@ -3574,7 +3574,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== equalsTen ===== ');    
+console.log(' ===== 124: equalsTen ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "equalsTen".
 
@@ -3593,7 +3593,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isLessThan30 ===== ');    
+console.log(' ===== 125: isLessThan30 ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isLessThan30".
 
@@ -3612,7 +3612,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== isGreaterThanTen ===== ');    
+console.log(' ===== 126: isGreaterThanTen ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "isGreaterThanTen".
 
@@ -3631,7 +3631,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeCompoundInterest ===== ');    
+console.log(' ===== 127: computeCompoundInterest ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeCompoundInterest".
 
@@ -3654,7 +3654,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== calculateBillTotal ===== ');    
+console.log(' ===== 128: calculateBillTotal ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "calculateBillTotal".
 
@@ -3677,7 +3677,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computePower ===== ');    
+console.log(' ===== 129: computePower ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computePower".
 
@@ -3696,7 +3696,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeAreaOfCircle ===== ');    
+console.log(' ===== 130: computeAreaOfCircle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfACircle".
 
@@ -3718,7 +3718,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computePerimeterOfCircle ===== ');    
+console.log(' ===== 131: computePerimeterOfCircle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfACircle".
 
@@ -3737,7 +3737,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeTripledAreaOfARectangle ===== ');    
+console.log(' ===== 132: computeTripledAreaOfARectangle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeTripledAreaOfARectangle".
 
@@ -3756,7 +3756,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== doubleSquareRootOf ===== ');    
+console.log(' ===== 133: doubleSquareRootOf ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "doubleSquareRootOf".
 
@@ -3775,7 +3775,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeAverageLengthOfWords ===== ');    
+console.log(' ===== 134: computeAverageLengthOfWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeAverageLengthOfWords".
 
@@ -3794,7 +3794,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeSquareRoot ===== ');    
+console.log(' ===== 135: computeSquareRoot ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeSquareRoot".
 
@@ -3813,7 +3813,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLengthOfThreeWords ===== ');    
+console.log(' ===== 136: getLengthOfThreeWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfThreeWords".
 
@@ -3832,7 +3832,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getFullName ===== ');    
+console.log(' ===== 137: getFullName ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getFullName".
 
@@ -3851,7 +3851,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== average ===== ');    
+console.log(' ===== 138: average ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "average".
 
@@ -3870,7 +3870,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeAreaOfATriangle ===== ');    
+console.log(' ===== 139: computeAreaOfATriangle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfATriangle".
 
@@ -3889,7 +3889,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLengthOfTwoWords ===== ');    
+console.log(' ===== 140: getLengthOfTwoWords ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfTwoWords".
 
@@ -3908,7 +3908,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== cube ===== ');    
+console.log(' ===== 141: cube ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "cube".
 
@@ -3927,7 +3927,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computePerimeterOfATriangle ===== ');    
+console.log(' ===== 142: computePerimeterOfATriangle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfATriangle".
 
@@ -3946,7 +3946,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computePerimeterOfARectangle ===== ');    
+console.log(' ===== 143: computePerimeterOfARectangle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfARectangle".
 
@@ -3965,7 +3965,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== computeAreaOfARectangle ===== ');    
+console.log(' ===== 144: computeAreaOfARectangle ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfARectangle".
 
@@ -3984,7 +3984,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== getLengthOfWord ===== ');    
+console.log(' ===== 145: getLengthOfWord ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfWord".
 
@@ -4003,7 +4003,7 @@ var aa = function () {
 console.log();
 
 
-console.log(' ===== square ===== ');    
+console.log(' ===== 146: square ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfWord".
 
