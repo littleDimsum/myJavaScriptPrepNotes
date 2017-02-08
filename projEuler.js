@@ -177,25 +177,33 @@ console.log(smallestMultiple(20)); // 232792560
 console.log();
 
 
-console.log(' ===== 06: SMALLEST SQUARE DIFFERENCE ===== ');    
+console.log(' ===== 06: SUM SQUARE DIFFERENCE ===== ');    
 //----------------------------------------------------------------------
 // Sum square difference
 // Problem 6
 // The sum of the squares of the first ten natural numbers is,
-
-// 12 + 22 + ... + 102 = 385
+// 1 ** 2 + 2 ** 2 + ... + 10 ** 2 = 385
 // The square of the sum of the first ten natural numbers is,
-
 // (1 + 2 + ... + 10)2 = 552 = 3025
 // Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 var sumSquareDifference = function (num) {
-
+  var numArr = [];
+  for (var i = 1; i <= num; i++) {
+    numArr.push(i);
+  }
+  var numArrSq = numArr.map(function (x) {
+    return x ** 2;
+  })
+  var sum = numArr.reduce(function(a, b) { return a + b; });
+  var squareSum = numArrSq.reduce(function(a, b) { return a + b; });
+  return sum ** 2 - squareSum;
 };
-console.log(sumSquareDifference());
-console.log(sumSquareDifference());
-console.log(sumSquareDifference());
+console.log(sumSquareDifference(2)); // 4
+console.log(sumSquareDifference(5)); // 170
+console.log(sumSquareDifference(10)); // 2640
+console.log(sumSquareDifference(100)); // 25164150
 console.log();
 
 
