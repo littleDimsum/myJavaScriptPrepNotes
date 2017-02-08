@@ -214,12 +214,31 @@ console.log(' ===== 07: 10001ST PRIME ===== ');
 // By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
 // What is the 10 001st prime number?
+var isPrime = function (num) {
+  for (var i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+//----------------------------------------------------------------------
 var nthPrime = function (num) {
+  var result = [];
+  var starter = 2;
+  while (result.length < num) {
+    if (isPrime(starter)) {
+      result.push(starter)
+    }
+    starter += 1 
+  }
 
+  return result.pop();
 };
-console.log(nthPrime());
-console.log(nthPrime());
-console.log(nthPrime());
+console.log(nthPrime(3)); // 5
+console.log(nthPrime(6)); // 13
+console.log(nthPrime(10)); // 29
+console.log(nthPrime(10001)); // 104743
 console.log();
 
 
@@ -251,12 +270,28 @@ console.log(' ===== 08: LARGEST PRODUCT IN SERIES ===== ');
 // 71636269561882670428252483600823257530420752963450
 
 // Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
-var largestProdiNASeries = function (num, numGrid) {
+var crazyNum = '7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450'
+var largestProdiNASeries = function (string, num) {
+  var result = undefined;
+  var resultArr = [];
+  var stringArr = string.split('');
+  var strArr = stringArr.map(function (lett) { return Number(lett); })
 
+  for (var i = 0; i < strArr.length; i++) {
+    currArr = strArr.slice(i, i + num);
+    var tester = currArr.reduce(function(a, b) { return a * b; })
+
+    if (tester > result || result === undefined) {
+      result = tester;
+      resultArr = currArr;
+    } 
+  }
+
+  return result;
 };
-console.log(largestProdiNASeries());
-console.log(largestProdiNASeries());
-console.log(largestProdiNASeries());
+console.log(largestProdiNASeries(crazyNum, 2)); // 81
+console.log(largestProdiNASeries(crazyNum, 4)); // 9 × 9 × 8 × 9 = 5832.
+console.log(largestProdiNASeries(crazyNum, 13)); // 23514624000
 console.log();
 
 
@@ -271,12 +306,26 @@ console.log(' ===== 09: SPECIAL PYTHAGOREAN TRIPLET ===== ');
 
 // There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 // Find the product abc.
-var specialPythagoreanTriplet = function (num) {
-
+var specialPythagoreanTriplet = function (upperRange, targetNum) {
+  // I'll set any of a, b, c, to be less than upperRange that should reasonably contain the range of numbers required to reach the targetNum. In the absence of an upperRange, I'd manually set upperRange within the function.
+  var resultArr = [];
+  for (var a = 1; a < upperRange; a++) {
+    for (var b = 1; b < upperRange; b++) {
+      for (var c = 1; c < upperRange; c++) {
+        if (a ** 2 + b ** 2 === c ** 2 && a + b + c === targetNum) {
+          return a * b * c;
+          // I tried to find out what values a, b, c took to reach the targetNum
+          // resultArr.push(a, b, c); 
+          // return resultArr;
+        }
+      }
+    }
+  }
+  // return 'Sorry, triplet does not exist'; // in case targetNum is not reached
 };
-console.log(specialPythagoreanTriplet());
-console.log(specialPythagoreanTriplet());
-console.log(specialPythagoreanTriplet());
+console.log(specialPythagoreanTriplet(450, 1000)); // 31875000: [200, 375, 425]
+console.log(specialPythagoreanTriplet(10, 12)); // 60 : [3, 4, 5]
+// console.log(specialPythagoreanTriplet());
 console.log();
 
 
@@ -288,11 +337,19 @@ console.log(' ===== 10: SUMMATION OF PRIMES ===== ');
 
 // Find the sum of all the primes below two million.
 var summationOfPrimes = function (num) {
-
+  // I'll invoke isPrime defined earlir in problem 7.
+  // To speed the compuation I'm also starting my primeNums array with 2 inside it, piping 3 into the isPrime function and then every two steps after that since 2 is the only even prime.
+  var primeNums = [2];
+  for (var i = 3; i < num; i++) {
+    if (isPrime(i)) {
+      primeNums.push(i);
+    }
+  }
+  return primeNums.reduce(function(a, b) { return a + b; })
 };
-console.log(summationOfPrimes());
-console.log(summationOfPrimes());
-console.log(summationOfPrimes());
+console.log(summationOfPrimes(10)); // 17
+console.log(summationOfPrimes(20)); // 77
+console.log(summationOfPrimes(2000000)); // 142913828922
 console.log();
 
 
