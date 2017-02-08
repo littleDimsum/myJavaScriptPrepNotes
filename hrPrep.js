@@ -29,54 +29,46 @@ console.log(' ===== Greet Customers ===== ');
 // Notes:
 // * Your function should not alter the customerData object to update the number of visits.
 // * Do not hardcode to the exact sample data. This is a BAD IDEA:
-// if (firstName === 'Joe') {
-//   // do something
-// }
-// Starter Code :
-// var customerData = {
-//   'Joe': {
-//     visits: 1
-//   },
-//   'Carol': {
-//     visits: 2
-//   },
-//   'Howard': {
-//     visits: 3
-//   },
-//   'Carrie': {
-//     visits: 4
-//   }
-// };
-// function greetCustomer(firstName) {
-//   var greeting = '';
-	
-//   // your code here
-	
-//   return greeting;
-// }
-var greetCustomer = function (name) {
-
+var customerData = {
+  'Joe': {
+    visits: 1
+  },
+  'Carol': {
+    visits: 2
+  },
+  'Howard': {
+    visits: 3
+  },
+  'Carrie': {
+    visits: 4
+  }
 };
-console.log(greetCustomer());
-console.log(greetCustomer());
-console.log(greetCustomer());
+//
+var greetCustomer = function (data, firstName) {
+  var name = data[firstName];
+  if (name === undefined) {
+    return 'Welcome! Is this your first time?';
+  } else if (name.visits === 1) {
+    return `Welcome back, ${firstName}! We\'re glad you liked us the first time!`;
+  } else if (name.visits > 1) {
+    return `Welcome back, ${firstName}! So glad to see you again!`;
+  }
+};
+console.log(greetCustomer(customerData, 'John'));
+console.log(greetCustomer(customerData, 'Joe'));
+console.log(greetCustomer(customerData, 'Carol'));
+console.log(greetCustomer(customerData, 'Carrie'));
 console.log();
 
 
 console.log(' ===== Array to Object ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "transformEmployeeData" that transforms some employee data from one format to another.
-
 // The argument will look something like this:
-// [
-//     [
-//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
-//     ],
-//     [
-//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
-//     ]
-// ]
-
+var arrData = [ 
+  [['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']], 
+  [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'CEO']]
+];
 // Given that input, the return value should look like this:
 // [
 //     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
@@ -86,17 +78,18 @@ console.log(' ===== Array to Object ===== ');
 // Note that the input may have a different number of rows or different keys than the given sample. 
 
 // For example, let's say the HR department adds a "tshirtSize" field to each employee record. Your code should flexibly accommodate that.
-
-// Starter Code :
-// function transformEmployeeData(array) {
-//   // your code here
-// }
 var transformEmployeeData = function (data) {
-
+  var result = [];
+  for (var i in data) {
+    var hash = {};
+    for (var j in data[i]) {
+      hash[data[i][j][0]] = data[i][j][1];
+    }
+    result.push(hash);
+  }
+  return result;
 };
-console.log(transformEmployeeData());
-console.log(transformEmployeeData());
-console.log(transformEmployeeData());
+console.log(transformEmployeeData(arrData));
 console.log();
 
 
@@ -104,28 +97,31 @@ console.log(' ===== Object to Array ===== ');
 //----------------------------------------------------------------------
 // Write  a function called "convertObjectToList" which converts an object literal into an array of arrays, like this:
 // Argument:
-// {
-//   name: 'Holly',
-//   age: 35,
-//   role: 'producer'
-// }
-// Return value:
+var hash1 = {
+  name: 'Holly',
+  age: 35,
+  role: 'producer'
+};
+//Return value:
 // [['name', 'Holly'], ['age', 35], ['role', 'producer']]
 
 // Note that your function should be able to handle ANY object like this, not just the exact sample provided above.
 
 // E.g., it should also be able to handle this, or any other object containing simple key-value pairs.
-// {
-//   species: 'canine',
-//   name: 'Bowser',
-//   weight: 45
-// }
-var convertObjectToList = function (object) {
-
+var hash2 = {
+  species: 'canine',
+  name: 'Bo',
+  weight: 45
 };
-console.log(convertObjectToList());
-console.log(convertObjectToList());
-console.log(convertObjectToList());
+var convertObjectToList = function (obj) {
+  var result = [];
+  for (var key in obj) {
+    result.push([key, obj[key]]);
+  }
+  return result;
+};
+console.log(convertObjectToList(hash1));
+console.log(convertObjectToList(hash2));
 console.log();
 //
 //
@@ -199,8 +195,13 @@ console.log();
 
 // Excerpt from "The Guerrilla Guide to Interviewing"
 // For the first interview of the day, I’ve started including a really, really easy programming problem. I had to start doing this during the dotcom boom when a lot of people who thought HTML was “programming” started showing up for interviews, and I needed a way to avoid wasting too much time with them. It’s the kind of problem that any programmer working today should be able to solve in about one minute. Some examples:
-
 // Write a function that determines if a string starts with an upper-case letter A-Z
+// var testtt = function (str) {
+//   return /^[A-Z]/.test(str);
+//   // return /[A-Z]/.test(str[0]);
+// };
+// console.log(testtt('Swy'));
+// console.log(testtt('swy'));
 // Write a function that determines the area of a circle given the radius
 // Add up all the values in an array
 // These softball questions seem too easy, so when I first started asking them, I had to admit that I really expected everyone to sail right through them. What I discovered was that everybody solved the problem, but there was a lot of variation in how long it took them to solve.
@@ -749,11 +750,21 @@ console.log(' ===== 01: countWords ===== ');
 //   // your code here
 // }  
 var countWords = function (string) {
-
+  var strArr = string.split(' ');
+  var hash = {};
+  for (var i in strArr) {
+    if (hash[strArr[i]] === undefined) {
+      hash[strArr[i]] = 1;
+    } else {
+      hash[strArr[i]] += 1;
+    }
+    // hash[strArr[i]] = (hash[strArr[i]] || 0) + 1;
+  }
+  return hash;
 };
-console.log(countWords());
-console.log(countWords());
-console.log(countWords());
+console.log(countWords('ask a bunch get a bunch'));
+console.log(countWords('john will always be john except john Bull'));
+console.log(countWords('Peter Pipper picked a peck and a bowl'));
 console.log();
 
 
@@ -778,12 +789,21 @@ console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');
 // function isPersonOldEnoughToDrinkAndDrive(person) {
 //   // your code here
 // }
-var isPersonOldEnoughToDrinkAndDrive = function (obj) {
-
+var john = { 
+  age: 17 
 };
-console.log(isPersonOldEnoughToDrinkAndDrive());
-console.log(isPersonOldEnoughToDrinkAndDrive());
-console.log(isPersonOldEnoughToDrinkAndDrive());
+var peter = { 
+  age: 75 
+};
+var paul = { 
+  age: 21 
+};
+var isPersonOldEnoughToDrinkAndDrive = function (obj) {
+  return obj.age >= 21;
+};
+console.log(isPersonOldEnoughToDrinkAndDrive(john));
+console.log(isPersonOldEnoughToDrinkAndDrive(peter));
+console.log(isPersonOldEnoughToDrinkAndDrive(paul));
 console.log();
 
 
@@ -797,31 +817,35 @@ console.log(' ===== 03: extend ===== ');
 // * Add any keys that are not in the 1st object.
 // * If the 1st object already has a given key, ignore it (do not overwrite the property value).
 // * Do not modify the 2nd object at all.
-
-// var obj1 = {
-//   a: 1,
-//   b: 2
-// };
-// var obj2 = {
-//   b: 4,
-//   c: 3
-// };
-
+var abj1 = { 
+  a: 1, b: 2 
+};
+var abj2 = { 
+  b: 4, c: 3 
+};
+var abj3 = { 
+  d: 'opps', e: 3, 'aww': 'whoa!' 
+};
 // extend(obj1, obj2);
-
-// console.log(obj1); // --> {a: 1, b: 2, c: 3}
-// console.log(obj2); // --> {b: 4, c: 3}
+// console.log(abj1); // --> {a: 1, b: 2, c: 3}
+// console.log(abj2); // --> {b: 4, c: 3}
 
 // Starter Code :
 // function extend(obj1, obj2) {
 //   // your code here
 // }
 var extend = function (obj1, obj2) {
-
+  for (var key in obj2) {
+    if (obj1[key] === undefined) {
+      obj1[key] = obj2[key];
+    }
+  }
+  return obj1;
 };
-console.log(extend());
-console.log(extend());
-console.log(extend());
+console.log(extend(abj3, abj1)); // note that this is different from below
+console.log(extend(abj1, abj2));
+console.log(extend(abj2, abj3));
+console.log(extend(abj3, abj1));
 console.log();
 
 
@@ -836,10 +860,15 @@ console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');
 // * If the array contains no elements equal to 10, it should return an empty array.
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
-
-// var obj = {
-//   key: [1000, 10, 50, 10]
-// };
+var obja = {
+  key: [1000, 10, 50, 10]
+};
+var objb = {
+  koy: [10, 510, 150, 100]
+};
+var objc = {
+  kuy: [100, 20, 30, 40, 10, 50, 10, 79, 120, '10', 10.0, 10.0]
+};
 // var output = getElementsThatEqual10AtProperty(obj, 'key');
 // console.log(output); // --> [10, 10]
 
@@ -847,12 +876,18 @@ console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');
 // function getElementsThatEqual10AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsThatEqual10AtProperty = function (obj, key) {
-
+var getElementsThatEqual10AtProperty = function (abj, kay) {
+  var result = [];
+  for (var i in abj[kay]) { 
+    if (abj[kay][i] === 10) {
+      result.push(abj[kay][i]);
+    }
+  }
+  return result;
 };
-console.log(getElementsThatEqual10AtProperty());
-console.log(getElementsThatEqual10AtProperty());
-console.log(getElementsThatEqual10AtProperty());
+console.log(getElementsThatEqual10AtProperty(obja, 'key'));
+console.log(getElementsThatEqual10AtProperty(objb, 'koy'));
+console.log(getElementsThatEqual10AtProperty(objc, 'kuy'));
 console.log();
 
 
@@ -865,17 +900,18 @@ console.log(' ===== 05: select ===== ');
 // Notes:
 // * If keys are present in the given array, but are not in the given object, it should ignore them. 
 // * It does not modify the passed in object.
-
-
-// var arr = ['a', 'c', 'e'];
-// var obj = {
-//   a: 1,
-//   b: 2,
-//   c: 3,
-//   d: 4
-// };
-// var output = select(arr, obj);
-// console.log(output); // --> { a: 1, c: 3 }
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'm'];
+var obj1 = {
+  a: 1, c: 2, e: 3, g: 4, x: 5, y: 6, z: 7
+};
+var obj2 = {
+  a: 32, d: 14, f: 87, h: 0, j: 900, y: 6, z: 7
+};
+var obj3 = {
+  a: 'koko', i: '$$', e: 55, g: 4, x: 5, m: 6, e: 4
+};
+// var output = select(arr1, obj1);
+// console.log(output); // --> { a: 1, c: 2, e: 3, g: 4 }
 
 
 // Starter Code:
@@ -883,11 +919,17 @@ console.log(' ===== 05: select ===== ');
 //   // your code here
 // }
 var select = function (arr, obj) {
-
+  var result = {};
+  for (var i in arr) {
+    if (obj[arr[i]] !== undefined) {
+      result[arr[i]] = obj[arr[i]];
+    }
+  }
+  return result;
 };
-console.log(select());
-console.log(select());
-console.log(select());
+console.log(select(arr1, obj1));
+console.log(select(arr1, obj2));
+console.log(select(arr1, obj3));
 console.log();
 
 
@@ -903,9 +945,15 @@ console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
 
-// var obj = {
-//   key: [1000, 20, 50, 500]
-// };
+var obj = {
+  key: [1000, 20, 50, 500]
+};
+var obj1 = {
+  key: [12, 134, 70, 1000, 20, 50, 500, -45]
+};
+var obj2 = {
+  key: [99, 80, 1011893928, 13, 20, 50, 500]
+};
 // var output = getElementsLessThan100AtProperty(obj, 'key');
 // console.log(output); // --> [20, 50]
 
@@ -913,19 +961,24 @@ console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');
 // function getElementsLessThan100AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsLessThan100AtProperty = function (obj, key) {
-
+var getElementsLessThan100AtProperty = function (object, keyy) {
+  var result = [];
+  for (var i in object[keyy]) {
+    if (object[keyy][i] < 100) {
+      result.push(object[keyy][i]);
+    }
+  }
+  return result;
 };
-console.log(getElementsLessThan100AtProperty());
-console.log(getElementsLessThan100AtProperty());
-console.log(getElementsLessThan100AtProperty());
+console.log(getElementsLessThan100AtProperty(obj, 'key'));
+console.log(getElementsLessThan100AtProperty(obj1, 'key'));
+console.log(getElementsLessThan100AtProperty(obj2, 'key'));
 console.log();
 
 
 console.log(' ===== 07: countAllCharacters ===== ');    
 //----------------------------------------------------------------------
 // Write a function called "countAllCharacters".
-
 // Given a string, "countAllCharacters" returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
 
 // Notes:
@@ -939,13 +992,21 @@ console.log(' ===== 07: countAllCharacters ===== ');
 //   // your code here
 // }
 var countAllCharacters = function (str) {
-
+  var strArr = str.split('').sort();
+  var result = {};
+  for (var i in strArr) {
+    if (result[strArr[i]] === undefined) {
+      result[strArr[i]] = 1;
+    } else {
+      result[strArr[i]] += 1;
+    }
+  }
+  return result;
 };
-console.log(countAllCharacters());
-console.log(countAllCharacters());
-console.log(countAllCharacters());
+console.log(countAllCharacters('banana'));
+console.log(countAllCharacters('hippopotamus'));
+console.log(countAllCharacters('fraframatingotirtiryabulation'));
 console.log();
-
 
 console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');    
 //----------------------------------------------------------------------
@@ -960,9 +1021,15 @@ console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array. 
 
-// var obj = {
-//   key: [1, 20, 30]
-// };
+var obj = {
+  key: [1, 20, 30]
+};
+var obj1 = {
+  key: [14, 10, 5, 25, 20, 30, 98, 2863551, -763]
+};
+var obj2 = {
+  key: [3.4, 35.8, 189, 20, 30]
+};
 // var output = getElementsGreaterThan10AtProperty(obj, 'key');
 // console.log(output); // --> [20, 30]
 
@@ -970,12 +1037,18 @@ console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');
 // function getElementsGreaterThan10AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsGreaterThan10atProperty = function (obj, key) {
-
+var getElementsGreaterThan10atProperty = function (object, keyy) {
+  var result = [];
+  for (var i in object[keyy]) {
+    if (object[keyy][i] > 10) {
+      result.push(object[keyy][i]);
+    }
+  }
+  return result;
 };
-console.log(getElementsGreaterThan10atProperty());
-console.log(getElementsGreaterThan10atProperty());
-console.log(getElementsGreaterThan10atProperty());
+console.log(getElementsGreaterThan10atProperty(obj, 'key'));
+console.log(getElementsGreaterThan10atProperty(obj1, 'key'));
+console.log(getElementsGreaterThan10atProperty(obj2, 'key'));
 console.log();
 
 
@@ -991,9 +1064,15 @@ console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');
 // * If there is no property at the given key, it should return 0.
 
 
-// var obj = {
-//   key: [1, 2, 3]
-// };
+var obj = {
+  key: [1, 2, 3]
+};
+var obj1 = {
+  key: [3, 'h', 7, 2, 3]
+};
+var obj2 = {
+  key: []
+};
 // var output = getAverageOfElementsAtProperty(obj, 'key');
 // console.log(output); // --> 2
 
@@ -1001,13 +1080,20 @@ console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');
 // function getAverageOfElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getAverageOfElementsAtProperty = function (obj, key) {
-
+var getAverageOfElementsAtProperty = function (objj, key) {
+  var average = 0;
+  var sum = 0;
+  if (objj[key].length !== 0 && objj[key].every(Number)) {
+    for (var i in objj[key]) {
+      sum += objj[key][i];
+    }
+    average = sum / (objj[key].length);
+  }
+  return average;
 };
-console.log(getAverageOfElementsAtProperty());
-console.log(getAverageOfElementsAtProperty());
-console.log(getAverageOfElementsAtProperty());
-console.log();
+console.log(getAverageOfElementsAtProperty(obj, 'key'));
+console.log(getAverageOfElementsAtProperty(obj1, 'key'));
+console.log(getAverageOfElementsAtProperty(obj2, 'key'));
 
 
 console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');    
@@ -1021,23 +1107,29 @@ console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');
 // * If it contains no odd length elements, it should return an empty array.
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the given key, it should return an empty array.
-
-// var obj = {
-//   key: ['It', 'has', 'some', 'words']
-// };
+var obj = {
+  key: ['It', 'has', 'some', 'words']
+};
+var obj1 = {
+  key: ['john', 'has', 'a', 'pair', 'of', 'boots']
+};
+var obj2 = {
+  key: ['peter', 'pipper', 'did', 'not', 'pick', 'shit', 'today']
+};
 // var output = getOddLengthWordsAtProperty(obj, 'key');
 // console.log(output); // --> ['has', 'words']
-
-// Starter Code :
-// function getOddLengthWordsAtProperty(obj, key) {
-//   // your code here
-// }
-var getOddLengthWordsAtProperty = function (obj, key) {
-
+var getOddLengthWordsAtProperty = function (objj, key) {
+  var result = [];
+  for (var i in objj[key]) {
+    if (objj[key][i].length % 2 === 1) {
+      result.push(objj[key][i]);
+    }
+  }
+  return result;
 };
-console.log(getOddLengthWordsAtProperty());
-console.log(getOddLengthWordsAtProperty());
-console.log(getOddLengthWordsAtProperty());
+console.log(getOddLengthWordsAtProperty(obj, 'key'));
+console.log(getOddLengthWordsAtProperty(obj1, 'key'));
+console.log(getOddLengthWordsAtProperty(obj2, 'key'));
 console.log();
 
 
