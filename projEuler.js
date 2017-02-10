@@ -839,12 +839,25 @@ console.log(' ===== 19: COUNTING SUNDAYS ===== ');
 // And on leap years, twenty-nine.
 // A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
 // How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
-var countingSundays = function (date1, date2) {
-
+var countingSundays = function (startDate, endDate) {
+  // I tried using a non-Date but intuitive approach but it got convulated and too long a code. So I resorted to the Date approach.
+  // 
+  var nuDate = new Date();
+  var result = 0;
+   
+  for (var i = startDate + 1; i <= endDate; i++) {
+    for (var j = 0; j <= 11; j++) {
+      nuDate.setFullYear(i, j, 1);
+      if ( nuDate.getDay() === 0 ) {
+        result++;
+      }
+    }
+  }
+  return result;
 };
-console.log(countingSundays());
-console.log(countingSundays());
-console.log(countingSundays());
+console.log(countingSundays(1900, 2000)); // 171
+// console.log(countingSundays(1, 2000)); // 3438
+// console.log(countingSundays(1776, 2017)); // 415
 console.log();
 
 
@@ -860,12 +873,12 @@ console.log(' ===== 20: FACTORIAL DIGIT SUM ===== ');
 // Find the sum of the digits in the number 100!
 var factorialDigitSum = function (num) {
   // I will be calling the factorial function from Prob 15 above.
-  var numStr = String(factorial(num)).replace('e', '').replace('.', '').replace('+', '');
+  var numStr = String(factorial(num).toFixed()).replace('e', '').replace('.', '').replace('+', '');
   var numArr = numStr.split('').map(function(x) { 
     return Number(x); 
   });
-  return numArr;
-  // return numArr.reduce(function(a, b) { return a + b; });
+  // the return value for factorialDigitSum(100) is too large a number to be output here without expressing it as an exponential. 'toFixed()' only pipes the first 20 digits into computing the 'reduce' function. I couldn't find an better a way to collect and pipe all the digits from 100! given the limitations of my computer.
+  return numArr.reduce(function(a, b) { return a + b; });
 };
 console.log(factorialDigitSum(10)); // 27
 console.log(factorialDigitSum(100)); //
