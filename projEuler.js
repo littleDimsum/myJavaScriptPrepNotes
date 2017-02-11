@@ -895,12 +895,41 @@ console.log(' ===== 21: AMICABLE NUMBERS ===== ');
 // For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 
 // Evaluate the sum of all the amicable numbers under 10000.
-var sumAmicableNumbersUnder = function (num) {
-
+var factorsOfNum = function (num) {
+  var factArr = [];
+  for (var i = 1; i < num; i++) {
+    if (num % i === 0) {
+      factArr.push(i);
+    }
+  }
+  return factArr;
 };
-console.log(sumAmicableNumbersUnder());
-console.log(sumAmicableNumbersUnder());
-console.log(sumAmicableNumbersUnder());
+//----------------------------------------------------------------------
+var amicableTwins = function (num1, num2) {
+  if (!isPrime(num1) && !isPrime(num2)) {
+  var uno = factorsOfNum(num1).reduce(function (a, b) { return a + b; });
+  var dos = factorsOfNum(num2).reduce(function (a, b) { return a + b; });
+  return (uno === num2 && dos === num1);
+  } else {
+    return false;
+  }
+};
+//----------------------------------------------------------------------
+var sumAmicableNumbersUnder = function (num) {
+  var amicableNumbers = [];
+  for (var i = 1; i < num - 1; i++) {
+    for (var j = i + 1; j < num; j++) {
+      if (amicableTwins(i, j)) {
+        amicableNumbers.push(i);
+        amicableNumbers.push(j);
+      }
+    }
+  }
+  return amicableNumbers.reduce(function (a, b) { return a + b; });
+};
+console.log(sumAmicableNumbersUnder(290));
+console.log(sumAmicableNumbersUnder(10000)); // [ 220, 284, 1184, 1210, 2620, 2924, 5020, 5564, 6232, 6368 ]
+// console.log(sumAmicableNumbersUnder(999999));
 console.log();
 
 
@@ -913,12 +942,23 @@ console.log(' ===== 22: NAMES SCORES ===== ');
 // For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
 
 // What is the total of all the name scores in the file?
-var totalNameScore = function (list) {
+var totalNameScore = function (names) {
+  var sortedNames = names.sort();
+  var nameScores = [];
+  for (var i = 0; i < sortedNames.length; i ++) {
+    var tempSum = 0;
+    for (j = 0; j < sortedNames[i].length; j++) {
+      // And assuming all letters are uppercased; minus 64.
+      tempSum += sortedNames[i][j].charCodeAt(0) - 64; 
+    }
+    scores.push(tempSum * (i + 1));
+  }
 
+  return nameScores.reduce(function (a, b) { return a + b; });
 };
-console.log(totalNameScore());
-console.log(totalNameScore());
-console.log(totalNameScore());
+// console.log(totalNameScore(names.txt)); // 871198282
+// console.log(totalNameScore()); //
+// console.log(totalNameScore()); //
 console.log();
 
 
@@ -933,13 +973,46 @@ console.log(' ===== 23: NON-ABUNDANT SUMS ===== ');
 // As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
 
 // Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
-var nonAbundantSums = function (numLimit) {
 
+var abundantNum = function (num) {
+  return factorsOfNum(num).reduce(function (a, b) { return a + b; }) > num;
 };
-console.log(nonAbundantSums());
-console.log(nonAbundantSums());
-console.log(nonAbundantSums());
-console.log();
+//----------------------------------------------------------------------
+var uniqVals = function(a) {
+  return Array.from(new Set(a));
+};
+//----------------------------------------------------------------------
+var nonAbundantSums = function (numLimit) {
+  var abundantNumArr = [];
+  var permTwoSumArr = [];
+  var notPermTwoSumArr = [];
+// I am starting my iteration from 2 because the 'reduce' function called in 'abundantNum' requires more than one entry; but 1 only itself as a factor. This doesnt affect the result though, because 1 isn't an abundant number anyway.
+  for (var i = 2; i < numLimit; i++) {
+    if (abundantNum(i)) {
+      abundantNumArr.push(i);
+    }
+  }
+// I will then create an array of the permutation sums of all entries in abundantNumArr
+  for (var x = 0; x < abundantNumArr.length; x++) {
+    for (var y = 0; y < abundantNumArr.length; y++) {
+      permTwoSumArr.push(abundantNumArr[x] + abundantNumArr[y]);
+    }
+  }
+  // I will eliminate duplicates from permTwoSumArr with the uniqVals function below
+  permTwoSumArr = uniqVals(permTwoSumArr);
+// I will then check for all numbers from 1 up to, but not including numLimit that cannot be written as a sum of two abundant numbers and store them in notPermTwoSumArr
+  for (var k = 1; k < numLimit; k++) {
+    if (!permTwoSumArr.includes(k)) {
+      notPermTwoSumArr.push(k);
+    }
+  }
+
+  return notPermTwoSumArr.reduce(function (a, b) { return a + b; });
+};
+console.log(nonAbundantSums(12)); // 66
+console.log(nonAbundantSums(13)); // 78
+console.log(nonAbundantSums(14)); // 91
+console.log(nonAbundantSums(28123)); // 4179871
 
 
 console.log(' ===== 24: LEXICOGRAPHIC PERMUTATIONS ===== ');    
@@ -951,14 +1024,54 @@ console.log(' ===== 24: LEXICOGRAPHIC PERMUTATIONS ===== ');
 // 012   021   102   120   201   210
 
 // What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
-var lexicographicPermutation = function (array, num) {
+var givenArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var lexicographicPermutation = function (arr, indx) {
+// I will convert the digits into an array of striungs
+  var numStr = arr.map(function (a) { return a.toString(); });
+  var strLength = numStr.length;
+  var permutatedArr = [];
+  // I will loop through each combination of digits to create a permutation of the digits.
+  for (var i = 0; i < strLength; i++) {
+    for (var j = 0; j < strLength; j++) {
+      for (var k = 0; k < strLength; k++) {
+        for (var l = 0; l < strLength; l++) {
+          for (var m = 0; m < strLength; m++) {
+            for (var n = 0; n < strLength; n++) {
+              for (var o = 0; o < strLength; o++) {
+                for (var p = 0; p < strLength; p++) {
+                  for (var q = 0; q < strLength; q++) {
+                    for (var r = 0; r < strLength; r++) {
+                    // And then I will manually permutate through all the numbers and pushing them into the permutatedArr array in an 'increasing' order, without the need to sort the array later.
+                      var ii = (i !== j && i !== k && i !== l && i !== m && i !== n && i !== o && i !== p && i !== q && i !== r);
+                      var jj = (j !== k && j !== l && j !== m && j !== n && j !== o && j !== p && j !== q && j !== r);
+                      var kk = (k !== l && k !== m && k !== n && k !== o && k !== p && k !== q && k !== r);
+                      var ll = (l !== m && l !== n && l !== o && l !== p && l !== q && l !== r);
+                      var mm = (m !== n && m !== o && m !== p && m !== q && m !== r);
+                      var nn = (n !== o && n !== p && n !== q && n !== r);
+                      var oo = (o !== p && o !== q && o !== r);
+                      var pp = (p !== q && p !== r);
+                      var qq = (q !== r);
+                      // Here, I ommit any entry that has duplicate digits within the entry, pushing the filtered entries into permutatedArr.
+                      if (ii && jj && kk && ll && mm && nn && oo && pp && qq) {
+                        permutatedArr.push(numStr[i] + numStr[j] + numStr[k] + numStr[l] + numStr[m] + numStr[n] + numStr[o] + numStr[p] + numStr[q] + numStr[r]);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }          
+        }
+      }
+    }
+  }
 
+  return permutatedArr[indx];
 };
-console.log(lexicographicPermutation());
-console.log(lexicographicPermutation());
-console.log(lexicographicPermutation());
+// console.log(lexicographicPermutation(givenArr, 0)); //
+// console.log(lexicographicPermutation(givenArr, 1)); //
+// console.log(lexicographicPermutation(givenArr, 999999)); //
 console.log();
-
 
 console.log(' ===== 25: 1000-DIGIT FIBONACCI NUMBER ===== ');    
 //----------------------------------------------------------------------
@@ -984,12 +1097,16 @@ console.log(' ===== 25: 1000-DIGIT FIBONACCI NUMBER ===== ');
 // The 12th term, F12, is the first term to contain three digits.
 
 // What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
-var firstNthDigitFibonacci = function (num) {
-
+var firstNthDigitFibonacci = function (reqDigits) {
+  var fibArr = [1, 1];
+  while (String(fibArr[fibArr.length - 1]).length < reqDigits) {
+    fibArr.push((fibArr[fibArr.length - 1]) + (fibArr[fibArr.length - 2]));
+  }
+  return fibArr.indexOf(fibArr.pop());
 };
-console.log(firstNthDigitFibonacci());
-console.log(firstNthDigitFibonacci());
-console.log(firstNthDigitFibonacci());
+console.log(firstNthDigitFibonacci(2)); // 6  => 13
+console.log(firstNthDigitFibonacci(3)); // 11 => 144
+console.log(firstNthDigitFibonacci(1000));
 console.log();
 
 
