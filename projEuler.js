@@ -13,7 +13,7 @@ console.log(' ===== 01: MULTIPLES OF 3 AND 5 ===== ');
 // Multiples of 3 and 5                                                       +
 // Problem 1                                                                  +
 // If we list all the natural numbers below 10 that are multiples of 3 or 5,  +
-// we get 3, 5, 6 and 9. The sum of these multiples is 23.                    + //                                                                            +
+// we get 3, 5, 6 and 9. The sum of these multiples is 23.                    +
 //                                                                            +
 // Find the sum of all the multiples of 3 or 5 below 1000.                    +
 //----------------------------------------------------------------------------+
@@ -328,7 +328,9 @@ console.log(' ===== 09: SPECIAL PYTHAGOREAN TRIPLET ===== ');
 // Find the product abc.                                                       +
 //-----------------------------------------------------------------------------+
 var specialPythagoreanTriplet = function (upperRange, targetNum) {
-  // I'll set any of a, b, c, to be less than upperRange that should reasonably contain the range of numbers required to reach the targetNum. In the absence of an upperRange, I'd manually set upperRange within the function.
+  // I'll set any of a, b, c, to be less than upperRange that should reasonably
+  // contain the range of numbers required to reach the targetNum. In the 
+  // absence of an upperRange, I'd manually set upperRange within the function.
   var resultArr = [];
   for (var a = 1; a < upperRange; a++) {
     for (var b = 1; b < upperRange; b++) {
