@@ -26,7 +26,7 @@ var multiplesOf3And5 = function (num) {
   }
   return result;
 };
-console.log(multiplesOf3And5(1000)); // 233168
+// console.log(multiplesOf3And5(1000)); // 233168
 console.log();
 
 
@@ -64,7 +64,7 @@ var sumOfEvenFibonacci = function (num) {
   }
   return result;
 };
-console.log(sumOfEvenFibonacci(4000000)); // 4613732
+// console.log(sumOfEvenFibonacci(4000000)); // 4613732
 console.log();
 
 
@@ -101,7 +101,7 @@ var largestPrimeFactor = function (num) {
     }
   }
 };
-console.log(largestPrimeFactor(600851475143)); // 6857
+// console.log(largestPrimeFactor(600851475143)); // 6857
 console.log();
 
 
@@ -138,7 +138,7 @@ var largestPalindromeProduct = function (biggerDigit, smallerDigit) {
   }
   return Math.max(...result);
 };
-console.log(largestPalindromeProduct(3, 3)); // 906609
+// console.log(largestPalindromeProduct(3, 3)); // 906609
 console.log();
 
 
@@ -172,7 +172,7 @@ var smallestMultiple = function (num) {
 
   return result;
 };
-console.log(smallestMultiple(20)); // 232792560
+// console.log(smallestMultiple(20)); // 232792560
 console.log();
 
 
@@ -205,7 +205,7 @@ var sumSquareDifference = function (num) {
   var squareSum = numArrSq.reduce(function(a, b) { return a + b; });
   return sum ** 2 - squareSum;
 };
-console.log(sumSquareDifference(100)); // 25164150
+// console.log(sumSquareDifference(100)); // 25164150
 console.log();
 
 
@@ -232,7 +232,7 @@ var nthPrime = function (num) {
 
   return starter - 1;
 };
-console.log(nthPrime(10001)); // 104743
+// console.log(nthPrime(10001)); // 104743
 console.log();
 
 
@@ -285,7 +285,7 @@ var largestProdiNASeries = function (string, num) {
 
   return result;
 };
-console.log(largestProdiNASeries(crazyNum, 13)); // 23514624000
+// console.log(largestProdiNASeries(crazyNum, 13)); // 23514624000
 console.log();
 
 
@@ -321,7 +321,7 @@ var specialPythagoreanTriplet = function (upperRange, targetNum) {
   }
   // return 'Sorry, triplet does not exist'; // in case targetNum is not reached
 };
-console.log(specialPythagoreanTriplet(500, 1000)); // 31875000
+// console.log(specialPythagoreanTriplet(500, 1000)); // 31875000
 console.log();
 
 
@@ -344,7 +344,7 @@ var summationOfPrimes = function (num) {
   }
   return result;
 };
-console.log(summationOfPrimes(2000000)); // 142913828922
+// console.log(summationOfPrimes(2000000)); // 142913828922
 console.log();
 
 
@@ -435,7 +435,7 @@ var largestProdiNAGrid = function (arr) {
 
   return result;
 };
-console.log(largestProdiNAGrid(bigArr)); // 70600674
+// console.log(largestProdiNAGrid(bigArr)); // 70600674
 console.log();
 
 
@@ -494,7 +494,7 @@ var highlyDivTriangularNum = function (numReq) {
     i += 1;
   }
 };
-console.log(highlyDivTriangularNum(501)); // 76576500
+// console.log(highlyDivTriangularNum(501)); // 76576500
 console.log();
 
 
@@ -608,7 +608,7 @@ var largeSum = function (numArr, num) {
   return Number(sumM.toString().slice(0, num));
   // this outputs 9 digits (but 10 characters) because this number is huge and espressed as an exponential.
 };
-console.log(largeSum(lottANums, 10)); // 5.53737623 * 10 ^ 51
+// console.log(largeSum(lottANums, 10)); // 5.53737623 * 10 ^ 51
 console.log();
 
 
@@ -663,7 +663,7 @@ var longestCollatzSequence = function (startNum) {
   }
   return numLongestChain;
 };
-console.log(longestCollatzSequence(1000000)); // 837799
+// console.log(longestCollatzSequence(1000000)); // 837799
 console.log();
 
 
@@ -694,7 +694,7 @@ var latticePaths = function (i, j) {
   // For the 2 x 2 grid, we needed 2 steps right (2R) + 2 steps down (2D) complete any route. Hence in an n x m grid, a total of nR + mD steps would be required to complete any route. Using combinations (ignoring order), there would be nCr ways to complete the route. I will create combination and factorial helper functions to help with this solution. 
   return combination((i + j), j);
 };
-console.log(latticePaths(20, 20)); // 137846528820
+// console.log(latticePaths(20, 20)); // 137846528820
 console.log();
 
 
@@ -738,32 +738,37 @@ var numHashTens = {10: 'ten', 20: 'twenty', 30: 'thirty', 40: 'fourty', 50: 'fif
 var numHashHundreds = {100: 'one hundred', 200: 'two hundred', 300: 'three hundred', 400: 'four hundred', 500: 'five hundred', 600: 'six hundred', 700: 'seven hundred', 800: 'eight hundred', 900: 'nine hundred'};
 var numberLetterCounts = function (num) {
 
-  var result = '';
+  var result = [];
 
   for (var i = 1; i <= num; i++) {
+    if (i === 1000) {
+      result.push('one thousand');
+    } 
+
     if (i <= 10) {
-      result += numHashOnes[i];
+      result.push(numHashOnes[i]);
     } else if (i < 20) {
-      result += numHashTeens[i];
+      result.push(numHashTeens[i]);
     } else if (i < 100) {
       if (i % 10 === 0) {
-        result += numHashTens[i];
+        result.push(numHashTens[i]);
       } else {
         var strNum = String(i);
-        result += numHashTens[Number(strNum[0] + '0')] + ' ' + numHashOnes[Number(strNum[1])];
+        result.push(numHashTens[Number(strNum[0] + '0')] + ' ' + numHashOnes[Number(strNum[1])]);
       }
     } else if (i < 1000 && i % 100 === 0) {
       var strNum = String(i);
-      result += numHashHundreds[Number(strNum[0] + '00')];
+      result.push(numHashHundreds[Number(strNum[0] + '00')]);
     } else if (i < 1000) {
       var strNum = String(i);
-      result += numHashHundreds[Number(strNum[0] + '00')] + ' and ' + numberLetterCounts(Number(strNum[1] + strNum[2]));
+      result.push(numHashHundreds[Number(strNum[0] + '00')] + ' and ' + numberLetterCounts(Number(strNum[1] + strNum[2])));
     }
   }
-
-  return result.replace(/\s/g, '').length;
+  
+  // return result.replace(/\s/g, '').length;
+  return result;
 };
-console.log(numberLetterCounts(1000)); // 15930 instead of an expected value of 21124 from Project Euler.
+// console.log(numberLetterCounts(1000)); // 15930 instead of an expected value of 21124 from Project Euler.
 console.log();
 
 
@@ -821,7 +826,7 @@ var maxPathSumI = function (arr) {
 
   return result;
 };
-console.log(maxPathSumI(pyramidArr)); // 1064 but I am expecting 1074 according to Project Euler. I foloowed the pyramid by hand to check for the answer and it did match my answer of 1064. I do not know what I may have done wrong and so I am sticking with my answer.
+// console.log(maxPathSumI(pyramidArr)); // 1064 but I am expecting 1074 according to Project Euler. I foloowed the pyramid by hand to check for the answer and it did match my answer of 1064. I do not know what I may have done wrong and so I am sticking with my answer.
 console.log();
 
 
@@ -860,7 +865,7 @@ var countingSundays = function (startDate, endDate) {
   }
   return result;
 };
-console.log(countingSundays(1900, 2000)); // 171
+// console.log(countingSundays(1900, 2000)); // 171
 console.log();
 
 
@@ -901,7 +906,7 @@ var factorialDigitSum = function (num) {
   }
   return result;
 };
-console.log(factorialDigitSum(100)); // 650 instead of an expected solution of 648 according to Project Euler.
+// console.log(factorialDigitSum(100)); // 650 instead of an expected solution of 648 according to Project Euler.
 console.log();
 
 console.log(' ===== 21: AMICABLE NUMBERS ===== ');    
@@ -952,7 +957,7 @@ var sumAmicableNumbersUnder = function (num) {
 
   return result;
 };
-console.log(sumAmicableNumbersUnder(10000)); // 31626. This took 2178.453 seconds to run.
+// console.log(sumAmicableNumbersUnder(10000)); // 31626. This took 2178.453 seconds to run.
 console.log();
 
 
@@ -987,7 +992,7 @@ var totalNameScore = function (names) {
   return totNameScore;
 
 };
-console.log(totalNameScore(names)); // 871198282
+// console.log(totalNameScore(names)); // 871198282
 console.log();
 
 
@@ -1049,7 +1054,7 @@ var nonAbundantSums = function (numLimit) {
 
   return notPermTwoSumArr.reduce(function (a, b) { return a + b; });
 };
-console.log(nonAbundantSums(28123)); // 4179871
+// console.log(nonAbundantSums(28123)); // 4179871
 console.log();
 
 
@@ -1111,7 +1116,7 @@ var lexicographicPermutation = function (arr, indx) {
 
   return permutatedArr[indx];
 };
-console.log(lexicographicPermutation(givenArr, 999999)); // 2783915460
+// console.log(lexicographicPermutation(givenArr, 999999)); // 2783915460
 console.log();
 
 console.log(' ===== 25: 1000-DIGIT FIBONACCI NUMBER ===== ');    
@@ -1154,7 +1159,7 @@ var firstNthDigitFibonacci = function (reqDigits) {
 
   return indexOfLastFib;
 };
-console.log(firstNthDigitFibonacci(1000)); // 4782 
+// console.log(firstNthDigitFibonacci(1000)); // 4782 
 console.log();
 
 
@@ -1203,7 +1208,7 @@ var reciprocalCycles = function (limit) {
   }
   return result;
 }; 
-console.log(reciprocalCycles(1000)); // 983 
+// console.log(reciprocalCycles(1000)); // 983 
 console.log();
 
 
@@ -1256,7 +1261,7 @@ var quadraticPrimes = function (num) {
 
   return aMax * bMax;
 };
-console.log(quadraticPrimes(1000)); // -59231
+// console.log(quadraticPrimes(1000)); // -59231
 console.log();
 
 
@@ -1301,7 +1306,7 @@ var spiralDiagonals = function (num) {
 
   return result;
 };
-console.log(spiralDiagonals(1001)); // 669171001
+// console.log(spiralDiagonals(1001)); // 669171001
 console.log();
 
 
@@ -1336,7 +1341,7 @@ var distinctPowers = function (aRange, bRange) {
 
   return resultArr.length;
 };
-console.log(distinctPowers(100, 100)); // 9183
+// console.log(distinctPowers(100, 100)); // 9183
 console.log();
 
 
@@ -1373,7 +1378,7 @@ var digitFifthPowers = function (cutOffRange) {
   }
   return result;
 };
-console.log(digitFifthPowers(999999)); // 443839
+// console.log(digitFifthPowers(999999)); // 443839
 console.log();
 
 
