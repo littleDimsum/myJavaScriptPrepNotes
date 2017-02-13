@@ -50,7 +50,175 @@ console.log(Math.random());
 console.log(Math.round(2.7));
 console.log(Math.round(2.4));
 console.log();
+
+var s = '12.34';
+console.log(+s);  // 12.34
+console.log(-'12.34' / '2');  // -6.17
+console.log(+'  12');  // 12
+console.log( +' \n34  \n'); // 34, 
+console.log( +'12test');  // NaN
+console.log(0.1 + 0.2 === 0.3); // false
+console.log((0.1 * 10 + 0.2 * 10) / 10 === 0.3); // true
+console.log((0.1 + 0.2).toFixed(10) === 0.3); // true / false
 console.log();
+console.log();
+console.log();
+var myObj = new Object ();
+myObj.name = 'john';
+myObj.age = 22;
+myObj.height = 5.6;
+console.log(myObj);
+console.log();
+//
+for (var key in myObj) {
+  console.log(key);
+}
+console.log();
+//
+for (var key in myObj) {
+  console.log(myObj[key]);
+}
+console.log();
+
+
+console.log();
+var yrObj = {};
+yrObj['name'] = 'mary';
+yrObj['age'] = 19;
+yrObj['height'] = 5.3;
+console.log(yrObj);
+console.log();
+//------------------------------------------------------------------------------
+
+// Create a function multiplyNumeric which gets an object and multiplies all numeric properties by 2. It should work like this:
+// before call
+console.log();
+var menu = {
+  width: 200, 
+  height: 300,
+  title: 'My menu'
+};
+// multiplyNumeric(menu)
+// after call
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: 'My menu'
+// };
+// P.S. The function to check for numericality:
+// Solution
+// The solution below uses !isNaN(x) to check for a number.  
+var isNumeric = function (n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
+//----------------------------------------------------------
+var multiplyNumeric = function (obj) {
+  for (var key in obj) {
+    var val = obj[key];
+    if (isNumeric(val)) {
+      obj[key] = val * 2;
+    }
+  }
+  return obj;
+};
+console.log(multiplyNumeric(menu));
+console.log('The menu width = ' + menu.width + ', height = ' + menu.height + ', and title = ' + menu.title);
+console.log();
+//------------------------------------------------------------------------------
+
+console.log(isNaN(12)); // false, because it is a number
+console.log(isNaN('12')); // false
+console.log(isNaN('sam')); // true, because it is not a number
+console.log(isNaN('sam12')); // true
+console.log(); 
+console.log(isFinite(5)); // true
+console.log(isFinite(-5)); // true
+console.log(isFinite(Infinity)); // false
+console.log(isFinite(-Infinity)); // false
+console.log(isFinite('123.456')); // true
+console.log(isFinite('sam'));  // false
+console.log(); 
+console.log(parseFloat('123.456')); // 123.456
+console.log(parseFloat(567.890)); // 567.89
+console.log(parseFloat('abc123')); // NaN
+console.log(parseFloat('1.23cde'));  // 1.23
+console.log(parseFloat('1.23c456de'));  // 1.23
+console.log(); 
+console.log(parseInt('123.456')); // 123
+console.log(parseInt(567.890)); // 567
+console.log(parseInt('abc123')); // NaN
+console.log(parseInt('1.29cde'));  // 1
+console.log(parseInt('12.9c456de'));  // 12
+console.log(); 
+//------------------------------------------------------------------------------
+
+var Animal = function (name, age) {
+  this.name = name;
+  this.age = age;
+  this.sound = 'woof! woooof!!';
+  this.canDance = false;
+};
+//
+var tom = new Animal ('Arrow', 18);
+console.log(tom.name); // Arrow
+console.log(tom.age); // 18
+console.log(tom.sound); // woof! woooof!!
+console.log(tom.canDance); // true
+//
+console.log(tom); // 
+console.log();
+//
+var jerry = new Animal ('Loki', 10);
+jerry.sound = 'meowww';
+jerry.canJump = true;
+console.log(jerry.name); // Loki
+console.log(jerry.age); // 10
+console.log(jerry.sound); // meowww
+console.log(jerry.canDance); // true
+//
+console.log(jerry); // 
+console.log();  
+//------------------------------------------------------------------------------
+var valueKey = function (hash, value) {
+  for (var key in hash) {
+    if (hash[key] === value) {
+      return key;
+    }
+  }
+};
+//
+var valueKeyKey = function (hash, intKey, value) {
+  for (var key in hash) {
+    if (hash[key][intKey] === value) {
+      return key;
+    }
+  }
+};
+//----------------------------------------------------------
+var boys = {
+  'simon Peter': 18,
+  'andrew': 20,
+  'james': 30,
+  'john': 50
+};
+console.log(valueKey(boys, 18)); // simon Peter
+console.log(valueKey(boys, 20)); // andrew
+console.log(valueKey(boys, 30)); // james
+console.log(valueKey(boys, 40)); // undefined
+console.log();
+
+var girls = {
+  'mary': { 'age': 19, 'hair': 'brown', 'height': 5.5 },
+  'sarah': { 'age': 21, 'hair': 'black', 'height': 5.6},
+  'anna': { 'age': 23, 'hair': 'blonde', 'height': 5.7}
+};
+console.log(valueKeyKey(girls, 'age', 19)); // mary
+console.log(valueKeyKey(girls, 'hair', 'black')); // sarah
+console.log(valueKeyKey(girls, 'height', 5.7)); // anna
+console.log(valueKeyKey(girls, 'eyes', 'hazel')); // undefined
+console.log();
+console.log();
+
 
 console.log(" ========== EXTRA STRING NOTES ========== ");
 console.log();
@@ -257,8 +425,8 @@ console.log();
 var num = [1, 2, 3, 4, 5, 9, 7, 10, 8, 0];
 console.log(num.sort(function(a, b) { return b - a; }));
 console.log((2345).toString());
-var ploMan = (3 * 2);
-var ploTan = (7 * 2);
+var ploMan =  'peterpiper'//(3 * 2);
+var ploTan = 'johnBull'//(7 * 2);
 console.log(`[${ploMan}, ${ploTan}]`);
 console.log(`the man is here for the ${ploMan}, and the ${ploTan}`);
 console.log();
@@ -448,11 +616,12 @@ var customerData = {
 
 var greetCustomer = function (firstName) {
   var greeting = '';
-  if (customerData[firstName] === undefined) {
+  var name = customerData[firstName];
+  if (name === undefined) {
     greeting = 'Welcome! Is this your first time?';
-  } else if (customerData[firstName].visits === 1) {
+  } else if (name.visits === 1) {
     greeting = "Welcome back, " + firstName + "! We're glad you liked us the first time!";
-  } else if (customerData[firstName].visits >= 2) {
+  } else if (name.visits >= 2) {
     greeting = "Welcome back, " + firstName + "! So glad to see you again!";
   }
   return greeting;

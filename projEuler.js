@@ -1,4 +1,3 @@
-
 //----------------------------------------------------------------------
 console.log();
 console.log(' ===== FIRST 30 PROJECT EULER QUESTIONS ===== '); 
@@ -19,6 +18,7 @@ console.log(' ===== 01: MULTIPLES OF 3 AND 5 ===== ');
 //----------------------------------------------------------------------------+
 var multiplesOf3And5 = function (num) {
   var result = 0;
+  // I will iterate from i = 0 to i 999 and add all i's that are either multiples multiples of 3 and/or 5 to result.
   for (var i = 0; i < num; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
       result += i;
@@ -26,8 +26,6 @@ var multiplesOf3And5 = function (num) {
   }
   return result;
 };
-console.log(multiplesOf3And5(10)); // 23
-console.log(multiplesOf3And5(100)); // 2318
 console.log(multiplesOf3And5(1000)); // 233168
 console.log();
 
@@ -56,7 +54,8 @@ var isInFibonacci = function (num) {
   return fibArr.includes(num);
 };
 //----------------------------------------------------------------------
-var evenFibonacciSum = function (num) {
+var sumOfEvenFibonacci = function (num) {
+  // I will create the helper functions isEven and isInFibonacci to test all i's from 1 up to but not including num, and then adding those that are even and Fibonacci numbers to result.
   var result = 0;
   for (var i = 1; i < num; i++) {
     if (isEven(i) && isInFibonacci(i)) {
@@ -65,9 +64,7 @@ var evenFibonacciSum = function (num) {
   }
   return result;
 };
-console.log(evenFibonacciSum(45)); // 44
-console.log(evenFibonacciSum(13)); // 10
-console.log(evenFibonacciSum(4000000)); // 4613732
+console.log(sumOfEvenFibonacci(4000000)); // 4613732
 console.log();
 
 
@@ -83,7 +80,6 @@ var isPrime = function (num) {
   if (num === 2) {
     return true;
   }
-
   for (var i = 2; i < num; i++) {
     if (num % i === 0) {
       return false;
@@ -97,17 +93,15 @@ var isFactor = function (numParent, numChild ) {
 };
 //----------------------------------------------------------------------
 var largestPrimeFactor = function (num) {
-  for (var i = num; i >= 2; i--) {
-    if (isFactor(num, i) && isPrime(i)) {
-      return i;
+  // Because num can only be an integral multiple of its factors, I will be iterating from i = 1 (equal to num) through i = (num + 1) / 2 because num is odd. This is roughly half of num. I will then check if k = num / i is an integer. If it is then it must be a factor of num.(I had written the isFactor function to check for this but i now realize it would be redundant to invoke it). I will then check if k is prime and then return it. This should return the largest factro that is also a prime.
+  for (var i = 1; i < (num + 1) / 2; i++) {
+    var k = num / i;
+    if (num % i === 0 && isPrime(k)) {
+      return k;
     }
   }
 };
-console.log(largestPrimeFactor(21)); // 7
-console.log(largestPrimeFactor(58)); // 29
-console.log(largestPrimeFactor(100000)); // 5
-// console.log(largestPrimeFactor(60085147514)); // 10976461
-// console.log(largestPrimeFactor(600851475143));
+console.log(largestPrimeFactor(600851475143)); // 6857
 console.log();
 
 
@@ -133,6 +127,7 @@ var isPalindrome = function (str) {
 };
 //----------------------------------------------------------------------
 var largestPalindromeProduct = function (biggerDigit, smallerDigit) {
+  // I will be using the isPalindrome helper function above to solve this problem. So the smallest n-digit number is '1' + 'n-1 zeros' and the largest is '9' times n. Thus the range of 3 by 3 didgit numbers would be from 999 - 100. I will iterate for a general 'biggerDigit' by 'smallerDigit' below. I will then form a combination from the range, checking each product to see if it is a palindrome. I will push each palindrome into the result array until I have iterated through the entire range, and then return the max number from the result array.
   var result = [];
   for (var i = Number('9'.repeat(biggerDigit)); i >= Number('1' + '0'.repeat(biggerDigit - 1)); i--) {
     for (var j = Number('9'.repeat(smallerDigit)); j >= Number('1' + '0'.repeat(smallerDigit - 1)); j--) {
@@ -143,9 +138,6 @@ var largestPalindromeProduct = function (biggerDigit, smallerDigit) {
   }
   return Math.max(...result);
 };
-console.log(largestPalindromeProduct(1, 1)); // 9
-console.log(largestPalindromeProduct(2, 1)); // 828
-console.log(largestPalindromeProduct(2, 2)); // 9009
 console.log(largestPalindromeProduct(3, 3)); // 906609
 console.log();
 
@@ -161,29 +153,25 @@ console.log(' ===== 05: SMALLEST MULTIPLE ===== ');
 // the numbers from 1 to 20?                                                   +
 //-----------------------------------------------------------------------------+
 var smallestMultiple = function (num) {
-  var result = num;
-  var numsToRun = num; 
-  while (numsToRun > 0) {
+  // So the smallest positive multiple of all numbers from 1 to n has to be a multiple of n. Hence in this problem I will be iterating from n in increaments of n until I hit the first multple of n that is also a multiple of all the number 1....n.
+  var result = num; // I will increase result by n after each iteration.
+  var timesToRun = num; // the loop willend when timesToRun = 0;
+  while (timesToRun > 0) {
     for (var j = 2; j <= num; j ++) {
-      if (result % j === 0 && numsToRun === 0) {
-        return result;
+      // I am skipping the number 1 above for obvious reasons.
+      if (result % j === 0 && timesToRun === 0) {
+        return result; // loop ends if timesToRun = 0.
       } else if (result % j === 0) {
-        numsToRun -= 1; 
+        timesToRun -= 1; 
       } else {
-        numsToRun = num; 
+        timesToRun = num; 
         result += num; 
       }
-
     }
-
   }
 
   return result;
 };
-console.log(smallestMultiple(3)); // 6
-console.log(smallestMultiple(5)); // 60
-console.log(smallestMultiple(6)); // 60
-console.log(smallestMultiple(10)); // 2520
 console.log(smallestMultiple(20)); // 232792560
 console.log();
 
@@ -203,20 +191,20 @@ console.log(' ===== 06: SUM SQUARE DIFFERENCE ===== ');
 // hundred natural numbers and the square of the sum.                          +
 //-----------------------------------------------------------------------------+
 var sumSquareDifference = function (num) {
+  // I will create an array to hold the first num natural numbers.
   var numArr = [];
   for (var i = 1; i <= num; i++) {
     numArr.push(i);
   }
+  // I will then map numArr to its sqaures as numArrSq.
   var numArrSq = numArr.map(function (x) {
     return x ** 2;
   })
+  // then I will square the sum of all the elements of numArr, and the subtract the sum of all the lements of numArrSq from it.
   var sum = numArr.reduce(function(a, b) { return a + b; });
   var squareSum = numArrSq.reduce(function(a, b) { return a + b; });
   return sum ** 2 - squareSum;
 };
-console.log(sumSquareDifference(2)); // 4
-console.log(sumSquareDifference(5)); // 170
-console.log(sumSquareDifference(10)); // 2640
 console.log(sumSquareDifference(100)); // 25164150
 console.log();
 
@@ -230,30 +218,20 @@ console.log(' ===== 07: 10001ST PRIME ===== ');
 //                                                                             +
 // What is the 10 001st prime number?                                          +
 //-----------------------------------------------------------------------------+
-var isPrime = function (num) {
-  for (var i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
-//----------------------------------------------------------------------
 var nthPrime = function (num) {
-  var result = [];
+  // I will be reusing the isPrime function from problem 3 in here. 
+  // I will start with the first prime number as 'starter' and set my counter to zero, and run starter through the isPrime function to trigger the while loop until my counter = num (10 001st in this problem).
   var starter = 2;
-  while (result.length < num) {
+  var counter = 0
+  while (counter < num) {
     if (isPrime(starter)) {
-      result.push(starter)
+      counter += 1
     }
     starter += 1 
   }
 
-  return result.pop();
+  return starter - 1;
 };
-console.log(nthPrime(3)); // 5
-console.log(nthPrime(6)); // 13
-console.log(nthPrime(10)); // 29
 console.log(nthPrime(10001)); // 104743
 console.log();
 
@@ -291,25 +269,22 @@ console.log(' ===== 08: LARGEST PRODUCT IN SERIES ===== ');
 //-----------------------------------------------------------------------------+
 var crazyNum = '7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450'
 var largestProdiNASeries = function (string, num) {
+  // I copied the given numbers as a string names 'crazynum' above. I will convert that into an array and then map them to their numerical equivalents, as strArr.
   var result = undefined;
-  var resultArr = [];
   var stringArr = string.split('');
   var strArr = stringArr.map(function (lett) { return Number(lett); })
-
+// I will then loop through the strArr, slicing through the required number of adjacent numbers, and then reducing those values. I will then compare each reduce value to 'result' and keep the greater of the two. At the end of iteration, result should be the greatest value.
   for (var i = 0; i < strArr.length; i++) {
     currArr = strArr.slice(i, i + num);
     var tester = currArr.reduce(function(a, b) { return a * b; })
 
     if (tester > result || result === undefined) {
       result = tester;
-      resultArr = currArr;
     } 
   }
 
   return result;
 };
-console.log(largestProdiNASeries(crazyNum, 2)); // 81
-console.log(largestProdiNASeries(crazyNum, 4)); // 9 × 9 × 8 × 9 = 5832.
 console.log(largestProdiNASeries(crazyNum, 13)); // 23514624000
 console.log();
 
@@ -330,7 +305,7 @@ console.log(' ===== 09: SPECIAL PYTHAGOREAN TRIPLET ===== ');
 var specialPythagoreanTriplet = function (upperRange, targetNum) {
   // I'll set any of a, b, c, to be less than upperRange that should reasonably
   // contain the range of numbers required to reach the targetNum. In the 
-  // absence of an upperRange, I'd manually set upperRange within the function.
+  // absence of an upperRange, I will make an educated guess of the upperRange that should reasonably solve the problem. What I do know for sure is that that value is less than targetNum, and possbily much smaller than it. A generous value for upperRange would be half of targetNum, although a better value can be chosen if more thought is put into finding the perfect threshold number. I will be using targetNum / 2 = 1000 / 2 = 500 in my calculation below.
   var resultArr = [];
   for (var a = 1; a < upperRange; a++) {
     for (var b = 1; b < upperRange; b++) {
@@ -346,9 +321,7 @@ var specialPythagoreanTriplet = function (upperRange, targetNum) {
   }
   // return 'Sorry, triplet does not exist'; // in case targetNum is not reached
 };
-console.log(specialPythagoreanTriplet(450, 1000)); // 31875000: [200, 375, 425]
-console.log(specialPythagoreanTriplet(10, 12)); // 60 : [3, 4, 5]
-// console.log(specialPythagoreanTriplet());
+console.log(specialPythagoreanTriplet(500, 1000)); // 31875000
 console.log();
 
 
@@ -361,19 +334,17 @@ console.log(' ===== 10: SUMMATION OF PRIMES ===== ');
 // Find the sum of all the primes below two million.                           +
 //-----------------------------------------------------------------------------+
 var summationOfPrimes = function (num) {
-  // I'll invoke isPrime defined earlir in problem 7.
-  // To speed the compuation I'm also starting my primeNums array with 2 inside it, piping 3 into the isPrime function and then every two steps after that since 2 is the only even prime.
-  var primeNums = [2];
-  for (var i = 3; i < num; i++) {
+  // I'll invoke the isPrime function defined earlier in problem 3.
+  // I'll also be starting my result array with the value of 2, adding every subsequent prime number to result. And because 2 is the only even prime number I will be iterating only over odd numbers.
+  var result = 2
+  for (var i = 3; i < num; i += 2) {
     if (isPrime(i)) {
-      primeNums.push(i);
+      result += i;
     }
   }
-  return primeNums.reduce(function(a, b) { return a + b; })
+  return result;
 };
-console.log(summationOfPrimes(10)); // 17
-console.log(summationOfPrimes(20)); // 77
-// console.log(summationOfPrimes(2000000)); // 142913828922
+console.log(summationOfPrimes(2000000)); // 142913828922
 console.log();
 
 
@@ -421,11 +392,11 @@ while (bigArr.length <= 20) {
   bigArr.push(smallArr);
 }
 //----------------------------------------------------------------------
-// first, I want to create a 20 * 20 matrix from the grid and name it bigArr, already created above.
+var largestProdiNAGrid = function (arr) {
+// first, I want to create a 20 * 20 matrix from the grid and name it bigArr, created above to help in solving this.
 // And then assuming all the numbers are positive I will set a var 'result' to equal zero. 
 // Because products are commutative, I will only be iterating from left to right, top to bottom, NW to SE, and NE to SW from index zero to index 17 which should cover index zero to 19, thus touching all indices available.
 // Then at each point or number in the grid (represented by i,j) I will slice 4 places, reduce the product of the 4 numbers and set it to 'result' if it is greater than 'result' until I have touched every point of the grid. I will then return 'result' as the greatest product.
-var largestProdiNAGrid = function (arr) {
   var result = -Infinity;
 
   for (var i = 0; i < arr.length; i++) {
@@ -465,8 +436,6 @@ var largestProdiNAGrid = function (arr) {
   return result;
 };
 console.log(largestProdiNAGrid(bigArr)); // 70600674
-// console.log(largestProdiNAGrid());
-// console.log(largestProdiNAGrid());
 console.log();
 
 
@@ -495,41 +464,42 @@ console.log(' ===== 12: HIGHLY DIVISBLE TRIANGULAR NUMBER ===== ');
 //-----------------------------------------------------------------------------+
 var factorsOf = function (num) {
   var factArr = [];
-  for (var i = 1; i <= num; i++) {
+  for (var i = 1; i <= Math.ceil(num / 2); i++) {
     if (num % i === 0) {
       factArr.push(i);
     }
   }
   return factArr;
-}
+};
 //----------------------------------------------------------------------
-var nthTriangleNum = function (num) {
-  var result = 0;
-  for (var j = 1; j <= num; j++) {
-    result += j;
+var nthTriangularNum = function (num) {
+  var nextTriangNum = 0;
+  var k = 0;
+  while (k <= num) {
+    nextTriangNum += k;
+    k++;
   }
-  return result;
-}
+  return nextTriangNum;
+};
 //----------------------------------------------------------------------
 var highlyDivTriangularNum = function (numReq) {
-  var triangleNum = 1;
+  // I will create two helper functions factorsOf and nthTriangularNum to help with this problem. Making an educated but excessively generous guess, I'd say that no number below 500 can have over 500 factors. The closest Triangular number to this value is 496; the 31st Triangular number. So I will be starting my iteration from 31. I will find the ith Triangular number, check its number of factors to see if is greater than numReq, and return the value of the ith Triangular number.
+  var i = 31;
   while (true) {
-    var checkLength = factorsOf((nthTriangleNum(triangleNum)));
-    if (checkLength.length === numReq) {
-      return triangleNum;
+    var nthTriang = nthTriangularNum(i)
+    var checkLength = factorsOf(nthTriang).length;
+    if (checkLength > numReq) {
+      return nthTriang;
     }
-    triangleNum += 1;
+    i += 1;
   }
 };
-console.log(highlyDivTriangularNum(2)); // 2
-// console.log(highlyDivTriangularNum(3)); // 4
-// console.log(highlyDivTriangularNum(5)); // 28
-// console.log(highlyDivTriangularNum(501)); // 
+console.log(highlyDivTriangularNum(501)); // 76576500
 console.log();
 
 
 console.log(' ===== 13: LARGE SUM ===== ');    
-//-----------------------------------------------------------------------------+
+// //-----------------------------------------------------------------------------+
 // Large sum                                                                   +
 // Problem 13                                                                  +
 // Work out the first ten digits of the sum of the following                   +
@@ -638,9 +608,7 @@ var largeSum = function (numArr, num) {
   return Number(sumM.toString().slice(0, num));
   // this outputs 9 digits (but 10 characters) because this number is huge and espressed as an exponential.
 };
-console.log(largeSum(lottANums, 10)); // 5.537376230 * 10 ^ 51
-// console.log(largeSum());
-// console.log(largeSum());
+console.log(largeSum(lottANums, 10)); // 5.53737623 * 10 ^ 51
 console.log();
 
 
@@ -666,6 +634,7 @@ console.log(' ===== 14: LONGEST COLLATZ SEQUENCE  ===== ');
 // NOTE: Once the chain starts the terms are allowed to go above one million.  +
 //-----------------------------------------------------------------------------+
 var collatzSequence = function (num) {
+  // I will push each number in the sequence to the result array, and then return that when the function is called.
   var result = [];
   var newNum = num
   while (newNum !== 1) {
@@ -682,6 +651,7 @@ var collatzSequence = function (num) {
 }
 //----------------------------------------------------------------------
 var longestCollatzSequence = function (startNum) {
+  // I will create a helper function named collatzSequence to help with this solution. I will then iterate from 1 up to but not including startNum, which is 1000000 in this problem.
   var longestChain = 0;
   var numLongestChain = null;
   for (var i = 1; i < startNum; i++) {
@@ -693,10 +663,7 @@ var longestCollatzSequence = function (startNum) {
   }
   return numLongestChain;
 };
-console.log(longestCollatzSequence(5)); // 3
-console.log(longestCollatzSequence(10)); // 9
-console.log(longestCollatzSequence(1000000)); // 9
-837799
+console.log(longestCollatzSequence(1000000)); // 837799
 console.log();
 
 
@@ -712,23 +679,22 @@ console.log(' ===== 15: LATTICE PATHS ===== ');
 // How many such routes are there through a 20×20 grid?                        +
 //-----------------------------------------------------------------------------+
 var factorial = function (num) {
-  var numArr = [];
+  var result = 1;
   for (var i = 1; i <= num; i++) {
-    numArr.push(i);
+    result *= i;
   } 
-  return numArr.reduce(function(a, b) { return a * b; });
+  return result;
 };
 //----------------------------------------------------------------------
 var combination = function (num1, num2) {
   return (factorial(num1) / (factorial(num2) * (factorial(num1 - num2))));
 };
 //----------------------------------------------------------------------
-var latticePath = function (i, j) {
+var latticePaths = function (i, j) {
+  // For the 2 x 2 grid, we needed 2 steps right (2R) + 2 steps down (2D) complete any route. Hence in an n x m grid, a total of nR + mD steps would be required to complete any route. Using combinations (ignoring order), there would be nCr ways to complete the route. I will create combination and factorial helper functions to help with this solution. 
   return combination((i + j), j);
 };
-console.log(latticePath(1, 1)); // 2
-console.log(latticePath(2, 2)); // 6
-console.log(latticePath(20, 20)); // 137846528820
+console.log(latticePaths(20, 20)); // 137846528820
 console.log();
 
 
@@ -740,15 +706,13 @@ console.log(' ===== 16: POWER DIGIT SUM ===== ');
 //                                                                             +
 // What is the sum of the digits of the number 2 ** 1000?                      +
 //-----------------------------------------------------------------------------+
-var powerDigitSum = function (num, pow) {
-  var numArray = (num ** pow).toString().split('').map(function (a) {
+var powerDigitSum = function (num, power) {
+  var numArray = (Math.pow(num, power)).toString().split('').map(function (a) {
     return Number(a);
   });
   return numArray.reduce(function (a, b) { return a + b; });
 };
-console.log(powerDigitSum(2, 4)); // 7
-console.log(powerDigitSum(2, 15)); // 26
-// console.log(powerDigitSum(2, 1000)); // I think the number is too big
+// console.log(powerDigitSum(2, 1000)); // my numArr is expressed as an exponential, and I am not sure how to obtain all the digits from the number. i tried splitting and selecting only numerical digits but my computer outputs a limited number of digits.
 console.log();
 
 
@@ -768,47 +732,38 @@ console.log(' ===== 17: NUMBER LETTER COUNTS ===== ');
 // 20 letters. The use of "and" when writing out numbers is in compliance      +
 // with British usage.                                                         +
 //-----------------------------------------------------------------------------+
-var numHashOnes = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'};
-var numHashTeens = {10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fiveteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen'};
+var numHashOnes = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten'};
+var numHashTeens = {11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen', 20: 'twenty'};
 var numHashTens = {10: 'ten', 20: 'twenty', 30: 'thirty', 40: 'fourty', 50: 'fifty', 60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'};
 var numHashHundreds = {100: 'one hundred', 200: 'two hundred', 300: 'three hundred', 400: 'four hundred', 500: 'five hundred', 600: 'six hundred', 700: 'seven hundred', 800: 'eight hundred', 900: 'nine hundred'};
 var numberLetterCounts = function (num) {
-  var result = '';
-  var numStr = String(num);
-  var strLength = numStr.length;
 
-  if (strLength > 3) {
-    result = 'one thousand'
-  }
-  
-  if (num < 10) {
-    result = numHashOnes[num];
-  } else if (num < 20) {
-    result = numHashTeens[num];
-  } else if (strLength === 2) {
-    if (Number(numStr[1]) === 0) {
-      result = numHashTens[num];
-    } else {
-      result = (numHashTens[Number(numStr[0] + '0')]).concat(' ', numHashOnes[Number(numStr[1])]);
-    }  
-  } else if (strLength === 3) {
-    if (Number(numStr[1]) === 0 && Number(numStr[2]) === 0) {
-      result = numHashHundreds[num];
-    } else {
-      result = (numHashHundreds[Number(numStr[0] + '00')]).concat(' and ', numberLetterCounts(Number(numStr[1] + numStr[2])));
+  var result = '';
+
+  for (var i = 1; i <= num; i++) {
+    if (i <= 10) {
+      result += numHashOnes[i];
+    } else if (i < 20) {
+      result += numHashTeens[i];
+    } else if (i < 100) {
+      if (i % 10 === 0) {
+        result += numHashTens[i];
+      } else {
+        var strNum = String(i);
+        result += numHashTens[Number(strNum[0] + '0')] + ' ' + numHashOnes[Number(strNum[1])];
+      }
+    } else if (i < 1000 && i % 100 === 0) {
+      var strNum = String(i);
+      result += numHashHundreds[Number(strNum[0] + '00')];
+    } else if (i < 1000) {
+      var strNum = String(i);
+      result += numHashHundreds[Number(strNum[0] + '00')] + ' and ' + numberLetterCounts(Number(strNum[1] + strNum[2]));
     }
   }
-  return result.replace(/ /g, '').replace(/-/g, '').length;
+
+  return result.replace(/\s/g, '').length;
 };
-console.log(numberLetterCounts(7)); // 5
-console.log(numberLetterCounts(13)); // 8
-// console.log(numberLetterCounts(60)); // 5
-// console.log(numberLetterCounts(74)); // 11
-// console.log(numberLetterCounts(981)); // 15
-// console.log(numberLetterCounts(120)); // 14
-// console.log(numberLetterCounts(819)); // 16
-// console.log(numberLetterCounts(137)); // 15
-console.log(numberLetterCounts(1000)); // 11
+console.log(numberLetterCounts(1000)); // 15930 instead of an expected value of 21124 from Project Euler.
 console.log();
 
 
@@ -849,27 +804,24 @@ console.log(' ===== 18: MAXIMUM PATH SUM I ===== ');
 // with a triangle containing one-hundred rows; it cannot be solved by brute   +
 // force, and requires a clever method! ;o)                                    +
 //-----------------------------------------------------------------------------+
-var firstArr = [[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]];
 var pyramidArr = [[75], [95, 64], [17, 47, 82], [18, 35, 87, 10], [20, 04, 82, 47, 65], [19, 01, 23, 75, 03, 34], [88, 02, 77, 73, 07, 63, 67], [99, 65, 04, 28, 06, 16, 70, 92], [41, 41, 26, 56, 83, 40, 80, 70, 33], [41, 48, 72, 33, 47, 32, 37, 16, 94, 29], [53, 71, 44, 65, 25, 43, 91, 52, 97, 51, 14], [70, 11, 33, 28, 77, 73, 17, 78, 39, 68, 17, 57], [91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48], [63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31], [04, 62, 98, 27, 23, 09, 70, 98, 73, 93, 38, 53, 60, 04, 23]];
 var maxPathSumI = function (arr) {
-  //first convert triangle into an array of arrays named triangArr
-  // var arr = [....];
-  var nuArr = [];
+  //I first converted triangle into an array of arrays named pyramidArr.
+  // I will add the first number at the apex of the pyramid to result to start the iteration, and make that index my main index. After that I will compare the index of the next array that matches the current array's index to the index + 1 of that same (next) array. the index with the bigger value becomes my next main index. I will continue this until i get to the bottom array.
+  var result = 0;
   var bigIndx = 0;
   for (var i = 0; i < arr.length; i++) {
     if (i === 0) {
-      nuArr.push(arr[i][i]);
+      result += arr[i][i];
     } else {
       (arr[i][bigIndx] > arr[i][bigIndx + 1]) ? (bigIndx = bigIndx) : (bigIndx += 1);
-      nuArr.push(arr[i][bigIndx]);
+      result += arr[i][bigIndx];
     }
   }
 
-  return nuArr.reduce(function (a, b) { return a + b; });
+  return result;
 };
-console.log(maxPathSumI(firstArr)); // 23
-console.log(maxPathSumI(pyramidArr)); // 1064
-// console.log(maxPathSumI());
+console.log(maxPathSumI(pyramidArr)); // 1064 but I am expecting 1074 according to Project Euler. I foloowed the pyramid by hand to check for the answer and it did match my answer of 1064. I do not know what I may have done wrong and so I am sticking with my answer.
 console.log();
 
 
@@ -909,8 +861,6 @@ var countingSundays = function (startDate, endDate) {
   return result;
 };
 console.log(countingSundays(1900, 2000)); // 171
-// console.log(countingSundays(1, 2000)); // 3438
-// console.log(countingSundays(1776, 2017)); // 415
 console.log();
 
 
@@ -935,10 +885,24 @@ var factorialDigitSum = function (num) {
   // the return value for factorialDigitSum(100) is too large a number to be output here without expressing it as an exponential. 'toFixed()' only pipes the first 20 digits into computing the 'reduce' function. I couldn't find an better a way to collect and pipe all the digits from 100! given the limitations of my computer.
   return numArr.reduce(function(a, b) { return a + b; });
 };
-console.log(factorialDigitSum(10)); // 27
-console.log(factorialDigitSum(100)); //
-// console.log(factorialDigitSum());
+// console.log(factorialDigitSum(100)); // 73, but I am expecting 648. But I think this is because my computer can only output a limited number of digits.
+// console.log();
+//------------------------------------------------------------------------------
+var factorialDigitSum = function (num) {
+  var result = 0;
+  var answer = factorial(num);
+  // I struggled a lot with this problem, not knowing how to obtain all the digits in 100! After moving on and returning a day later I still couldn't figure a way to solve it so I looked up this solution. i have included the source here:
+  // http://stackoverflow.com/questions/18907458/javascript-doesnt-give-correct-integer-output-project-euler-20
 
+  // I do get the logic of this solution but I didn't come up with it.
+  while (answer > 10) {
+    result += Math.floor(answer % 10);
+    answer /= 10;
+  }
+  return result;
+};
+console.log(factorialDigitSum(100)); // 650 instead of an expected solution of 648 according to Project Euler.
+console.log();
 
 console.log(' ===== 21: AMICABLE NUMBERS ===== ');    
 //-----------------------------------------------------------------------------+
@@ -976,20 +940,19 @@ var amicableTwins = function (num1, num2) {
 };
 //----------------------------------------------------------------------
 var sumAmicableNumbersUnder = function (num) {
-  var amicableNumbers = [];
-  for (var i = 1; i < num - 1; i++) {
+  var result = 0;
+  // I will be writing the helper functions amicableTwins and factorsOfNum to help with this solution. And then I will iterate through a combination of numbers from 1 up to num, checking if any pair are amicable numbers. If they are then they would be added to result.
+  for (var i = 1; i <= num; i++) {
     for (var j = i + 1; j < num; j++) {
       if (amicableTwins(i, j)) {
-        amicableNumbers.push(i);
-        amicableNumbers.push(j);
+        result += (i + j);
       }
     }
   }
-  return amicableNumbers.reduce(function (a, b) { return a + b; });
+
+  return result;
 };
-console.log(sumAmicableNumbersUnder(290));
-// console.log(sumAmicableNumbersUnder(10000)); // [ 220, 284, 1184, 1210, 2620, 2924, 5020, 5564, 6232, 6368 ]
-// console.log(sumAmicableNumbersUnder(999999));
+console.log(sumAmicableNumbersUnder(10000)); // 31626. This took 2178.453 seconds to run.
 console.log();
 
 
@@ -1009,22 +972,22 @@ console.log(' ===== 22: NAMES SCORES ===== ');
 // What is the total of all the name scores in the file?                       +
 //-----------------------------------------------------------------------------+
 var totalNameScore = function (names) {
+  // I have included the names.txt file in this zip.
+  // I will start by sorting the names into a 'sortedNames' array.
   var sortedNames = names.sort();
-  var nameScores = [];
+  var totNameScore = 0;
   for (var i = 0; i < sortedNames.length; i ++) {
-    var tempSum = 0;
+    var nameScore = 0;
     for (j = 0; j < sortedNames[i].length; j++) {
       // And assuming all letters are uppercased; minus 64.
-      tempSum += sortedNames[i][j].charCodeAt(0) - 64; 
+      nameScore += sortedNames[i][j].charCodeAt(0) - 64; 
     }
-    scores.push(tempSum * (i + 1));
+    totNameScore += (nameScore * (i + 1));
   }
+  return totNameScore;
 
-  return nameScores.reduce(function (a, b) { return a + b; });
 };
-// console.log(totalNameScore(names.txt)); // 871198282
-// console.log(totalNameScore()); //
-// console.log(totalNameScore()); //
+console.log(totalNameScore(names)); // 871198282
 console.log();
 
 
@@ -1086,10 +1049,8 @@ var nonAbundantSums = function (numLimit) {
 
   return notPermTwoSumArr.reduce(function (a, b) { return a + b; });
 };
-console.log(nonAbundantSums(12)); // 66
-console.log(nonAbundantSums(13)); // 78
-console.log(nonAbundantSums(14)); // 91
 console.log(nonAbundantSums(28123)); // 4179871
+console.log();
 
 
 console.log(' ===== 24: LEXICOGRAPHIC PERMUTATIONS ===== ');    
@@ -1150,9 +1111,7 @@ var lexicographicPermutation = function (arr, indx) {
 
   return permutatedArr[indx];
 };
-// console.log(lexicographicPermutation(givenArr, 0)); // 0123456789
-// console.log(lexicographicPermutation(givenArr, 1)); // 0123456798
-// console.log(lexicographicPermutation(givenArr, 999999)); // 2783915460
+console.log(lexicographicPermutation(givenArr, 999999)); // 2783915460
 console.log();
 
 console.log(' ===== 25: 1000-DIGIT FIBONACCI NUMBER ===== ');    
@@ -1186,7 +1145,7 @@ var firstNthDigitFibonacci = function (reqDigits) {
   var lastFib = 1;
   var indexOfLastFib = 1;
 
-  while (String(lastFib).length <= requiredDigits) {
+  while (String(lastFib).length <= reqDigits) {
     var c = secondToLastFib + lastFib;
     secondToLastFib = lastFib;
     lastFib = c;
@@ -1195,10 +1154,8 @@ var firstNthDigitFibonacci = function (reqDigits) {
 
   return indexOfLastFib;
 };
-console.log(firstNthDigitFibonacci(2)); // 6  => 13
-console.log(firstNthDigitFibonacci(3)); // 11 => 144
-console.log(firstNthDigitFibonacci(1000)); // 4781 => some HUUUUUUUGE number
-// console.log();
+console.log(firstNthDigitFibonacci(1000)); // 4782 
+console.log();
 
 
 console.log(' ===== 26: RECIPROCAL CYCLES ===== ');    
@@ -1246,10 +1203,7 @@ var reciprocalCycles = function (limit) {
   }
   return result;
 }; 
-console.log(reciprocalCycles(4)); // 1/3 => 0.3-3-3-3-3-3-3-3-3-3-3...
-console.log(reciprocalCycles(9)); // 1/7 => 0.142857-142857-142857...
-console.log(reciprocalCycles(100)); // 1/97 => 0.010309278350515464...
-console.log(reciprocalCycles(1000)); // 1/983 => 0.001017293997965412...
+console.log(reciprocalCycles(1000)); // 983 
 console.log();
 
 
@@ -1302,9 +1256,7 @@ var quadraticPrimes = function (num) {
 
   return aMax * bMax;
 };
-console.log(quadraticPrimes(40)); 
-console.log(quadraticPrimes(90));
-console.log(quadraticPrimes(1000));
+console.log(quadraticPrimes(1000)); // -59231
 console.log();
 
 
@@ -1349,10 +1301,7 @@ var spiralDiagonals = function (num) {
 
   return result;
 };
-console.log(spiralDiagonals(1)); //
-console.log(spiralDiagonals(2)); //
-console.log(spiralDiagonals(3)); //
-console.log(spiralDiagonals(1001)); //
+console.log(spiralDiagonals(1001)); // 669171001
 console.log();
 
 
@@ -1387,9 +1336,7 @@ var distinctPowers = function (aRange, bRange) {
 
   return resultArr.length;
 };
-console.log(distinctPowers(5, 5)); // 15
-console.log(distinctPowers(10, 10)); // 69
-console.log(distinctPowers(100, 100)); // 9220
+console.log(distinctPowers(100, 100)); // 9183
 console.log();
 
 
@@ -1426,9 +1373,7 @@ var digitFifthPowers = function (cutOffRange) {
   }
   return result;
 };
-console.log(digitFifthPowers(999999)); // 	443839
-// console.log(digitFifthPowers()); //
-// console.log(digitFifthPowers()); //
+console.log(digitFifthPowers(999999)); // 443839
 console.log();
 
 
