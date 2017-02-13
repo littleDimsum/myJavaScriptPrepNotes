@@ -18,8 +18,8 @@ console.log(2 ** 4);
 console.log();
 
 console.log(' numero 2 ');
-console.log("wonderful day".substring (3, 7));
-console.log ("January".substring (0, 3));
+console.log("wonderful day".substring (3, 7)); // derf
+console.log ("January".substring (0, 3)); // Jan
 console.log ("Melbourne is great".substring (0, 12));
 console.log ("Hamburgers".substring (3, 10));
 console.log();
@@ -62,6 +62,96 @@ console.log((0.1 * 10 + 0.2 * 10) / 10 === 0.3); // true
 console.log((0.1 + 0.2).toFixed(10) === 0.3); // true / false
 console.log();
 console.log();
+console.log();
+var myObj = new Object ();
+myObj.name = 'john';
+myObj.age = 22;
+myObj.height = 5.6;
+console.log(myObj);
+console.log();
+//
+for (var key in myObj) {
+  console.log(key);
+}
+console.log();
+//
+for (var key in myObj) {
+  console.log(myObj[key]);
+}
+console.log();
+
+
+console.log();
+var yrObj = {};
+yrObj['name'] = 'mary';
+yrObj['age'] = 19;
+yrObj['height'] = 5.3;
+console.log(yrObj);
+console.log();
+//------------------------------------------------------------------------------
+
+// Create a function multiplyNumeric which gets an object and multiplies all numeric properties by 2. It should work like this:
+// before call
+console.log();
+var menu = {
+  width: 200, 
+  height: 300,
+  title: 'My menu'
+};
+// multiplyNumeric(menu)
+// after call
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: 'My menu'
+// };
+// P.S. The function to check for numericality:
+// Solution
+// The solution below uses !isNaN(x) to check for a number.  
+var isNumeric = function (n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
+//----------------------------------------------------------
+var multiplyNumeric = function (obj) {
+  for (var key in obj) {
+    var val = obj[key];
+    if (isNumeric(val)) {
+      obj[key] = val * 2;
+    }
+  }
+  return obj;
+};
+console.log(multiplyNumeric(menu));
+console.log('The menu width = ' + menu.width + ', height = ' + menu.height + ', and title = ' + menu.title);
+console.log();
+//------------------------------------------------------------------------------
+
+console.log(isNaN(12)); // false, because it is a number
+console.log(isNaN('12')); // false
+console.log(isNaN('sam')); // true, because it is not a number
+console.log(isNaN('sam12')); // true
+console.log(); 
+console.log(isFinite(5)); // true
+console.log(isFinite(-5)); // true
+console.log(isFinite(Infinity)); // false
+console.log(isFinite(-Infinity)); // false
+console.log(isFinite('123.456')); // true
+console.log(isFinite('sam'));  // false
+console.log(); 
+console.log(parseFloat('123.456')); // 123.456
+console.log(parseFloat(567.890)); // 567.89
+console.log(parseFloat('abc123')); // NaN
+console.log(parseFloat('1.23cde'));  // 1.23
+console.log(parseFloat('1.23c456de'));  // 1.23
+console.log(); 
+console.log(parseInt('123.456')); // 123
+console.log(parseInt(567.890)); // 567
+console.log(parseInt('abc123')); // NaN
+console.log(parseInt('1.29cde'));  // 1
+console.log(parseInt('12.9c456de'));  // 12
+console.log(); 
+//------------------------------------------------------------------------------
+
 console.log();
 var myObj = new Object ();
 myObj.name = 'john';
@@ -216,6 +306,7 @@ console.log(valueKeyKey(girls, 'age', 19)); // mary
 console.log(valueKeyKey(girls, 'hair', 'black')); // sarah
 console.log(valueKeyKey(girls, 'height', 5.7)); // anna
 console.log(valueKeyKey(girls, 'eyes', 'hazel')); // undefined
+
 console.log();
 console.log();
 
@@ -224,18 +315,18 @@ console.log(" ========== EXTRA STRING NOTES ========== ");
 console.log();
 
 console.log(' numero 4 ');
-console.log("HELLO WORLD".charAt(0));
-console.log("AZabHELLO WORLD".charCodeAt(0));
-console.log("AZabHELLO WORLD".charCodeAt(1));
-console.log("AZabHELLO WORLD".charCodeAt(2));
-console.log("AZazHELLO WORLD".charCodeAt(3));
-console.log(String.fromCharCode(65));
-console.log(String.fromCharCode(...[72, 69, 76, 76, 79]));
+console.log("HELLO WORLD".charAt(0)); // H
+console.log("AZabHELLO WORLD".charCodeAt(0)); // 65
+console.log("AZabHELLO WORLD".charCodeAt(1)); // 90
+console.log("AZabHELLO WORLD".charCodeAt(2)); // 97
+console.log("AZazHELLO WORLD".charCodeAt(3)); // 122
+console.log(String.fromCharCode(65)); // A
+console.log(String.fromCharCode(...[72, 69, 76, 76, 79])); // HELLO
 var ascii = function (a) { 
   return a.charCodeAt(0); 
 };
-console.log('abxyzABXYZ'.split('').map(ascii));
-console.log('ergtrer'.split('').map(ascii));
+console.log('abxyzABXYZ'.split('').map(ascii)); // [ 97, 98, 120, 121, 122, 65, 66, 88, 89, 90 ]
+console.log('ergtrer'.split('').map(ascii)); // [ 101, 114, 103, 116, 114, 101, 114 ]
 console.log();
 console.log();
 
