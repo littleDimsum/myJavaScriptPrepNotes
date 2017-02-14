@@ -1785,17 +1785,5 @@ console.log(EvenPairs('3gy41d216'));
 console.log();
 
 
-console.log(' ===== XIII Even Pairs =====');
-var EvenPairs = function (str) {
-  var regEx = /[24680]\d*[24680]/;
-
-  return regEx.test(str);
-};
-console.log(EvenPairs('f178svg3k19k46'));
-console.log(EvenPairs('f09r27i8e67'));
-console.log(EvenPairs('3gy41d216'));
-console.log();
-
-
 console.log();
 console.log(' ========== THE END! ========== ');
