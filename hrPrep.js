@@ -1145,9 +1145,9 @@ console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
 
-// var obj = {
-//   key: ['a', 'long', 'game']
-// };
+var abj = {
+  key: ['a', 'long', 'game']
+};
 // var output = getEvenLengthWordsAtProperty(obj, 'key');
 // console.log(output); // --> ['long', 'game']
 
@@ -1156,11 +1156,22 @@ console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');
 //   // your code here
 // }
 var getEvenLengthWordsAtProperty = function (obj, key) {
+  var result = [];
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length; i++) {
+        if (obj[key][i].length % 2 === 0) {
+          result.push(obj[key][i]);
+        }
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getEvenLengthWordsAtProperty());
-console.log(getEvenLengthWordsAtProperty());
-console.log(getEvenLengthWordsAtProperty());
+console.log(getEvenLengthWordsAtProperty(abj)); // ['long', 'game']
+// console.log(getEvenLengthWordsAtProperty());
+// console.log(getEvenLengthWordsAtProperty());
 console.log();
 
 
@@ -1175,9 +1186,9 @@ console.log(' ===== 12: getSquaredElementsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
 
-// var obj = {
-//   key: [2, 1, 5]
-// };
+var abj = {
+  key: [2, 1, 5]
+};
 // var output = getSquaredElementsAtProperty(obj, 'key');
 // console.log(output); // --> [4, 1, 25]
 
@@ -1186,11 +1197,20 @@ console.log(' ===== 12: getSquaredElementsAtProperty ===== ');
 //   // your code here
 // }
 var getSquaredElementsAtProperty = function (obj, key) {
+  var result = [];
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length; i++) {
+        result.push(obj[key][i] ** 2);
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getSquaredElementsAtProperty());
-console.log(getSquaredElementsAtProperty());
-console.log(getSquaredElementsAtProperty());
+console.log(getSquaredElementsAtProperty(abj)); // --> [4, 1, 25]
+// console.log(getSquaredElementsAtProperty());
+// console.log(getSquaredElementsAtProperty());
 console.log();
 
 
@@ -1206,9 +1226,9 @@ console.log(' ===== 13: getOddElementsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
 
-// var obj = {
-//   key: [1, 2, 3, 4, 5]
-// };
+var abj = {
+  key: [1, 2, 3, 4, 5]
+};
 // var output = getOddElementsAtProperty(obj, 'key');
 // console.log(output); // --> [1, 3, 5]
 
@@ -1217,11 +1237,22 @@ console.log(' ===== 13: getOddElementsAtProperty ===== ');
 //   // your code here
 // }
 var getOddElementsAtProperty = function (obj, key) {
+  var result = [];
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length; i++) {
+        if (obj[key][i] % 2 === 1) {
+          result.push(obj[key][i]);
+        }
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getOddElementsAtProperty());
-console.log(getOddElementsAtProperty());
-console.log(getOddElementsAtProperty());
+console.log(getOddElementsAtProperty(abj)); // --> [1, 3, 5]
+// console.log(getOddElementsAtProperty());
+// console.log(getOddElementsAtProperty());
 console.log();
 
 
@@ -1237,9 +1268,9 @@ console.log(' ===== 14: getEvenElementsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the given key, it should return an empty array.
 
-// var obj = {
-//   key: [1000, 11, 50, 17]
-// };
+var abj = {
+  key: [1000, 11, 50, 17]
+};
 // var output = getEvenElementsAtProperty(obj, 'key');
 // console.log(output); // --> [1000, 50]
 
@@ -1248,11 +1279,22 @@ console.log(' ===== 14: getEvenElementsAtProperty ===== ');
 //   // your code here
 // }
 var getEvenElementsAtProperty = function (obj, key) {
+  var result = [];
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length; i++) {
+        if (obj[key][i] % 2 === 0) {
+          result.push(obj[key][i]);
+        }
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getEvenElementsAtProperty());
-console.log(getEvenElementsAtProperty());
-console.log(getEvenElementsAtProperty());
+console.log(getEvenElementsAtProperty(abj)); // --> [1000, 50]
+// console.log(getEvenElementsAtProperty());
+// console.log(getEvenElementsAtProperty());
 console.log();
 
 
@@ -1267,9 +1309,12 @@ console.log(' ===== 15: getSmallestElementAtProperty ===== ');
 // * If the property at the given key is not an array, it should return undefined. 
 // * If there is no property at the key, it should return undefined.
 
-// var obj = {
-//   key: [2, 1, 5]
-// };
+var abj = {
+  key: [2, 1, 5]
+};
+var abj1 = {
+  key: []
+};
 // var output = getSmallestElementAtProperty(obj, 'key');
 // console.log(output); // --> 1
 
@@ -1278,11 +1323,19 @@ console.log(' ===== 15: getSmallestElementAtProperty ===== ');
 //   // your code here
 // }
 var getSmallestElementAtProperty = function (obj, key) {
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+        if (!isNaN(Math.min(...obj[key]))) {
+          return Math.min(...obj[key]);
+        }
+    }
+  }
 
+  return 'undefined';
 };
-console.log(getSmallestElementAtProperty());
-console.log(getSmallestElementAtProperty());
-console.log(getSmallestElementAtProperty());
+console.log(getSmallestElementAtProperty(abj)); // --> 1
+// console.log(getSmallestElementAtProperty()); 
+// console.log(getSmallestElementAtProperty());
 console.log();
 
 
@@ -1297,9 +1350,9 @@ console.log(' ===== 16: getLargestElementAtProperty ===== ');
 // * If the property at the given key is not an array, it should return undefined.
 // * If there is no property at the key, it should return undefined.
 
-// var obj = {
-//   key: [1, 2, 4]
-// };
+var abj = {
+  key: [1, 2, 4]
+};
 // var output = getLargestElementAtProperty(obj, 'key');
 // console.log(output); // --> 4
 
@@ -1308,11 +1361,19 @@ console.log(' ===== 16: getLargestElementAtProperty ===== ');
 //   // your code here
 // }
 var getLargestElementAtProperty = function (obj, key) {
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+        if (!isNaN(obj[key])) {
+          return Math.max(...obj[key]);
+        }
+    }
+  }
 
+  return 'undefined';
 };
-console.log(getLargestElementAtProperty());
-console.log(getLargestElementAtProperty());
-console.log(getLargestElementAtProperty());
+console.log(getLargestElementAtProperty(abj)); // --> 4
+// console.log(getLargestElementAtProperty());
+// console.log(getLargestElementAtProperty());
 console.log();
 
 
@@ -1327,9 +1388,9 @@ console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return 0.
 // * If there is no property at the given key, it should return 0.
 
-// var obj = {
-//   key: [1, 2, 3, 4]
-// };
+var abj = {
+  key: [1, 2, 3, 4]
+};
 // var output = getProductOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 24
 
@@ -1338,11 +1399,21 @@ console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');
 //   // your code here
 // }
 var getProductOfAllElementsAtProperty = function (obj, key) {
+  var result = 0;
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      result = 1;
+      for (var i = 0; i < obj[key].length; i++) {
+        result *= obj[key][i];
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getProductOfAllElementsAtProperty());
-console.log(getProductOfAllElementsAtProperty());
-console.log(getProductOfAllElementsAtProperty());
+console.log(getProductOfAllElementsAtProperty(abj)); // --> 24
+// console.log(getProductOfAllElementsAtProperty());
+// console.log(getProductOfAllElementsAtProperty());
 console.log();
 
 
@@ -1357,9 +1428,9 @@ console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return 0.
 // * If there is no property at the key, it should return 0.
 
-// var obj = {
-//   key: [4, 1, 8]
-// };
+var abj = {
+  key: [4, 1, 8]
+};
 // var output = getSumOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 13
 
@@ -1368,11 +1439,20 @@ console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');
 //   // your code here
 // }
 var getSumOfAllElementsAtProperty = function (obj, key) {
+  var result = 0;
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length; i++) {
+        result += obj[key][i];
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getSumOfAllElementsAtProperty());
-console.log(getSumOfAllElementsAtProperty());
-console.log(getSumOfAllElementsAtProperty());
+console.log(getSumOfAllElementsAtProperty(abj)); // 13
+// console.log(getSumOfAllElementsAtProperty());
+// console.log(getSumOfAllElementsAtProperty());
 console.log();
 
 
@@ -1387,9 +1467,9 @@ console.log(' ===== 19: getAllButLastElementOfProperty ===== ');
 // * If the property at the given key is not an array, it return an empty array.
 // * If there is no property at the key, it should return an empty array. 
 
-// var obj = {
-//   key: [1, 2, 3]
-// };
+var abj = {
+  key: [1, 2, 3]
+};
 // var output = getAllButLastElementOfProperty(obj, 'key');
 // console.log(output); // --> [1,2]
 
@@ -1398,11 +1478,20 @@ console.log(' ===== 19: getAllButLastElementOfProperty ===== ');
 //   // your code here
 // }
 var getAllButLastElementOfProperty = function (obj, key) {
+  var result = [];
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (var i = 0; i < obj[key].length - 1; i++) {
+        result.push(obj[key][i]);
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getAllButLastElementOfProperty());
-console.log(getAllButLastElementOfProperty());
-console.log(getAllButLastElementOfProperty());
+console.log(getAllButLastElementOfProperty(abj)); // --> [1,2]
+// console.log(getAllButLastElementOfProperty());
+// console.log(getAllButLastElementOfProperty());
 console.log();
 
 
@@ -1418,9 +1507,9 @@ console.log(' ===== 20: getNthElementOfProperty ===== ');
 // * If the property at the given key is not an array, it should return undefined.
 // * If there is no property at the key, it should return undefined.
 
-// var obj = {
-//   key: [1, 2, 6]
-// };
+var abj = {
+  key: [1, 2, 6]
+};
 // var output = getNthElementOfProperty(obj, 'key', 1);
 // console.log(output); // --> 2
 
@@ -1429,11 +1518,20 @@ console.log(' ===== 20: getNthElementOfProperty ===== ');
 //   // your code here
 // }
 var getNthElementOfProperty = function (obj, key, n) {
+  var result = undefined;
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      if (n <= obj[key].length) {
+        result = obj[key][n];
+      }
+    }
+  }
 
+  return result;
 };
-console.log(getNthElementOfProperty());
-console.log(getNthElementOfProperty());
-console.log(getNthElementOfProperty());
+console.log(getNthElementOfProperty(abj, 'key', 1)); // --> 2
+// console.log(getNthElementOfProperty());
+// console.log(getNthElementOfProperty());
 console.log();
 
 
@@ -1448,9 +1546,9 @@ console.log(' ===== 21: getLastElementOfProperty ===== ');
 // * if the property at the given key is not an array, it should return undefined.
 // * If there is no property at the key, it should return undefined.
 
-// var obj = {
-//   key: [1, 2, 5]
-// };
+var abj = {
+  key: [1, 2, 5]
+};
 // var output = getLastElementOfProperty(obj, 'key');
 // console.log(output); // --> 5
 
@@ -1459,11 +1557,16 @@ console.log(' ===== 21: getLastElementOfProperty ===== ');
 //   // your code here
 // }
 var getLastElementOfProperty = function (obj, key) {
+  var result = undefined;
+  if (Array.isArray(obj[key])) {
+    result = obj[key][(obj[key].length - 1)];
+  }
 
+  return result;
 };
-console.log(getLastElementOfProperty());
-console.log(getLastElementOfProperty());
-console.log(getLastElementOfProperty());
+console.log(getLastElementOfProperty(abj, 'key')); // --> 5
+// console.log(getLastElementOfProperty());
+// console.log(getLastElementOfProperty());
 console.log();
 
 
@@ -1479,9 +1582,9 @@ console.log(' ===== 22: getFirstElementOfProperty ===== ');
 // * If there is no property at the key, it should return undefined.
 
 
-// var obj = {
-//   key: [1, 2, 4]
-// };
+var abj = {
+  key: [1, 2, 4]
+};
 // var output = getFirstElementOfProperty(obj, 'key');
 // console.log(output); // --> 1
 
@@ -1490,11 +1593,16 @@ console.log(' ===== 22: getFirstElementOfProperty ===== ');
 //   // your code here
 // }
 var getFirstElementOfProperty = function (obj, key) {
+  var result = undefined;
+  if (Array.isArray(obj[key])) {
+    result = obj[key][0];
+  }
 
+  return result;
 };
-console.log(getFirstElementOfProperty());
-console.log(getFirstElementOfProperty());
-console.log(getFirstElementOfProperty());
+console.log(getFirstElementOfProperty(abj, 'key')); // --> 1
+// console.log(getFirstElementOfProperty());
+// console.log(getFirstElementOfProperty());
 console.log();
 
 
@@ -1504,11 +1612,11 @@ console.log(' ===== 23: removeNumbersLargerThan ===== ');
 
 // Given a number and an object, "removeNumbersLargerThan" removes any properties whose values are numbers greater than the given number.
 
-// var obj = {
-//   a: 8,
-//   b: 2,
-//   c: 'montana'
-// }
+var abj = {
+  a: 8,
+  b: 2,
+  c: 'montana'
+}
 // removeNumbersLargerThan(5, obj);
 // console.log(obj); // --> { b: 2, c: 'montana' }
 
@@ -1517,11 +1625,16 @@ console.log(' ===== 23: removeNumbersLargerThan ===== ');
 //   // your code here
 // }
 var removeNumbersLargerThan = function (num, obj) {
-
+  for (var key in obj) {
+    if (obj[key] > num) {
+      delete obj[key];
+    }
+  }
+  return obj;
 };
-console.log(removeNumbersLargerThan());
-console.log(removeNumbersLargerThan());
-console.log(removeNumbersLargerThan());
+console.log(removeNumbersLargerThan(5, abj));// --> { b: 2, c: 'montana' }
+// console.log(removeNumbersLargerThan());
+// console.log(removeNumbersLargerThan());
 console.log();
 
 
@@ -1531,11 +1644,11 @@ console.log(' ===== 24: removeNumbersLessThan ===== ');
 
 // Given a number and an object, "removeNumbersLessThan" removes any properties whose values are numbers less than the given number.
 
-// var obj = {
-//   a: 8,
-//   b: 2,
-//   c: 'montana'
-// }
+var abj = {
+  a: 8,
+  b: 2,
+  c: 'montana'
+}
 // removeNumbersLessThan(5, obj);
 // console.log(obj); // --> { a: 8, c: 'montana' }
 
@@ -1545,11 +1658,16 @@ console.log(' ===== 24: removeNumbersLessThan ===== ');
 //   // your code here
 // }
 var removeNumbersLessThan = function (num, obj) {
-
+  for (var key in obj) {
+    if (obj[key] < num) {
+      delete obj[key];
+    }
+  }
+  return obj;
 };
-console.log(removeNumbersLessThan());
-console.log(removeNumbersLessThan());
-console.log(removeNumbersLessThan());
+console.log(removeNumbersLessThan(5, abj)); // --> { a: 8, c: 'montana' }
+// console.log(removeNumbersLessThan());
+// console.log(removeNumbersLessThan());
 console.log();
 
 
@@ -1559,10 +1677,10 @@ console.log(' ===== 25: addFullNameProperty ===== ');
 
 // Given an object that has a "firstName" property and a "lastName" property, "addFullNameProperty" returns a "fullName" property whose value is a string with the first name and last name separated by a space.
 
-// var person = {
-//   firstName: 'Jade',
-//   lastName: 'Smith'
-// };
+var person = {
+  firstName: 'Jade',
+  lastName: 'Smith'
+};
 // addFullNameProperty(person);
 // console.log(person.fullName); // --> 'Jade Smith'
 
@@ -1571,11 +1689,11 @@ console.log(' ===== 25: addFullNameProperty ===== ');
 //   // your code here
 // }
 var addFullNameProperty = function (obj) {
-
+  return `${obj.firstName} ${obj.lastName}`;
 };
-console.log(addFullNameProperty());
-console.log(addFullNameProperty());
-console.log(addFullNameProperty());
+console.log(addFullNameProperty(person)); // --> 'Jade Smith'
+// console.log(addFullNameProperty());
+// console.log(addFullNameProperty());
 console.log();
 
 
