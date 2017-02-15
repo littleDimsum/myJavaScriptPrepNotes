@@ -1681,6 +1681,10 @@ var person = {
   firstName: 'Jade',
   lastName: 'Smith'
 };
+var person2 = {
+  firstName: 'Tom',
+  lastName: 'Cruise'
+};
 // addFullNameProperty(person);
 // console.log(person.fullName); // --> 'Jade Smith'
 
@@ -1692,7 +1696,7 @@ var addFullNameProperty = function (obj) {
   return `${obj.firstName} ${obj.lastName}`;
 };
 console.log(addFullNameProperty(person)); // --> 'Jade Smith'
-// console.log(addFullNameProperty());
+console.log(addFullNameProperty(person2)); // Tom Cruise
 // console.log(addFullNameProperty());
 console.log();
 
