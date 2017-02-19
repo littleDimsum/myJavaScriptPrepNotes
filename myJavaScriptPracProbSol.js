@@ -1400,7 +1400,893 @@ console.log();
 console.log(' =============== OTHER EXERCISES =============== ');
 console.log();
 //==============================================================================
+// lucky_sevens?
+// Write a function lucky_sevens?(numbers), which takes in an array of integers and returns true if any three consecutive elements sum to 7.
+// Make sure your code correctly checks for edge cases (i.e. the first and last elements of the array).
+console.log('01: luckySevens');
+var luckySevens = function(array) {
+  if (array[array.length - 2] + array[array.length - 1] + array[0] === 7 || array[array.length - 1] + array[0] + array[1] === 7) {
+    return true;
+  } 
+  for (var i = 0; i < array.length - 2; i++) {
+    if (array.slice(i, i + 3).reduce(function (a, b) { return a + b; }) === 7) {
+      return true;
+    }
+  }
 
+  return false;
+};
+console.log(luckySevens([2, 0, 5, 1, 0])); // true
+console.log(luckySevens([2, 1, 5, 1, 0])); // true 
+console.log(luckySevens([0, -2, 1, 8])); // true
+console.log(luckySevens([7, 7, 7, 7])); // false
+console.log(luckySevens([3, 4, 3, 4])); // false
+console.log(luckySevens([1, 7, 2, 4])); // true
+console.log(luckySevens([0, 5, 3, 2])); // true
+console.log();
+
+
+console.log('02: oddBallSum');
+// oddball_sum
+// Write a function oddball_sum(numbers), which takes in an array of integers and returns the sum of all the odd elements.
+var oddBallSum = function (arr) {
+  var result = 0;
+  for (var j = 0; j < arr.length; j++) {
+    if (arr[j] % 2 === 1) {
+      result += arr[j];
+    }
+  }
+  return result;
+};
+console.log(oddBallSum([1, 2, 3, 4, 5])); // 9 
+console.log(oddBallSum([0, 6, 4, 4])); //  0
+console.log(oddBallSum([1, 2, 1])); // 2
+console.log();
+
+
+console.log('03: disEmvowel');
+// disemvowel
+// Write a function disEmvowel(string), which takes in a string, and returns that string with all the vowels removed. Treat 'y' as a consonant.
+var disEmvowel = function (string) {
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var strArr = string.split('');
+  return strArr.filter(function (a) { return !vowels.includes(a); }).join('');
+};
+console.log(disEmvowel('foobar')); // fbr
+console.log(disEmvowel('ruby')); //rby
+console.log(disEmvowel('aeiou')); // ''
+console.log();
+
+
+console.log('04: reverse');
+//  Write a method that will take a string as input, and return a new
+//  string with the same letters in reverse order.
+//  Don't use String's reverse method; that would be too simple.
+//  Difficulty: easy.
+var reverse = function (string) {
+  return string.split('').reverse().join('');
+};
+console.log(reverse('abc')); // cba
+console.log(reverse('a')); // a
+console.log(reverse('')); // ''
+console.log();
+
+
+console.log('05: factorial');
+//  Write a method that takes an integer `n` in; it should return
+//  n*(n-1)*(n-2)*...*2*1. Assume n >= 0.
+//  As a special case, `factorial(0) == 1`.
+//  Difficulty: easy.
+var factorial = function (n) {
+  var fact = 1;
+  while (n > 1) {
+    fact *= n;
+    n -= 1;
+  }
+  return fact;
+};
+console.log(factorial(0)); // 1
+console.log(factorial(1)); // 1
+console.log(factorial(2)); // 2
+console.log(factorial(3)); // 6
+console.log(factorial(4)); // 24
+console.log();
+
+
+console.log('06: longestWord');
+//  Write a method that takes in a string. Return the longest word in
+//  the string. You may assume that the string contains only letters and
+//  spaces.
+//  You may use the String `split` method to aid you in your quest.
+//  Difficulty: easy.
+var longest = function (a, b) {
+  return a.length > b.length ? a : b;
+};
+var longestWord = function (string) {
+  return string.split(' ').reduce(longest);
+};
+console.log(longestWord('short longest')); // longest
+console.log(longestWord('one')); // one
+console.log(longestWord('abc def abcde')); // abcde
+console.log();
+
+
+console.log('07: sumNums');
+//  Write a method that takes in an integer `num` and returns the sum of
+//  all integers between zero and num, up to and including `num`.
+//  Difficulty: easy.
+var sumNums = function (num) {
+  var result = 0;
+  while (num > 0) {
+    result += num;
+    num -= 1;
+  }
+  return result;
+};
+console.log(sumNums(1)); // 1
+console.log(sumNums(2)); // 3
+console.log(sumNums(3)); // 6
+console.log(sumNums(4)); // 10
+console.log(sumNums(5)); // 15
+console.log();
+
+
+console.log('08: timeConversion');
+//  Write a method that will take in a number of minutes, and returns a
+//  string that formats the number into `hours:minutes`.
+//  Difficulty: easy.
+var timeConversion = function (min) {
+  var hours = Math.floor(min / 60);
+  var mins = min % 60;
+  return mins < 10 ? `${hours}:0${mins}` : `${hours}:${mins}`;
+};
+console.log(timeConversion(5)); // 0:05
+console.log(timeConversion(15)); // 0:15
+console.log(timeConversion(150)); // 2:30
+console.log(timeConversion(360)); // 6:00
+console.log();
+
+
+console.log('09: countVowels');
+//  Write a method that takes a string and returns the number of vowels
+//  in the string. You may assume that all the letters are lower cased.
+//  You can treat 'y' as a consonant.
+//  Difficulty: easy.
+var countVowels = function (string) {
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var count = 0;
+  for (var i = 0; i < string.length; i++) {
+    vowels.includes(string[i]) ? count++ : count;
+  }
+  return count;
+};
+console.log(countVowels('abcd')); // 1
+console.log(countVowels('color')); // 2
+console.log(countVowels('colour')); // 3
+console.log(countVowels('cecilia')); // 4
+console.log();
+
+
+console.log('10: isPalindrome');
+//  Write a method that takes a string and returns true if it is a
+//  palindrome. A palindrome is a string that is the same whether written
+//  backward or forward. Assume that there are no spaces; only lowercase
+//  letters will be given.
+//  Difficulty: easy.
+var isPalindrome = function (string) {
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] !== string[string.length - (1 + i)]) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(isPalindrome('abc')); // false
+console.log(isPalindrome('abcba')); // true
+console.log(isPalindrome('z')); // true
+console.log();
+
+
+console.log('11: nearbyAZ');
+//  Write a method that takes a string in and returns true if the letter
+//  'z' appears within three letters **after** an 'a'. You may assume
+//  that the string contains only lowercase letters.
+//  Difficulty: medium.
+var nearbyAZ = function (str) {
+  return str.search(/a..z/) !== isNaN;
+};
+console.log(nearbyAZ('baz')); // true
+console.log(nearbyAZ('abz')); // true
+console.log(nearbyAZ('abcz')); // true
+console.log(nearbyAZ('a')); // false
+console.log(nearbyAZ('z')); // false
+console.log(nearbyAZ('za')); // false
+console.log();
+
+
+console.log('12: twoSum');
+//  Write a method that takes an array of numbers. If a pair of numbers
+//  in the array sums to zero, return the positions of those two numbers.
+//  If no pair of numbers sums to zero, return `nil`.
+//  Difficulty: medium.
+var twoSum = function (arr) {
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        return [i, j];
+      }
+    }
+  }
+  return 'nil';
+};
+console.log(twoSum([1, 3, 5, -3])); // [1, 3]
+console.log(twoSum([1, 3, 5])); // nil
+console.log();
+
+
+console.log('13: isPowerOfTwo');
+//  Write a method that takes in a number and returns true if it is a
+//  power of 2. Otherwise, return false.
+//  You may want to use the `%` modulo operation. `5 % 2` returns the
+//  remainder when dividing 5 by 2; therefore, `5 % 2 == 1`. In the case
+//  of `6 % 2`, since 2 evenly divides 6 with no remainder, `6 % 2 == 0`.
+//  Difficulty: medium.
+var isPowerOfTwo = function (num) {
+  if (num === 1) {
+    return true;
+  }
+  var result = num;
+  while (result > 1) {
+    if (result / 2 === 1) {
+      return true;
+    } 
+    result /= 2;
+  }
+  return false;
+};
+console.log(isPowerOfTwo(1)); // true
+console.log(isPowerOfTwo(16)); // true
+console.log(isPowerOfTwo(64)); // true
+console.log(isPowerOfTwo(78)); // false
+console.log(isPowerOfTwo(0)); // false
+console.log();
+
+
+console.log('14: thirdGreatest');
+//  Write a method that takes an array of numbers in. Your method should
+//  return the third greatest number in the array. You may assume that
+//  the array has at least three numbers in it.
+//  Difficulty: medium.
+var thirdGreatest = function (nums) {
+  nums.sort(function (a, b) { return a - b; });
+  return nums[nums.length - 3];
+};
+console.log(thirdGreatest([5, 3, 7])); // 3
+console.log(thirdGreatest([5, 3, 7, 4])); // 4
+console.log(thirdGreatest([2, 3, 7, 4])); // 3
+console.log();
+
+
+console.log('15: mostCommonLetter');
+//  Write a method that takes in a string. Your method should return the
+//  most common letter in the array, and a count of how many times it
+//  appears.
+var mostCommonLetter = function (str) {
+  var strArr = str.split('');
+  var count = 0;
+  var letter = undefined;
+  for (var i = 0; i < strArr.length; i++) {
+    var iCount = 0;
+    for (var j = i; j < strArr.length; j++) {
+      strArr[j] === strArr[i] ? iCount++ : iCount;
+    }
+    if (iCount > count) {
+      count = iCount;
+      letter = strArr[i];
+    } 
+  }
+  return [letter, count];
+};
+console.log(mostCommonLetter('abca')); // ['a', 2]
+console.log(mostCommonLetter('abbab')); // ['b', 3]
+console.log(mostCommonLetter('ljbuivvuqr89rygfubvffgfgfffdggdgds')); // ['a', 2]
+console.log();
+
+
+console.log('16: dasherizeNumber');
+//  Write a method that takes in a number and returns a string, placing
+//  a single dash before and after each odd digit. There is one
+//  exception: don't start or end the string with a dash.
+//  You may wish to use the `%` modulo operation; you can see if a number
+//  is even if it has zero remainder when divided by two.
+//  Difficulty: medium.
+var dasherize = function (a) {
+  return Number(a) % 2 === 1 ? a + '-' : a;
+};
+var dasherizeNumber = function (num) {
+  var result = [];
+  var strNum = String(num).split('');
+  for (var i = 0; i < strNum.length - 1; i++) {
+    if (Number(strNum[i]) % 2 === 0 && Number(strNum[i + 1]) % 2 === 1) {
+      result.push(strNum[i] + '-');
+    } else {
+      result.push(dasherize(strNum[i]));
+    }
+  }
+  result.push(strNum[strNum.length - 1]);
+  
+  return result.join('');
+};
+console.log(dasherizeNumber(123456789)); // 1-2-3-4-5-6-7-8-9
+console.log(dasherizeNumber(12237545678)); // 1-22-3-7-5-4-5-6-7-8
+console.log(dasherizeNumber(22255554567809)); // 222-5-5-5-5-4-5-6-7-80-9
+console.log(dasherizeNumber(3223)); // 3-22-3
+console.log(dasherizeNumber(303)); // 3-0-3
+console.log(dasherizeNumber(333)); // 3-3-3
+console.log();
+
+
+console.log('17: capitalizeWords');
+//  Write a method that takes in a string of lowercase letters and
+//  spaces, producing a new string that capitalizes the first letter of
+//  each word.
+//  You'll want to use the `split` and `join` methods. Also, the String
+//  method `upcase`, which converts a string to all upper case will be
+//  helpful.
+//  Difficulty: medium.
+var capWord = function (word) { return word[0].toUpperCase() + word.slice(1); };
+var capitalizeWords = function (string) {
+  return string.split(' ').map(capWord).join(' ');
+};
+console.log(capitalizeWords('swy ocran yehuza'));
+console.log(capitalizeWords('this is a sentence'));
+console.log(capitalizeWords('mike bloomfield'));
+console.log(capitalizeWords('in god we trust'));
+console.log();
+
+
+console.log('18: scrambleString');
+//  Write a method that takes in a string and an array of indices in the
+//  string. Produce a new string, which contains letters from the input
+//  string in the order specified by the indices of the array of indices.
+//  Difficulty: medium.
+var scrambleString = function (str, arr) {
+  var result = [];
+  var strArr = str.split('');
+  for (var i = 0; i < arr.length; i++) {
+    result.push(strArr[arr[i]]);
+  }
+  return result.join('');
+};
+console.log(scrambleString('abcd', [3, 1, 2, 0])); // dbca
+console.log(scrambleString('markov', [5, 3, 1, 4, 2, 0])); // vkaorm
+console.log();
+
+
+console.log('19: isPrime');
+//  Write a method that takes in an integer (greater than one) and
+//  returns true if it is prime; otherwise return false.
+//  You may want to use the `%` modulo operation. `5 % 2` returns the
+//  remainder when dividing 5 by 2; therefore, `5 % 2 == 1`. In the case
+//  of `6 % 2`, since 2 evenly divides 6 with no remainder, `6 % 2 == 0`.
+//  More generally, if `m` and `n` are integers, `m % n == 0` if and only
+//  if `n` divides `m` evenly.
+//  Difficulty: medium.
+var isPrime = function (num) {
+  var testNum = num - 1;
+  while (testNum > 1) {
+    if (num % testNum === 0) {
+      return false;
+    }
+    testNum -= 1;
+  }
+  return true;
+};
+console.log(isPrime(2));
+console.log(isPrime(3));
+console.log(isPrime(4));
+console.log(isPrime(9));
+console.log(isPrime(23));
+console.log();
+
+
+console.log('20: nthPrime');
+//  Write a method that returns the `n`th prime number. Recall that only
+//  numbers greater than 1 can be prime.
+//  Difficulty: medium.
+var nthPrime = function (num) {
+  var counter = 0;
+  var testNum = 2;
+  while (counter < num) {
+    if (isPrime(testNum)) {
+      counter += 1;
+    }
+    if (counter === num) {
+      return testNum;
+    }
+    testNum += 1;
+  }
+};
+console.log(nthPrime(1)); // 2
+console.log(nthPrime(2)); // 3
+console.log(nthPrime(3)); // 5
+console.log(nthPrime(4)); // 7
+console.log(nthPrime(5)); // 11
+console.log();
+
+
+console.log('21: longestPalindrome');
+//  Write a method that takes in a string of lowercase letters (no
+//  uppercase letters, no repeats). Consider the *substrings* of the
+//  string: consecutive sequences of letters contained inside the string.
+//  Find the longest such string of letters that is a palindrome.
+//  Note that the entire string may itself be a palindrome.
+//  You may want to use Array's `slice(start_index, length)` method,
+//  which returns a substring of length `length` starting at index
+//  `start_index`:
+// 
+//      'abcd'.slice(1, 2) == 'bc'
+//      'abcd'.slice(1, 3) == 'bcd'
+//      'abcd'.slice(2, 1) == 'c'
+//      'abcd'.slice(2, 2) == 'cd'
+//  Difficulty: hard.
+// var longest = function (a, b) {
+//   return a.length > b.length ? a : b;
+// };
+var isPalindrome = function (str) {
+  var strArr = str.split('');
+  for (var i = 0; i < strArr.length; i++) {
+    if (strArr[i] !== strArr[str.length - (1 + i)]) {
+      return false;
+    }
+  }
+  return true;    
+};
+var longestPalindrome = function (string) {
+  var palindromeArray = [];
+  for (var i = 0; i < string.length; i++) {
+    for (var j = i + 1; j <= string.length; j++) {
+      var subSt = string.substring(i, j);
+      if (isPalindrome(subSt)) {
+        palindromeArray.push(subSt);
+      }
+    }
+  }
+  // return palindromeArray;
+  return palindromeArray.reduce(function (a, b) { return a.length > b.length ? a : b; });
+};
+console.log(longestPalindrome('abcdedcbaydnjkerkor')); // abcdedcba
+console.log(longestPalindrome('asdfghjkl'));
+console.log(longestPalindrome('aswedstopitipots')); // stopitipots
+console.log(longestPalindrome('aswedystopitipotsyhj')); // ystopitipotsy
+console.log();
+
+
+console.log('22: greatestcommonFactor');
+//  Write a method that takes in two numbers. Return the greatest
+//  integer that evenly divides both numbers. You may wish to use the
+//  `%` modulo operation.
+//  Difficulty: medium.
+var greatestcommonFactor = function (num1, num2) {
+  var smallerNum = undefined;
+  num1 >= num2 ? smallerNum = num2 : smallernum = num1;
+  while (smallerNum > 1) {
+    if (num1 % smallerNum === 0 && num2 % smallerNum === 0) {
+      return smallerNum;
+    } 
+    smallerNum -= 1;
+  }
+  return 1;
+};
+console.log(greatestcommonFactor(10, 5)); // 5
+console.log(greatestcommonFactor(24, 16)); // 8
+console.log(greatestcommonFactor(10, 3)); // 1
+console.log(greatestcommonFactor(100, 20)); // 20
+console.log(greatestcommonFactor(100, 30)); // 10
+console.log();
+
+
+console.log('23: caesarCipher');
+//  Write a method that takes in an integer `offset` and a string.
+//  Produce a new string, where each letter is shifted by `offset`. You
+//  may assume that the string contains only lowercase letters and
+//  spaces.
+//  When shifting 'z' by three letters, wrap around to the front of the
+//  alphabet to produce the letter 'c'.
+//  You'll want to use String's `ord` method and Integer's `chr` method.
+//  `ord` converts a letter to an ASCII number code. `chr` converts an
+//  ASCII number code to a letter.
+//  You may look at the ASCII printable characters chart:
+//  http://en.wikipedia.org/wiki/ASCIIASCII_printable_characters
+//  Notice that the letter 'a' has code 97, 'b' has code 98, etc., up to
+//  'z' having code 122.
+// 
+//  You may also want to use the `%` modulo operation to handle wrapping
+//  of 'z' to the front of the alphabet.
+// 
+//  Difficulty: hard. Because this problem relies on outside
+//  information, we would not give it to you on the timed challenge. :-)
+var offsetter = function (letter, num) {
+  var newNum = letter.charCodeAt(0) + num;
+  if (newNum <= 122) {
+    return String.fromCharCode(letter.charCodeAt(0) + num);
+  } else if (newNum > 122) {
+    return String.fromCharCode(letter.charCodeAt(0) + num - 26);
+  } 
+};
+var caesarCipher = function (num, string) {
+  var result = [];
+  var wordArr = string.split(' ');
+  for (var i = 0; i < wordArr.length; i++) {
+    var offsettedWord = '';
+    var letterArr = wordArr[i].split('');
+    for (var j = 0; j < wordArr[i].length; j++) {
+      offsettedWord += offsetter(wordArr[i][j], num);
+    }
+    result.push(offsettedWord);
+  }
+
+  return result.join(' ');
+};
+console.log(caesarCipher(1, 'abc')); // bcd
+console.log(caesarCipher(3, 'abc def')); // def ghi
+console.log(caesarCipher(3, 'abc xyz')); // def abc
+console.log(caesarCipher(5, 'swy yehuza')); //
+console.log();
+
+
+console.log('24: numRepeats');
+//  Write a method that takes in a string and returns the number of
+//  letters that appear more than once in the string. You may assume
+//  the string contains only lowercase letters. Count the number of
+//  letters that repeat, not the number of times they repeat in the
+//  string.
+//  Difficulty: hard.
+var numRepeats = function (string) {
+  var stringArr = [];
+  var result = [];
+  var thrashBox = [];
+  var strArr = string.split('');
+  for (var i = 0; i < strArr.length; i++) {
+    if (!stringArr.includes(strArr[i])) {
+      stringArr.push(strArr[i]);
+    } else if (!result.includes(strArr[i])) {
+      result.push(strArr[i]);
+    } else {
+      thrashBox.push(strArr[i]);
+    }
+  }
+
+  return result.length;
+};
+console.log(numRepeats('abdbc')); // 1
+console.log(numRepeats('abab')); // 2
+console.log(numRepeats('abcde')); // 0
+console.log(numRepeats('mississippi')); // 3
+console.log();
+
+
+
+console.log('25: nearestLarger ');
+//  Write a function, `nearestLarger(arr, i)` which takes an array and an
+//  index.  The function should return another index, `j`: this should
+//  satisfy:
+//  (a) `arr[i] < arr[j]`, AND
+//  (b) there is no `j2` closer to `i` than `j` where `arr[i] < arr[j2]`.
+//  In case of ties (see example below), choose the earliest (left-most)
+//  of the two indices. If no number in `arr` is larger than `arr[i]`,
+//  return `nil`.
+//  Difficulty: 2/5
+var nearestLarger = function (arr, idx) {
+  let diff = 1;
+  while (true) {
+    let left = idx - diff;
+    let right = idx + diff;
+    if (idx >= 0 && arr[left] > arr[idx]) {
+      return left;
+    } else if (idx < arr.length && arr[right] > arr[idx]) {
+      return right;
+    } else if (left < 0 && right >= arr.length) {
+      return null;
+    }
+
+    diff += 1;
+  }
+};
+console.log(nearestLarger([2, 3, 4, 8], 2)); // 3
+console.log(nearestLarger([2, 8, 4, 3], 2)); // 1
+console.log(nearestLarger([2, 6, 4, 8], 2)); // 1
+console.log(nearestLarger([2, 6, 4, 6], 2)); // 1
+console.log(nearestLarger([8, 2, 4, 3], 2)); // 0
+console.log(nearestLarger([2, 4, 3, 8], 1)); // 3
+console.log(nearestLarger([2, 6, 4, 8], 3)); // nil
+console.log(nearestLarger([2, 6, 9, 4, 8], 3)); // 2
+console.log();
+
+
+console.log('26: noRepeats');
+//  Write a function, `noRepeats(year_start, year_end)`, which takes a
+//  range of years and outconsole.log those years which do not have any
+//  repeated digits.
+//  You should probably write a helper function, `noRepeat?(year)` which
+//  returns true/false if a single year doesn't have a repeat.
+// var uniq = function (a) {
+//   var result = [];
+//   for (var x = 0; x < a.length; x++) {
+//     if (result.indexOf(a[x]) === -1) {
+//       result.push(a[x]);
+//     }
+//   }
+//   return result.sort(function (a, b) { return a - b; });
+// };
+// console.log(uniq([1, 4, 2, 7, 1, 5, 9, 2, 4, 7, 2])); // [ 1, 2, 4, 5, 7, 9 ]
+//  Difficulty: 1/5
+
+
+var noRep = function (str) {
+  for (var i = 0; i < str.length; i++) {
+    if (str.slice(i + 1).includes(str[i])) {
+      return false;
+    }
+  }
+  return true;
+};
+//
+var noRepeats = function (yr1, yr2) {
+  var result = [];
+  var yearArr = [];
+  for (var i = yr1; i <= yr2; i++) {
+    yearArr.push(i);
+  }
+
+  for (var j = 0; j < yearArr.length; j++) {
+    if (noRep(String(yearArr[j]))) {
+      result.push(yearArr[j]);
+    }
+  }
+
+  return result;
+};
+console.log(noRepeats(1234, 1234)); // [1234]
+console.log(noRepeats(1123, 1123)); // []
+console.log(noRepeats(1980, 1987)); // [1980,1982,1983,1984,1985,1986,1987]
+console.log();
+
+
+
+console.log('27: letterCount');
+//  Write a function, `letterCount(str)` that takes a string and
+//  returns a hash mapping each letter to its frequency. Do not include
+//  spaces.
+//  Difficulty: 1/5
+var letterCount = function (str) {
+  var hash = {};
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] !== ' ') {
+      if (hash[str[i]] === undefined) {
+        hash[str[i]] = 1;
+      } else {
+        hash[str[i]] += 1;
+      }
+    }
+  }
+  return hash;
+};
+console.log(letterCount('cat')); // { c: 1, a: 1, t: 1 }
+console.log(letterCount('moon')); // { m: 1, o: 2, n: 1 }
+console.log(letterCount('cats are fun')); // { c: 1, a: 2, t: 1, s: 1, r: 1, e: 1, f: 1, u: 1, n: 1 }
+console.log();
+
+
+console.log('28: orderedVowelWords');
+//  Write a method, `orderedVowelWords(str)` that takes a string of
+//  lowercase words and returns a string with just the words containing
+//  all their vowels (excluding 'y') in alphabetical order. Vowels may
+//  be repeated (`'afoot'` is an ordered vowel word).
+//  You will probably want a helper method, `ordered_vowel_word?(word)`
+//  which returns true/false if a word's vowels are ordered.
+//  Difficulty: 2/5
+var ordered = function (word) {
+  var vowels = 'aeiou';
+  var vowelAlph = '';
+  for (var i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      vowelAlph += word[i];
+    }
+  }
+
+  for (var j = 0; j < vowelAlph.length - 1; j++) {
+    if (vowelAlph[j] > vowelAlph[j + 1]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+var orderedVowelWords = function (str) {
+  var result = [];
+  var newstr = str.split(' ');
+  for (var i = 0; i < newstr.length; i++) {
+    if (ordered(newstr[i])) {
+      result.push(newstr[i]);
+    }
+  }
+
+  return result.join(' ');
+};
+console.log(orderedVowelWords('amends aeuoi')); // amends
+console.log(orderedVowelWords('complicated aeiou')); // aeiou
+console.log(orderedVowelWords('afoot here i come')); // afoot here i
+console.log(orderedVowelWords('ham')); // ham
+console.log(orderedVowelWords('crypt')); // crypt
+console.log(orderedVowelWords('o')); // o
+console.log(orderedVowelWords('tamely')); // tamely
+console.log();
+
+
+console.log('29: wonkyCoins');
+// //  Catsylvanian money is a strange thing: they have a coin for every
+// //  denomination (including zero!). A wonky change machine in
+// //  Catsylvania takes any coin of value N and returns 3 new coins,
+// //  valued at N/2, N/3 and N/4 (rounding down).
+// //  Write a method `wonkyCoins(n)` that returns the number of coins you
+// //  are left with if you take all non-zero coins and keep feeding them
+// //  back into the machine until you are left with only zero-value coins.
+// //  Difficulty: 3/5
+
+var wonkyCoins = function (num) {
+  if (num === 0) {
+    return 1;
+  }
+
+  return wonkyCoins(Math.floor(num / 2)) + wonkyCoins(Math.floor(num / 3)) + wonkyCoins(Math.floor(num / 4));
+};
+console.log(wonkyCoins(1)); // 3
+console.log(wonkyCoins(5)); // 11
+console.log(wonkyCoins(6)); // 15
+console.log(wonkyCoins(0)); // 1
+console.log();
+
+
+console.log('30: morseEncode');
+// //  Build a function, `morseEncode(str)` that takes in a string (no
+// //  numbers or punctuation) and outconsole.log the morse code for it. See
+// //  http://en.wikipedia.org/wiki/Morse_code. Put two spaces between
+// //  words and one space between letters.
+// //  You'll have to type in morse code: I'd use a hash to map letters to
+// //  codes. Don't worry about numbers.
+// //  I wrote a helper method `morseEncode_word(word)` that handled a
+// //  single word.
+// //  Difficulty: 2/5
+var morseCode = {
+  'a': '.-',
+  'b': '-...',
+  'c': '-.-.',
+  'd': '-..',
+  'e': '.',
+  'f': '..-.',
+  'g': '--.',
+  'h': '....',
+  'i': '..',
+  'j': '.---',
+  'k': '-.-',
+  'l': '.-..',
+  'm': '--',
+  'n': '-.',
+  'o': '---',
+  'p': '.--.',
+  'q': '--.-',
+  'r': '.-.',
+  's': '...',
+  't': '-',
+  'u': '..-',
+  'v': '...-',
+  'w': '.--',
+  'x': '-..-',
+  'y': '-.--',
+  'z': '--..'
+};
+//
+var morseEncodeWord = function (word) {
+  let letters = word.split('');
+  let codes = letters.map(function (l) { return morseCode[l]; });
+  return codes.join(' ');
+};
+//
+var morseEncode = function (str) {
+  let words = str.split(' ');
+  let codedWords = words.map(function (word) { return morseEncodeWord(word); });
+  return codedWords.join('   ');
+};
+console.log(morseEncode('q')); // --.-
+console.log(morseEncode('cat')); // -.-. .- -
+console.log(morseEncode('cat in hat')); // -.-. .- -  .. -.  .... .- - 
+console.log();
+
+
+console.log('31: wordUnscrambler');
+//  Write a function wordUnscrambler that takes two arguments: a scrambled
+//  word and a dictionary of real words. Your program must then output
+//  all words that our scrambled word can unscramble to.
+//  Hint: To see if a string `s1` is an anagram of `s2`, split both
+//  strings into arrays of letters. Sort the two arrays. If they are
+//  equal, then they are anagrams.
+//  Difficulty: 3/5
+// var wordUnscrambler = function (string, dictionary) {
+//   var stringLetters = string.split('').sort().join('');
+//   var anagrams = [];
+//   dictionary.forEach(function (word) {
+//     var wordLetters = word.split('').sort().join('');
+//     if (wordLetters === stringLetters) {
+//       anagrams.push(word);
+//     }
+//   });
+
+//   return anagrams;
+// };
+// //
+var wordUnscrambler = function (str, words) {
+  var strLetters = str.split('').sort().join('');
+  return words.filter(function (word) {
+    return strLetters === word.split('').sort().join('');
+  });
+};
+console.log(wordUnscrambler('cat', ['tac'])); // ['tac']
+console.log(wordUnscrambler('cat', ['tom'])); // []
+console.log(wordUnscrambler('cat', ['tic', 'toc', 'tac', 'toe'])); // ['tac']
+console.log(wordUnscrambler('cat', ['scatter', 'tac', 'ca'])); // ['tac']
+console.log(wordUnscrambler('turn', ['numb', 'turn', 'runt', 'nurt'])); // ['turn', 'runt', 'nurt']
+console.log();
+
+
+console.log('32: recIntersection');
+//  Write a function, `recIntersection(rect1, rect2)` and returns the
+//  intersection of the two.
+// 
+//  Rectangles are represented as a pair of coordinate-pairs: the
+//  bottom-left and top-right coordinates (given in `[x, y]` notation).
+//  Hint: You can calculate the left-most x coordinate of the
+//  intersection by taking the maximum of the left-most x coordinate of
+//  each rectangle. Likewise, you can calculate the top-most y
+//  coordinate of the intersection by taking the minimum of the top most
+//  y coordinate of each rectangle.
+//  Difficulty: 4/5
+var recIntersection = function (rect1, rect2) {
+  let xMin = Math.max(...[rect1[0][0], rect2[0][0]]);
+  let xMax = Math.min(...[rect1[1][0], rect2[1][0]]);
+
+  let yMin = Math.max(...[rect1[0][1], rect2[0][1]]);
+  let yMax = Math.min(...[rect1[1][1], rect2[1][1]]);
+
+  if (xMax < xMin || yMax < yMin) {
+    return null;
+  } else {
+    return [[xMin, yMin], [xMax, yMax]];
+  }
+};
+console.log(recIntersection([[0, 0], [2, 1]], [[1, 0], [3, 1]])); // [[1, 0], [2, 1]]
+console.log(recIntersection([[1, 1], [2, 2]], [[0, 0], [5, 5]])); // [[1, 1], [2, 2]]
+console.log(recIntersection([[1, 1], [2, 2]], [[4, 4], [5, 5]])); //  nil
+console.log(recIntersection([[1, 1], [5, 4]], [[2, 2], [3, 5]])); // [[2, 2], [3, 4]]
+console.log();
+
+
+
+console.log('33: bubbleSort');
+//  Write a function `bubbleSort(arr)` which will sort an array of
+//  integers using the 'bubble sort'
+//  methodology. (http://en.wikipedia.org/wiki/bubbleSort)
+//  Difficulty: 3/5
+var bubbleSort = function (arr) {
+  return arr.sort(function (a, b) { return a - b; });
+};
+console.log(bubbleSort([])); // == []
+console.log(bubbleSort([1])); // [1]
+console.log(bubbleSort([5, 4, 3, 2, 1])); // [1, 2, 3, 4, 5]
+console.log();
+
+
+console.log('34: transformEmployeeData');
 // Write a function called 'transformEmployeeData' that transforms some employee
 // data from one format to another.The argument will look something like this:
 // [
@@ -1434,7 +2320,8 @@ var transformEmployeeData = function (array) {
 console.log(transformEmployeeData(employedList));
 console.log();
 
-//==============================================================================
+
+console.log('35: convertObjectToList');
 // Write  a function called 'convertObjectToList' which converts an object literal
 // into an array of arrays, like this:
 // Argument:{name: 'Holly',age: 35,role: 'producer'}
@@ -1462,6 +2349,7 @@ console.log(convertObjectToList(hash1));
 console.log();
 
 
+console.log('36: doubling');
 //   ===== key: value ===== 
 // (1) Create an array of numbers and save the array to a variable
 // (2) Iterate through the array using a loop
