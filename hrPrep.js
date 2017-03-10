@@ -1,18 +1,13 @@
-/****************************************************************************/
 console.log();
-console.log(' ===== HACK REACTOR PREP QUESTIONS ===== '); 
+console.log(' ===== HACK REACTOR PREP QUESTIONS ===== ');
 console.log();
-/****************************************************************************/
 
 
-
-/****************************************************************************/
+console.log(' ===== MODULE 0: EXERCISES ===== ');
 console.log();
-console.log(' ===== MODULE 0: EXERCISES ===== '); 
-console.log();
-/****************************************************************************/
 
-console.log(' ===== Greet Customers ===== ');  
+
+console.log(' ===== Greet Customers ===== ');
 //----------------------------------------------------------------------
 // Write a function called "greetCustomer".
 // Given a name, "greetCustomer" returns a greeting based on how many times that customer has visited the restaurant.  Please refer to the customerData object. 
@@ -30,29 +25,29 @@ console.log(' ===== Greet Customers ===== ');
 // * Your function should not alter the customerData object to update the number of visits.
 // * Do not hardcode to the exact sample data. This is a BAD IDEA:
 var customerData = {
-  'Joe': {
-    visits: 1
-  },
-  'Carol': {
-    visits: 2
-  },
-  'Howard': {
-    visits: 3
-  },
-  'Carrie': {
-    visits: 4
-  }
+    'Joe': {
+        visits: 1
+    },
+    'Carol': {
+        visits: 2
+    },
+    'Howard': {
+        visits: 3
+    },
+    'Carrie': {
+        visits: 4
+    }
 };
 //
-var greetCustomer = function (data, firstName) {
-  var name = data[firstName];
-  if (name === undefined) {
-    return 'Welcome! Is this your first time?';
-  } else if (name.visits === 1) {
-    return `Welcome back, ${firstName}! We\'re glad you liked us the first time!`;
-  } else if (name.visits > 1) {
-    return `Welcome back, ${firstName}! So glad to see you again!`;
-  }
+var greetCustomer = function(data, firstName) {
+    var name = data[firstName];
+    if (name === undefined) {
+        return 'Welcome! Is this your first time?';
+    } else if (name.visits === 1) {
+        return `Welcome back, ${firstName}! We\'re glad you liked us the first time!`;
+    } else if (name.visits > 1) {
+        return `Welcome back, ${firstName}! So glad to see you again!`;
+    }
 };
 console.log(greetCustomer(customerData, 'John'));
 console.log(greetCustomer(customerData, 'Joe'));
@@ -61,13 +56,23 @@ console.log(greetCustomer(customerData, 'Carrie'));
 console.log();
 
 
-console.log(' ===== Array to Object ===== ');    
+console.log(' ===== Array to Object ===== ');
 //----------------------------------------------------------------------
 // Write a function called "transformEmployeeData" that transforms some employee data from one format to another.
 // The argument will look something like this:
-var arrData = [ 
-  [['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']], 
-  [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'CEO']]
+var arrData = [
+    [
+        ['firstName', 'Joe'],
+        ['lastName', 'Blow'],
+        ['age', 42],
+        ['role', 'clerk']
+    ],
+    [
+        ['firstName', 'Mary'],
+        ['lastName', 'Jenkins'],
+        ['age', 36],
+        ['role', 'CEO']
+    ]
 ];
 // Given that input, the return value should look like this:
 // [
@@ -78,29 +83,29 @@ var arrData = [
 // Note that the input may have a different number of rows or different keys than the given sample. 
 
 // For example, let's say the HR department adds a "tshirtSize" field to each employee record. Your code should flexibly accommodate that.
-var transformEmployeeData = function (data) {
-  var result = [];
-  for (var i in data) {
-    var hash = {};
-    for (var j in data[i]) {
-      hash[data[i][j][0]] = data[i][j][1];
+var transformEmployeeData = function(data) {
+    var result = [];
+    for (var i in data) {
+        var hash = {};
+        for (var j in data[i]) {
+            hash[data[i][j][0]] = data[i][j][1];
+        }
+        result.push(hash);
     }
-    result.push(hash);
-  }
-  return result;
+    return result;
 };
 console.log(transformEmployeeData(arrData));
 console.log();
 
 
-console.log(' ===== Object to Array ===== ');    
+console.log(' ===== Object to Array ===== ');
 //----------------------------------------------------------------------
 // Write  a function called "convertObjectToList" which converts an object literal into an array of arrays, like this:
 // Argument:
 var hash1 = {
-  name: 'Holly',
-  age: 35,
-  role: 'producer'
+    name: 'Holly',
+    age: 35,
+    role: 'producer'
 };
 //Return value:
 // [['name', 'Holly'], ['age', 35], ['role', 'producer']]
@@ -109,16 +114,16 @@ var hash1 = {
 
 // E.g., it should also be able to handle this, or any other object containing simple key-value pairs.
 var hash2 = {
-  species: 'canine',
-  name: 'Bo',
-  weight: 45
+    species: 'canine',
+    name: 'Bo',
+    weight: 45
 };
-var convertObjectToList = function (obj) {
-  var result = [];
-  for (var key in obj) {
-    result.push([key, obj[key]]);
-  }
-  return result;
+var convertObjectToList = function(obj) {
+    var result = [];
+    for (var key in obj) {
+        result.push([key, obj[key]]);
+    }
+    return result;
 };
 console.log(convertObjectToList(hash1));
 console.log(convertObjectToList(hash2));
@@ -128,7 +133,7 @@ console.log();
 
 /****************************************************************************/
 console.log();
-console.log(' ===== MODULE 1: READING ===== '); 
+console.log(' ===== MODULE 1: READING ===== ');
 console.log();
 /****************************************************************************/
 // Reactor Prep Module 1: Building Blocks Review
@@ -729,11 +734,11 @@ Under certain circumstances, you will see people use snake-casing for constants 
 //
 //
 
-console.log(' ===== MODULE 1: EXERCISES ===== '); 
+console.log(' ===== MODULE 1: EXERCISES ===== ');
 console.log();
 /****************************************************************************/
 
-console.log(' ===== 01: countWords ===== '); 
+console.log(' ===== 01: countWords ===== ');
 //---------------------------------------------------------------------- 
 // Write a function called "countWords".
 
@@ -749,18 +754,18 @@ console.log(' ===== 01: countWords ===== ');
 // function countWords(str) {
 //   // your code here
 // }  
-var countWords = function (string) {
-  var strArr = string.split(' ');
-  var hash = {};
-  for (var i in strArr) {
-    if (hash[strArr[i]] === undefined) {
-      hash[strArr[i]] = 1;
-    } else {
-      hash[strArr[i]] += 1;
+var countWords = function(string) {
+    var strArr = string.split(' ');
+    var hash = {};
+    for (var i in strArr) {
+        if (hash[strArr[i]] === undefined) {
+            hash[strArr[i]] = 1;
+        } else {
+            hash[strArr[i]] += 1;
+        }
+        // hash[strArr[i]] = (hash[strArr[i]] || 0) + 1;
     }
-    // hash[strArr[i]] = (hash[strArr[i]] || 0) + 1;
-  }
-  return hash;
+    return hash;
 };
 console.log(countWords('ask a bunch get a bunch'));
 console.log(countWords('john will always be john except john Bull'));
@@ -768,7 +773,7 @@ console.log(countWords('Peter Pipper picked a peck and a bowl'));
 console.log();
 
 
-console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');    
+console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrinkAndDrive".
 
@@ -789,17 +794,17 @@ console.log(' ===== 02: isPersonOldEnoughToDrinkAndDrive ===== ');
 // function isPersonOldEnoughToDrinkAndDrive(person) {
 //   // your code here
 // }
-var john = { 
-  age: 17 
+var john = {
+    age: 17
 };
-var peter = { 
-  age: 75 
+var peter = {
+    age: 75
 };
-var paul = { 
-  age: 21 
+var paul = {
+    age: 21
 };
-var isPersonOldEnoughToDrinkAndDrive = function (obj) {
-  return obj.age >= 21;
+var isPersonOldEnoughToDrinkAndDrive = function(obj) {
+    return obj.age >= 21;
 };
 console.log(isPersonOldEnoughToDrinkAndDrive(john));
 console.log(isPersonOldEnoughToDrinkAndDrive(peter));
@@ -807,7 +812,7 @@ console.log(isPersonOldEnoughToDrinkAndDrive(paul));
 console.log();
 
 
-console.log(' ===== 03: extend ===== ');    
+console.log(' ===== 03: extend ===== ');
 //----------------------------------------------------------------------
 // Write a function called "extend".
 
@@ -817,14 +822,18 @@ console.log(' ===== 03: extend ===== ');
 // * Add any keys that are not in the 1st object.
 // * If the 1st object already has a given key, ignore it (do not overwrite the property value).
 // * Do not modify the 2nd object at all.
-var abj1 = { 
-  a: 1, b: 2 
+var abj1 = {
+    a: 1,
+    b: 2
 };
-var abj2 = { 
-  b: 4, c: 3 
+var abj2 = {
+    b: 4,
+    c: 3
 };
-var abj3 = { 
-  d: 'opps', e: 3, 'aww': 'whoa!' 
+var abj3 = {
+    d: 'opps',
+    e: 3,
+    'aww': 'whoa!'
 };
 // extend(obj1, obj2);
 // console.log(abj1); // --> {a: 1, b: 2, c: 3}
@@ -834,13 +843,13 @@ var abj3 = {
 // function extend(obj1, obj2) {
 //   // your code here
 // }
-var extend = function (obj1, obj2) {
-  for (var key in obj2) {
-    if (obj1[key] === undefined) {
-      obj1[key] = obj2[key];
+var extend = function(obj1, obj2) {
+    for (var key in obj2) {
+        if (obj1[key] === undefined) {
+            obj1[key] = obj2[key];
+        }
     }
-  }
-  return obj1;
+    return obj1;
 };
 console.log(extend(abj3, abj1)); // note that this is different from below
 console.log(extend(abj1, abj2));
@@ -849,7 +858,7 @@ console.log(extend(abj3, abj1));
 console.log();
 
 
-console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');    
+console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getElementsThatEqual10AtProperty".
 
@@ -861,13 +870,13 @@ console.log(' ===== 04: getElementsThatEqual10AtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the key, it should return an empty array.
 var obja = {
-  key: [1000, 10, 50, 10]
+    key: [1000, 10, 50, 10]
 };
 var objb = {
-  koy: [10, 510, 150, 100]
+    koy: [10, 510, 150, 100]
 };
 var objc = {
-  kuy: [100, 20, 30, 40, 10, 50, 10, 79, 120, '10', 10.0, 10.0]
+    kuy: [100, 20, 30, 40, 10, 50, 10, 79, 120, '10', 10.0, 10.0]
 };
 // var output = getElementsThatEqual10AtProperty(obj, 'key');
 // console.log(output); // --> [10, 10]
@@ -876,14 +885,14 @@ var objc = {
 // function getElementsThatEqual10AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsThatEqual10AtProperty = function (abj, kay) {
-  var result = [];
-  for (var i in abj[kay]) { 
-    if (abj[kay][i] === 10) {
-      result.push(abj[kay][i]);
+var getElementsThatEqual10AtProperty = function(abj, kay) {
+    var result = [];
+    for (var i in abj[kay]) {
+        if (abj[kay][i] === 10) {
+            result.push(abj[kay][i]);
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(getElementsThatEqual10AtProperty(obja, 'key'));
 console.log(getElementsThatEqual10AtProperty(objb, 'koy'));
@@ -891,7 +900,7 @@ console.log(getElementsThatEqual10AtProperty(objc, 'kuy'));
 console.log();
 
 
-console.log(' ===== 05: select ===== ');    
+console.log(' ===== 05: select ===== ');
 //----------------------------------------------------------------------
 // Write a function called "select".
 
@@ -902,13 +911,31 @@ console.log(' ===== 05: select ===== ');
 // * It does not modify the passed in object.
 var arr1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'm'];
 var obj1 = {
-  a: 1, c: 2, e: 3, g: 4, x: 5, y: 6, z: 7
+    a: 1,
+    c: 2,
+    e: 3,
+    g: 4,
+    x: 5,
+    y: 6,
+    z: 7
 };
 var obj2 = {
-  a: 32, d: 14, f: 87, h: 0, j: 900, y: 6, z: 7
+    a: 32,
+    d: 14,
+    f: 87,
+    h: 0,
+    j: 900,
+    y: 6,
+    z: 7
 };
 var obj3 = {
-  a: 'koko', i: '$$', e: 55, g: 4, x: 5, m: 6, e: 4
+    a: 'koko',
+    i: '$$',
+    e: 55,
+    g: 4,
+    x: 5,
+    m: 6,
+    e: 4
 };
 // var output = select(arr1, obj1);
 // console.log(output); // --> { a: 1, c: 2, e: 3, g: 4 }
@@ -918,14 +945,14 @@ var obj3 = {
 // function select(arr, obj) {
 //   // your code here
 // }
-var select = function (arr, obj) {
-  var result = {};
-  for (var i in arr) {
-    if (obj[arr[i]] !== undefined) {
-      result[arr[i]] = obj[arr[i]];
+var select = function(arr, obj) {
+    var result = {};
+    for (var i in arr) {
+        if (obj[arr[i]] !== undefined) {
+            result[arr[i]] = obj[arr[i]];
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(select(arr1, obj1));
 console.log(select(arr1, obj2));
@@ -933,7 +960,7 @@ console.log(select(arr1, obj3));
 console.log();
 
 
-console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');    
+console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getElementsLessThan100AtProperty".
 
@@ -946,13 +973,13 @@ console.log(' ===== 06: getElementsLessThan100AtProperty ===== ');
 // * If there is no property at the key, it should return an empty array.
 
 var obj = {
-  key: [1000, 20, 50, 500]
+    key: [1000, 20, 50, 500]
 };
 var obj1 = {
-  key: [12, 134, 70, 1000, 20, 50, 500, -45]
+    key: [12, 134, 70, 1000, 20, 50, 500, -45]
 };
 var obj2 = {
-  key: [99, 80, 1011893928, 13, 20, 50, 500]
+    key: [99, 80, 1011893928, 13, 20, 50, 500]
 };
 // var output = getElementsLessThan100AtProperty(obj, 'key');
 // console.log(output); // --> [20, 50]
@@ -961,14 +988,14 @@ var obj2 = {
 // function getElementsLessThan100AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsLessThan100AtProperty = function (object, keyy) {
-  var result = [];
-  for (var i in object[keyy]) {
-    if (object[keyy][i] < 100) {
-      result.push(object[keyy][i]);
+var getElementsLessThan100AtProperty = function(object, keyy) {
+    var result = [];
+    for (var i in object[keyy]) {
+        if (object[keyy][i] < 100) {
+            result.push(object[keyy][i]);
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(getElementsLessThan100AtProperty(obj, 'key'));
 console.log(getElementsLessThan100AtProperty(obj1, 'key'));
@@ -976,7 +1003,7 @@ console.log(getElementsLessThan100AtProperty(obj2, 'key'));
 console.log();
 
 
-console.log(' ===== 07: countAllCharacters ===== ');    
+console.log(' ===== 07: countAllCharacters ===== ');
 //----------------------------------------------------------------------
 // Write a function called "countAllCharacters".
 // Given a string, "countAllCharacters" returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
@@ -991,24 +1018,24 @@ console.log(' ===== 07: countAllCharacters ===== ');
 // function countAllCharacters(str) {
 //   // your code here
 // }
-var countAllCharacters = function (str) {
-  var strArr = str.split('').sort();
-  var result = {};
-  for (var i in strArr) {
-    if (result[strArr[i]] === undefined) {
-      result[strArr[i]] = 1;
-    } else {
-      result[strArr[i]] += 1;
+var countAllCharacters = function(str) {
+    var strArr = str.split('').sort();
+    var result = {};
+    for (var i in strArr) {
+        if (result[strArr[i]] === undefined) {
+            result[strArr[i]] = 1;
+        } else {
+            result[strArr[i]] += 1;
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(countAllCharacters('banana'));
 console.log(countAllCharacters('hippopotamus'));
 console.log(countAllCharacters('fraframatingotirtiryabulation'));
 console.log();
 
-console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');    
+console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');
 //----------------------------------------------------------------------
 
 // Write a function called "getElementsGreaterThan10AtProperty".
@@ -1022,13 +1049,13 @@ console.log(' ===== 08: getElementsGreaterThan10atProperty ===== ');
 // * If there is no property at the key, it should return an empty array. 
 
 var obj = {
-  key: [1, 20, 30]
+    key: [1, 20, 30]
 };
 var obj1 = {
-  key: [14, 10, 5, 25, 20, 30, 98, 2863551, -763]
+    key: [14, 10, 5, 25, 20, 30, 98, 2863551, -763]
 };
 var obj2 = {
-  key: [3.4, 35.8, 189, 20, 30]
+    key: [3.4, 35.8, 189, 20, 30]
 };
 // var output = getElementsGreaterThan10AtProperty(obj, 'key');
 // console.log(output); // --> [20, 30]
@@ -1037,14 +1064,14 @@ var obj2 = {
 // function getElementsGreaterThan10AtProperty(obj, key) {
 //   // your code here
 // }
-var getElementsGreaterThan10atProperty = function (object, keyy) {
-  var result = [];
-  for (var i in object[keyy]) {
-    if (object[keyy][i] > 10) {
-      result.push(object[keyy][i]);
+var getElementsGreaterThan10atProperty = function(object, keyy) {
+    var result = [];
+    for (var i in object[keyy]) {
+        if (object[keyy][i] > 10) {
+            result.push(object[keyy][i]);
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(getElementsGreaterThan10atProperty(obj, 'key'));
 console.log(getElementsGreaterThan10atProperty(obj1, 'key'));
@@ -1052,7 +1079,7 @@ console.log(getElementsGreaterThan10atProperty(obj2, 'key'));
 console.log();
 
 
-console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');    
+console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAverageOfElementsAtProperty".
 
@@ -1065,13 +1092,13 @@ console.log(' ===== 09: getAverageOfElementsAtProperty ===== ');
 
 
 var obj = {
-  key: [1, 2, 3]
+    key: [1, 2, 3]
 };
 var obj1 = {
-  key: [3, 'h', 7, 2, 3]
+    key: [3, 'h', 7, 2, 3]
 };
 var obj2 = {
-  key: []
+    key: []
 };
 // var output = getAverageOfElementsAtProperty(obj, 'key');
 // console.log(output); // --> 2
@@ -1080,23 +1107,23 @@ var obj2 = {
 // function getAverageOfElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getAverageOfElementsAtProperty = function (objj, key) {
-  var average = 0;
-  var sum = 0;
-  if (objj[key].length !== 0 && objj[key].every(Number)) {
-    for (var i in objj[key]) {
-      sum += objj[key][i];
+var getAverageOfElementsAtProperty = function(objj, key) {
+    var average = 0;
+    var sum = 0;
+    if (objj[key].length !== 0 && objj[key].every(Number)) {
+        for (var i in objj[key]) {
+            sum += objj[key][i];
+        }
+        average = sum / (objj[key].length);
     }
-    average = sum / (objj[key].length);
-  }
-  return average;
+    return average;
 };
 console.log(getAverageOfElementsAtProperty(obj, 'key'));
 console.log(getAverageOfElementsAtProperty(obj1, 'key'));
 console.log(getAverageOfElementsAtProperty(obj2, 'key'));
 
 
-console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');    
+console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getOddLengthWordsAtProperty".
 
@@ -1108,24 +1135,24 @@ console.log(' ===== 10: getOddLengthWordsAtProperty ===== ');
 // * If the property at the given key is not an array, it should return an empty array.
 // * If there is no property at the given key, it should return an empty array.
 var obj = {
-  key: ['It', 'has', 'some', 'words']
+    key: ['It', 'has', 'some', 'words']
 };
 var obj1 = {
-  key: ['john', 'has', 'a', 'pair', 'of', 'boots']
+    key: ['john', 'has', 'a', 'pair', 'of', 'boots']
 };
 var obj2 = {
-  key: ['peter', 'pipper', 'did', 'not', 'pick', 'shit', 'today']
+    key: ['peter', 'pipper', 'did', 'not', 'pick', 'shit', 'today']
 };
 // var output = getOddLengthWordsAtProperty(obj, 'key');
 // console.log(output); // --> ['has', 'words']
-var getOddLengthWordsAtProperty = function (objj, key) {
-  var result = [];
-  for (var i in objj[key]) {
-    if (objj[key][i].length % 2 === 1) {
-      result.push(objj[key][i]);
+var getOddLengthWordsAtProperty = function(objj, key) {
+    var result = [];
+    for (var i in objj[key]) {
+        if (objj[key][i].length % 2 === 1) {
+            result.push(objj[key][i]);
+        }
     }
-  }
-  return result;
+    return result;
 };
 console.log(getOddLengthWordsAtProperty(obj, 'key'));
 console.log(getOddLengthWordsAtProperty(obj1, 'key'));
@@ -1133,7 +1160,7 @@ console.log(getOddLengthWordsAtProperty(obj2, 'key'));
 console.log();
 
 
-console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');    
+console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getEvenLengthWordsAtProperty".
 
@@ -1146,7 +1173,7 @@ console.log(' ===== 11: getEvenLengthWordsAtProperty ===== ');
 // * If there is no property at the key, it should return an empty array.
 
 var abj = {
-  key: ['a', 'long', 'game']
+    key: ['a', 'long', 'game']
 };
 // var output = getEvenLengthWordsAtProperty(obj, 'key');
 // console.log(output); // --> ['long', 'game']
@@ -1155,19 +1182,19 @@ var abj = {
 // function getEvenLengthWordsAtProperty(obj, key) {
 //   // your code here
 // }
-var getEvenLengthWordsAtProperty = function (obj, key) {
-  var result = [];
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length; i++) {
-        if (obj[key][i].length % 2 === 0) {
-          result.push(obj[key][i]);
+var getEvenLengthWordsAtProperty = function(obj, key) {
+    var result = [];
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length; i++) {
+                if (obj[key][i].length % 2 === 0) {
+                    result.push(obj[key][i]);
+                }
+            }
         }
-      }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getEvenLengthWordsAtProperty(abj)); // ['long', 'game']
 // console.log(getEvenLengthWordsAtProperty());
@@ -1175,7 +1202,7 @@ console.log(getEvenLengthWordsAtProperty(abj)); // ['long', 'game']
 console.log();
 
 
-console.log(' ===== 12: getSquaredElementsAtProperty ===== ');    
+console.log(' ===== 12: getSquaredElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getSquaredElementsAtProperty".
 
@@ -1187,7 +1214,7 @@ console.log(' ===== 12: getSquaredElementsAtProperty ===== ');
 // * If there is no property at the key, it should return an empty array.
 
 var abj = {
-  key: [2, 1, 5]
+    key: [2, 1, 5]
 };
 // var output = getSquaredElementsAtProperty(obj, 'key');
 // console.log(output); // --> [4, 1, 25]
@@ -1196,17 +1223,17 @@ var abj = {
 // function getSquaredElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getSquaredElementsAtProperty = function (obj, key) {
-  var result = [];
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length; i++) {
-        result.push(obj[key][i] ** 2);
-      }
+var getSquaredElementsAtProperty = function(obj, key) {
+    var result = [];
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length; i++) {
+                result.push(obj[key][i] ** 2);
+            }
+        }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getSquaredElementsAtProperty(abj)); // --> [4, 1, 25]
 // console.log(getSquaredElementsAtProperty());
@@ -1214,7 +1241,7 @@ console.log(getSquaredElementsAtProperty(abj)); // --> [4, 1, 25]
 console.log();
 
 
-console.log(' ===== 13: getOddElementsAtProperty ===== ');    
+console.log(' ===== 13: getOddElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getOddElementsAtProperty".
 
@@ -1227,7 +1254,7 @@ console.log(' ===== 13: getOddElementsAtProperty ===== ');
 // * If there is no property at the key, it should return an empty array.
 
 var abj = {
-  key: [1, 2, 3, 4, 5]
+    key: [1, 2, 3, 4, 5]
 };
 // var output = getOddElementsAtProperty(obj, 'key');
 // console.log(output); // --> [1, 3, 5]
@@ -1236,19 +1263,19 @@ var abj = {
 // function getOddElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getOddElementsAtProperty = function (obj, key) {
-  var result = [];
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length; i++) {
-        if (obj[key][i] % 2 === 1) {
-          result.push(obj[key][i]);
+var getOddElementsAtProperty = function(obj, key) {
+    var result = [];
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length; i++) {
+                if (obj[key][i] % 2 === 1) {
+                    result.push(obj[key][i]);
+                }
+            }
         }
-      }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getOddElementsAtProperty(abj)); // --> [1, 3, 5]
 // console.log(getOddElementsAtProperty());
@@ -1256,7 +1283,7 @@ console.log(getOddElementsAtProperty(abj)); // --> [1, 3, 5]
 console.log();
 
 
-console.log(' ===== 14: getEvenElementsAtProperty ===== ');    
+console.log(' ===== 14: getEvenElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getEvenElementsAtProperty".
 
@@ -1269,7 +1296,7 @@ console.log(' ===== 14: getEvenElementsAtProperty ===== ');
 // * If there is no property at the given key, it should return an empty array.
 
 var abj = {
-  key: [1000, 11, 50, 17]
+    key: [1000, 11, 50, 17]
 };
 // var output = getEvenElementsAtProperty(obj, 'key');
 // console.log(output); // --> [1000, 50]
@@ -1278,19 +1305,19 @@ var abj = {
 // function getEvenElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getEvenElementsAtProperty = function (obj, key) {
-  var result = [];
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length; i++) {
-        if (obj[key][i] % 2 === 0) {
-          result.push(obj[key][i]);
+var getEvenElementsAtProperty = function(obj, key) {
+    var result = [];
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length; i++) {
+                if (obj[key][i] % 2 === 0) {
+                    result.push(obj[key][i]);
+                }
+            }
         }
-      }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getEvenElementsAtProperty(abj)); // --> [1000, 50]
 // console.log(getEvenElementsAtProperty());
@@ -1298,7 +1325,7 @@ console.log(getEvenElementsAtProperty(abj)); // --> [1000, 50]
 console.log();
 
 
-console.log(' ===== 15: getSmallestElementAtProperty ===== ');    
+console.log(' ===== 15: getSmallestElementAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getSmallestElementAtProperty".
 
@@ -1310,10 +1337,10 @@ console.log(' ===== 15: getSmallestElementAtProperty ===== ');
 // * If there is no property at the key, it should return undefined.
 
 var abj = {
-  key: [2, 1, 5]
+    key: [2, 1, 5]
 };
 var abj1 = {
-  key: []
+    key: []
 };
 // var output = getSmallestElementAtProperty(obj, 'key');
 // console.log(output); // --> 1
@@ -1322,16 +1349,16 @@ var abj1 = {
 // function getSmallestElementAtProperty(obj, key) {
 //   // your code here
 // }
-var getSmallestElementAtProperty = function (obj, key) {
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-        if (!isNaN(Math.min(...obj[key]))) {
-          return Math.min(...obj[key]);
+var getSmallestElementAtProperty = function(obj, key) {
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            if (!isNaN(Math.min(...obj[key]))) {
+                return Math.min(...obj[key]);
+            }
         }
     }
-  }
 
-  return 'undefined';
+    return 'undefined';
 };
 console.log(getSmallestElementAtProperty(abj)); // --> 1
 // console.log(getSmallestElementAtProperty()); 
@@ -1339,7 +1366,7 @@ console.log(getSmallestElementAtProperty(abj)); // --> 1
 console.log();
 
 
-console.log(' ===== 16: getLargestElementAtProperty ===== ');    
+console.log(' ===== 16: getLargestElementAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLargestElementAtProperty".
 
@@ -1351,7 +1378,7 @@ console.log(' ===== 16: getLargestElementAtProperty ===== ');
 // * If there is no property at the key, it should return undefined.
 
 var abj = {
-  key: [1, 2, 4]
+    key: [1, 2, 4]
 };
 // var output = getLargestElementAtProperty(obj, 'key');
 // console.log(output); // --> 4
@@ -1360,16 +1387,16 @@ var abj = {
 // function getLargestElementAtProperty(obj, key) {
 //   // your code here
 // }
-var getLargestElementAtProperty = function (obj, key) {
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-        if (!isNaN(obj[key])) {
-          return Math.max(...obj[key]);
+var getLargestElementAtProperty = function(obj, key) {
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            if (!isNaN(obj[key])) {
+                return Math.max(...obj[key]);
+            }
         }
     }
-  }
 
-  return 'undefined';
+    return 'undefined';
 };
 console.log(getLargestElementAtProperty(abj)); // --> 4
 // console.log(getLargestElementAtProperty());
@@ -1377,7 +1404,7 @@ console.log(getLargestElementAtProperty(abj)); // --> 4
 console.log();
 
 
-console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');    
+console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getProductOfAllElementsAtProperty".
 
@@ -1389,7 +1416,7 @@ console.log(' ===== 17: getProductOfAllElementsAtProperty ===== ');
 // * If there is no property at the given key, it should return 0.
 
 var abj = {
-  key: [1, 2, 3, 4]
+    key: [1, 2, 3, 4]
 };
 // var output = getProductOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 24
@@ -1398,18 +1425,18 @@ var abj = {
 // function getProductOfAllElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getProductOfAllElementsAtProperty = function (obj, key) {
-  var result = 0;
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      result = 1;
-      for (var i = 0; i < obj[key].length; i++) {
-        result *= obj[key][i];
-      }
+var getProductOfAllElementsAtProperty = function(obj, key) {
+    var result = 0;
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            result = 1;
+            for (var i = 0; i < obj[key].length; i++) {
+                result *= obj[key][i];
+            }
+        }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getProductOfAllElementsAtProperty(abj)); // --> 24
 // console.log(getProductOfAllElementsAtProperty());
@@ -1417,7 +1444,7 @@ console.log(getProductOfAllElementsAtProperty(abj)); // --> 24
 console.log();
 
 
-console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');    
+console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getSumOfAllElementsAtProperty".
 
@@ -1429,7 +1456,7 @@ console.log(' ===== 18: getSumOfAllElementsAtProperty ===== ');
 // * If there is no property at the key, it should return 0.
 
 var abj = {
-  key: [4, 1, 8]
+    key: [4, 1, 8]
 };
 // var output = getSumOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 13
@@ -1438,17 +1465,17 @@ var abj = {
 // function getSumOfAllElementsAtProperty(obj, key) {
 //   // your code here
 // }
-var getSumOfAllElementsAtProperty = function (obj, key) {
-  var result = 0;
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length; i++) {
-        result += obj[key][i];
-      }
+var getSumOfAllElementsAtProperty = function(obj, key) {
+    var result = 0;
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length; i++) {
+                result += obj[key][i];
+            }
+        }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getSumOfAllElementsAtProperty(abj)); // 13
 // console.log(getSumOfAllElementsAtProperty());
@@ -1456,7 +1483,7 @@ console.log(getSumOfAllElementsAtProperty(abj)); // 13
 console.log();
 
 
-console.log(' ===== 19: getAllButLastElementOfProperty ===== ');    
+console.log(' ===== 19: getAllButLastElementOfProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllButLastElementOfProperty".
 
@@ -1468,7 +1495,7 @@ console.log(' ===== 19: getAllButLastElementOfProperty ===== ');
 // * If there is no property at the key, it should return an empty array. 
 
 var abj = {
-  key: [1, 2, 3]
+    key: [1, 2, 3]
 };
 // var output = getAllButLastElementOfProperty(obj, 'key');
 // console.log(output); // --> [1,2]
@@ -1477,17 +1504,17 @@ var abj = {
 // function getAllButLastElementOfProperty(obj, key) {
 //   // your code here
 // }
-var getAllButLastElementOfProperty = function (obj, key) {
-  var result = [];
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      for (var i = 0; i < obj[key].length - 1; i++) {
-        result.push(obj[key][i]);
-      }
+var getAllButLastElementOfProperty = function(obj, key) {
+    var result = [];
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            for (var i = 0; i < obj[key].length - 1; i++) {
+                result.push(obj[key][i]);
+            }
+        }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getAllButLastElementOfProperty(abj)); // --> [1,2]
 // console.log(getAllButLastElementOfProperty());
@@ -1495,7 +1522,7 @@ console.log(getAllButLastElementOfProperty(abj)); // --> [1,2]
 console.log();
 
 
-console.log(' ===== 20: getNthElementOfProperty ===== ');    
+console.log(' ===== 20: getNthElementOfProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getNthElementOfProperty".
 
@@ -1508,7 +1535,7 @@ console.log(' ===== 20: getNthElementOfProperty ===== ');
 // * If there is no property at the key, it should return undefined.
 
 var abj = {
-  key: [1, 2, 6]
+    key: [1, 2, 6]
 };
 // var output = getNthElementOfProperty(obj, 'key', 1);
 // console.log(output); // --> 2
@@ -1517,17 +1544,17 @@ var abj = {
 // function getNthElementOfProperty(obj, key, n) {
 //   // your code here
 // }
-var getNthElementOfProperty = function (obj, key, n) {
-  var result = undefined;
-  for (var key in obj) {
-    if (Array.isArray(obj[key])) {
-      if (n <= obj[key].length) {
-        result = obj[key][n];
-      }
+var getNthElementOfProperty = function(obj, key, n) {
+    var result = undefined;
+    for (var key in obj) {
+        if (Array.isArray(obj[key])) {
+            if (n <= obj[key].length) {
+                result = obj[key][n];
+            }
+        }
     }
-  }
 
-  return result;
+    return result;
 };
 console.log(getNthElementOfProperty(abj, 'key', 1)); // --> 2
 // console.log(getNthElementOfProperty());
@@ -1535,7 +1562,7 @@ console.log(getNthElementOfProperty(abj, 'key', 1)); // --> 2
 console.log();
 
 
-console.log(' ===== 21: getLastElementOfProperty ===== ');    
+console.log(' ===== 21: getLastElementOfProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLastElementOfProperty".
 
@@ -1547,7 +1574,7 @@ console.log(' ===== 21: getLastElementOfProperty ===== ');
 // * If there is no property at the key, it should return undefined.
 
 var abj = {
-  key: [1, 2, 5]
+    key: [1, 2, 5]
 };
 // var output = getLastElementOfProperty(obj, 'key');
 // console.log(output); // --> 5
@@ -1556,13 +1583,13 @@ var abj = {
 // function getLastElementOfProperty(obj, key) {
 //   // your code here
 // }
-var getLastElementOfProperty = function (obj, key) {
-  var result = undefined;
-  if (Array.isArray(obj[key])) {
-    result = obj[key][(obj[key].length - 1)];
-  }
+var getLastElementOfProperty = function(obj, key) {
+    var result = undefined;
+    if (Array.isArray(obj[key])) {
+        result = obj[key][(obj[key].length - 1)];
+    }
 
-  return result;
+    return result;
 };
 console.log(getLastElementOfProperty(abj, 'key')); // --> 5
 // console.log(getLastElementOfProperty());
@@ -1570,7 +1597,7 @@ console.log(getLastElementOfProperty(abj, 'key')); // --> 5
 console.log();
 
 
-console.log(' ===== 22: getFirstElementOfProperty ===== ');    
+console.log(' ===== 22: getFirstElementOfProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getFirstElementOfProperty".
 
@@ -1583,7 +1610,7 @@ console.log(' ===== 22: getFirstElementOfProperty ===== ');
 
 
 var abj = {
-  key: [1, 2, 4]
+    key: [1, 2, 4]
 };
 // var output = getFirstElementOfProperty(obj, 'key');
 // console.log(output); // --> 1
@@ -1592,13 +1619,13 @@ var abj = {
 // function getFirstElementOfProperty(obj, key) {
 //   // your code here
 // }
-var getFirstElementOfProperty = function (obj, key) {
-  var result = undefined;
-  if (Array.isArray(obj[key])) {
-    result = obj[key][0];
-  }
+var getFirstElementOfProperty = function(obj, key) {
+    var result = undefined;
+    if (Array.isArray(obj[key])) {
+        result = obj[key][0];
+    }
 
-  return result;
+    return result;
 };
 console.log(getFirstElementOfProperty(abj, 'key')); // --> 1
 // console.log(getFirstElementOfProperty());
@@ -1606,64 +1633,64 @@ console.log(getFirstElementOfProperty(abj, 'key')); // --> 1
 console.log();
 
 
-console.log(' ===== 23: removeNumbersLargerThan ===== ');    
+console.log(' ===== 23: removeNumbersLargerThan ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeNumbersLargerThan".
 
 // Given a number and an object, "removeNumbersLargerThan" removes any properties whose values are numbers greater than the given number.
 
 var abj = {
-  a: 8,
-  b: 2,
-  c: 'montana'
-}
-// removeNumbersLargerThan(5, obj);
-// console.log(obj); // --> { b: 2, c: 'montana' }
+        a: 8,
+        b: 2,
+        c: 'montana'
+    }
+    // removeNumbersLargerThan(5, obj);
+    // console.log(obj); // --> { b: 2, c: 'montana' }
 
 // Starter Code :
 // function removeNumbersLargerThan(num, obj) {
 //   // your code here
 // }
-var removeNumbersLargerThan = function (num, obj) {
-  for (var key in obj) {
-    if (obj[key] > num) {
-      delete obj[key];
+var removeNumbersLargerThan = function(num, obj) {
+    for (var key in obj) {
+        if (obj[key] > num) {
+            delete obj[key];
+        }
     }
-  }
-  return obj;
+    return obj;
 };
-console.log(removeNumbersLargerThan(5, abj));// --> { b: 2, c: 'montana' }
+console.log(removeNumbersLargerThan(5, abj)); // --> { b: 2, c: 'montana' }
 // console.log(removeNumbersLargerThan());
 // console.log(removeNumbersLargerThan());
 console.log();
 
 
-console.log(' ===== 24: removeNumbersLessThan ===== ');    
+console.log(' ===== 24: removeNumbersLessThan ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeNumbersLessThan".
 
 // Given a number and an object, "removeNumbersLessThan" removes any properties whose values are numbers less than the given number.
 
 var abj = {
-  a: 8,
-  b: 2,
-  c: 'montana'
-}
-// removeNumbersLessThan(5, obj);
-// console.log(obj); // --> { a: 8, c: 'montana' }
+        a: 8,
+        b: 2,
+        c: 'montana'
+    }
+    // removeNumbersLessThan(5, obj);
+    // console.log(obj); // --> { a: 8, c: 'montana' }
 
 
 // Starter Code :
 // function removeNumbersLessThan(num, obj) {
 //   // your code here
 // }
-var removeNumbersLessThan = function (num, obj) {
-  for (var key in obj) {
-    if (obj[key] < num) {
-      delete obj[key];
+var removeNumbersLessThan = function(num, obj) {
+    for (var key in obj) {
+        if (obj[key] < num) {
+            delete obj[key];
+        }
     }
-  }
-  return obj;
+    return obj;
 };
 console.log(removeNumbersLessThan(5, abj)); // --> { a: 8, c: 'montana' }
 // console.log(removeNumbersLessThan());
@@ -1671,19 +1698,19 @@ console.log(removeNumbersLessThan(5, abj)); // --> { a: 8, c: 'montana' }
 console.log();
 
 
-console.log(' ===== 25: addFullNameProperty ===== ');    
+console.log(' ===== 25: addFullNameProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addFullNameProperty".
 
 // Given an object that has a "firstName" property and a "lastName" property, "addFullNameProperty" returns a "fullName" property whose value is a string with the first name and last name separated by a space.
 
 var person = {
-  firstName: 'Jade',
-  lastName: 'Smith'
+    firstName: 'Jade',
+    lastName: 'Smith'
 };
 var person2 = {
-  firstName: 'Tom',
-  lastName: 'Cruise'
+    firstName: 'Tom',
+    lastName: 'Cruise'
 };
 // addFullNameProperty(person);
 // console.log(person.fullName); // --> 'Jade Smith'
@@ -1692,8 +1719,8 @@ var person2 = {
 // function addFullNameProperty(obj) {
 //   // your code here
 // }
-var addFullNameProperty = function (obj) {
-  return `${obj.firstName} ${obj.lastName}`;
+var addFullNameProperty = function(obj) {
+    return `${obj.firstName} ${obj.lastName}`;
 };
 console.log(addFullNameProperty(person)); // --> 'Jade Smith'
 console.log(addFullNameProperty(person2)); // Tom Cruise
@@ -1701,7 +1728,7 @@ console.log(addFullNameProperty(person2)); // Tom Cruise
 console.log();
 
 
-console.log(' ===== 26: removeStringValuesLongerThan ===== ');    
+console.log(' ===== 26: removeStringValuesLongerThan ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeStringValuesLongerThan".
 
@@ -1719,7 +1746,7 @@ console.log(' ===== 26: removeStringValuesLongerThan ===== ');
 // function removeStringValuesLongerThan(num, obj) {
 //   // your code here
 // }
-var removeStringValuesLongerThan = function (num, obj) {
+var removeStringValuesLongerThan = function(num, obj) {
 
 };
 console.log(removeStringValuesLongerThan());
@@ -1728,7 +1755,7 @@ console.log(removeStringValuesLongerThan());
 console.log();
 
 
-console.log(' ===== 27: removeEvenValues ===== ');    
+console.log(' ===== 27: removeEvenValues ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeEvenValues".
 
@@ -1750,7 +1777,7 @@ console.log(' ===== 27: removeEvenValues ===== ');
 // function removeEvenValues(obj) {
 //   // your code here
 // }
-var removeEvenValues = function (obj) {
+var removeEvenValues = function(obj) {
 
 };
 console.log(removeEvenValues());
@@ -1759,7 +1786,7 @@ console.log(removeEvenValues());
 console.log();
 
 
-console.log(' ===== 28: countNumberOfKeys ===== ');    
+console.log(' ===== 28: countNumberOfKeys ===== ');
 //----------------------------------------------------------------------
 // Write a function called "countNumberOfKeys".
 
@@ -1777,7 +1804,7 @@ console.log(' ===== 28: countNumberOfKeys ===== ');
 // function countNumberOfKeys(obj) {
 //   // your code here
 // }
-var countNumberOfKeys = function (obj) {
+var countNumberOfKeys = function(obj) {
 
 };
 console.log(countNumberOfKeys());
@@ -1786,7 +1813,7 @@ console.log(countNumberOfKeys());
 console.log();
 
 
-console.log(' ===== 29: isPersonOldEnoughToDrive ===== ');    
+console.log(' ===== 29: isPersonOldEnoughToDrive ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrive".
 
@@ -1805,7 +1832,7 @@ console.log(' ===== 29: isPersonOldEnoughToDrive ===== ');
 // function isPersonOldEnoughToDrive(person) {
 //   // your code here
 // }
-var isPersonOldEnoughToDrive = function (obj) {
+var isPersonOldEnoughToDrive = function(obj) {
 
 };
 console.log(isPersonOldEnoughToDrive());
@@ -1814,7 +1841,7 @@ console.log(isPersonOldEnoughToDrive());
 console.log();
 
 
-console.log(' ===== 30: removeOddValues ===== ');    
+console.log(' ===== 30: removeOddValues ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeOddValues".
 
@@ -1832,7 +1859,7 @@ console.log(' ===== 30: removeOddValues ===== ');
 // function removeOddValues(obj) {
 //   // your code here
 // }
-var removeOddValues = function (obj) {
+var removeOddValues = function(obj) {
 
 };
 console.log(removeOddValues());
@@ -1841,7 +1868,7 @@ console.log(removeOddValues());
 console.log();
 
 
-console.log(' ===== 31: removeArrayValues ===== ');    
+console.log(' ===== 31: removeArrayValues ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeArrayValues".
 
@@ -1859,7 +1886,7 @@ console.log(' ===== 31: removeArrayValues ===== ');
 // function removeArrayValues(obj) {
 //   // your code here
 // }
-var removeArrayValues = function (obj) {
+var removeArrayValues = function(obj) {
 
 };
 console.log(removeArrayValues());
@@ -1868,7 +1895,7 @@ console.log(removeArrayValues());
 console.log();
 
 
-console.log(' ===== 32: removeNumberValues ===== ');    
+console.log(' ===== 32: removeNumberValues ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeNumberValues".
 
@@ -1886,7 +1913,7 @@ console.log(' ===== 32: removeNumberValues ===== ');
 // function removeNumberValues(obj) {
 //   // your code here
 // }
-var removeNumberValues = function (obj) {
+var removeNumberValues = function(obj) {
 
 };
 console.log(removeNumberValues());
@@ -1895,7 +1922,7 @@ console.log(removeNumberValues());
 console.log();
 
 
-console.log(' ===== 33: isPersonOldEnoughToVote ===== ');    
+console.log(' ===== 33: isPersonOldEnoughToVote ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToVote".
 
@@ -1914,7 +1941,7 @@ console.log(' ===== 33: isPersonOldEnoughToVote ===== ');
 // function isPersonOldEnoughToVote(person) {
 //   // your code here
 // }
-var isPersonOldEnoughToVote = function (obj) {
+var isPersonOldEnoughToVote = function(obj) {
 
 };
 console.log(isPersonOldEnoughToVote());
@@ -1923,7 +1950,7 @@ console.log(isPersonOldEnoughToVote());
 console.log();
 
 
-console.log(' ===== 34: removeStringValues ===== ');    
+console.log(' ===== 34: removeStringValues ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeStringValues".
 
@@ -1940,7 +1967,7 @@ console.log(' ===== 34: removeStringValues ===== ');
 // function removeStringValues(obj) {
 //   // your code here
 // }
-var removeStringValues = function (obj) {
+var removeStringValues = function(obj) {
 
 };
 console.log(removeStringValues());
@@ -1949,7 +1976,7 @@ console.log(removeStringValues());
 console.log();
 
 
-console.log(' ===== 35: isPersonOldEnoughToDrink ===== ');    
+console.log(' ===== 35: isPersonOldEnoughToDrink ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isPersonOldEnoughToDrink".
 
@@ -1968,7 +1995,7 @@ console.log(' ===== 35: isPersonOldEnoughToDrink ===== ');
 // function isPersonOldEnoughToDrink(person) {
 //   // your code here
 // }
-var isPersonOldEnoughToDrink = function (obj) {
+var isPersonOldEnoughToDrink = function(obj) {
 
 };
 console.log(isPersonOldEnoughToDrink());
@@ -1977,7 +2004,7 @@ console.log(isPersonOldEnoughToDrink());
 console.log();
 
 
-console.log(' ===== 36: getElementOfArrayProperty ===== ');    
+console.log(' ===== 36: getElementOfArrayProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getElementOfArrayProperty".
 
@@ -1999,7 +2026,7 @@ console.log(' ===== 36: getElementOfArrayProperty ===== ');
 // function getElementOfArrayProperty(obj, key, index) {
 //   // your code here
 // }
-var getElementOfArrayProperty = function (obj, key, ind) {
+var getElementOfArrayProperty = function(obj, key, ind) {
 
 };
 console.log(getElementOfArrayProperty());
@@ -2008,7 +2035,7 @@ console.log(getElementOfArrayProperty());
 console.log();
 
 
-console.log(' ===== 37: getProperty ===== ');    
+console.log(' ===== 37: getProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getProperty".
 
@@ -2027,7 +2054,7 @@ console.log(' ===== 37: getProperty ===== ');
 // function getProperty(obj, key) {
 //   // your code here
 // }
-var getProperty = function (obj, key) {
+var getProperty = function(obj, key) {
 
 };
 console.log(getProperty());
@@ -2036,7 +2063,7 @@ console.log(getProperty());
 console.log();
 
 
-console.log(' ===== 38: addObjectProperty ===== ');    
+console.log(' ===== 38: addObjectProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addObjectProperty".
 
@@ -2057,7 +2084,7 @@ console.log(' ===== 38: addObjectProperty ===== ');
 // function addObjectProperty(obj1, key, obj2) {
 //   // your code here
 // }
-var addObjectProperty = function (obj1, key, obj2) {
+var addObjectProperty = function(obj1, key, obj2) {
 
 };
 console.log(addObjectProperty());
@@ -2066,7 +2093,7 @@ console.log(addObjectProperty());
 console.log();
 
 
-console.log(' ===== 39: addArrayProperty ===== ');    
+console.log(' ===== 39: addArrayProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addArrayProperty".
 
@@ -2081,7 +2108,7 @@ console.log(' ===== 39: addArrayProperty ===== ');
 // function addArrayProperty(obj, key, arr) {
 //   // your code here
 // }
-var addArrayProperty = function (obj, key, arr) {
+var addArrayProperty = function(obj, key, arr) {
 
 };
 console.log(addArrayProperty());
@@ -2090,7 +2117,7 @@ console.log(addArrayProperty());
 console.log();
 
 
-console.log(' =====  40: removeProperty===== ');    
+console.log(' =====  40: removeProperty===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeProperty".
 
@@ -2107,7 +2134,7 @@ console.log(' =====  40: removeProperty===== ');
 // function removeProperty(obj, key) {
 //   // your code here
 // }
-var removeProperty = function (obj, key) {
+var removeProperty = function(obj, key) {
 
 };
 console.log(removeProperty());
@@ -2116,7 +2143,7 @@ console.log(removeProperty());
 console.log();
 
 
-console.log(' ===== 41: addProperty ===== ');    
+console.log(' ===== 41: addProperty ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addProperty".
 
@@ -2130,7 +2157,7 @@ console.log(' ===== 41: addProperty ===== ');
 // function addProperty(obj, key) {
 //   // your code here
 // }
-var addProperty = function (obj, key) {
+var addProperty = function(obj, key) {
 
 };
 console.log(addProperty());
@@ -2139,7 +2166,7 @@ console.log(addProperty());
 console.log();
 
 
-console.log(' ===== 42: convertDoubleSpaceToSingle ===== ');    
+console.log(' ===== 42: convertDoubleSpaceToSingle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "convertDoubleSpaceToSingle".
 
@@ -2155,7 +2182,7 @@ console.log(' ===== 42: convertDoubleSpaceToSingle ===== ');
 // function convertDoubleSpaceToSingle(str) {
 //   // your code here
 // }
-var convertDoubleSpaceToSingle = function (str) {
+var convertDoubleSpaceToSingle = function(str) {
 
 };
 console.log(convertDoubleSpaceToSingle());
@@ -2164,7 +2191,7 @@ console.log(convertDoubleSpaceToSingle());
 console.log();
 
 
-console.log(' ===== 43: getAllWords ===== ');    
+console.log(' ===== 43: getAllWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllWords".
 
@@ -2180,7 +2207,7 @@ console.log(' ===== 43: getAllWords ===== ');
 // function getAllWords(str) {
 //   // your code here
 // }
-var getAllWords = function (str) {
+var getAllWords = function(str) {
 
 };
 console.log(getAllWords());
@@ -2189,7 +2216,7 @@ console.log(getAllWords());
 console.log();
 
 
-console.log(' ===== 44: getAllLetters ===== ');    
+console.log(' ===== 44: getAllLetters ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllLetters".
 
@@ -2205,7 +2232,7 @@ console.log(' ===== 44: getAllLetters ===== ');
 // function getAllLetters(str) {
 //   // your code here
 // }
-var getAllLetters = function (str) {
+var getAllLetters = function(str) {
 
 };
 console.log(getAllLetters());
@@ -2214,7 +2241,7 @@ console.log(getAllLetters());
 console.log();
 
 
-console.log(' ===== 45: countCharacter ===== ');    
+console.log(' ===== 45: countCharacter ===== ');
 //----------------------------------------------------------------------
 // Write a function called "countCharacter".
 
@@ -2227,7 +2254,7 @@ console.log(' ===== 45: countCharacter ===== ');
 // function countCharacter(str, char) {
 //   // your code here
 // }
-var countCharacter = function (str, char) {
+var countCharacter = function(str, char) {
 
 };
 console.log(countCharacter());
@@ -2236,7 +2263,7 @@ console.log(countCharacter());
 console.log();
 
 
-console.log(' ===== 46: removeElement ===== ');    
+console.log(' ===== 46: removeElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeElement".
 
@@ -2254,7 +2281,7 @@ console.log(' ===== 46: removeElement ===== ');
 // function removeElement(array, discarder) {
 //   // your code here
 // }
-var removeElement = function (arr, discarder) {
+var removeElement = function(arr, discarder) {
 
 };
 console.log(removeElement());
@@ -2263,7 +2290,7 @@ console.log(removeElement());
 console.log();
 
 
-console.log(' ===== 47: keep ===== ');    
+console.log(' ===== 47: keep ===== ');
 //----------------------------------------------------------------------
 // Write a function called "keep".
 
@@ -2279,7 +2306,7 @@ console.log(' ===== 47: keep ===== ');
 // function keep(array, keeper) {
 //   // your code here
 // }
-var keep = function (arr, keeper) {
+var keep = function(arr, keeper) {
 
 };
 console.log(keep());
@@ -2288,7 +2315,7 @@ console.log(keep());
 console.log();
 
 
-console.log(' ===== 48: findShortestWordAmongMixedElements ===== ');    
+console.log(' ===== 48: findShortestWordAmongMixedElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findShortestWordAmongMixedElements".
 
@@ -2307,7 +2334,7 @@ console.log(' ===== 48: findShortestWordAmongMixedElements ===== ');
 // function findShortestWordAmongMixedElements(arr) {
 //   // your code here
 // }
-var findShortestWordAmongMixedElements = function (arr) {
+var findShortestWordAmongMixedElements = function(arr) {
 
 };
 console.log(findShortestWordAmongMixedElements());
@@ -2316,7 +2343,7 @@ console.log(findShortestWordAmongMixedElements());
 console.log();
 
 
-console.log(' ===== 49: computeAverageOfNumbers ===== ');    
+console.log(' ===== 49: computeAverageOfNumbers ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeAverageOfNumbers".
 
@@ -2333,7 +2360,7 @@ console.log(' ===== 49: computeAverageOfNumbers ===== ');
 // function computeAverageOfNumbers(nums) {
 //   // your code here
 // }
-var computeAverageOfNumbers = function (nums) {
+var computeAverageOfNumbers = function(nums) {
 
 };
 console.log(computeAverageOfNumbers());
@@ -2342,7 +2369,7 @@ console.log(computeAverageOfNumbers());
 console.log();
 
 
-console.log(' ===== 50: findSmallestNumberAmongMixedElements ===== ');    
+console.log(' ===== 50: findSmallestNumberAmongMixedElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findSmallestNumberAmongMixedElements".
 
@@ -2359,7 +2386,7 @@ console.log(' ===== 50: findSmallestNumberAmongMixedElements ===== ');
 // function findSmallestNumberAmongMixedElements(arr) {
 //   // your code here
 // }
-var findSmallestNumberAmongMixedElements = function (arr) {
+var findSmallestNumberAmongMixedElements = function(arr) {
 
 };
 console.log(findSmallestNumberAmongMixedElements());
@@ -2368,7 +2395,7 @@ console.log(findSmallestNumberAmongMixedElements());
 console.log();
 
 
-console.log(' ===== 51: getLongestWordOfMixedElements ===== ');    
+console.log(' ===== 51: getLongestWordOfMixedElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLongestWordOfMixedElements".
 
@@ -2385,7 +2412,7 @@ console.log(' ===== 51: getLongestWordOfMixedElements ===== ');
 // function getLongestWordOfMixedElements(arr) {
 //   // your code here
 // }
-var getLongestWordOfMixedElements = function (arr) {
+var getLongestWordOfMixedElements = function(arr) {
 
 };
 console.log(getLongestWordOfMixedElements());
@@ -2394,7 +2421,7 @@ console.log(getLongestWordOfMixedElements());
 console.log();
 
 
-console.log(' ===== 52: filterOddLengthWords ===== ');    
+console.log(' ===== 52: filterOddLengthWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "filterOddLengthWords".
 
@@ -2407,7 +2434,7 @@ console.log(' ===== 52: filterOddLengthWords ===== ');
 // function filterOddLengthWords(words) {
 //   // your code here
 // }
-var filterOddLengthWords = function (words) {
+var filterOddLengthWords = function(words) {
 
 };
 console.log(filterOddLengthWords());
@@ -2416,7 +2443,7 @@ console.log(filterOddLengthWords());
 console.log();
 
 
-console.log(' ===== 53: findLargestNumberAmongMixedElements ===== ');    
+console.log(' ===== 53: findLargestNumberAmongMixedElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLargestNumberAmongMixedElements". 
 
@@ -2434,7 +2461,7 @@ console.log(' ===== 53: findLargestNumberAmongMixedElements ===== ');
 // function getLargestNumberAmongMixedElements(arr) {
 //   // your code here
 // }
-var getLargestNumberAmongMixedElements = function (arr) {
+var getLargestNumberAmongMixedElements = function(arr) {
 
 };
 console.log(getLargestNumberAmongMixedElements());
@@ -2443,7 +2470,7 @@ console.log(getLargestNumberAmongMixedElements());
 console.log();
 
 
-console.log(' ===== 54: getLengthOfLongestElement ===== ');    
+console.log(' ===== 54: getLengthOfLongestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfLongestElement".
 
@@ -2459,7 +2486,7 @@ console.log(' ===== 54: getLengthOfLongestElement ===== ');
 // function getLengthOfLongestElement(arr) {
 //   // your code here
 // }
-var getLengthOfLongestElement = function (arr) {
+var getLengthOfLongestElement = function(arr) {
 
 };
 console.log(getLengthOfLongestElement());
@@ -2468,7 +2495,7 @@ console.log(getLengthOfLongestElement());
 console.log();
 
 
-console.log(' ===== 55: filterEvenLengthWords ===== ');    
+console.log(' ===== 55: filterEvenLengthWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "filterEvenLengthWords".
 
@@ -2481,7 +2508,7 @@ console.log(' ===== 55: filterEvenLengthWords ===== ');
 // function filterEvenLengthWords(words) {
 //   // your code here
 // }
-var filterEvenLengthWords = function (words) {
+var filterEvenLengthWords = function(words) {
 
 };
 console.log(filterEvenLengthWords());
@@ -2490,7 +2517,7 @@ console.log(filterEvenLengthWords());
 console.log();
 
 
-console.log(' ===== 56: squareElements ===== ');    
+console.log(' ===== 56: squareElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "squareElements".
 
@@ -2503,7 +2530,7 @@ console.log(' ===== 56: squareElements ===== ');
 // function squareElements(arr) {
 //   // your code here
 // }
-var squareElements = function (arr) {
+var squareElements = function(arr) {
 
 };
 console.log(squareElements());
@@ -2512,7 +2539,7 @@ console.log(squareElements());
 console.log();
 
 
-console.log(' ===== 57: filterOddElements ===== ');    
+console.log(' ===== 57: filterOddElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "filterOddElements".
 
@@ -2525,7 +2552,7 @@ console.log(' ===== 57: filterOddElements ===== ');
 // function filterOddElements(arr) {
 //   // your code here
 // }
-var filterOddElements = function (arr) {
+var filterOddElements = function(arr) {
 
 };
 console.log(filterOddElements());
@@ -2534,7 +2561,7 @@ console.log(filterOddElements());
 console.log();
 
 
-console.log(' ===== 58: computeProductOfAllElements ===== ');    
+console.log(' ===== 58: computeProductOfAllElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeProductOfAllElements".
 
@@ -2550,7 +2577,7 @@ console.log(' ===== 58: computeProductOfAllElements ===== ');
 // function computeProductOfAllElements(arr) {
 //   // your code here
 // }
-var computeProductOfAllElements = function (arr) {
+var computeProductOfAllElements = function(arr) {
 
 };
 console.log(computeProductOfAllElements());
@@ -2559,7 +2586,7 @@ console.log(computeProductOfAllElements());
 console.log();
 
 
-console.log(' ===== 59: filterEvenElements ===== ');    
+console.log(' ===== 59: filterEvenElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "filterEvenElements".
 
@@ -2572,7 +2599,7 @@ console.log(' ===== 59: filterEvenElements ===== ');
 // function filterEvenElements(arr) {
 //   // your code here
 // }
-var filterEvenElements = function (arr) {
+var filterEvenElements = function(arr) {
 
 };
 console.log(filterEvenElements());
@@ -2581,7 +2608,7 @@ console.log(filterEvenElements());
 console.log();
 
 
-console.log(' ===== 60: getLengthOfShortestElement ===== ');    
+console.log(' ===== 60: getLengthOfShortestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfShortestElement".
 
@@ -2597,7 +2624,7 @@ console.log(' ===== 60: getLengthOfShortestElement ===== ');
 // function getLengthOfShortestElement(arr) {
 //   // your code here
 // }
-var getLengthOfShortestElement = function (arr) {
+var getLengthOfShortestElement = function(arr) {
 
 };
 console.log(getLengthOfShortestElement());
@@ -2606,7 +2633,7 @@ console.log(getLengthOfShortestElement());
 console.log();
 
 
-console.log(' ===== 61: getLongestElement ===== ');    
+console.log(' ===== 61: getLongestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLongestElement".
 
@@ -2623,7 +2650,7 @@ console.log(' ===== 61: getLongestElement ===== ');
 // function getLongestElement(arr) {
 //   // your code here
 // }
-var getLongestElement = function (arr) {
+var getLongestElement = function(arr) {
 
 };
 console.log(getLongestElement());
@@ -2632,7 +2659,7 @@ console.log(getLongestElement());
 console.log();
 
 
-console.log(' ===== 62: findSmallestElement ===== ');    
+console.log(' ===== 62: findSmallestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findSmallestElement".
 
@@ -2648,7 +2675,7 @@ console.log(' ===== 62: findSmallestElement ===== ');
 // function findSmallestElement(arr) {
 //   // your code here
 // }
-var findSmallestElement = function (arr) {
+var findSmallestElement = function(arr) {
 
 };
 console.log(findSmallestElement());
@@ -2657,7 +2684,7 @@ console.log(findSmallestElement());
 console.log();
 
 
-console.log(' ===== 63: removeFromFrontOfNew ===== ');    
+console.log(' ===== 63: removeFromFrontOfNew ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeFromFrontOfNew".
 
@@ -2675,7 +2702,7 @@ console.log(' ===== 63: removeFromFrontOfNew ===== ');
 // function removeFromFrontOfNew(arr) {
 //   // your code here
 // }
-var removeFromFrontOfNew = function (arr) {
+var removeFromFrontOfNew = function(arr) {
 
 };
 console.log(removeFromFrontOfNew());
@@ -2684,7 +2711,7 @@ console.log(removeFromFrontOfNew());
 console.log();
 
 
-console.log(' ===== 64: findShortestElement ===== ');    
+console.log(' ===== 64: findShortestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findShortestElement".
 
@@ -2701,7 +2728,7 @@ console.log(' ===== 64: findShortestElement ===== ');
 // function findShortestElement(arr) {
 //   // your code here
 // }
-var findShortestElement = function (arr) {
+var findShortestElement = function(arr) {
 
 };
 console.log(findShortestElement());
@@ -2710,7 +2737,7 @@ console.log(findShortestElement());
 console.log();
 
 
-console.log(' ===== 65: getLargestElement ===== ');    
+console.log(' ===== 65: getLargestElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLargestElement".
 
@@ -2726,7 +2753,7 @@ console.log(' ===== 65: getLargestElement ===== ');
 // function getLargestElement(arr) {
 //   // your code here
 // }
-var getLargestElement = function (arr) {
+var getLargestElement = function(arr) {
 
 };
 console.log(getLargestElement());
@@ -2735,7 +2762,7 @@ console.log(getLargestElement());
 console.log();
 
 
-console.log(' ===== 66: joinThreeArrays ===== ');    
+console.log(' ===== 66: joinThreeArrays ===== ');
 //----------------------------------------------------------------------
 // Write a function called "joinThreeArrays".
 
@@ -2750,7 +2777,7 @@ console.log(' ===== 66: joinThreeArrays ===== ');
 // function joinThreeArrays(arr1, arr2, arr3) {
 //   // your code here
 // }
-var joinThreeArrays = function (arr1, arr2, arr3) {
+var joinThreeArrays = function(arr1, arr2, arr3) {
 
 };
 console.log(joinThreeArrays());
@@ -2759,7 +2786,7 @@ console.log(joinThreeArrays());
 console.log();
 
 
-console.log(' ===== 67: computeSumOfAllElements ===== ');    
+console.log(' ===== 67: computeSumOfAllElements ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeSumOfAllElements".
 
@@ -2772,7 +2799,7 @@ console.log(' ===== 67: computeSumOfAllElements ===== ');
 // function computeSumOfAllElements(arr) {
 //   // your code here
 // }
-var computeSumOfAllElements = function (arr) {
+var computeSumOfAllElements = function(arr) {
 
 };
 console.log(computeSumOfAllElements());
@@ -2781,7 +2808,7 @@ console.log(computeSumOfAllElements());
 console.log();
 
 
-console.log(' ===== 68: removeFromBackOfNew ===== ');    
+console.log(' ===== 68: removeFromBackOfNew ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeFromBackOfNew".
 
@@ -2799,7 +2826,7 @@ console.log(' ===== 68: removeFromBackOfNew ===== ');
 // function removeFromBackOfNew(arr) {
 //   // your code here
 // }
-var removeFromBackOfNew = function (arr) {
+var removeFromBackOfNew = function(arr) {
 
 };
 console.log(removeFromBackOfNew());
@@ -2808,7 +2835,7 @@ console.log(removeFromBackOfNew());
 console.log();
 
 
-console.log(' ===== 69: addToFrontOfNew ===== ');    
+console.log(' ===== 69: addToFrontOfNew ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addToFrontOfNew".
 
@@ -2825,7 +2852,7 @@ console.log(' ===== 69: addToFrontOfNew ===== ');
 // function addToFrontOfNew(arr, element) {
 //   // your code here
 // }
-var addToFrontOfNew = function (arr, element) {
+var addToFrontOfNew = function(arr, element) {
 
 };
 console.log(addToFrontOfNew());
@@ -2834,7 +2861,7 @@ console.log(addToFrontOfNew());
 console.log();
 
 
-console.log(' ===== 70: addToBackOfNew ===== ');    
+console.log(' ===== 70: addToBackOfNew ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addToBackOfNew".
 
@@ -2851,7 +2878,7 @@ console.log(' ===== 70: addToBackOfNew ===== ');
 // function addToBackOfNew(arr, element) {
 //   // your code here
 // }
-var addToBackOfNew = function (arr, element) {
+var addToBackOfNew = function(arr, element) {
 
 };
 console.log(addToBackOfNew());
@@ -2860,7 +2887,7 @@ console.log(addToBackOfNew());
 console.log();
 
 
-console.log(' ===== 71: getAllElementsButNth ===== ');    
+console.log(' ===== 71: getAllElementsButNth ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButNth".
 
@@ -2873,7 +2900,7 @@ console.log(' ===== 71: getAllElementsButNth ===== ');
 // function getAllElementsButNth(array, n) {
 //   // your code here
 // }
-var getAllElementsButNth = function (arr, n) {
+var getAllElementsButNth = function(arr, n) {
 
 };
 console.log(getAllElementsButNth());
@@ -2882,7 +2909,7 @@ console.log(getAllElementsButNth());
 console.log();
 
 
-console.log(' ===== 72: joinArrayOfArrays ===== ');    
+console.log(' ===== 72: joinArrayOfArrays ===== ');
 //----------------------------------------------------------------------
 // Write a function called "joinArrayOfArrays".
 
@@ -2897,7 +2924,7 @@ console.log(' ===== 72: joinArrayOfArrays ===== ');
 // function joinArrayOfArrays(arr) {
 //   // your code here
 // }
-var joinArrayOfArrays = function (arr) {
+var joinArrayOfArrays = function(arr) {
 
 };
 console.log(joinArrayOfArrays());
@@ -2906,7 +2933,7 @@ console.log(joinArrayOfArrays());
 console.log();
 
 
-console.log(' ===== 73: removeFromFront ===== ');    
+console.log(' ===== 73: removeFromFront ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeFromFront".
 
@@ -2922,7 +2949,7 @@ console.log(' ===== 73: removeFromFront ===== ');
 // function removeFromFront(arr) {
 //   // your code here
 // }
-var removeFromFront = function (arr) {
+var removeFromFront = function(arr) {
 
 };
 console.log(removeFromFront());
@@ -2931,7 +2958,7 @@ console.log(removeFromFront());
 console.log();
 
 
-console.log(' ===== 74: getAllElementsButLast ===== ');    
+console.log(' ===== 74: getAllElementsButLast ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButLast".
 
@@ -2945,7 +2972,7 @@ console.log(' ===== 74: getAllElementsButLast ===== ');
 // function getAllElementsButLast(array) {
 //   // your code here
 // }
-var getAllElementsButLast = function (arr) {
+var getAllElementsButLast = function(arr) {
 
 };
 console.log(getAllElementsButLast());
@@ -2954,7 +2981,7 @@ console.log(getAllElementsButLast());
 console.log();
 
 
-console.log(' ===== 75: joinArrays ===== ');    
+console.log(' ===== 75: joinArrays ===== ');
 //----------------------------------------------------------------------
 // Write a function called "joinArrays".
 
@@ -2969,7 +2996,7 @@ console.log(' ===== 75: joinArrays ===== ');
 // function joinArrays(arr1, arr2) {
 //   // your code here
 // }
-var joinArrays = function (arr1, arr2) {
+var joinArrays = function(arr1, arr2) {
 
 };
 console.log(joinArrays());
@@ -2978,7 +3005,7 @@ console.log(joinArrays());
 console.log();
 
 
-console.log(' ===== 76: getNthElement ===== ');    
+console.log(' ===== 76: getNthElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getNthElement".
 
@@ -2994,7 +3021,7 @@ console.log(' ===== 76: getNthElement ===== ');
 // function getNthElement(array, n) {
 //   // your code here
 // }
-var getNthElement = function (arr, n) {
+var getNthElement = function(arr, n) {
 
 };
 console.log(getNthElement());
@@ -3003,7 +3030,7 @@ console.log(getNthElement());
 console.log();
 
 
-console.log(' ===== 77: getElementsAfter ===== ');    
+console.log(' ===== 77: getElementsAfter ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getElementsAfter".
 
@@ -3016,7 +3043,7 @@ console.log(' ===== 77: getElementsAfter ===== ');
 // function getElementsAfter(array, n) {
 //   // your code here
 // }
-var getElementsAfter = function (arr, n) {
+var getElementsAfter = function(arr, n) {
 
 };
 console.log(getElementsAfter());
@@ -3025,7 +3052,7 @@ console.log(getElementsAfter());
 console.log();
 
 
-console.log(' ===== 78: getElementsUpTo ===== ');    
+console.log(' ===== 78: getElementsUpTo ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getElementsUpTo".
 
@@ -3041,7 +3068,7 @@ console.log(' ===== 78: getElementsUpTo ===== ');
 // function getElementsUpTo(array, n) {
 //   // your code here
 // }
-var getElementsUpTo = function (arr, n) {
+var getElementsUpTo = function(arr, n) {
 
 };
 console.log(getElementsUpTo());
@@ -3050,7 +3077,7 @@ console.log(getElementsUpTo());
 console.log();
 
 
-console.log(' ===== 79: getAllElementsButFirst ===== ');    
+console.log(' ===== 79: getAllElementsButFirst ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getAllElementsButFirst".
 
@@ -3064,7 +3091,7 @@ console.log(' ===== 79: getAllElementsButFirst ===== ');
 // function getAllElementsButFirst(array) {
 //   // your code here
 // }
-var getAllElementsButFirst = function (arr) {
+var getAllElementsButFirst = function(arr) {
 
 };
 console.log(getAllElementsButFirst());
@@ -3073,7 +3100,7 @@ console.log(getAllElementsButFirst());
 console.log();
 
 
-console.log(' ===== 80: removeFromBack ===== ');    
+console.log(' ===== 80: removeFromBack ===== ');
 //----------------------------------------------------------------------
 // Write a function called "removeFromBack".
 
@@ -3089,7 +3116,7 @@ console.log(' ===== 80: removeFromBack ===== ');
 // function removeFromBack(arr) {
 //   // your code here
 // }
-var removeFromBack = function (arr) {
+var removeFromBack = function(arr) {
 
 };
 console.log(removeFromBack());
@@ -3098,7 +3125,7 @@ console.log(removeFromBack());
 console.log();
 
 
-console.log(' ===== 81: addToFront ===== ');    
+console.log(' ===== 81: addToFront ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addToFront".
 
@@ -3114,7 +3141,7 @@ console.log(' ===== 81: addToFront ===== ');
 // function addToFront(arr, element) {
 //   // your code here
 // }
-var addToFront = function (arr, element) {
+var addToFront = function(arr, element) {
 
 };
 console.log(addToFront());
@@ -3123,7 +3150,7 @@ console.log(addToFront());
 console.log();
 
 
-console.log(' ===== 82: addToBack ===== ');    
+console.log(' ===== 82: addToBack ===== ');
 //----------------------------------------------------------------------
 // Write a function called "addToBack".
 
@@ -3138,7 +3165,7 @@ console.log(' ===== 82: addToBack ===== ');
 // function addToBack(arr, element) {
 //   // your code here
 // }
-var addToBack = function (arr, element) {
+var addToBack = function(arr, element) {
 
 };
 console.log(addToBack());
@@ -3147,7 +3174,7 @@ console.log(addToBack());
 console.log();
 
 
-console.log(' ===== 83: getLastElement ===== ');    
+console.log(' ===== 83: getLastElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLastElement".
 
@@ -3163,7 +3190,7 @@ console.log(' ===== 83: getLastElement ===== ');
 // function getLastElement(array) {
 //   // your code here
 // }
-var getLastElement = function (arr) {
+var getLastElement = function(arr) {
 
 };
 console.log(getLastElement());
@@ -3172,7 +3199,7 @@ console.log(getLastElement());
 console.log();
 
 
-console.log(' ===== 84: getFirstElement ===== ');    
+console.log(' ===== 84: getFirstElement ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getFirstElement".
 
@@ -3188,7 +3215,7 @@ console.log(' ===== 84: getFirstElement ===== ');
 // function getFirstElement(array) {
 //   // your code here
 // }
-var getFirstElement = function (arr) {
+var getFirstElement = function(arr) {
 
 };
 console.log(getFirstElement());
@@ -3197,7 +3224,7 @@ console.log(getFirstElement());
 console.log();
 
 
-console.log(' ===== 85: sumDigits ===== ');    
+console.log(' ===== 85: sumDigits ===== ');
 //----------------------------------------------------------------------
 // Write a function called "sumDigits".
 
@@ -3219,7 +3246,7 @@ console.log(' ===== 85: sumDigits ===== ');
 // function sumDigits(num) {
 //   // your code here
 // }
-var sumDigits = function (num) {
+var sumDigits = function(num) {
 
 };
 console.log(sumDigits());
@@ -3228,7 +3255,7 @@ console.log(sumDigits());
 console.log();
 
 
-console.log(' ===== 86: getIndexOf ===== ');    
+console.log(' ===== 86: getIndexOf ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getIndexOf".
 
@@ -3247,7 +3274,7 @@ console.log(' ===== 86: getIndexOf ===== ');
 // function getIndexOf(char, str) {
 //   // your code here
 // }
-var getIndexOf = function (char, str) {
+var getIndexOf = function(char, str) {
 
 };
 console.log(getIndexOf());
@@ -3256,7 +3283,7 @@ console.log(getIndexOf());
 console.log();
 
 
-console.log(' ===== 87: getStringLength ===== ');    
+console.log(' ===== 87: getStringLength ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getStringLength".
 
@@ -3273,7 +3300,7 @@ console.log(' ===== 87: getStringLength ===== ');
 // function getStringLength(string) {
 //   // your code here
 // }
-var getStringLength = function (str) {
+var getStringLength = function(str) {
 
 };
 console.log(getStringLength());
@@ -3282,7 +3309,7 @@ console.log(getStringLength());
 console.log();
 
 
-console.log(' ===== 88: countAllCharacters ===== ');    
+console.log(' ===== 88: countAllCharacters ===== ');
 //----------------------------------------------------------------------
 // Write a function called "countCharacter".
 
@@ -3295,7 +3322,7 @@ console.log(' ===== 88: countAllCharacters ===== ');
 // function countCharacter(str, char) {
 //   // your code here
 // }
-var countCharacter = function (str, char) {
+var countCharacter = function(str, char) {
 
 };
 console.log(countCharacter());
@@ -3304,7 +3331,7 @@ console.log(countCharacter());
 console.log();
 
 
-console.log(' ===== 89: modulo ===== ');    
+console.log(' ===== 89: modulo ===== ');
 //----------------------------------------------------------------------
 // Write a function called "modulo".
 
@@ -3327,7 +3354,7 @@ console.log(' ===== 89: modulo ===== ');
 // function modulo(num1, num2) {
 //   // your code here
 // }
-var modulo = function (num1, num2) {
+var modulo = function(num1, num2) {
 
 };
 console.log(modulo());
@@ -3336,7 +3363,7 @@ console.log(modulo());
 console.log();
 
 
-console.log(' ===== 90: multiply ===== ');    
+console.log(' ===== 90: multiply ===== ');
 //----------------------------------------------------------------------
 // Write a function called "multiply".
 
@@ -3352,7 +3379,7 @@ console.log(' ===== 90: multiply ===== ');
 // function multiply(num1, num2) {
 //   // your code here
 // }
-var multiply = function (num1, num2) {
+var multiply = function(num1, num2) {
 
 };
 console.log(multiply());
@@ -3361,7 +3388,7 @@ console.log(multiply());
 console.log();
 
 
-console.log(' ===== 91: isOddWithoutModulo ===== ');    
+console.log(' ===== 91: isOddWithoutModulo ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOddWithoutModulo".
 
@@ -3378,7 +3405,7 @@ console.log(' ===== 91: isOddWithoutModulo ===== ');
 // function isOddWithoutModulo(num) {
 //   // your code here
 // }
-var isOddWithoutModulo = function (num) {
+var isOddWithoutModulo = function(num) {
 
 };
 console.log(isOddWithoutModulo());
@@ -3387,7 +3414,7 @@ console.log(isOddWithoutModulo());
 console.log();
 
 
-console.log(' ===== 92: isEvenWithoutModulo ===== ');    
+console.log(' ===== 92: isEvenWithoutModulo ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEvenWithoutModulo".
 
@@ -3404,7 +3431,7 @@ console.log(' ===== 92: isEvenWithoutModulo ===== ');
 // function isEvenWithoutModulo(num) {
 //   // your code here
 // }
-var isEvenWithoutModulo = function (num) {
+var isEvenWithoutModulo = function(num) {
 
 };
 console.log(isEvenWithoutModulo());
@@ -3413,7 +3440,7 @@ console.log(isEvenWithoutModulo());
 console.log();
 
 
-console.log(' ===== 93: multiplyBetween ===== ');    
+console.log(' ===== 93: multiplyBetween ===== ');
 //----------------------------------------------------------------------
 // Write a function called "multiplyBetween".
 
@@ -3430,7 +3457,7 @@ console.log(' ===== 93: multiplyBetween ===== ');
 // function multiplyBetween(num1, num2) {
 //   // your code here
 // }
-var multiplyBetween = function (num1, num2) {
+var multiplyBetween = function(num1, num2) {
 
 };
 console.log(multiplyBetween());
@@ -3439,7 +3466,7 @@ console.log(multiplyBetween());
 console.log();
 
 
-console.log(' ===== 94: computeSumBetween ===== ');    
+console.log(' ===== 94: computeSumBetween ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeSumBetween".
 
@@ -3456,7 +3483,7 @@ console.log(' ===== 94: computeSumBetween ===== ');
 // function computeSumBetween(num1, num2) {
 //   // your code here
 // }
-var computeSumBetween = function (num1, num2) {
+var computeSumBetween = function(num1, num2) {
 
 };
 console.log(computeSumBetween());
@@ -3465,7 +3492,7 @@ console.log(computeSumBetween());
 console.log();
 
 
-console.log(' ===== 95: computeFactorialOfN ===== ');    
+console.log(' ===== 95: computeFactorialOfN ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeFactorialOfN".
 
@@ -3481,7 +3508,7 @@ console.log(' ===== 95: computeFactorialOfN ===== ');
 // function computeFactorialOfN(n) {
 //   // your code here
 // }
-var computeFactorialOfN = function (num) {
+var computeFactorialOfN = function(num) {
 
 };
 console.log(computeFactorialOfN());
@@ -3490,7 +3517,7 @@ console.log(computeFactorialOfN());
 console.log();
 
 
-console.log(' ===== 96: repeatString ===== ');    
+console.log(' ===== 96: repeatString ===== ');
 //----------------------------------------------------------------------
 // Write a function called "repeatString".
 
@@ -3503,7 +3530,7 @@ console.log(' ===== 96: repeatString ===== ');
 // function repeatString(string, num) {
 //   // your code here
 // }
-var repeatString = function (str, num) {
+var repeatString = function(str, num) {
 
 };
 console.log(repeatString());
@@ -3512,7 +3539,7 @@ console.log(repeatString());
 console.log();
 
 
-console.log(' ===== 97: computeSummationToN ===== ');    
+console.log(' ===== 97: computeSummationToN ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeSummationToN".
 
@@ -3528,7 +3555,7 @@ console.log(' ===== 97: computeSummationToN ===== ');
 // function computeSummationToN(n) {
 //   // your code here
 // }
-var computeSummationToN = function (n) {
+var computeSummationToN = function(n) {
 
 };
 console.log(computeSummationToN());
@@ -3537,7 +3564,7 @@ console.log(computeSummationToN());
 console.log();
 
 
-console.log(' ===== 98: computeScoreToGradeWithPlus ===== ');    
+console.log(' ===== 98: computeScoreToGradeWithPlus ===== ');
 //----------------------------------------------------------------------
 // Write a function called "convertScoreToGradeWithPlusAndMinus".
 
@@ -3562,7 +3589,7 @@ console.log(' ===== 98: computeScoreToGradeWithPlus ===== ');
 // function convertScoreToGradeWithPlusAndMinus(score) {
 //   // your code here
 // }
-var convertScoreToGradeWithPlusAndMinus = function (score) {
+var convertScoreToGradeWithPlusAndMinus = function(score) {
 
 };
 console.log(convertScoreToGradeWithPlusAndMinus());
@@ -3571,7 +3598,7 @@ console.log(convertScoreToGradeWithPlusAndMinus());
 console.log();
 
 
-console.log(' ===== 99: computeScoreToGrade ===== ');    
+console.log(' ===== 99: computeScoreToGrade ===== ');
 //----------------------------------------------------------------------
 // Write a function called "convertScoreToGrade".
 
@@ -3592,7 +3619,7 @@ console.log(' ===== 99: computeScoreToGrade ===== ');
 // function convertScoreToGrade(score) {
 //   // your code here
 // }
-var convertScoreToGrade = function (score) {
+var convertScoreToGrade = function(score) {
 
 };
 console.log(convertScoreToGrade());
@@ -3601,7 +3628,7 @@ console.log(convertScoreToGrade());
 console.log();
 
 
-console.log(' ===== 100: areValidCredentials ===== ');    
+console.log(' ===== 100: areValidCredentials ===== ');
 //----------------------------------------------------------------------
 // Write a function called "areValidCredentials".
 
@@ -3614,7 +3641,7 @@ console.log(' ===== 100: areValidCredentials ===== ');
 // function areValidCredentials(name, password) {
 //   // your code here
 // }
-var areValidCredentials = function (name, password) {
+var areValidCredentials = function(name, password) {
 
 };
 console.log(areValidCredentials());
@@ -3623,7 +3650,7 @@ console.log(areValidCredentials());
 console.log();
 
 
-console.log(' ===== 101: getLongestOfThreeWords ===== ');    
+console.log(' ===== 101: getLongestOfThreeWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLongestOfThreeWords".
 
@@ -3639,7 +3666,7 @@ console.log(' ===== 101: getLongestOfThreeWords ===== ');
 // function getLongestOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var getLongestOfThreeWords = function (word1, word2, word3) {
+var getLongestOfThreeWords = function(word1, word2, word3) {
 
 };
 console.log(getLongestOfThreeWords());
@@ -3648,7 +3675,7 @@ console.log(getLongestOfThreeWords());
 console.log();
 
 
-console.log(' ===== 102: findShortestOfThreeWords ===== ');    
+console.log(' ===== 102: findShortestOfThreeWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findShortestOfThreeWords".
 
@@ -3664,7 +3691,7 @@ console.log(' ===== 102: findShortestOfThreeWords ===== ');
 // function findShortestOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var findShortestOfThreeWords = function (word1, word2, word3) {
+var findShortestOfThreeWords = function(word1, word2, word3) {
 
 };
 console.log(findShortestOfThreeWords());
@@ -3673,7 +3700,7 @@ console.log(findShortestOfThreeWords());
 console.log();
 
 
-console.log(' ===== 103: findMinLengthOfThreeWords ===== ');    
+console.log(' ===== 103: findMinLengthOfThreeWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findMinLengthOfThreeWords".
 
@@ -3686,7 +3713,7 @@ console.log(' ===== 103: findMinLengthOfThreeWords ===== ');
 // function findMinLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var findMinLengthOfThreeWords = function (word1, word2, word3) {
+var findMinLengthOfThreeWords = function(word1, word2, word3) {
 
 };
 console.log(findMinLengthOfThreeWords());
@@ -3695,7 +3722,7 @@ console.log(findMinLengthOfThreeWords());
 console.log();
 
 
-console.log(' ===== 104: findMaxLengthOfThreeWords ===== ');    
+console.log(' ===== 104: findMaxLengthOfThreeWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "findMaxLengthOfThreeWords".
 
@@ -3708,7 +3735,7 @@ console.log(' ===== 104: findMaxLengthOfThreeWords ===== ');
 // function findMaxLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var findMaxLengthOfThreeWords = function (str1, str2, str3) {
+var findMaxLengthOfThreeWords = function(str1, str2, str3) {
 
 };
 console.log(findMaxLengthOfThreeWords());
@@ -3717,7 +3744,7 @@ console.log(findMaxLengthOfThreeWords());
 console.log();
 
 
-console.log(' ===== 105: checkAge ===== ');    
+console.log(' ===== 105: checkAge ===== ');
 //----------------------------------------------------------------------
 // Write a function called "checkAge". 
 
@@ -3735,7 +3762,7 @@ console.log(' ===== 105: checkAge ===== ');
 // function checkAge(name, age) {
 //   // your code here
 // }
-var checkAge = function (name, age) {
+var checkAge = function(name, age) {
 
 };
 console.log(checkAge());
@@ -3744,7 +3771,7 @@ console.log(checkAge());
 console.log();
 
 
-console.log(' ===== 106: or ===== ');    
+console.log(' ===== 106: or ===== ');
 //----------------------------------------------------------------------
 // Write a function called "or".
 
@@ -3761,7 +3788,7 @@ console.log(' ===== 106: or ===== ');
 // function or(expression1, expression2) {
 //   // your code here
 // }
-var or = function (exp1, exp2) {
+var or = function(exp1, exp2) {
 
 };
 console.log(or());
@@ -3770,7 +3797,7 @@ console.log(or());
 console.log();
 
 
-console.log(' ===== 107: isOldEnoughToDrinkAndDrive ===== ');    
+console.log(' ===== 107: isOldEnoughToDrinkAndDrive ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrinkAndDrive".
 
@@ -3787,7 +3814,7 @@ console.log(' ===== 107: isOldEnoughToDrinkAndDrive ===== ');
 // function isOldEnoughToDrinkAndDrive(age) {
 //   // your code here
 // }
-var isOldEnoughToDrinkAndDrive = function (age) {
+var isOldEnoughToDrinkAndDrive = function(age) {
 
 };
 console.log(isOldEnoughToDrinkAndDrive());
@@ -3796,7 +3823,7 @@ console.log(isOldEnoughToDrinkAndDrive());
 console.log();
 
 
-console.log(' ===== 108: isOldEnoughToDrive ===== ');    
+console.log(' ===== 108: isOldEnoughToDrive ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrive".
 
@@ -3812,7 +3839,7 @@ console.log(' ===== 108: isOldEnoughToDrive ===== ');
 // function isOldEnoughToDrive(age) {
 //   // your code here
 // }
-var isOldEnoughToDrive = function (age) {
+var isOldEnoughToDrive = function(age) {
 
 };
 console.log(isOldEnoughToDrive());
@@ -3821,7 +3848,7 @@ console.log(isOldEnoughToDrive());
 console.log();
 
 
-console.log(' ===== 109: isOldEnoughToVote ===== ');    
+console.log(' ===== 109: isOldEnoughToVote ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToVote".
 
@@ -3837,7 +3864,7 @@ console.log(' ===== 109: isOldEnoughToVote ===== ');
 // function isOldEnoughToVote(age) {
 //   // your code here
 // }
-var isOldEnoughToVote = function (age) {
+var isOldEnoughToVote = function(age) {
 
 };
 console.log(isOldEnoughToVote());
@@ -3846,7 +3873,7 @@ console.log(isOldEnoughToVote());
 console.log();
 
 
-console.log(' ===== 110: isOldEnoughToDrink ===== ');    
+console.log(' ===== 110: isOldEnoughToDrink ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOldEnoughToDrink".
 
@@ -3862,7 +3889,7 @@ console.log(' ===== 110: isOldEnoughToDrink ===== ');
 // function isOldEnoughToDrink(age) {
 //   // your code here	
 // }
-var isOldEnoughToDrink = function (age) {
+var isOldEnoughToDrink = function(age) {
 
 };
 console.log(isOldEnoughToDrink());
@@ -3871,7 +3898,7 @@ console.log(isOldEnoughToDrink());
 console.log();
 
 
-console.log(' ===== 111: isEitherEvenOrAreBoth7 ===== ');    
+console.log(' ===== 111: isEitherEvenOrAreBoth7 ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEitherEvenOrAreBoth7".
 
@@ -3887,7 +3914,7 @@ console.log(' ===== 111: isEitherEvenOrAreBoth7 ===== ');
 // function isEitherEvenOrAreBoth7(num1, num2) {
 //   // your code here
 // }
-var isEitherEvenOrAreBoth7 = function (num1, num2) {
+var isEitherEvenOrAreBoth7 = function(num1, num2) {
 
 };
 console.log(isEitherEvenOrAreBoth7());
@@ -3896,7 +3923,7 @@ console.log(isEitherEvenOrAreBoth7());
 console.log();
 
 
-console.log(' ===== 112: isEitherEvenAndLessThan9 ===== ');    
+console.log(' ===== 112: isEitherEvenAndLessThan9 ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEitherEvenAndLessThan9".
 
@@ -3912,7 +3939,7 @@ console.log(' ===== 112: isEitherEvenAndLessThan9 ===== ');
 // function isEitherEvenAndLessThan9(num1, num2) {
 //   // your code here
 // }
-var sEitherEvenAndLessThan9 = function (num1, num2) {
+var sEitherEvenAndLessThan9 = function(num1, num2) {
 
 };
 console.log(sEitherEvenAndLessThan9());
@@ -3921,7 +3948,7 @@ console.log(sEitherEvenAndLessThan9());
 console.log();
 
 
-console.log(' ===== 113: isEitherEven ===== ');    
+console.log(' ===== 113: isEitherEven ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEitherEven".
 
@@ -3934,7 +3961,7 @@ console.log(' ===== 113: isEitherEven ===== ');
 // function isEitherEven(num1, num2) {
 //   // your code here
 // }
-var isEitherEven = function (num1, num2) {
+var isEitherEven = function(num1, num2) {
 
 };
 console.log(isEitherEven());
@@ -3943,7 +3970,7 @@ console.log(isEitherEven());
 console.log();
 
 
-console.log(' ===== 114: areBothOdd ===== ');    
+console.log(' ===== 114: areBothOdd ===== ');
 //----------------------------------------------------------------------
 // Write a function called "areBothOdd".
 
@@ -3956,7 +3983,7 @@ console.log(' ===== 114: areBothOdd ===== ');
 // function areBothOdd(num1, num2) {
 //   // your code here
 // }
-var areBothOdd = function (num1, num2) {
+var areBothOdd = function(num1, num2) {
 
 };
 console.log(areBothOdd());
@@ -3965,7 +3992,7 @@ console.log(areBothOdd());
 console.log();
 
 
-console.log(' ===== 115: isEvenAndGretaerThanTen ===== ');    
+console.log(' ===== 115: isEvenAndGretaerThanTen ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEvenAndGreaterThanTen".
 
@@ -3978,7 +4005,7 @@ console.log(' ===== 115: isEvenAndGretaerThanTen ===== ');
 // function isEvenAndGreaterThanTen(num) {
 //   // your code here
 // }
-var isEvenAndGreaterThanTen = function (num) {
+var isEvenAndGreaterThanTen = function(num) {
 
 };
 console.log(isEvenAndGreaterThanTen());
@@ -3987,7 +4014,7 @@ console.log(isEvenAndGreaterThanTen());
 console.log();
 
 
-console.log(' ===== 116: isSameLength ===== ');    
+console.log(' ===== 116: isSameLength ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isSameLength".
 
@@ -4000,7 +4027,7 @@ console.log(' ===== 116: isSameLength ===== ');
 // function isSameLength(word1, word2) {
 //   // your code here
 // }
-var isSameLength = function (word1, word2) {
+var isSameLength = function(word1, word2) {
 
 };
 console.log(isSameLength());
@@ -4009,7 +4036,7 @@ console.log(isSameLength());
 console.log();
 
 
-console.log(' ===== 117: isOddLength ===== ');    
+console.log(' ===== 117: isOddLength ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOddLength".
 
@@ -4022,7 +4049,7 @@ console.log(' ===== 117: isOddLength ===== ');
 // function isOddLength(word) {
 //   // your code here
 // }
-var isOddLength = function (word) {
+var isOddLength = function(word) {
 
 };
 console.log(isOddLength());
@@ -4031,7 +4058,7 @@ console.log(isOddLength());
 console.log();
 
 
-console.log(' ===== 118: isEvenLength ===== ');    
+console.log(' ===== 118: isEvenLength ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEvenLength".
 
@@ -4044,7 +4071,7 @@ console.log(' ===== 118: isEvenLength ===== ');
 // function isEvenLength(word) {
 //   // your code here
 // }
-var isEvenLength = function (word) {
+var isEvenLength = function(word) {
 
 };
 console.log(isEvenLength());
@@ -4053,7 +4080,7 @@ console.log(isEvenLength());
 console.log();
 
 
-console.log(' ===== 119: isOdd ===== ');    
+console.log(' ===== 119: isOdd ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isOdd".
 
@@ -4066,7 +4093,7 @@ console.log(' ===== 119: isOdd ===== ');
 // function isOdd(num) {
 //   // your code here
 // }
-var isOdd = function (num) {
+var isOdd = function(num) {
 
 };
 console.log(isOdd());
@@ -4075,7 +4102,7 @@ console.log(isOdd());
 console.log();
 
 
-console.log(' ===== 120: isEven ===== ');    
+console.log(' ===== 120: isEven ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEven".
 
@@ -4088,7 +4115,7 @@ console.log(' ===== 120: isEven ===== ');
 // function isEven(num) {
 //   // your code here
 // }
-var sEven = function (num) {
+var sEven = function(num) {
 
 };
 console.log(sEven());
@@ -4097,7 +4124,7 @@ console.log(sEven());
 console.log();
 
 
-console.log(' ===== 121: isEqualTo ===== ');    
+console.log(' ===== 121: isEqualTo ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isEqualTo".
 
@@ -4110,7 +4137,7 @@ console.log(' ===== 121: isEqualTo ===== ');
 // function isEqualTo(num1, num2) {
 //   // your code here
 // }
-var isEqualTo = function (num1, num2) {
+var isEqualTo = function(num1, num2) {
 
 };
 console.log(isEqualTo());
@@ -4119,7 +4146,7 @@ console.log(isEqualTo());
 console.log();
 
 
-console.log(' ===== 122: isGreaterThan ===== ');    
+console.log(' ===== 122: isGreaterThan ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isGreaterThan".
 
@@ -4132,7 +4159,7 @@ console.log(' ===== 122: isGreaterThan ===== ');
 // function isGreaterThan(num1, num2) {
 //   // your code here
 // }
-var isGreaterThan = function (num1, num2) {
+var isGreaterThan = function(num1, num2) {
 
 };
 console.log(isGreaterThan());
@@ -4141,7 +4168,7 @@ console.log(isGreaterThan());
 console.log();
 
 
-console.log(' ===== 123: isLessThan ===== ');    
+console.log(' ===== 123: isLessThan ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isLessThan".
 
@@ -4154,7 +4181,7 @@ console.log(' ===== 123: isLessThan ===== ');
 // function isLessThan(num1, num2) {
 //   // your code here
 // }
-var isLessThan = function (num1, num2) {
+var isLessThan = function(num1, num2) {
 
 };
 console.log(isLessThan());
@@ -4163,7 +4190,7 @@ console.log(isLessThan());
 console.log();
 
 
-console.log(' ===== 124: equalsTen ===== ');    
+console.log(' ===== 124: equalsTen ===== ');
 //----------------------------------------------------------------------
 // Write a function called "equalsTen".
 
@@ -4176,7 +4203,7 @@ console.log(' ===== 124: equalsTen ===== ');
 // function equalsTen(num) {
 //   // your code here
 // }
-var equalsTen = function (num) {
+var equalsTen = function(num) {
 
 };
 console.log(equalsTen());
@@ -4185,7 +4212,7 @@ console.log(equalsTen());
 console.log();
 
 
-console.log(' ===== 125: isLessThan30 ===== ');    
+console.log(' ===== 125: isLessThan30 ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isLessThan30".
 
@@ -4198,7 +4225,7 @@ console.log(' ===== 125: isLessThan30 ===== ');
 // function isLessThan30(num) {
 //   // your code here
 // }
-var isLessThan30 = function (num) {
+var isLessThan30 = function(num) {
 
 };
 console.log(isLessThan30());
@@ -4207,7 +4234,7 @@ console.log(isLessThan30());
 console.log();
 
 
-console.log(' ===== 126: isGreaterThanTen ===== ');    
+console.log(' ===== 126: isGreaterThanTen ===== ');
 //----------------------------------------------------------------------
 // Write a function called "isGreaterThanTen".
 
@@ -4220,7 +4247,7 @@ console.log(' ===== 126: isGreaterThanTen ===== ');
 // function isGreaterThanTen(num) {
 //   // your code here
 // }
-var isGreaterThanTen = function (num) {
+var isGreaterThanTen = function(num) {
 
 };
 console.log(isGreaterThanTen());
@@ -4229,7 +4256,7 @@ console.log(isGreaterThanTen());
 console.log();
 
 
-console.log(' ===== 127: computeCompoundInterest ===== ');    
+console.log(' ===== 127: computeCompoundInterest ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeCompoundInterest".
 
@@ -4246,7 +4273,7 @@ console.log(' ===== 127: computeCompoundInterest ===== ');
 // function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
 //   // your code here
 // }
-var computeCompoundInterest = function (principal, int) {
+var computeCompoundInterest = function(principal, int) {
 
 };
 console.log(computeCompoundInterest());
@@ -4255,7 +4282,7 @@ console.log(computeCompoundInterest());
 console.log();
 
 
-console.log(' ===== 128: calculateBillTotal ===== ');    
+console.log(' ===== 128: calculateBillTotal ===== ');
 //----------------------------------------------------------------------
 // Write a function called "calculateBillTotal".
 
@@ -4272,7 +4299,7 @@ console.log(' ===== 128: calculateBillTotal ===== ');
 // function calculateBillTotal(preTaxAndTipAmount) {
 //   // your code here
 // }
-var calculateBillTotal = function (preBill) {
+var calculateBillTotal = function(preBill) {
 
 };
 console.log(calculateBillTotal());
@@ -4281,7 +4308,7 @@ console.log(calculateBillTotal());
 console.log();
 
 
-console.log(' ===== 129: computePower ===== ');    
+console.log(' ===== 129: computePower ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computePower".
 
@@ -4294,7 +4321,7 @@ console.log(' ===== 129: computePower ===== ');
 // function computePower(num, exponent) {
 //   // your code here
 // }
-var computePower = function (num, exp) {
+var computePower = function(num, exp) {
 
 };
 console.log(computePower());
@@ -4303,7 +4330,7 @@ console.log(computePower());
 console.log();
 
 
-console.log(' ===== 130: computeAreaOfCircle ===== ');    
+console.log(' ===== 130: computeAreaOfCircle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfACircle".
 
@@ -4319,7 +4346,7 @@ console.log(' ===== 130: computeAreaOfCircle ===== ');
 // function computeAreaOfACircle(radius) {
 //   // your code here
 // }
-var computeAreaOfACircle = function (radius) {
+var computeAreaOfACircle = function(radius) {
 
 };
 console.log(computeAreaOfACircle());
@@ -4328,7 +4355,7 @@ console.log(computeAreaOfACircle());
 console.log();
 
 
-console.log(' ===== 131: computePerimeterOfCircle ===== ');    
+console.log(' ===== 131: computePerimeterOfCircle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfACircle".
 
@@ -4341,7 +4368,7 @@ console.log(' ===== 131: computePerimeterOfCircle ===== ');
 // function computePerimeterOfACircle(radius) {
 //   // your code here
 // }
-var computePerimeterOfACircle = function (radius) {
+var computePerimeterOfACircle = function(radius) {
 
 };
 console.log(computePerimeterOfACircle());
@@ -4350,7 +4377,7 @@ console.log(computePerimeterOfACircle());
 console.log();
 
 
-console.log(' ===== 132: computeTripledAreaOfARectangle ===== ');    
+console.log(' ===== 132: computeTripledAreaOfARectangle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeTripledAreaOfARectangle".
 
@@ -4363,7 +4390,7 @@ console.log(' ===== 132: computeTripledAreaOfARectangle ===== ');
 // function computeTripledAreaOfARectangle(length, width) {
 //   // your code here
 // }
-var computeTripledAreaOfARectangle = function (length, width) {
+var computeTripledAreaOfARectangle = function(length, width) {
 
 };
 console.log(computeTripledAreaOfARectangle());
@@ -4372,7 +4399,7 @@ console.log(computeTripledAreaOfARectangle());
 console.log();
 
 
-console.log(' ===== 133: doubleSquareRootOf ===== ');    
+console.log(' ===== 133: doubleSquareRootOf ===== ');
 //----------------------------------------------------------------------
 // Write a function called "doubleSquareRootOf".
 
@@ -4385,7 +4412,7 @@ console.log(' ===== 133: doubleSquareRootOf ===== ');
 // function doubleSquareRootOf(num) {
 //   // your code here
 // }
-var doubleSquareRootOf = function (num) {
+var doubleSquareRootOf = function(num) {
 
 };
 console.log(doubleSquareRootOf());
@@ -4394,7 +4421,7 @@ console.log(doubleSquareRootOf());
 console.log();
 
 
-console.log(' ===== 134: computeAverageLengthOfWords ===== ');    
+console.log(' ===== 134: computeAverageLengthOfWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeAverageLengthOfWords".
 
@@ -4407,7 +4434,7 @@ console.log(' ===== 134: computeAverageLengthOfWords ===== ');
 // function computeAverageLengthOfWords(word1, word2) {
 //   // your code here
 // }
-var omputeAverageLengthOfWords = function (str1, str2) {
+var omputeAverageLengthOfWords = function(str1, str2) {
 
 };
 console.log(omputeAverageLengthOfWords());
@@ -4416,7 +4443,7 @@ console.log(omputeAverageLengthOfWords());
 console.log();
 
 
-console.log(' ===== 135: computeSquareRoot ===== ');    
+console.log(' ===== 135: computeSquareRoot ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeSquareRoot".
 
@@ -4429,7 +4456,7 @@ console.log(' ===== 135: computeSquareRoot ===== ');
 // function computeSquareRoot(num) {
 //   // your code here
 // }
-var omputeSquareRoot = function (num) {
+var omputeSquareRoot = function(num) {
 
 };
 console.log(omputeSquareRoot());
@@ -4438,7 +4465,7 @@ console.log(omputeSquareRoot());
 console.log();
 
 
-console.log(' ===== 136: getLengthOfThreeWords ===== ');    
+console.log(' ===== 136: getLengthOfThreeWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfThreeWords".
 
@@ -4451,7 +4478,7 @@ console.log(' ===== 136: getLengthOfThreeWords ===== ');
 // function getLengthOfThreeWords(word1, word2, word3) {
 //   // your code here
 // }
-var getLengthOfThreeWords = function (str1, str2, str3) {
+var getLengthOfThreeWords = function(str1, str2, str3) {
 
 };
 console.log(getLengthOfThreeWords());
@@ -4460,7 +4487,7 @@ console.log(getLengthOfThreeWords());
 console.log();
 
 
-console.log(' ===== 137: getFullName ===== ');    
+console.log(' ===== 137: getFullName ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getFullName".
 
@@ -4473,7 +4500,7 @@ console.log(' ===== 137: getFullName ===== ');
 // function getFullName(firstName, lastName) {
 //   // your code here
 // }
-var getFullName = function (firstName, lastName) {
+var getFullName = function(firstName, lastName) {
 
 };
 console.log(getFullName());
@@ -4482,7 +4509,7 @@ console.log(getFullName());
 console.log();
 
 
-console.log(' ===== 138: average ===== ');    
+console.log(' ===== 138: average ===== ');
 //----------------------------------------------------------------------
 // Write a function called "average".
 
@@ -4495,7 +4522,7 @@ console.log(' ===== 138: average ===== ');
 // function average(num1, num2) {
 //   // your code here
 // }
-var average = function (num1, num2) {
+var average = function(num1, num2) {
 
 };
 console.log(average());
@@ -4504,7 +4531,7 @@ console.log(average());
 console.log();
 
 
-console.log(' ===== 139: computeAreaOfATriangle ===== ');    
+console.log(' ===== 139: computeAreaOfATriangle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfATriangle".
 
@@ -4517,7 +4544,7 @@ console.log(' ===== 139: computeAreaOfATriangle ===== ');
 // function computeAreaOfATriangle(base, height) {
 //   // your code here
 // }
-var computeAreaOfATriangle = function (base, height) {
+var computeAreaOfATriangle = function(base, height) {
 
 };
 console.log(computeAreaOfATriangle());
@@ -4526,7 +4553,7 @@ console.log(computeAreaOfATriangle());
 console.log();
 
 
-console.log(' ===== 140: getLengthOfTwoWords ===== ');    
+console.log(' ===== 140: getLengthOfTwoWords ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfTwoWords".
 
@@ -4539,7 +4566,7 @@ console.log(' ===== 140: getLengthOfTwoWords ===== ');
 // function getLengthOfTwoWords(word1, word2) {
 //   // your code here
 // }
-var etLengthOfTwoWords = function (word1, word2) {
+var etLengthOfTwoWords = function(word1, word2) {
 
 };
 console.log(etLengthOfTwoWords());
@@ -4548,7 +4575,7 @@ console.log(etLengthOfTwoWords());
 console.log();
 
 
-console.log(' ===== 141: cube ===== ');    
+console.log(' ===== 141: cube ===== ');
 //----------------------------------------------------------------------
 // Write a function called "cube".
 
@@ -4561,7 +4588,7 @@ console.log(' ===== 141: cube ===== ');
 // function cube(num) {
 //   // your code here
 // }
-var cube = function (num) {
+var cube = function(num) {
 
 };
 console.log(cube());
@@ -4570,7 +4597,7 @@ console.log(cube());
 console.log();
 
 
-console.log(' ===== 142: computePerimeterOfATriangle ===== ');    
+console.log(' ===== 142: computePerimeterOfATriangle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfATriangle".
 
@@ -4583,7 +4610,7 @@ console.log(' ===== 142: computePerimeterOfATriangle ===== ');
 // function computePerimeterOfATriangle(side1, side2, side3) {
 //   // your code here
 // }
-var computePerimeterOfATriangle = function (side1, side2, side3) {
+var computePerimeterOfATriangle = function(side1, side2, side3) {
 
 };
 console.log(computePerimeterOfATriangle());
@@ -4592,7 +4619,7 @@ console.log(computePerimeterOfATriangle());
 console.log();
 
 
-console.log(' ===== 143: computePerimeterOfARectangle ===== ');    
+console.log(' ===== 143: computePerimeterOfARectangle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computePerimeterOfARectangle".
 
@@ -4605,7 +4632,7 @@ console.log(' ===== 143: computePerimeterOfARectangle ===== ');
 // function computePerimeterOfARectangle(length, width) {
 //   // your code here
 // }
-var computePerimeterOfARectangle = function (length, width) {
+var computePerimeterOfARectangle = function(length, width) {
 
 };
 console.log(computePerimeterOfARectangle());
@@ -4614,7 +4641,7 @@ console.log(computePerimeterOfARectangle());
 console.log();
 
 
-console.log(' ===== 144: computeAreaOfARectangle ===== ');    
+console.log(' ===== 144: computeAreaOfARectangle ===== ');
 //----------------------------------------------------------------------
 // Write a function called "computeAreaOfARectangle".
 
@@ -4627,7 +4654,7 @@ console.log(' ===== 144: computeAreaOfARectangle ===== ');
 // function computeAreaOfARectangle(length, width) {
 //   // your code here
 // }
-var computeAreaOfARectangle = function (length, width) {
+var computeAreaOfARectangle = function(length, width) {
 
 };
 console.log(computeAreaOfARectangle());
@@ -4636,7 +4663,7 @@ console.log(computeAreaOfARectangle());
 console.log();
 
 
-console.log(' ===== 145: getLengthOfWord ===== ');    
+console.log(' ===== 145: getLengthOfWord ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfWord".
 
@@ -4649,7 +4676,7 @@ console.log(' ===== 145: getLengthOfWord ===== ');
 // function getLengthOfWord(word) {
 //   // your code here
 // }
-var getLengthOfWord = function (word) {
+var getLengthOfWord = function(word) {
 
 };
 console.log(getLengthOfWord());
@@ -4658,7 +4685,7 @@ console.log(getLengthOfWord());
 console.log();
 
 
-console.log(' ===== 146: square ===== ');    
+console.log(' ===== 146: square ===== ');
 //----------------------------------------------------------------------
 // Write a function called "getLengthOfWord".
 
@@ -4671,7 +4698,7 @@ console.log(' ===== 146: square ===== ');
 // function getLengthOfWord(word) {
 //   // your code here
 // }
-var getLengthOfWord = function (word) {
+var getLengthOfWord = function(word) {
 
 };
 console.log(getLengthOfWord());
@@ -4683,7 +4710,7 @@ console.log();
 
 /****************************************************************************/
 console.log();
-console.log(' ===== MODULE 2: READING ===== '); 
+console.log(' ===== MODULE 2: READING ===== ');
 console.log();
 /****************************************************************************/
 // INTRODUCTION
@@ -5349,11 +5376,11 @@ console.log();
 //
 //
 
-console.log(' ===== MODULE 2: EXERCISES ===== '); 
+console.log(' ===== MODULE 2: EXERCISES ===== ');
 console.log();
 /****************************************************************************/
 
-console.log(' ===== [evaluation 00] Scalar value assignments ===== ');    
+console.log(' ===== [evaluation 00] Scalar value assignments ===== ');
 //----------------------------------------------------------------------
 // Evaluate each line below as though YOU were the interpreter.
 
@@ -5385,14 +5412,14 @@ console.log(' ===== [evaluation 00] Scalar value assignments ===== ');
 // var answer = {
 //   finalValueOfX: null // fill this in with your MENTALLY evaluated answer.
 // };
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [evaluation 01] Array assignment ===== ');    
+console.log(' ===== [evaluation 01] Array assignment ===== ');
 //----------------------------------------------------------------------
 // Evaluate each line below as though YOU were the interpreter.
 
@@ -5418,14 +5445,14 @@ console.log(' ===== [evaluation 01] Array assignment ===== ');
 //   finalValueOfY: null, // FILL THIS IN
 //   finalValueOfZ: null, // FILL THIS IN
 // };
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 01] writing "assertEqual" ===== ');    
+console.log(' ===== [testing 01] writing "assertEqual" ===== ');
 //----------------------------------------------------------------------
 // Write an assertEqual function from scratch.
 
@@ -5457,14 +5484,14 @@ console.log(' ===== [testing 01] writing "assertEqual" ===== ');
 // function assertEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 02] writing "assertArraysEqual" ===== ');    
+console.log(' ===== [testing 02] writing "assertArraysEqual" ===== ');
 //----------------------------------------------------------------------
 // Write an "assertArraysEqual" function from scratch.
 
@@ -5492,14 +5519,14 @@ console.log(' ===== [testing 02] writing "assertArraysEqual" ===== ');
 // function assertArraysEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 03] writing "assertObjectsEqual" ===== ');    
+console.log(' ===== [testing 03] writing "assertObjectsEqual" ===== ');
 //----------------------------------------------------------------------
 // Write an "assertObjectsEqual" function from scratch.
 
@@ -5531,14 +5558,14 @@ console.log(' ===== [testing 03] writing "assertObjectsEqual" ===== ');
 // function assertObjectsEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 04] writing "assertWithinRange" ===== ');    
+console.log(' ===== [testing 04] writing "assertWithinRange" ===== ');
 //----------------------------------------------------------------------
 // Write an "assertWithinRange" function from scratch.
 
@@ -5576,14 +5603,14 @@ console.log(' ===== [testing 04] writing "assertWithinRange" ===== ');
 //   // your code here
 // }
 
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 05] applying "assertEqual" #1 ===== ');    
+console.log(' ===== [testing 05] applying "assertEqual" #1 ===== ');
 //----------------------------------------------------------------------
 // Write an "assertEqual" function from scratch, from memory.
 
@@ -5606,14 +5633,14 @@ console.log(' ===== [testing 05] applying "assertEqual" #1 ===== ');
 // function assertEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 06] apply "assertEqual" #2 ===== ');    
+console.log(' ===== [testing 06] apply "assertEqual" #2 ===== ');
 //----------------------------------------------------------------------
 // Write an "assertEqual" function from scratch, from memory.
 
@@ -5641,14 +5668,14 @@ console.log(' ===== [testing 06] apply "assertEqual" #2 ===== ');
 // function assertEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 07] apply "assertArraysEqual" ===== ');    
+console.log(' ===== [testing 07] apply "assertArraysEqual" ===== ');
 //----------------------------------------------------------------------
 // Write an "assertArraysEqual" function from scratch, from memory.
 
@@ -5680,14 +5707,14 @@ console.log(' ===== [testing 07] apply "assertArraysEqual" ===== ');
 // function assertArraysEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [testing 08] apply "assertObjectsEqual" ===== ');    
+console.log(' ===== [testing 08] apply "assertObjectsEqual" ===== ');
 //----------------------------------------------------------------------
 // Write an "assertObjectsEqual" function from scratch, from memory.
 
@@ -5716,14 +5743,14 @@ console.log(' ===== [testing 08] apply "assertObjectsEqual" ===== ');
 // function assertObjectsEqual(actual, expected, testName) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 00] average integers ===== ');    
+console.log(' ===== [skeleton 00] average integers ===== ');
 //----------------------------------------------------------------------
 // Use the skeleton provided to write a working implementation.
 
@@ -5742,14 +5769,14 @@ console.log(' ===== [skeleton 00] average integers ===== ');
 
 // function sum(numbers) {
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 01] decorate student list with ages ===== ');    
+console.log(' ===== [skeleton 01] decorate student list with ages ===== ');
 //----------------------------------------------------------------------
 // Convert from a flat class list of names to an object literal decorated with an age for each student.
 
@@ -5784,14 +5811,14 @@ console.log(' ===== [skeleton 01] decorate student list with ages ===== ');
 // function decorateClassListWithAges(classList) {
 //   // your code here
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 02] is it an isogram? ===== ');    
+console.log(' ===== [skeleton 02] is it an isogram? ===== ');
 //----------------------------------------------------------------------
 // An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
 
@@ -5811,14 +5838,14 @@ console.log(' ===== [skeleton 02] is it an isogram? ===== ');
 //   // thus, to see if all the chars were unique,
 //   // check length of text and the size of the set 
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 03] read skeleton; understand problem  ===== ');    
+console.log(' ===== [skeleton 03] read skeleton; understand problem  ===== ');
 //----------------------------------------------------------------------
 // Basic instructions
 
@@ -5860,17 +5887,17 @@ console.log(' ===== [skeleton 03] read skeleton; understand problem  ===== ');
 //       //  If that max repeat count is higher than the overall max repeat count, then
 //       //    update maxRepeatCountOverall
 //       //    update wordWithMaxRepeatCount
-      
+
 //   return wordWithMaxRepeatCount;
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 04] render phone number ===== ');    
+console.log(' ===== [skeleton 04] render phone number ===== ');
 //----------------------------------------------------------------------
 // Problem statement
 
@@ -5924,14 +5951,14 @@ console.log(' ===== [skeleton 04] render phone number ===== ');
 // PhoneNumberFormatter.prototype.slice = function(start, end) {
 //   return this.numbers.slice(start, end).join('');
 // };
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [skeleton 05] find longest palindrome ===== ');    
+console.log(' ===== [skeleton 05] find longest palindrome ===== ');
 //----------------------------------------------------------------------
 // Find the longest single-word palindrome within a phrase.
 
@@ -5966,14 +5993,14 @@ console.log(' ===== [skeleton 05] find longest palindrome ===== ');
 //   }
 //   return 0;
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [problem 01] Fashion Inventory part A ===== ');    
+console.log(' ===== [problem 01] Fashion Inventory part A ===== ');
 //----------------------------------------------------------------------
 // You have a fashion catalog, an inventory of items from various high-fashion designers. 
 // Each designer has a lineup of shoes. Each shoe has a name and a price.
@@ -6012,14 +6039,14 @@ console.log(' ===== [problem 01] Fashion Inventory part A ===== ');
 //   // hint: before you just dive into coding...
 //   // it's a good idea to sketch out a skeleton like you've been seeing earlier in this module...
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [problem 02] Fashion Inventory part B ===== ');    
+console.log(' ===== [problem 02] Fashion Inventory part B ===== ');
 //----------------------------------------------------------------------
 // This is a variation of the "Fashion Inventory" problem.
 
@@ -6067,14 +6094,14 @@ console.log(' ===== [problem 02] Fashion Inventory part B ===== ');
 // // what's a good main function name to choose?
 
 // // what does your outline look like?  don't just dive into coding and make a mess! :)
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [problem 03] Fashion Inventory, part C ===== ');    
+console.log(' ===== [problem 03] Fashion Inventory, part C ===== ');
 //----------------------------------------------------------------------
 // This is a variation of the "Fashion Inventory" problem.
 
@@ -6110,14 +6137,14 @@ console.log(' ===== [problem 03] Fashion Inventory, part C ===== ');
 
 // Starter Code :
 // // make it very clean and organized, please! :)
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== [problem 04] Fashion Inventory, part D ===== ');    
+console.log(' ===== [problem 04] Fashion Inventory, part D ===== ');
 //----------------------------------------------------------------------
 // This is a variation of the "Fashion Inventory" problem.
 
@@ -6191,7 +6218,7 @@ console.log(' ===== [problem 04] Fashion Inventory, part D ===== ');
 
 // Starter Code :
 // // Don't just dive into coding! Make a plan.
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
@@ -6201,7 +6228,7 @@ console.log();
 
 /****************************************************************************/
 console.log();
-console.log(' ===== MODULE 3: READING ===== '); 
+console.log(' ===== MODULE 3: READING ===== ');
 console.log();
 /****************************************************************************/
 // Module 3: Introduction
@@ -7094,11 +7121,11 @@ console.log();
 //
 //
 
-console.log(' ===== MODULE 3: EXERCISES ===== '); 
+console.log(' ===== MODULE 3: EXERCISES ===== ');
 console.log();
 /****************************************************************************/
 
-console.log(' ===== 001 Flipper ===== ');    
+console.log(' ===== 001 Flipper ===== ');
 //----------------------------------------------------------------------
 // PLEASE FOLLOW THESE INSTRUCTIONS CAREFULLY.
 
@@ -7166,14 +7193,14 @@ console.log(' ===== 001 Flipper ===== ');
 // ine bhgchg = syvcCnvef(vachg);
 // pbafbyr.ybt(bhgchg); // --> uppr xhb gbu javrgregfav tugfvc beyozrv ,fv 'g favnfralyv gaerfrvgta!
 // */
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 002 Big Flipper ===== ');    
+console.log(' ===== 002 Big Flipper ===== ');
 //----------------------------------------------------------------------
 // PLEASE FOLLOW THESE INSTRUCTIONS CAREFULLY.
 
@@ -7234,14 +7261,14 @@ console.log(' ===== 002 Big Flipper ===== ');
 
 // -> 'buf nkr geryczn'
 // */
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 003 Outliers ===== ');    
+console.log(' ===== 003 Outliers ===== ');
 //----------------------------------------------------------------------
 // PLEASE FOLLOW THESE INSTRUCTIONS CAREFULLY.
 
@@ -7285,21 +7312,21 @@ console.log(' ===== 003 Outliers ===== ');
 // Problem description (see instructions for how to de-obfuscate).
 
 // Tvira n fgevat bs rira naq bqq ahzoref, svaq juvpu vf gur fbyr rira ahzore be gur fbyr bqq ahzore.
-  
+
 // Gur erghea inyhr fubhyq or 1-vaqrkrq, abg 0-vaqrkrq.
 
 // Rknzcyrf :
 // qrgrpgBhgyvreInyhr("2 4 7 8 10"); // => 3 - Guveq ahzore vf bqq, juvyr gur erfg bs gur ahzoref ner rira
 // qrgrpgBhgyvreInyhr("1 10 1 1");  //=> 2 - Frpbaq ahzore vf rira, juvyr gur erfg bs gur ahzoref ner bqq
 // */
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 004 Transpose ===== ');    
+console.log(' ===== 004 Transpose ===== ');
 //----------------------------------------------------------------------
 // PLEASE FOLLOW THESE INSTRUCTIONS CAREFULLY.
 
@@ -7355,14 +7382,14 @@ console.log(' ===== 004 Transpose ===== ');
 // y y  
 // b q
 // */
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 005 Find the pair ===== ');    
+console.log(' ===== 005 Find the pair ===== ');
 //----------------------------------------------------------------------
 // Ok by now you know the drill on how to set up and do these videos, so we won't repeat the giant list of instructions.
 
@@ -7383,14 +7410,14 @@ console.log(' ===== 005 Find the pair ===== ');
 // ine cnve = svaqCnveSbeFhz([3, 34, 4, 12, 5, 2], 9);
 // pbafbyr.ybt(cnve); // --> [4, 5]
 // */
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 006 oh yeah? Rotate THIS ===== ');    
+console.log(' ===== 006 oh yeah? Rotate THIS ===== ');
 //----------------------------------------------------------------------
 // Ok by now you know the drill on how to set up and do these videos.
 
@@ -7423,14 +7450,14 @@ console.log(' ===== 006 oh yeah? Rotate THIS ===== ');
 
 // function isRotated(str1, str2) {
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
 console.log();
 
 
-console.log(' ===== 007 Divide and conquer ===== ');    
+console.log(' ===== 007 Divide and conquer ===== ');
 //----------------------------------------------------------------------
 // Computer science and software engineering have lots of cool, useful ideas for you to absorb and apply in your upcoming career.
 
@@ -7471,7 +7498,7 @@ console.log(' ===== 007 Divide and conquer ===== ');
 
 // function search(array, value) {
 // }
-var aa = function () {
+var aa = function() {
 
 };
 console.log();
@@ -7481,6 +7508,6 @@ console.log();
 
 /****************************************************************************/
 console.log();
-console.log(' ===== END OF PROBLEMS ===== ');    
+console.log(' ===== END OF PROBLEMS ===== ');
 console.log();
 /****************************************************************************/
