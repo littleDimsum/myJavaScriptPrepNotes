@@ -291,6 +291,26 @@ turkeyAnd("Swiss"); // "turkey and Swiss"
 turkeyAnd("Provolone"); // "turkey and Provolone"
 // This example creates two distinct functions, hamAnd and turkeyAnd. Even though they both come from the same make definition, they are two distinct objects: The first function stores "ham" as the value of magicIngredient, and the second stores "turkey".
 
+// Note that closures can update the values of outer variables. Closures actually store references to their outer variables, rather than copying their values. So updates are visible to any closures that have access to them. A simple idiom that illustrates this is a box — an object that stores an internal value that can be read and updated:
+function box() {
+  var val = undefined; 
+  return {
+    set: function(newVal) { val = newVal; }, 
+    get: function() { return val; },
+    type: function() { return typeof val; }
+  }; 
+}
+var b = box();
+console.log(b.type()); // "undefined" 
+console.log(b.set(98.6)); 
+console.log(b.get()); // 98.6 
+console.log(b.type()); // "number"
+// This example produces an object containing three closures: its set, get, and type properties. Each of these closures shares access to the val variable. The set closure updates the value of val, and subsequently calling get and type sees the results of the update.
+// Also note that: 
+// Functions can refer to variables defined in outer scopes.
+// Closures can outlive the function that creates them.
+// Closures internally store references to their outer variables, and can both read and update their stored variables.
+
 // Applications
 // Passing Arguments Implicitly
 // We can use closures to pass down arguments to helper functions without explicitly listing them as arguments.
@@ -377,27 +397,17 @@ console.log('THIS');
 
 // The meaning of this can be incredibly perplexing to new JavaScript developers, and you should take comfort in knowing that jQuery largely makes it so that you don't need to understand it for a while. However, no discussion of objects and methods is complete without talking about this at least a little. In short, if this section is confusing, feel free to skip to Objects in jQuery, and come back to it when you're ready.
 // Let's look at how we could use this in our method:
-
 var person = {
   firstName : 'Boaz',
   lastName : 'Sender',
   greet : function() {
-    log( 'Hi, ' + this.firstName );
+    return 'Hi, ' + this.firstName;
   }
 };
-person.greet();
-// Not so confusing so far, right? The confusion arises because the meaning of this can change — as mentioned above, it depends on the context in which the function was called! Consider the following code:
-
-// CAUTION BROKEN CODE
-var person = {
-  firstName : 'Boaz',
-  lastName : 'Sender',
-  greet : function() {
-    log( 'Hi, ' + this.firstName );
-  }
-};
+console.log(person.greet()); // 'Hi Boaz'
 var sayIt = person.greet; // store the method in a variable
-sayIt(); // logs 'Hi, undefined' -- uh-oh
+console.log(sayIt()); // logs 'Hi, undefined'
+// The first was pretty straight forward because the 'greet' action was invoked on the person. However, when we store 'person.greet' (uninvoked) and then invoke the stored variable as seen in the second part we run into problems. The confusion arises because the meaning of 'this' can change — as mentioned above, it depends on the context in which the function was called!
 // When we store the .greet() method in a variable sayIt and then call sayIt(), the context object changes to the global window object, not the person object. Since the window object doesn't have a property firstName, we get undefined when we try to access it.
 // What's a developer to do? First, be aware that storing object methods in variables can have unintended consequences for the meaning of this. Second, be aware that you can force the meaning of this to be what you want it to be, using the .call() or .apply() method on the function itself.
 
@@ -405,25 +415,29 @@ var person = {
   firstName : 'Boaz',
   lastName : 'Sender',
   greet : function() {
-    log( 'Hi, ' + this.firstName );
+    return 'Hi, ' + this.firstName;
   }
 };
+console.log(person.greet()); // 'Hi, Boaz'
 var sayIt = person.greet;
-sayIt.call( person );
+console.log(sayIt()); // logs 'Hi, undefined'
+console.log(sayIt.call(person)); // 'Hi, Boaz'
+console.log(sayIt.apply(person)); // 'Hi, Boaz'
+console.log(sayIt.bind(person)); // [Function: bound greet]
+console.log(sayIt.bind(person)()); // 'Hi, Boaz'
 // Both .call() and the very similar .apply() method also let us pass arguments to the function we're invoking. Imagine if our greet method took some arguments; we could pass those arguments using .call() like this:
 
 var person = {
   firstName : 'Boaz',
   lastName : 'Sender',
   greet : function(greeting, punctuation) {
-    log( greeting + ', ' + this.firstName + punctuation );
+    return greeting + ', ' + this.firstName + punctuation;
   }
 };
 var sayIt = person.greet;
-sayIt.call( person, 'Hello', '!!1!!1' );
+sayIt.call(person, 'Hello', '!!1!!1') ;
 
 // We could do the same thing using .apply(), but we'd pass the arguments within a single array instead of as separate arguments:
-
 var person = {
   firstName : 'Boaz',
   lastName : 'Sender',
@@ -432,7 +446,7 @@ var person = {
   }
 }; 
 var sayIt = person.greet;
-sayIt.apply( person, [ 'Hello', '!!1!!1' ] );
+sayIt.apply(person, [ 'Hello', '!!1!!1' ]);
 
 
 
@@ -448,8 +462,8 @@ let cat = {
   }
 };
 
-cat.purr();
-cat.purrMore();
+console.log(cat.purr());
+console.log(cat.purrMore());
 // When we call a function like cat.purr() or cat.purrMore(), a variable named this gets set. Through the this variable, the method can access the object it was called on. this is a lot like self in Ruby.
 // We do not use this in the purr method, but we do in purrMore. In purrMore, we use this to access the cat object that has a purr method.
 // Unlike Ruby's self, this is not optional if you want to access the attributes of the object. In other words, purr() instead of this.purr() would not work.
@@ -458,7 +472,7 @@ cat.purrMore();
 // Calling a function in the traditional function style (f(a, b, c)) does not set this properly. In such cases, this is set to the global scope (either window or global).
 
 var purrLots = cat.purrMore;
-purrLots(); // this evaluates to the global scope
+console.log(purrLots()); // this evaluates to the global scope
 
 // Scope Issues with this
 // There is one tricky thing about this, and it comes up when passing callbacks. Observe, dear reader:
@@ -476,9 +490,9 @@ const cat = {
     this.age += 1;
   }
 };
-cat.ageOneYear(); // works
+console.log(cat.ageOneYear()); // works
 
-times(10, cat.ageOneYear); // ReferenceError; this.age is not defined
+console.log(times(10, cat.ageOneYear)); // ReferenceError; this.age is not defined
 // Calling cat.ageOneYear() method style works. But the calls to increment the cat's age ten times don't.
 
 
@@ -491,7 +505,6 @@ function times(num, fun) {
 
 const cat = {
   age: 5,
-
   ageOneYear: function () {
     this.age += 1;
   }
@@ -504,7 +517,7 @@ times(10, function () {
 // times will still call the passed function function-style, so this will still be set to window. But the closure doesn't care, because inside, it explicitly calls ageOneYear method style on cat.
 // This is a very common pattern, so there is another, less verbose alternative using Function.prototype.bind.
 
-times(10, cat.ageOneYear.bind(cat));
+console.log(times(10, cat.ageOneYear.bind(cat)));
 // bind is a method you can call on JS functions. Other methods defined on Function objects live in Function.prototype.
 // bind works just like the closure we made, in which cat#ageOneYear is called method style on the cat object. cat.ageOneYear.bind(cat) returns a closure that will still be called function-style, but which calls cat.ageOneYear method-style inside of it.
 // Note that you can bind functions to any scope, not just this:

@@ -208,6 +208,45 @@ console.log('FIVE');
 
 
 console.log('SIX');
+// HOISTING : Understanding Variable Hoisting
+// 1. Variable declarations within a block are implicitly hoisted to the top of their enclosing function.
+// 2. Redeclarations of a variable are treated as a single variable.
+// 3. Consider manually hoisting local variable declarations to avoid confusion.
+
+// The code in example 1 below is internally represented as the code in example 2.
+// Ex. 1
+trimSections = function(header, body, footer) {
+  for (var i = 0, n = header.length; i < n; i++) {
+    header[i] = header[i].trim();
+  }
+  for (var i = 0, n = body.length; i < n; i++) { 
+    body[i] = body[i].trim();
+  }
+  for (var i = 0, n = footer.length; i < n; i++) {
+    footer[i] = footer[i].trim();
+  }
+}
+// The trimSections function appears to declare six local variables (three called i and three called n), but hoisting results in only two. In other words, after hoisting, the trimSections function is equivalent to this rewritten version:
+// Ex. 2
+trimSections = function(header, body, footer) { 
+  var i, n;
+  for (i = 0, n = header.length; i < n; i++) { 
+    header[i] = header[i].trim();
+  }
+  for (i = 0, n = body.length; i < n; i++) {
+    body[i] = body[i].trim();
+  }
+  for (i = 0, n = footer.length; i < n; i++) { 
+    footer[i] = footer[i].trim();
+  }
+}
+// Because redeclarations can lead to the appearance of distinct variables, some programmers prefer to place all var declarations at the top of their functions, effectively hoisting their variables manually, in order to avoid ambiguity. 
+
+
+// Understand the difference between binding and assignment.
+// Closures capture their outer variables by reference, not by value.
+// Use immediately invoked function expressions(IIFEs)to create local scopes.
+// Be aware of the cases where wrapping a block in an IIFE can change its behavior.
 
 
 console.log('SEVEN');
