@@ -276,6 +276,21 @@ function threeDeep() {
 }
 console.log(threeDeep()()('ti do')); // 'do re mi fa so la ti do'
 
+
+// Ex. 4
+sandwichMaker = function(magicIngredient) { 
+  make = function(filling) {
+  return magicIngredient + " and " + filling; 
+  }
+  return make; 
+}
+var hamAnd = sandwichMaker("ham"); 
+hamAnd("cheese"); // "ham and cheese" hamAnd("mustard"); // "ham and mustard"
+var turkeyAnd = sandwichMaker("turkey"); 
+turkeyAnd("Swiss"); // "turkey and Swiss" 
+turkeyAnd("Provolone"); // "turkey and Provolone"
+// This example creates two distinct functions, hamAnd and turkeyAnd. Even though they both come from the same make definition, they are two distinct objects: The first function stores "ham" as the value of magicIngredient, and the second stores "turkey".
+
 // Applications
 // Passing Arguments Implicitly
 // We can use closures to pass down arguments to helper functions without explicitly listing them as arguments.
