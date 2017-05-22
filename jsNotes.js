@@ -247,6 +247,18 @@ trimSections = function(header, body, footer) {
 // Closures capture their outer variables by reference, not by value.
 // Use immediately invoked function expressions(IIFEs)to create local scopes.
 // Be aware of the cases where wrapping a block in an IIFE can change its behavior.
+const wrapElements = function (a) {
+  var result = [], i;
+  for (i = 0; i < a.length; i++) {
+    result[i] = function () {
+      return a[i];
+    };
+  }
+  return result;
+}
+var wrapped = wrapElements([10, 20, 30, 40, 50]);
+console.log(wrapped[0]()); // undefined. This is because the nested function in the loop is a closure and only maintains a pointer to i. However, the nested function doesnt get invoked until the loop terminates, at which point the value of i is 5. So the 'i' inside the closure sees 5 in all of it iterations, but 5 at that point is invalid because it is outside the range of the array.
+
 
 
 console.log('SEVEN');
