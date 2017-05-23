@@ -1,6 +1,39 @@
 console.log('CLASSES')
-// ES2015 provides an alternative syntax for creating object-constructor functions. ES2015 lets us create classes with a more intuitive and Ruby-like syntax. Consider this example:
+// something.prototype determines the prototype of objects created by new something()
+// Object.getPrototypeOf(obj)is the standard ES5 function for retrieving the prototype of an object.
+// obj.__proto__ is a nonstandard mechanism for retrieving the prototype of an object.
+// A class is a design pattern consisting of a constructor function and an associated prototype.
+// Ex.
+Person = function (name, age) {
+  this.name = name;
+  this.age = age;
+}
+swy = new Person('suhai', 25);
+Object.getPrototypeOf(swy); // Person {}
+swy.__proto__; // Person {} 
 
+Person.prototype.sing = function () {
+  return `${this.name} is singing`;
+}
+Object.getPrototypeOf(swy); // Person {sing: [Function]}
+swy.__proto__; // Person {sing: [Function]} 
+swy.sing(); // 'suhai is singing'
+
+// // OLD SCHOOL. Probably outdated now that classes exist in JavaScript.
+// function User(name, passwordHash) {
+//   if (!(this instanceof User)) {
+//     return new User(name, passwordHash);
+//   }
+//   this.name = name;
+//   this.passwordHash = passwordHash;
+// }
+// var x = User("baravelli", "d8b74df393528d51cd19980ae0aa028e");
+// var y = new User("baravelli", "d8b74df393528d51cd19980ae0aa028e");
+// x instanceof User; // true
+// y instanceof User; // true
+
+
+// ES2015 provides an alternative syntax for creating object-constructor functions. ES2015 lets us create classes with a more intuitive and Ruby-like syntax. Consider this example:
 class Bicycle {
   constructor(model, color) {
     this.model = model;

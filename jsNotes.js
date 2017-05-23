@@ -262,6 +262,10 @@ console.log(wrapped[0]()); // undefined. This is because the nested function in 
 
 
 console.log('SEVEN');
+// HIGHER ORDER FUNCTIONS
+// Higher-order functions are functions that take other functions as arguments or return functions as their result.
+// Familiarize yourself with higher-order functions in existing libraries.
+// Learn to detect common coding patterns that can be replaced by higher-order functions.
 
 
 console.log('EIGHT');
